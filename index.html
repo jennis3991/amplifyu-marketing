@@ -2691,6 +2691,60 @@
     transition: opacity 0.25s;
   }
   .sc-card:hover .sc-label { opacity: 1; }
+
+  /* ── MOBILE NAV ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 28px;
+    height: 24px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 1px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.is-active span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: rgba(26,23,20,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(107,124,110,0.12);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .nav-links .nav-link {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(240,235,226,0.08);
+    }
+    #nav.nav-open .nav-links { max-height: 70vh; }
+    .nav-cta.nav-cta--app { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -2703,6 +2757,11 @@
     <a href="features.html" class="nav-link" data-page="features">Features</a>
     <a href="story.html" class="nav-link" data-page="story">Story</a>
   </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <a href="#" class="nav-cta nav-cta--app">Coming Soon</a>
 </nav>
 <section class="hero-new">
@@ -3139,6 +3198,21 @@
 })();
 var navEl = document.getElementById('nav');
 window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 40); });
+var navHamburger = document.getElementById('navHamburger');
+if (navHamburger) {
+  navHamburger.addEventListener('click', function() {
+    var isOpen = navEl.classList.toggle('nav-open');
+    navHamburger.classList.toggle('is-active', isOpen);
+    navHamburger.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.nav-links .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navEl.classList.remove('nav-open');
+      navHamburger.classList.remove('is-active');
+      navHamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 var obs = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
