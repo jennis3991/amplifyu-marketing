@@ -2174,6 +2174,17 @@
     max-width: 100vw;
     padding: 0 20px;
     box-sizing: border-box;
+    min-height: 92vh;
+    align-items: stretch;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 92vh;
+  }
+  .hero-eyebrow-new {
+    margin-top: 32px;
   }
   .hero-h1 {
     font-size: 2.8rem;
@@ -2193,6 +2204,8 @@
   .hero-sub-new {
     padding-bottom: 24px;
     margin-bottom: 32px;
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.75);
   }
   .hs-rule {
     display: none;
@@ -2204,6 +2217,7 @@
     border-radius: 10px;
     align-self: center;
     transform: translateX(-16px);
+    margin-top: auto;
   }
 }
 .hero-btn-secondary {
@@ -2791,7 +2805,7 @@
   @media (max-width: 768px) {
     .hero-right { display: none; }
     .hero-new {
-      padding-top: 48px;
+      padding-top: 60px;
     }
     .hero-mobile-tagline {
       display: block;
@@ -2856,7 +2870,7 @@
     }
     .mob-card {
       width: 100%;
-      height: 220px;
+      height: 150px;
       border-radius: 12px;
       flex-shrink: 0;
       overflow: hidden;
