@@ -2779,8 +2779,35 @@
 
   /* ── MOBILE SCREENSHOT GRID ── */
   .mob-grid { display: none; }
+  .hero-mobile-tagline { display: none; }
+  .hero-mobile-section-label { display: none; }
   @media (max-width: 768px) {
     .hero-right { display: none; }
+    .hero-mobile-tagline {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-variant: small-caps;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 16px 0;
+      margin-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-mobile-section-label {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-variant: small-caps;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      padding: 20px 0 12px 0;
+    }
     .mob-grid {
       display: flex;
       box-sizing: border-box;
@@ -2859,6 +2886,8 @@
       <p class="hero-sub-new">The unwritten skills behind career success. <em style="font-style:italic; color:var(--cream); opacity:1;">Now finally taught.</em></p>
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
       <a href="#" class="hero-btn-primary" aria-disabled="true">Start Your Programme</a>
+      <p class="hero-mobile-tagline">14 Sessions · AI-Coached · ~15 Min/Day</p>
+      <p class="hero-mobile-section-label">Inside The Programme</p>
       <!-- MOBILE SCREENSHOT GRID -->
       <div class="mob-grid" aria-hidden="true">
         <div class="mob-col mob-col--up">
