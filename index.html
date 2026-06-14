@@ -2169,6 +2169,16 @@
   border-color: var(--cream);
 }
 @media (max-width: 768px) {
+  .hero-h1 {
+    font-size: clamp(26px, 7vw, 32px);
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .hero-sub-new,
+  .hero-sub-contexts {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
   .hero-btn-primary {
     font-family: var(--serif-display);
     font-weight: 500;
