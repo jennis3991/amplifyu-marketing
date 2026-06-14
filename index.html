@@ -2833,47 +2833,19 @@
       padding: 28px 0 16px 0;
     }
     .mob-grid {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
       box-sizing: border-box;
       width: 100vw;
       margin-left: calc(-20px);
       margin-top: 16px;
       padding: 0 12px;
-      gap: 12px;
-      overflow: hidden;
-      height: 100vh;
-      max-height: 460px;
-    }
-    .mob-col {
-      flex: 1 1 0;
-      min-width: 0;
-      overflow: hidden;
-    }
-    .mob-track {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-    }
-    .mob-col--up .mob-track {
-      animation: mob-scroll-up 32s linear infinite;
-    }
-    .mob-col--down .mob-track {
-      animation: mob-scroll-down 38s linear infinite;
-    }
-    @keyframes mob-scroll-up {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-50%); }
-    }
-    @keyframes mob-scroll-down {
-      0% { transform: translateY(-50%); }
-      100% { transform: translateY(0); }
     }
     .mob-card {
       width: 100%;
       height: 220px;
       border-radius: 12px;
-      flex-shrink: 0;
       overflow: hidden;
     }
     .mob-card img {
@@ -2915,34 +2887,10 @@
       <p class="hero-mobile-section-label">Inside The Programme</p>
       <!-- MOBILE SCREENSHOT GRID -->
       <div class="mob-grid" aria-hidden="true">
-        <div class="mob-col mob-col--up">
-          <div class="mob-track">
-            <div class="mob-card"><img src="mob2.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob3.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob4.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob5.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob6.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob2.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob3.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob4.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob5.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob6.jpg" alt=""></div>
-          </div>
-        </div>
-        <div class="mob-col mob-col--down">
-          <div class="mob-track">
-            <div class="mob-card"><img src="mob7.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob8.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob9.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob10.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob12.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob7.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob8.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob9.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob10.jpg" alt=""></div>
-            <div class="mob-card"><img src="mob12.jpg" alt=""></div>
-          </div>
-        </div>
+        <div class="mob-card"><img src="mob2.jpg" alt=""></div>
+        <div class="mob-card"><img src="mob3.jpg" alt=""></div>
+        <div class="mob-card"><img src="mob4.jpg" alt=""></div>
+        <div class="mob-card"><img src="mob5.jpg" alt=""></div>
       </div>
       <p style="font-family:var(--sans);font-size:11px;letter-spacing:0.08em;color:rgba(240,235,226,0.55);text-transform:uppercase;margin-top:16px;">Persona-tailored · Expert-coached · 14 sessions · ~15 min/day</p>
     </div>
