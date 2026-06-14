@@ -2752,10 +2752,13 @@
     .hero-right { display: none; }
     .mob-grid {
       display: flex;
+      box-sizing: border-box;
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      gap: 2px;
+      margin-top: 16px;
+      padding: 0 12px;
+      gap: 8px;
       overflow: hidden;
       height: 100vh;
     }
@@ -2767,7 +2770,7 @@
     .mob-track {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 8px;
       width: 100%;
     }
     .mob-col--up .mob-track {
@@ -2786,7 +2789,8 @@
     }
     .mob-card {
       width: 100%;
-      aspect-ratio: 1 / 1.2;
+      height: 220px;
+      border-radius: 12px;
       flex-shrink: 0;
       overflow: hidden;
     }
@@ -2824,7 +2828,37 @@
       <p class="hero-sub-new">The unwritten skills behind career success. <em style="font-style:italic; color:var(--cream); opacity:1;">Now finally taught.</em></p>
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
       <a href="#" class="hero-btn-primary" aria-disabled="true">Start Your Programme</a>
-      
+      <!-- MOBILE SCREENSHOT GRID -->
+      <div class="mob-grid" aria-hidden="true">
+        <div class="mob-col mob-col--up">
+          <div class="mob-track">
+            <div class="mob-card"><img src="mob2.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob3.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob4.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob5.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob6.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob2.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob3.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob4.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob5.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob6.jpg" alt=""></div>
+          </div>
+        </div>
+        <div class="mob-col mob-col--down">
+          <div class="mob-track">
+            <div class="mob-card"><img src="mob7.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob8.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob9.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob10.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob12.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob7.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob8.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob9.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob10.jpg" alt=""></div>
+            <div class="mob-card"><img src="mob12.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
       <p style="font-family:var(--sans);font-size:11px;letter-spacing:0.08em;color:rgba(240,235,226,0.55);text-transform:uppercase;margin-top:16px;">Persona-tailored · Expert-coached · 14 sessions · ~15 min/day</p>
     </div>
     <div class="hero-right fade-up delay-2" style="height:560px;overflow:hidden;position:relative;margin-left:80px;margin-right:-60px;">
@@ -2954,37 +2988,6 @@
     </div>
   </div>
 </section>
-<!-- MOBILE SCREENSHOT GRID -->
-<div class="mob-grid" aria-hidden="true">
-  <div class="mob-col mob-col--up">
-    <div class="mob-track">
-      <div class="mob-card"><img src="mob2.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob3.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob4.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob5.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob6.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob2.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob3.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob4.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob5.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob6.jpg" alt=""></div>
-    </div>
-  </div>
-  <div class="mob-col mob-col--down">
-    <div class="mob-track">
-      <div class="mob-card"><img src="mob7.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob8.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob9.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob10.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob12.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob7.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob8.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob9.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob10.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob12.jpg" alt=""></div>
-    </div>
-  </div>
-</div>
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
