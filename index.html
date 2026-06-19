@@ -1996,16 +1996,29 @@
     mix-blend-mode: multiply;
     opacity: 0.75;
   }
-  .hero-logo-watermark {
+  .why-comm-bg-logo {
     position: absolute;
-    width: 220px;
+    width: 480px;
     height: auto;
-    right: -10px;
-    bottom: 60px;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
     mix-blend-mode: multiply;
-    opacity: 0.07;
+    opacity: 0.11;
     pointer-events: none;
     user-select: none;
+    z-index: 0;
+  }
+  .section-why-comm { position: relative; overflow: hidden; }
+  .why-comm-inner { position: relative; z-index: 1; }
+  @media (max-width: 768px) {
+    .why-comm-bg-logo {
+      width: 280px;
+      left: 50%;
+      top: 30px;
+      transform: translateX(-50%);
+      opacity: 0.09;
+    }
   }
   .cta-logo-mark {
     width: 64px;
@@ -2016,28 +2029,6 @@
     opacity: 0.55;
     display: block;
     margin: 0 auto 28px;
-  }
-  .hero-cream-seal {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(26,23,20,0.12), 0 1px 4px rgba(26,23,20,0.07);
-  }
-  .why-comm-seal {
-    width: 72px;
-    height: 72px;
-    border-radius: 16px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 28px;
-    box-shadow: 0 3px 16px rgba(26,23,20,0.1), 0 1px 4px rgba(26,23,20,0.06);
-  }
-  @media (max-width: 768px) {
-    .hero-cream-seal { width: 44px; height: 44px; border-radius: 10px; margin-bottom: 16px; }
-    .why-comm-seal { width: 56px; height: 56px; border-radius: 12px; margin-bottom: 20px; }
   }
   .footer-socials { display: flex; align-items: center; gap: 20px; }
   .footer-social {
@@ -3130,7 +3121,7 @@
 </head>
 <body>
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="logo-icon-sage.jpeg" alt="" class="nav-logo-img">Amplify<span>U</span></a>
+  <a href="index.html" class="nav-logo"><img src="logo-cream.jpeg" alt="" class="nav-logo-img">Amplify<span>U</span></a>
   <div class="nav-links">
     <a href="index.html" class="nav-link active" data-page="home">Home</a>
     <a href="programme.html" class="nav-link" data-page="programme">Programme</a>
@@ -3157,7 +3148,6 @@
 <section class="hero-new">
   <div class="hero-grid">
     <div class="hero-left fade-up">
-      <img src="logo-cream.jpeg" alt="AmplifyU" class="hero-cream-seal">
       <p class="hero-eyebrow-new">A Private Coaching Programme</p>
       <h1 class="hero-h1">The space to become who you've <em>always been capable of.</em></h1>
       <p class="hero-sub-new">The communications skills behind career success. <em style="font-style:italic; color:var(--accent); opacity:1;">Now finally taught.</em></p>
@@ -3173,7 +3163,6 @@
           </svg>
         </div>
       </div>
-      <img src="logo-mark.jpeg" alt="" class="hero-logo-watermark" aria-hidden="true">
     </div>
     <div class="hero-right fade-up delay-2" style="height:560px;overflow:hidden;position:relative;margin-left:80px;margin-right:-60px;">
       <!-- SCREENSHOT CAROUSEL -->
@@ -3333,9 +3322,9 @@
 </div>
 <!-- WHY COMMUNICATION SECTION -->
 <section class="section-why-comm">
+  <img src="logo-mark.jpeg" alt="" class="why-comm-bg-logo" aria-hidden="true">
   <div class="why-comm-inner">
     <div class="why-comm-header">
-      <img src="logo-cream.jpeg" alt="" class="why-comm-seal" aria-hidden="true">
       <h2 class="why-comm-headline">Great communication<br>is strategic.<br><em>Master every move.</em></h2>
     </div>
     <div class="why-comm-grid">
