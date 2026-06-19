@@ -2819,12 +2819,148 @@
     .nav-overlay.is-open .nav-overlay-link:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.6s; }
   }
 
+  /* ── WHY COMMUNICATION SECTION ── */
+  .section-why-comm {
+    background: var(--cream);
+    padding: 100px 40px;
+  }
+  .why-comm-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .why-comm-headline {
+    font-family: var(--serif-display);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.15;
+    margin: 0 0 64px;
+  }
+  .why-comm-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .why-comm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0 56px;
+    align-items: start;
+  }
+  .why-col-rule {
+    background: var(--cream-dark);
+    align-self: stretch;
+  }
+  .why-col-label {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin: 0 0 32px;
+  }
+  .why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 0 24px;
+  }
+  .why-row-rule {
+    height: 1px;
+    background: var(--cream-dark);
+    margin: 0 0 24px;
+  }
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .why-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .why-icon--light {
+    background: var(--cream-dark);
+    color: var(--text-mid);
+  }
+  .why-icon--dark {
+    background: var(--accent);
+    color: var(--cream);
+  }
+  .why-item-text {
+    font-family: var(--serif-body);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin: 8px 0 0;
+  }
+  .why-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .why-skill {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .why-skill span {
+    font-family: var(--serif-body);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.4;
+  }
+  .why-skills-rule {
+    height: 1px;
+    background: var(--cream-dark);
+    margin-bottom: 20px;
+  }
+  .why-footer-label {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .section-why-comm {
+      padding: 64px 24px;
+    }
+    .why-comm-headline {
+      font-size: 2rem;
+      margin-bottom: 48px;
+    }
+    .why-comm-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .why-col-rule {
+      height: 1px;
+      width: 100%;
+      margin: 40px 0;
+    }
+    .why-icon {
+      width: 42px;
+      height: 42px;
+    }
+    .why-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
   /* ── MOBILE SCREENSHOT GRID ── */
   .mob-grid { display: none; }
   .hero-mobile-tagline { display: none; }
   .mob-scroll-hint { display: none; }
   .mob-carousel-section { display: none; }
-  .mob-outcomes { display: none; }
   @media (max-width: 768px) {
     .hero-right { display: none; }
     .hero-new {
@@ -2843,28 +2979,6 @@
       margin-top: 24px;
       border-top: 1px solid var(--cream-dark);
       border-bottom: 1px solid var(--cream-dark);
-    }
-    .mob-outcomes {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      list-style: none;
-      margin: 20px 0 0;
-      padding: 0;
-    }
-    .mob-outcomes li {
-      font-family: var(--sans);
-      font-size: 0.82rem;
-      letter-spacing: 0.02em;
-      color: var(--text-mid);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .mob-outcome-check {
-      color: var(--accent);
-      font-size: 0.75rem;
-      flex-shrink: 0;
     }
     .mob-scroll-hint {
       display: flex;
@@ -2983,15 +3097,6 @@
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
       <a href="#" class="hero-btn-primary" aria-disabled="true">Start Your Programme</a>
       <p class="hero-mobile-tagline">14 Sessions · AI-Coached · ~15 Min/Day</p>
-      <!-- MOBILE OUTCOMES STRIP -->
-      <ul class="mob-outcomes" aria-hidden="true">
-        <li><span class="mob-outcome-check">✓</span> Speak with clarity</li>
-        <li><span class="mob-outcome-check">✓</span> Influence decisions</li>
-        <li><span class="mob-outcome-check">✓</span> Lead high-stakes conversations</li>
-        <li><span class="mob-outcome-check">✓</span> Tell unforgettable stories</li>
-        <li><span class="mob-outcome-check">✓</span> Build executive presence</li>
-        <li><span class="mob-outcome-check">✓</span> Accelerate your career</li>
-      </ul>
       <!-- MOBILE SCROLL INDICATOR -->
       <div class="mob-scroll-hint" aria-hidden="true">
         <p class="mob-scroll-label">Inside The Programme</p>
@@ -3158,6 +3263,89 @@
     </div>
   </div>
 </div>
+<!-- WHY COMMUNICATION SECTION -->
+<section class="section-why-comm">
+  <div class="why-comm-inner">
+    <div class="why-comm-header">
+      <h2 class="why-comm-headline">Great communication<br>is strategic.<br><em>Master every move.</em></h2>
+    </div>
+    <div class="why-comm-grid">
+
+      <!-- LEFT: the problem -->
+      <div class="why-comm-col">
+        <p class="why-col-label">Why communication changes everything</p>
+        <div class="why-item">
+          <div class="why-icon why-icon--light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4"/><polyline points="9 11 12 14 22 4"/><path d="M16 19h6M19 16v6"/></svg>
+          </div>
+          <p class="why-item-text">Most people spend years mastering their profession.</p>
+        </div>
+        <div class="why-row-rule"></div>
+        <div class="why-item">
+          <div class="why-icon why-icon--light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <p class="why-item-text">Almost nobody teaches them how to communicate it.</p>
+        </div>
+        <div class="why-row-rule"></div>
+        <div class="why-item">
+          <div class="why-icon why-icon--light">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <p class="why-item-text">Yet communication shapes who gets heard, trusted, promoted, and remembered.</p>
+        </div>
+      </div>
+
+      <div class="why-col-rule"></div>
+
+      <!-- RIGHT: the skills -->
+      <div class="why-comm-col">
+        <p class="why-col-label">The skills that shape careers are rarely taught.</p>
+        <div class="why-skills">
+          <div class="why-skill">
+            <div class="why-icon why-icon--dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <span>Speak with clarity</span>
+          </div>
+          <div class="why-skill">
+            <div class="why-icon why-icon--dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span>Influence decisions</span>
+          </div>
+          <div class="why-skill">
+            <div class="why-icon why-icon--dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span>Lead high-stakes conversations</span>
+          </div>
+          <div class="why-skill">
+            <div class="why-icon why-icon--dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <span>Tell unforgettable stories</span>
+          </div>
+          <div class="why-skill">
+            <div class="why-icon why-icon--dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><polyline points="15 3 18 6 15 9"/></svg>
+            </div>
+            <span>Build executive presence</span>
+          </div>
+          <div class="why-skill">
+            <div class="why-icon why-icon--dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+            <span>Accelerate your career</span>
+          </div>
+        </div>
+        <div class="why-skills-rule"></div>
+        <p class="why-footer-label">AmplifyU teaches them deliberately.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
