@@ -642,37 +642,74 @@
     height: 2px;
     background: var(--cream);
     border-radius: 1px;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+    transition: all 0.3s ease;
+    transform-origin: center;
   }
-  .nav-hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-hamburger.is-active span:nth-child(2) { opacity: 0; }
-  .nav-hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-open .nav-hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
+  .nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+  .nav-overlay { display: none; }
   @media (max-width: 768px) {
     .nav-hamburger { display: flex; }
-    .nav-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-      background: rgba(26,23,20,0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(107,124,110,0.12);
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-    }
-    .nav-links .nav-link {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 16px 24px;
-      border-bottom: 1px solid rgba(240,235,226,0.08);
-    }
-    #nav.nav-open .nav-links { max-height: 70vh; }
+    .nav-links { display: none; }
     .nav-cta.nav-cta--app { display: none; }
+    .nav-overlay {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: #1a1714;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .nav-overlay.is-open { opacity: 1; pointer-events: all; transform: translateX(0); }
+    .nav-overlay-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+    }
+    .nav-overlay-logo {
+      font-family: var(--serif-display);
+      font-size: 22px; font-weight: 500;
+      color: rgba(240,235,226,0.9);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .nav-overlay-logo span { color: rgba(107,124,110,0.7); }
+    .nav-overlay-close {
+      background: none; border: none; cursor: pointer;
+      padding: 8px; width: 36px; height: 36px; position: relative;
+    }
+    .nav-overlay-close span {
+      display: block; width: 22px; height: 2px;
+      background: #f0ebe2; border-radius: 1px;
+      position: absolute; top: 50%; left: 50%;
+    }
+    .nav-overlay-close span:nth-child(1) { transform: translate(-50%, -50%) rotate(45deg); }
+    .nav-overlay-close span:nth-child(2) { transform: translate(-50%, -50%) rotate(-45deg); }
+    .nav-overlay-links {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    .nav-overlay-link {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.2rem; color: #f0ebe2;
+      text-decoration: none; padding: 20px 0;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s;
+    }
+    .nav-overlay-link:hover { color: rgba(107,124,110,0.9); }
+    .nav-overlay.is-open .nav-overlay-link:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.1s; }
+    .nav-overlay.is-open .nav-overlay-link:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.2s; }
+    .nav-overlay.is-open .nav-overlay-link:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.3s; }
+    .nav-overlay.is-open .nav-overlay-link:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.4s; }
+    .nav-overlay.is-open .nav-overlay-link:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.5s; }
   }
 </style>
 </head>
@@ -694,6 +731,21 @@
   </button>
   <a href="#" class="nav-cta nav-cta--app">Coming Soon</a>
 </nav>
+<div class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <div class="nav-overlay-top">
+    <a href="index.html" class="nav-overlay-logo">Amplify<span>U</span></a>
+    <button class="nav-overlay-close" id="navOverlayClose" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-overlay-links">
+    <a href="index.html" class="nav-overlay-link">Home</a>
+    <a href="programme.html" class="nav-overlay-link">Programme</a>
+    <a href="coach.html" class="nav-overlay-link">Coach</a>
+    <a href="features.html" class="nav-overlay-link">Features</a>
+    <a href="story.html" class="nav-overlay-link">Story</a>
+  </div>
+</div>
 
 <!-- ─── HERO ─── -->
 <section class="story-hero">
@@ -1023,20 +1075,25 @@
   });
 
   var navHamburger = document.getElementById('navHamburger');
-  if (navHamburger) {
-    navHamburger.addEventListener('click', function() {
-      var isOpen = navEl.classList.toggle('nav-open');
-      navHamburger.classList.toggle('is-active', isOpen);
-      navHamburger.setAttribute('aria-expanded', isOpen);
-    });
-    document.querySelectorAll('.nav-links .nav-link').forEach(function(link) {
-      link.addEventListener('click', function() {
-        navEl.classList.remove('nav-open');
-        navHamburger.classList.remove('is-active');
-        navHamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
+  var navOverlay = document.getElementById('navOverlay');
+  var navOverlayClose = document.getElementById('navOverlayClose');
+  function openOverlay() {
+    navEl.classList.add('nav-open');
+    if (navHamburger) { navHamburger.classList.add('is-active'); navHamburger.setAttribute('aria-expanded', 'true'); }
+    if (navOverlay) { navOverlay.classList.add('is-open'); navOverlay.setAttribute('aria-hidden', 'false'); }
+    document.body.style.overflow = 'hidden';
   }
+  function closeOverlay() {
+    navEl.classList.remove('nav-open');
+    if (navHamburger) { navHamburger.classList.remove('is-active'); navHamburger.setAttribute('aria-expanded', 'false'); }
+    if (navOverlay) { navOverlay.classList.remove('is-open'); navOverlay.setAttribute('aria-hidden', 'true'); }
+    document.body.style.overflow = '';
+  }
+  if (navHamburger) navHamburger.addEventListener('click', openOverlay);
+  if (navOverlayClose) navOverlayClose.addEventListener('click', closeOverlay);
+  document.querySelectorAll('.nav-overlay-link').forEach(function(link) {
+    link.addEventListener('click', closeOverlay);
+  });
 
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
