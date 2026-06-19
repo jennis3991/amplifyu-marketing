@@ -2824,6 +2824,7 @@
   .hero-mobile-tagline { display: none; }
   .mob-scroll-hint { display: none; }
   .mob-carousel-section { display: none; }
+  .mob-outcomes { display: none; }
   @media (max-width: 768px) {
     .hero-right { display: none; }
     .hero-new {
@@ -2842,6 +2843,28 @@
       margin-top: 24px;
       border-top: 1px solid var(--cream-dark);
       border-bottom: 1px solid var(--cream-dark);
+    }
+    .mob-outcomes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+      margin: 20px 0 0;
+      padding: 0;
+    }
+    .mob-outcomes li {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mob-outcome-check {
+      color: var(--accent);
+      font-size: 0.75rem;
+      flex-shrink: 0;
     }
     .mob-scroll-hint {
       display: flex;
@@ -2960,6 +2983,15 @@
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
       <a href="#" class="hero-btn-primary" aria-disabled="true">Start Your Programme</a>
       <p class="hero-mobile-tagline">14 Sessions · AI-Coached · ~15 Min/Day</p>
+      <!-- MOBILE OUTCOMES STRIP -->
+      <ul class="mob-outcomes" aria-hidden="true">
+        <li><span class="mob-outcome-check">✓</span> Speak with clarity</li>
+        <li><span class="mob-outcome-check">✓</span> Influence decisions</li>
+        <li><span class="mob-outcome-check">✓</span> Lead high-stakes conversations</li>
+        <li><span class="mob-outcome-check">✓</span> Tell unforgettable stories</li>
+        <li><span class="mob-outcome-check">✓</span> Build executive presence</li>
+        <li><span class="mob-outcome-check">✓</span> Accelerate your career</li>
+      </ul>
       <!-- MOBILE SCROLL INDICATOR -->
       <div class="mob-scroll-hint" aria-hidden="true">
         <p class="mob-scroll-label">Inside The Programme</p>
@@ -2967,7 +2999,6 @@
           <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 1v14M1 13l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span>Scroll</span>
         </div>
       </div>
     </div>
