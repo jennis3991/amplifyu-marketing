@@ -212,8 +212,20 @@
     letter-spacing: 0.04em;
     color: var(--cream);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .nav-logo span { color: var(--accent); }
+  .nav-logo-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    flex-shrink: 0;
+  }
   .nav-cta {
     font-family: var(--sans);
     font-size: 12px;
@@ -1971,8 +1983,40 @@
     font-weight: 500;
     color: var(--text-mid);
     letter-spacing: 0.04em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
   .footer-logo span { color: var(--accent); }
+  .footer-logo-img {
+    width: 52px;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    opacity: 0.75;
+  }
+  .hero-logo-watermark {
+    position: absolute;
+    width: 220px;
+    height: auto;
+    right: -10px;
+    bottom: 60px;
+    mix-blend-mode: multiply;
+    opacity: 0.07;
+    pointer-events: none;
+    user-select: none;
+  }
+  .cta-logo-mark {
+    width: 64px;
+    height: auto;
+    border-radius: 14px;
+    object-fit: cover;
+    mix-blend-mode: screen;
+    opacity: 0.55;
+    display: block;
+    margin: 0 auto 28px;
+  }
   .footer-socials { display: flex; align-items: center; gap: 20px; }
   .footer-social {
     color: var(--text-light); text-decoration: none;
@@ -2118,7 +2162,7 @@
   width:100%; display:grid;
   grid-template-columns:1fr 1fr; gap:48px; align-items:center;
 }
-.hero-left { display:flex; flex-direction:column; gap:0; }
+.hero-left { display:flex; flex-direction:column; gap:0; position:relative; }
 .hero-eyebrow-new {
   font-family:var(--sans); font-size:10px; letter-spacing:0.26em;
   text-transform:uppercase; color:var(--accent); margin-bottom:28px;
@@ -3064,7 +3108,10 @@
 </head>
 <body>
 <nav id="nav">
-  <a href="index.html" class="nav-logo">Amplify<span>U</span></a>
+  <a href="index.html" class="nav-logo">
+    <img src="logo-icon-sage.jpeg" alt="AmplifyU" class="nav-logo-img">
+    Amplify<span>U</span>
+  </a>
   <div class="nav-links">
     <a href="index.html" class="nav-link active" data-page="home">Home</a>
     <a href="programme.html" class="nav-link" data-page="programme">Programme</a>
@@ -3106,6 +3153,7 @@
           </svg>
         </div>
       </div>
+      <img src="logo-mark.jpeg" alt="" class="hero-logo-watermark" aria-hidden="true">
     </div>
     <div class="hero-right fade-up delay-2" style="height:560px;overflow:hidden;position:relative;margin-left:80px;margin-right:-60px;">
       <!-- SCREENSHOT CAROUSEL -->
@@ -3569,6 +3617,7 @@
   </div>
 </section>
 <section class="section-cta-new">
+  <img src="logo-cream.jpeg" alt="" class="cta-logo-mark fade-up" aria-hidden="true">
   <p class="cta-new-eyebrow fade-up">Communication Mastery Platform</p>
   <h2 class="cta-new-h2 fade-up delay-1">This is your moment.<br><em>AmplifyU.</em></h2>
   <p class="cta-new-sub fade-up delay-2">14 sessions. Persona-tailored. 15 minutes a day.</p>
@@ -3580,7 +3629,10 @@
 </section>
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Amplify<span>U</span></div>
+  <div class="footer-logo">
+    <img src="logo-mark.jpeg" alt="" class="footer-logo-img" aria-hidden="true">
+    Amplify<span>U</span>
+  </div>
   <div class="footer-socials">
     <a href="#" class="footer-social" aria-label="Instagram">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
