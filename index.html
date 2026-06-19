@@ -2898,6 +2898,11 @@
       display: block;
     }
   }
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
 </style>
 </head>
 <body>
@@ -3423,4 +3428,18 @@ function playVideo() {
   if (poster) poster.style.display = 'none';
   if (embed) embed.style.display = 'block';
 }
+</script>
+<script>
+(function() {
+  var heroZones = '.hero-new, .hero, .story-hero, .features-hero, .page-top';
+  document.querySelectorAll('h2, h3, blockquote, [class*="eyebrow"], .possible-quote-block p, .ti-blockquote p, .founder-quote-strip').forEach(function(el) {
+    if (!el.closest(heroZones)) el.classList.add('reveal');
+  });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+})();
 </script></body></html>
