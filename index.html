@@ -2009,7 +2009,7 @@
     user-select: none;
     z-index: 0;
   }
-  .section-why-comm { position: relative; overflow: hidden; }
+  .section-why-comm { position: relative; overflow: hidden; background: var(--cream-mid); }
   .why-comm-inner { position: relative; z-index: 1; }
   @media (max-width: 768px) {
     .why-comm-bg-logo {
@@ -2401,7 +2401,7 @@
 
 /* ── WHAT BECOMES POSSIBLE ── */
 .section-possible {
-  background:var(--cream);
+  background:var(--cream-mid);
   padding:120px 8% 40px;
 }
 .possible-inner { max-width:1300px; margin:0 auto; }
@@ -2578,9 +2578,7 @@
 /* ── STATS STRIP ── */
 .stats-strip {
   padding:80px 8%;
-  background:var(--cream);
-  border-top:1px solid var(--cream-dark);
-  border-bottom:1px solid var(--cream-dark);
+  background:var(--cream-mid);
 }
 .stats-strip-inner {
   max-width:1200px; margin:0 auto;
@@ -2989,6 +2987,7 @@
   @media (max-width: 768px) {
     .section-why-comm {
       padding: 64px 24px;
+      background: var(--cream-mid);
     }
     .why-comm-headline {
       font-size: 2rem;
@@ -3155,14 +3154,6 @@
       <a href="#" class="hero-btn-primary" aria-disabled="true">Start Your Programme</a>
       <p class="hero-mobile-tagline">14 Sessions · AI-Coached · ~15 Min/Day</p>
       <!-- MOBILE SCROLL INDICATOR -->
-      <div class="mob-scroll-hint" aria-hidden="true">
-        <p class="mob-scroll-label">Inside The Programme</p>
-        <div class="mob-scroll-arrow">
-          <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 1v14M1 13l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
     </div>
     <div class="hero-right fade-up delay-2" style="height:560px;overflow:hidden;position:relative;margin-left:80px;margin-right:-60px;">
       <!-- SCREENSHOT CAROUSEL -->
