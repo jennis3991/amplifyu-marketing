@@ -3064,6 +3064,7 @@
   .mob-scroll-hint { display: none; }
   .mob-carousel-section { display: none; }
   .mob-hero-logo-wrap { display: none; }
+  .hero-mobile-sub { display: none; }
   @media (max-width: 768px) {
     .hero-right { display: none; }
     .ticker-wrap { display: none; }
@@ -3084,6 +3085,17 @@
       width: 100%;
       border-top: 1px solid var(--cream-dark);
       border-bottom: 1px solid var(--cream-dark);
+    }
+    .hero-mobile-sub {
+      display: block;
+      font-family: var(--serif-body);
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 14px;
+      opacity: 0.75;
     }
     .mob-scroll-hint {
       display: flex;
@@ -3206,6 +3218,7 @@
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
       <a href="#" class="hero-btn-primary" aria-disabled="true">Start Your Programme</a>
       <p class="hero-mobile-tagline">14 Sessions · AI-Coached · ~15 Min/Day</p>
+      <p class="hero-mobile-sub">More influence. More impact. In 14 days.</p>
       <!-- MOBILE SCROLL INDICATOR -->
     </div>
     <div class="hero-right fade-up delay-2" style="height:560px;overflow:hidden;position:relative;margin-left:80px;margin-right:-60px;">
