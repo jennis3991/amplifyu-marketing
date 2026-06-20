@@ -3144,6 +3144,23 @@
       overflow: hidden;
       position: relative;
     }
+    .mob-carousel-section .mob-grid::before,
+    .mob-carousel-section .mob-grid::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .mob-carousel-section .mob-grid::before {
+      top: 0;
+      background: linear-gradient(to bottom, var(--cream), transparent);
+    }
+    .mob-carousel-section .mob-grid::after {
+      bottom: 0;
+      background: linear-gradient(to top, var(--cream), transparent);
+    }
     .mob-col {
       flex: 1 1 0;
       min-width: 0;
