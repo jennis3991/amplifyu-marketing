@@ -2237,7 +2237,7 @@
   .hero-new {
     overflow-x: hidden;
     max-width: 100vw;
-    padding: 0 20px;
+    padding: 0 32px;
     box-sizing: border-box;
     min-height: 100svh;
     height: 100svh;
@@ -2246,32 +2246,51 @@
   .hero-left {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
     min-height: calc(100svh - 80px);
+    padding-top: 28px;
+    padding-bottom: 36px;
   }
   .hero-eyebrow-new {
-    margin-top: 32px;
+    margin-top: 0;
+    text-align: center;
+  }
+  .mob-hero-logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0 20px;
+  }
+  .mob-hero-logo {
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 24px rgba(26,23,20,0.1), 0 1px 4px rgba(26,23,20,0.06);
   }
   .hero-h1 {
-    font-size: 3.4rem;
-    line-height: 1.1;
+    font-size: 2.9rem;
+    line-height: 1.12;
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
     max-width: 100%;
-    padding-right: 16px;
+    padding-right: 0;
     box-sizing: border-box;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
   }
   .hero-sub-new,
   .hero-sub-contexts {
     max-width: 100%;
     overflow-wrap: break-word;
+    text-align: center;
   }
   .hero-sub-new {
     padding-bottom: 0;
     margin-bottom: 0;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+    line-height: 1.65;
     color: var(--text-mid);
   }
   .hs-rule {
@@ -2282,9 +2301,14 @@
     font-weight: 500;
     letter-spacing: 0.08em;
     border-radius: 10px;
-    align-self: center;
-    transform: translateX(-16px);
-    margin-top: 40px;
+    align-self: stretch;
+    transform: none;
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 32px;
+    font-size: 16px;
   }
 }
 .hero-btn-secondary {
@@ -3029,6 +3053,7 @@
   .hero-mobile-tagline { display: none; }
   .mob-scroll-hint { display: none; }
   .mob-carousel-section { display: none; }
+  .mob-hero-logo-wrap { display: none; }
   @media (max-width: 768px) {
     .hero-right { display: none; }
     .hero-new {
@@ -3038,13 +3063,13 @@
       display: block;
       font-family: var(--sans);
       font-size: 0.65rem;
-      font-variant: small-caps;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-light);
       text-align: center;
-      padding: 20px 0;
-      margin-top: 24px;
+      padding: 16px 0;
+      margin-top: 28px;
+      width: 100%;
       border-top: 1px solid var(--cream-dark);
       border-bottom: 1px solid var(--cream-dark);
     }
@@ -3160,6 +3185,9 @@
   <div class="hero-grid">
     <div class="hero-left fade-up">
       <p class="hero-eyebrow-new">A Private Coaching Programme</p>
+      <div class="mob-hero-logo-wrap" aria-hidden="true">
+        <img src="logo-cream2.jpeg" alt="" class="mob-hero-logo">
+      </div>
       <h1 class="hero-h1">The space to become who you've <em>always been capable of.</em></h1>
       <p class="hero-sub-new">The unwritten skills behind career success. <em style="font-style:italic; color:var(--accent); opacity:1;">Now finally taught.</em></p>
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
