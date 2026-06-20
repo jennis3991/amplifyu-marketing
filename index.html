@@ -2266,13 +2266,20 @@
     display: flex;
     justify-content: center;
     margin: 24px 0 20px;
-  }
-  .mob-hero-logo {
     width: 88px;
     height: 88px;
     border-radius: 20px;
-    object-fit: cover;
+    overflow: hidden;
+    align-self: center;
     box-shadow: 0 4px 24px rgba(26,23,20,0.1), 0 1px 4px rgba(26,23,20,0.06);
+  }
+  .mob-hero-logo {
+    width: 125%;
+    height: 125%;
+    margin: -12.5%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
   }
   .hero-h1 {
     font-size: 2.9rem;
