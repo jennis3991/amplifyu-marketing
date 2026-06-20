@@ -1921,15 +1921,17 @@
     overflow: hidden;
   }
   .section-cta::before {
-    content: '♛';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    font-size: 400px;
-    color: rgba(107,124,110,0.03);
+    width: 400px;
+    height: 400px;
+    background: url('logo-cream.jpeg') center/contain no-repeat;
+    mix-blend-mode: screen;
+    opacity: 0.07;
     pointer-events: none;
-    line-height: 1;
   }
   .cta-eyebrow {
     font-family: var(--sans);
@@ -2629,10 +2631,12 @@
   text-align:center; position:relative; overflow:hidden;
 }
 .section-cta-new::before {
-  content:'♛'; position:absolute; top:50%; left:50%;
+  content:''; position:absolute; top:50%; left:50%;
   transform:translate(-50%,-50%);
-  font-size:360px; color:rgba(107,124,110,0.025);
-  pointer-events:none; line-height:1;
+  width:400px; height:400px;
+  background:url('logo-cream.jpeg') center/contain no-repeat;
+  mix-blend-mode:screen; opacity:0.07;
+  pointer-events:none;
 }
 .cta-new-eyebrow {
   font-family:var(--sans); font-size:10px; letter-spacing:0.22em;
