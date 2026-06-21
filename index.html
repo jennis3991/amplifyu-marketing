@@ -2232,17 +2232,22 @@
   cursor: pointer;
   pointer-events: all;
   transition: box-shadow 0.3s, border-color 0.3s;
-  border: 2px solid rgba(57,255,100,0.3);
+  border: 2px solid rgba(138,158,141,0.3);
   align-self: flex-start;
   animation: btn-pulse 2.4s ease-in-out infinite;
 }
 @keyframes btn-pulse {
-  0%, 100% { border-color: rgba(57,255,100,0.3); }
-  50%       { border-color: rgba(57,255,100,1.0); }
+  0%, 100% { border-color: rgba(138,158,141,0.3); }
+  50%       { border-color: rgba(138,158,141,1.0); }
 }
 .hero-btn-primary:hover {
-  border-color: rgba(57,255,100,1.0);
+  border-color: rgba(138,158,141,1.0);
   animation: none;
+}
+.hero-btn-primary:active {
+  background: #000000;
+  color: #ffffff;
+  border-color: rgba(138,158,141,1.0);
 }
 @media (max-width: 768px) {
   .hero-new {
