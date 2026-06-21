@@ -2232,21 +2232,21 @@
   cursor: pointer;
   pointer-events: all;
   transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(237,234,230,0.55);
+  border: 1px solid rgba(107,124,110,0.9);
   align-self: flex-start;
-  box-shadow: 0 0 14px rgba(237,234,230,0.2), 0 0 32px rgba(237,234,230,0.08);
-  animation: btn-glow 2.8s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(107,124,110,0.8), 0 0 20px rgba(107,124,110,0.4), inset 0 0 8px rgba(107,124,110,0.15);
+  animation: btn-glow 2.4s ease-in-out infinite;
 }
 @keyframes btn-glow {
-  0%, 100% { box-shadow: 0 0 14px rgba(237,234,230,0.2),  0 0 32px rgba(237,234,230,0.08); }
-  50%       { box-shadow: 0 0 28px rgba(237,234,230,0.55), 0 0 56px rgba(237,234,230,0.2); }
+  0%, 100% { box-shadow: 0 0 8px rgba(107,124,110,0.8),  0 0 20px rgba(107,124,110,0.4),  inset 0 0 8px rgba(107,124,110,0.15); border-color: rgba(107,124,110,0.9); }
+  50%       { box-shadow: 0 0 16px rgba(107,124,110,1.0), 0 0 40px rgba(107,124,110,0.7), 0 0 70px rgba(107,124,110,0.3), inset 0 0 12px rgba(107,124,110,0.2); border-color: rgba(138,158,141,1.0); }
 }
 .hero-btn-primary:hover {
-  background: rgba(237,234,230,0.08);
+  background: var(--accent);
   color: var(--cream);
-  border-color: rgba(237,234,230,0.8);
+  border-color: #8a9e8d;
   animation: none;
-  box-shadow: 0 0 32px rgba(237,234,230,0.6), 0 0 60px rgba(237,234,230,0.25);
+  box-shadow: 0 0 20px rgba(107,124,110,1.0), 0 0 50px rgba(107,124,110,0.7), 0 0 80px rgba(107,124,110,0.3);
 }
 @media (max-width: 768px) {
   .hero-new {
