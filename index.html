@@ -3177,6 +3177,7 @@
   .hero-mobile-tagline { display: none; }
   .mob-scroll-hint { display: none; }
   .mob-carousel-section { display: none; }
+  .mob-video-section { display: none; }
   .mob-hero-logo-wrap { display: none; }
   .hero-mobile-sub { display: none; }
   @media (max-width: 768px) {
@@ -3241,6 +3242,36 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(5px); }
     }
+    .mob-video-section {
+      display: block;
+      background: var(--dark);
+      padding: 32px 20px 40px;
+    }
+    .mob-video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .mob-video-iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border-radius: 12px;
+    }
+    .mob-video-cta {
+      display: block;
+      margin-top: 20px;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      text-align: center;
+      text-decoration: none;
+    }
+    .mob-video-cta:hover { color: var(--cream); }
     .mob-carousel-section {
       display: block;
       background: var(--dark);
@@ -3478,6 +3509,19 @@
     </div>
   </div>
 </section>
+<!-- MOBILE VIDEO SECTION -->
+<div class="mob-video-section">
+  <div class="mob-video-wrap">
+    <iframe
+      src="https://player.vimeo.com/video/1203200840?autoplay=1&loop=1&muted=1&background=1&autopause=0"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      class="mob-video-iframe"
+      title="AmplifyU"></iframe>
+  </div>
+  <a href="amplifyu-pitch.html" class="mob-video-cta">View the AmplifyU Pitch Pack →</a>
+</div>
 <!-- MOBILE CAROUSEL SECTION (shown only on mobile, appears after scrolling past hero) -->
 <div class="mob-carousel-section" aria-hidden="true">
   <div class="mob-grid">
