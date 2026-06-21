@@ -2221,7 +2221,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: var(--accent);
+  background: transparent;
   color: var(--cream);
   padding: 18px 52px;
   border-radius: 2px;
@@ -2232,21 +2232,21 @@
   cursor: pointer;
   pointer-events: all;
   transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(138,158,141,0.7);
+  border: 1px solid rgba(237,234,230,0.55);
   align-self: flex-start;
-  box-shadow: 0 0 14px rgba(138,158,141,0.55), 0 0 32px rgba(138,158,141,0.25);
+  box-shadow: 0 0 14px rgba(237,234,230,0.2), 0 0 32px rgba(237,234,230,0.08);
   animation: btn-glow 2.8s ease-in-out infinite;
 }
 @keyframes btn-glow {
-  0%, 100% { box-shadow: 0 0 14px rgba(138,158,141,0.55), 0 0 32px rgba(138,158,141,0.25); }
-  50%       { box-shadow: 0 0 26px rgba(138,158,141,0.85), 0 0 56px rgba(138,158,141,0.4); }
+  0%, 100% { box-shadow: 0 0 14px rgba(237,234,230,0.2),  0 0 32px rgba(237,234,230,0.08); }
+  50%       { box-shadow: 0 0 28px rgba(237,234,230,0.55), 0 0 56px rgba(237,234,230,0.2); }
 }
 .hero-btn-primary:hover {
-  background: var(--dark);
+  background: rgba(237,234,230,0.08);
   color: var(--cream);
-  border-color: rgba(138,158,141,0.5);
+  border-color: rgba(237,234,230,0.8);
   animation: none;
-  box-shadow: 0 0 22px rgba(138,158,141,0.5), 0 0 48px rgba(138,158,141,0.2);
+  box-shadow: 0 0 32px rgba(237,234,230,0.6), 0 0 60px rgba(237,234,230,0.25);
 }
 @media (max-width: 768px) {
   .hero-new {
