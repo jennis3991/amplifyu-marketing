@@ -3248,21 +3248,26 @@
       padding: 28px 0 32px;
     }
     .mob-swipe-track-wrap {
-      overflow: hidden;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 20px;
+      scrollbar-width: none;
       width: 100%;
     }
+    .mob-swipe-track-wrap::-webkit-scrollbar { display: none; }
     .mob-swipe-track {
       display: flex;
-      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      will-change: transform;
+      padding-left: 20px;
     }
     .mob-swipe-slide {
-      flex: 0 0 88vw;
-      margin: 0 8px;
+      flex: 0 0 86vw;
+      margin-right: 12px;
+      scroll-snap-align: start;
       border-radius: 10px;
       overflow: hidden;
       aspect-ratio: 16/9;
-      border: 1px solid rgba(237,234,230,0.12);
+      border: 1px solid rgba(237,234,230,0.14);
     }
     .mob-swipe-slide img {
       width: 100%;
@@ -4013,19 +4018,16 @@ function playVideo() {
     el.style.transform = 'translateY(0)';
   });
 
-  // Mobile swipe carousel
+  // Mobile swipe carousel — native scroll-snap, no manual offset math
   (function() {
     var track = document.getElementById('mobSwipeTrack');
     var dotsWrap = document.getElementById('mobSwipeDots');
     if (!track) return;
+    var wrap = track.parentElement;
     var slides = track.querySelectorAll('.mob-swipe-slide');
     var total = slides.length;
     var current = 0;
     var autoTimer;
-    var startX = 0;
-    var isDragging = false;
-    // stepW = 88vw + 16px (two 8px margins); window.innerWidth matches 88vw exactly on mobile
-    var stepW = Math.round(window.innerWidth * 0.88) + 16;
 
     // Build dots
     for (var i = 0; i < total; i++) {
@@ -4035,10 +4037,11 @@ function playVideo() {
     }
     var dots = dotsWrap.querySelectorAll('.mob-swipe-dot');
 
+    function stepW() { return Math.round(window.innerWidth * 0.86) + 12; }
+
     function goTo(idx) {
-      current = (idx + total) % total;
-      var offset = Math.round(window.innerWidth * 0.88) + 16;
-      track.style.transform = 'translateX(-' + (current * offset) + 'px)';
+      current = ((idx % total) + total) % total;
+      wrap.scrollTo({ left: current * stepW(), behavior: 'smooth' });
       dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
     }
 
@@ -4047,18 +4050,22 @@ function playVideo() {
       autoTimer = setInterval(function() { goTo(current + 1); }, 3000);
     }
 
-    // Touch swipe
-    track.addEventListener('touchstart', function(e) {
-      startX = e.touches[0].clientX;
-      isDragging = true;
-      clearInterval(autoTimer);
-    }, { passive: true });
-    track.addEventListener('touchend', function(e) {
-      if (!isDragging) return;
-      var diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-      isDragging = false;
-      startAuto();
+    // Pause auto on user touch, resume after
+    wrap.addEventListener('touchstart', function() { clearInterval(autoTimer); }, { passive: true });
+    wrap.addEventListener('touchend', function() { startAuto(); }, { passive: true });
+
+    // Sync dots to scroll position
+    var scrollTick;
+    wrap.addEventListener('scroll', function() {
+      clearTimeout(scrollTick);
+      scrollTick = setTimeout(function() {
+        var idx = Math.round(wrap.scrollLeft / stepW());
+        idx = Math.max(0, Math.min(total - 1, idx));
+        if (idx !== current) {
+          current = idx;
+          dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+        }
+      }, 80);
     }, { passive: true });
 
     goTo(0);
