@@ -2232,17 +2232,16 @@
   cursor: pointer;
   pointer-events: all;
   transition: box-shadow 0.3s, border-color 0.3s;
-  border: 1.5px solid var(--accent-light);
+  border: 2px solid var(--accent-light);
   align-self: flex-start;
-  box-shadow: 0 0 8px rgba(138,158,141,0.9), 0 0 20px rgba(138,158,141,0.5);
-  animation: btn-glow 2.4s ease-in-out infinite;
+  animation: btn-pulse 2.4s ease-in-out infinite;
 }
-@keyframes btn-glow {
-  0%, 100% { box-shadow: 0 0 8px rgba(138,158,141,0.9), 0 0 20px rgba(138,158,141,0.5); }
-  50%       { box-shadow: 0 0 16px rgba(138,158,141,1.0), 0 0 40px rgba(138,158,141,0.8), 0 0 60px rgba(138,158,141,0.3); }
+@keyframes btn-pulse {
+  0%, 100% { border-color: rgba(138,158,141,0.3); }
+  50%       { border-color: rgba(138,158,141,1.0); }
 }
 .hero-btn-primary:hover {
-  box-shadow: 0 0 20px rgba(138,158,141,1.0), 0 0 50px rgba(138,158,141,0.8);
+  border-color: rgba(138,158,141,1.0);
   animation: none;
 }
 @media (max-width: 768px) {
