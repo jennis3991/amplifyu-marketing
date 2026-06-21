@@ -3257,11 +3257,12 @@
       will-change: transform;
     }
     .mob-swipe-slide {
-      flex: 0 0 88vw;
+      flex: 0 0 auto;
       margin: 0 8px;
       border-radius: 10px;
       overflow: hidden;
       aspect-ratio: 16/9;
+      border: 1px solid rgba(237,234,230,0.12);
     }
     .mob-swipe-slide img {
       width: 100%;
@@ -4023,6 +4024,16 @@ function playVideo() {
     var autoTimer;
     var startX = 0;
     var isDragging = false;
+    var stepW = 0;
+
+    // Set slide widths from actual container px to avoid vw/offsetWidth rounding drift
+    function initSlideWidths() {
+      var wrapW = track.parentElement.clientWidth;
+      var slideW = Math.floor(wrapW * 0.88);
+      stepW = slideW + 16; // 8px margin each side
+      slides.forEach(function(s) { s.style.width = slideW + 'px'; });
+    }
+    initSlideWidths();
 
     // Build dots
     for (var i = 0; i < total; i++) {
@@ -4034,8 +4045,7 @@ function playVideo() {
 
     function goTo(idx) {
       current = (idx + total) % total;
-      var slideW = (slides[0].offsetWidth || window.innerWidth * 0.88) + 16;
-      track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
+      track.style.transform = 'translateX(-' + (current * stepW) + 'px)';
       dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
     }
 
