@@ -3248,21 +3248,17 @@
       padding: 28px 0 32px;
     }
     .mob-swipe-track-wrap {
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
+      overflow: hidden;
       width: 100%;
     }
-    .mob-swipe-track-wrap::-webkit-scrollbar { display: none; }
     .mob-swipe-track {
       display: flex;
       gap: 12px;
-      padding: 0 7vw;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform;
     }
     .mob-swipe-slide {
-      flex: 0 0 86vw;
-      scroll-snap-align: center;
+      flex: 0 0 auto;
       border-radius: 10px;
       overflow: hidden;
       aspect-ratio: 16/9;
@@ -4017,16 +4013,25 @@ function playVideo() {
     el.style.transform = 'translateY(0)';
   });
 
-  // Mobile swipe carousel — native scroll-snap, no manual offset math
+  // Mobile swipe carousel
   (function() {
     var track = document.getElementById('mobSwipeTrack');
     var dotsWrap = document.getElementById('mobSwipeDots');
     if (!track) return;
-    var wrap = track.parentElement;
     var slides = track.querySelectorAll('.mob-swipe-slide');
     var total = slides.length;
     var current = 0;
     var autoTimer;
+    var startX = 0;
+
+    // Compute from real pixels — no vw, no clientWidth
+    var PAD = 20;                                       // left gap always visible
+    var GAP = 12;                                       // gap between slides
+    var slideW = Math.round(window.innerWidth * 0.86); // 86% of viewport
+    var step = slideW + GAP;
+
+    // Set slide widths explicitly
+    slides.forEach(function(s) { s.style.width = slideW + 'px'; });
 
     // Build dots
     for (var i = 0; i < total; i++) {
@@ -4036,11 +4041,10 @@ function playVideo() {
     }
     var dots = dotsWrap.querySelectorAll('.mob-swipe-dot');
 
-    function stepW() { return Math.round(window.innerWidth * 0.86) + 12; }
-
     function goTo(idx) {
       current = ((idx % total) + total) % total;
-      wrap.scrollTo({ left: current * stepW(), behavior: 'smooth' });
+      // translateX = PAD - (current * step) always puts active slide at PAD from left
+      track.style.transform = 'translateX(' + (PAD - current * step) + 'px)';
       dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
     }
 
@@ -4049,22 +4053,15 @@ function playVideo() {
       autoTimer = setInterval(function() { goTo(current + 1); }, 3000);
     }
 
-    // Pause auto on user touch, resume after
-    wrap.addEventListener('touchstart', function() { clearInterval(autoTimer); }, { passive: true });
-    wrap.addEventListener('touchend', function() { startAuto(); }, { passive: true });
+    track.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      clearInterval(autoTimer);
+    }, { passive: true });
 
-    // Sync dots to scroll position
-    var scrollTick;
-    wrap.addEventListener('scroll', function() {
-      clearTimeout(scrollTick);
-      scrollTick = setTimeout(function() {
-        var idx = Math.round(wrap.scrollLeft / stepW());
-        idx = Math.max(0, Math.min(total - 1, idx));
-        if (idx !== current) {
-          current = idx;
-          dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
-        }
-      }, 80);
+    track.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+      startAuto();
     }, { passive: true });
 
     goTo(0);
