@@ -2220,19 +2220,6 @@
   font-weight:300; line-height:1.7;
   color:var(--text-mid); margin-bottom:16px;
 }
-.hero-sub-impact {
-  display: block;
-  margin-top: 6px;
-  font-size: clamp(22px, 2.4vw, 32px);
-  line-height: 1.2;
-}
-.hero-sub-pre {
-  color: rgba(107,124,110,0.45);
-}
-.hero-sub-key {
-  color: var(--accent);
-  font-size: 1.25em;
-}
 .hero-sub-contexts {
   font-family:var(--sans); font-size:11px;
   letter-spacing:0.06em; color:var(--text-light);
@@ -2271,7 +2258,8 @@
   border-color: rgba(138,158,141,1.0);
   animation: none;
 }
-.hero-btn-primary:active {
+.hero-btn-primary:active,
+.hero-btn-primary.is-tapped {
   background: var(--accent) !important;
   color: #ffffff !important;
   border-color: var(--accent) !important;
@@ -3356,7 +3344,7 @@
         <img src="logo-dark.jpeg" alt="" class="mob-hero-logo">
       </div>
       <h1 class="hero-h1">Great communication is strategic<br><span class="hero-rotate-wrap"><em class="hero-rotate-text">Master every move</em></span></h1>
-      <p class="hero-sub-new">The unwritten skills behind career success. <em style="font-style:italic; color:var(--accent); opacity:1;" class="hero-sub-impact"><span class="hero-sub-pre">Now finally </span><span class="hero-sub-key">taught</span></em></p>
+      <p class="hero-sub-new">The unwritten skills behind career success.<br><em style="font-style:italic; color:var(--accent); font-weight:700; opacity:1;">Now finally taught</em></p>
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
       <a href="#" class="hero-btn-primary" aria-disabled="true">Start Your Programme</a>
       <p class="hero-mobile-tagline">14 Sessions · AI-Coached · 15 Min/Day · Science Backed</p>
@@ -3966,6 +3954,14 @@ function playVideo() {
     el.style.transition = 'transform 0.55s cubic-bezier(0.16, 1, 0.3, 1)';
     el.style.transform = 'translateY(0)';
   });
+
+  // Sage tap feedback for iOS where :active is unreliable
+  var btn = document.querySelector('.hero-btn-primary');
+  if (btn) {
+    btn.addEventListener('touchstart', function() { btn.classList.add('is-tapped'); }, { passive: true });
+    btn.addEventListener('touchend', function() { setTimeout(function() { btn.classList.remove('is-tapped'); }, 200); });
+    btn.addEventListener('touchcancel', function() { btn.classList.remove('is-tapped'); });
+  }
 
   setInterval(function() {
     // Wipe out downward
