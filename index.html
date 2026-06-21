@@ -2232,21 +2232,19 @@
   cursor: pointer;
   pointer-events: all;
   transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(107,124,110,0.9);
+  border: 2px solid var(--dark);
   align-self: flex-start;
-  box-shadow: 0 0 8px rgba(107,124,110,0.8), 0 0 20px rgba(107,124,110,0.4), inset 0 0 8px rgba(107,124,110,0.15);
-  animation: btn-glow 2.4s ease-in-out infinite;
+  animation: btn-pulse 2.4s ease-in-out infinite;
 }
-@keyframes btn-glow {
-  0%, 100% { box-shadow: 0 0 8px rgba(107,124,110,0.8),  0 0 20px rgba(107,124,110,0.4),  inset 0 0 8px rgba(107,124,110,0.15); border-color: rgba(107,124,110,0.9); }
-  50%       { box-shadow: 0 0 16px rgba(107,124,110,1.0), 0 0 40px rgba(107,124,110,0.7), 0 0 70px rgba(107,124,110,0.3), inset 0 0 12px rgba(107,124,110,0.2); border-color: rgba(138,158,141,1.0); }
+@keyframes btn-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.03); }
 }
 .hero-btn-primary:hover {
-  background: var(--accent);
+  background: var(--dark);
   color: var(--cream);
-  border-color: #8a9e8d;
+  border-color: var(--dark);
   animation: none;
-  box-shadow: 0 0 20px rgba(107,124,110,1.0), 0 0 50px rgba(107,124,110,0.7), 0 0 80px rgba(107,124,110,0.3);
 }
 @media (max-width: 768px) {
   .hero-new {
