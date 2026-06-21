@@ -2200,7 +2200,20 @@
   letter-spacing:-0.02em;
 }
 .hero-h1 em { font-style:italic; color:var(--accent); }
-.hero-rotate-text { display:inline-block; transition: opacity 0.35s ease; }
+.hero-rotate-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1.2em;
+  height: 1.2em;
+}
+.hero-rotate-text {
+  display: inline-block;
+  font-style: italic;
+  color: var(--accent);
+  transform: translateY(100%);
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
 .hero-sub-new {
   font-family:var(--serif-body);
   font-size:clamp(16px,1.6vw,20px);
@@ -3328,7 +3341,7 @@
       <div class="mob-hero-logo-wrap" aria-hidden="true">
         <img src="logo-dark.jpeg" alt="" class="mob-hero-logo">
       </div>
-      <h1 class="hero-h1">Great communication is strategic.<br><em class="hero-rotate-text">Master every move.</em></h1>
+      <h1 class="hero-h1">Great communication is strategic.<br><span class="hero-rotate-wrap"><em class="hero-rotate-text">Master every move.</em></span></h1>
       <p class="hero-sub-new">The unwritten skills behind career success. <em style="font-style:italic; color:var(--accent); opacity:1;">Now finally taught</em></p>
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
       <a href="#" class="hero-btn-primary" aria-disabled="true">Start Your Programme</a>
@@ -3933,13 +3946,32 @@ function playVideo() {
   var idx = 0;
   var el = document.querySelector('.hero-rotate-text');
   if (!el) return;
+
+  // Slide in first phrase
+  requestAnimationFrame(function() {
+    el.style.transition = 'transform 0.55s cubic-bezier(0.16, 1, 0.3, 1)';
+    el.style.transform = 'translateY(0)';
+  });
+
   setInterval(function() {
-    el.style.opacity = '0';
+    // Wipe out upward
+    el.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 1, 1)';
+    el.style.transform = 'translateY(-110%)';
+
     setTimeout(function() {
+      // Swap text while hidden, reset below
       idx = (idx + 1) % phrases.length;
       el.textContent = phrases[idx];
-      el.style.opacity = '1';
-    }, 350);
-  }, 2000);
+      el.style.transition = 'none';
+      el.style.transform = 'translateY(110%)';
+
+      // Force reflow so transition fires
+      void el.offsetWidth;
+
+      // Wipe in downward (curtain reveal top → bottom)
+      el.style.transition = 'transform 0.55s cubic-bezier(0.16, 1, 0.3, 1)';
+      el.style.transform = 'translateY(0)';
+    }, 420);
+  }, 2400);
 })();
 </script></body></html>
