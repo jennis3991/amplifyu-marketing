@@ -3257,8 +3257,8 @@
       will-change: transform;
     }
     .mob-swipe-slide {
-      flex: 0 0 92%;
-      margin: 0 6px;
+      flex: 0 0 88vw;
+      margin: 0 8px;
       border-radius: 10px;
       overflow: hidden;
       aspect-ratio: 16/9;
@@ -4034,7 +4034,7 @@ function playVideo() {
 
     function goTo(idx) {
       current = (idx + total) % total;
-      var slideW = track.parentElement.offsetWidth * 0.85 + 16;
+      var slideW = (slides[0].offsetWidth || window.innerWidth * 0.88) + 16;
       track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
       dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
     }
