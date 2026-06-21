@@ -2231,14 +2231,22 @@
   justify-content: center;
   cursor: pointer;
   pointer-events: all;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
-  border: 1px solid var(--accent);
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(138,158,141,0.7);
   align-self: flex-start;
+  box-shadow: 0 0 10px rgba(138,158,141,0.35), 0 0 24px rgba(138,158,141,0.15);
+  animation: btn-glow 2.8s ease-in-out infinite;
+}
+@keyframes btn-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(138,158,141,0.35), 0 0 24px rgba(138,158,141,0.15); }
+  50%       { box-shadow: 0 0 18px rgba(138,158,141,0.6),  0 0 40px rgba(138,158,141,0.25); }
 }
 .hero-btn-primary:hover {
   background: var(--dark);
   color: var(--cream);
-  border-color: var(--dark);
+  border-color: rgba(138,158,141,0.5);
+  animation: none;
+  box-shadow: 0 0 22px rgba(138,158,141,0.5), 0 0 48px rgba(138,158,141,0.2);
 }
 @media (max-width: 768px) {
   .hero-new {
