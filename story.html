@@ -661,44 +661,18 @@
   .nav-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-open .nav-hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
   .nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  .nav-overlay { display: none; }
   @media (max-width: 768px) {
     .nav-hamburger { display: flex; }
-    .nav-links { display: none; }
+    .nav-links {
+      position: absolute; top: 100%; left: 0; right: 0;
+      display: flex; flex-direction: column; align-items: stretch; gap: 0;
+      background: rgba(26,23,20,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(107,124,110,0.12);
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+    }
+    .nav-links .nav-link { width: 100%; box-sizing: border-box; padding: 16px 24px; border-bottom: 1px solid rgba(240,235,226,0.08); }
+    #nav.nav-open .nav-links { max-height: 70vh; }
     .nav-cta.nav-cta--app { display: none; }
-    .nav-overlay {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: #1a1714;
-      z-index: 1000;
-      pointer-events: none;
-      clip-path: inset(0 0 100% 0);
-      transition: clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .nav-overlay.is-open { clip-path: inset(0 0 0% 0); pointer-events: all; }
-    .nav-overlay-links {
-      display: flex; flex-direction: column;
-      align-items: flex-start;
-      padding: 110px 0 0 32px;
-    }
-    .nav-overlay-link {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.8rem; color: #f0ebe2;
-      text-decoration: none; padding: 10px 0;
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.35s ease, transform 0.35s ease, color 0.2s;
-    }
-    .nav-overlay-link:hover { color: rgba(107,124,110,0.9); }
-    .nav-overlay.is-open .nav-overlay-link:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.2s; }
-    .nav-overlay.is-open .nav-overlay-link:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.3s; }
-    .nav-overlay.is-open .nav-overlay-link:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.4s; }
-    .nav-overlay.is-open .nav-overlay-link:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.5s; }
-    .nav-overlay.is-open .nav-overlay-link:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.6s; }
-    .nav-overlay.is-open .nav-overlay-link:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.7s; }
   }
 </style>
 </head>
@@ -722,16 +696,6 @@
   </button>
   <a href="#" class="nav-cta nav-cta--app">Coming Soon</a>
 </nav>
-<div class="nav-overlay" id="navOverlay" aria-hidden="true">
-  <div class="nav-overlay-links">
-    <a href="why.html" class="nav-overlay-link">Home</a>
-    <a href="index.html" class="nav-overlay-link">Why AmplifyU</a>
-
-    <a href="programme.html" class="nav-overlay-link">Programme</a>
-    <a href="coach.html" class="nav-overlay-link">Coach</a>
-    <a href="features.html" class="nav-overlay-link">Features</a>
-    <a href="story.html" class="nav-overlay-link">Story</a>
-  </div>
 </div>
 
 <!-- ─── HERO ─── -->
@@ -1065,24 +1029,12 @@
   });
 
   var navHamburger = document.getElementById('navHamburger');
-  var navOverlay = document.getElementById('navOverlay');
-  function openOverlay() {
-    navEl.classList.add('nav-open');
-    if (navHamburger) { navHamburger.classList.add('is-active'); navHamburger.setAttribute('aria-expanded', 'true'); }
-    if (navOverlay) { navOverlay.classList.add('is-open'); navOverlay.setAttribute('aria-hidden', 'false'); }
-    document.body.style.overflow = 'hidden';
-  }
-  function closeOverlay() {
-    navEl.classList.remove('nav-open');
-    if (navHamburger) { navHamburger.classList.remove('is-active'); navHamburger.setAttribute('aria-expanded', 'false'); }
-    if (navOverlay) { navOverlay.classList.remove('is-open'); navOverlay.setAttribute('aria-hidden', 'true'); }
-    document.body.style.overflow = '';
-  }
   if (navHamburger) navHamburger.addEventListener('click', function() {
-    navEl.classList.contains('nav-open') ? closeOverlay() : openOverlay();
+    var isOpen = navEl.classList.toggle('nav-open');
+    navHamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
-  document.querySelectorAll('.nav-overlay-link').forEach(function(link) {
-    link.addEventListener('click', closeOverlay);
+  document.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('click', function() { navEl.classList.remove('nav-open'); });
   });
 
   var obs = new IntersectionObserver(function(entries) {
