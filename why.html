@@ -85,6 +85,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .phone-stack { display:flex; gap:14px; align-items:center; justify-content:center; }
 .phone-mock { border-radius:22px; border:1.5px solid rgba(255,255,255,0.1); overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5); flex-shrink:0; }
 .phone-mock img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+.w-mob-demo { display: none; }
 
 /* ─── PROBLEM ─── */
 .w-problem { background: var(--dark); padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
@@ -275,6 +276,50 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-hero { padding: 110px 24px 72px; }
   .w-hero-inner { grid-template-columns:1fr; gap:48px; }
   .phone-stack { display:none; }
+  .w-mob-demo {
+    display: flex;
+    justify-content: center;
+    padding: 44px 0 0;
+  }
+  .w-phone-frame {
+    width: min(260px, 72vw);
+    aspect-ratio: 1 / 2;
+    background: #0a0806;
+    border-radius: 36px;
+    border: 1.5px solid rgba(255,255,255,0.12);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .w-phone-notch {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: #0a0806;
+    border-radius: 12px;
+    z-index: 10;
+  }
+  .w-phone-inner {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 34px;
+  }
+  .w-demo-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .w-demo-img.active { opacity: 1; }
   .w-hero-h1 { font-size: clamp(36px, 9vw, 54px); }
   .w-hero-sub { max-width:100%; }
 
@@ -361,6 +406,26 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <div class="w-hero-tag fade-up delay-3">
         <span></span>
         14 sessions · AI-coached · 15 min/day
+      </div>
+      <div class="w-mob-demo" aria-hidden="true">
+        <div class="w-phone-frame">
+          <div class="w-phone-notch"></div>
+          <div class="w-phone-inner">
+            <img class="w-demo-img active" src="img_programme1.jpeg" alt="" loading="eager">
+            <img class="w-demo-img" src="img_programme2.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_insight.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_theory_piano.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_practice.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_simulation.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_review.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_composure.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_millers.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_connection.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_storytelling.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_toolkit1.jpeg" alt="" loading="lazy">
+            <img class="w-demo-img" src="img_progress1.jpeg" alt="" loading="lazy">
+          </div>
+        </div>
       </div>
     </div>
     <div class="fade-up delay-2">
@@ -783,6 +848,18 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
   setTimeout(function() { document.querySelectorAll('.w-hero .fade-up').forEach(function(el) { el.classList.add('visible'); }); }, 80);
+
+// Mobile phone demo — auto-cycle every 2.2s
+(function() {
+  var imgs = document.querySelectorAll('.w-demo-img');
+  if (!imgs.length) return;
+  var cur = 0;
+  setInterval(function() {
+    imgs[cur].classList.remove('active');
+    cur = (cur + 1) % imgs.length;
+    imgs[cur].classList.add('active');
+  }, 2200);
+}());
 </script>
 </body>
 </html>
