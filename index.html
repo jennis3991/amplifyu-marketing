@@ -245,6 +245,19 @@
     transition: border-color 0.2s, color 0.2s;
   }
   .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
+.nav-cta--get {
+  background: #8a9e8d;
+  color: #ffffff;
+  border-color: transparent;
+  border-radius: 24px;
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 10px 22px;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+.nav-cta--get:hover { background: #6b7c6e; border-color: transparent; color: #ffffff; }
 
   /* ─── HERO ─── */
   .hero {
@@ -3287,7 +3300,7 @@
 </head>
 <body>
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="logo-dark.jpeg" alt="" class="nav-logo-img"><span>Amplify<span class="nav-u">U</span></span></a>
+  <a href="index.html" class="nav-logo"><img src="logo-dark.jpeg" alt="" class="nav-logo-img"></a>
   <div class="nav-links">
     <a href="why.html" class="nav-link" data-page="why">Home</a>
     <a href="index.html" class="nav-link active" data-page="home">Why AmplifyU</a>
@@ -3297,12 +3310,12 @@
     <a href="features.html" class="nav-link" data-page="features">Features</a>
     <a href="story.html" class="nav-link" data-page="story">Story</a>
   </div>
+  <a href="#" class="nav-cta nav-cta--get">Get AmplifyU</a>
   <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>
   </button>
-  <a href="#" class="nav-cta nav-cta--app">Coming Soon</a>
 </nav>
 </div>
 <section class="hero-new">
