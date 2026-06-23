@@ -15,7 +15,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --dark: #1a1714;
+  --dark: #0f0d0a;
   --cream: #edeae6;
   --cream-mid: #e5e2de;
   --cream-dark: #d2cecc;
@@ -77,8 +77,8 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(138,158,141,0.07) 0%, transparent 55%); pointer-events:none; }
 .w-hero-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
 .w-hero-eyebrow { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:24px; }
-.w-hero-h1 { font-family:var(--serif-body); font-size:clamp(36px,4.5vw,68px); font-weight:500; color:var(--cream); letter-spacing:-2px; line-height:1.04; margin-bottom:24px; }
-.w-hero-h1 em { font-style:italic; color:var(--accent-light); }
+.w-hero-h1 { font-family:var(--serif-body); font-size:clamp(36px,4.5vw,68px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-2px; line-height:1.04; margin-bottom:24px; }
+.w-hero-h1 span { color:var(--accent-light); font-style:normal; }
 .w-hero-rule { width:32px; height:1px; background:var(--accent); opacity:0.5; margin-bottom:20px; }
 .w-hero-sub { font-size:14px; color:rgba(237,234,230,0.38); line-height:1.75; font-weight:300; max-width:400px; margin-bottom:40px; }
 .w-hero-tag { display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.05em; color:rgba(237,234,230,0.45); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:7px 16px; }
@@ -90,7 +90,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 /* ─── PROBLEM ─── */
 .w-problem { background: var(--dark); padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
 .w-problem-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
-.w-problem-h2 { font-family:var(--serif-body); font-size:clamp(30px,4vw,58px); font-weight:500; color:var(--cream); letter-spacing:-1.5px; line-height:1.08; margin-bottom:20px; }
+.w-problem-h2 { font-family:var(--serif-body); font-size:clamp(30px,4vw,58px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.08; margin-bottom:20px; }
 .w-problem-sub { font-size:13px; color:rgba(237,234,230,0.35); line-height:1.7; font-weight:300; max-width:380px; }
 .w-problem-callout { padding:20px 24px; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.15); border-left:2px solid var(--gold); border-radius:0 6px 6px 0; }
 .w-problem-callout p { font-family:var(--serif-body); font-size:17px; font-style:italic; color:rgba(237,234,230,0.6); line-height:1.6; }
@@ -124,7 +124,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 /* ─── SOLUTION ─── */
 .w-solution { background: var(--dark); padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
 .w-solution-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
-.w-solution-h2 { font-family:var(--serif-body); font-size:clamp(28px,3.5vw,52px); font-weight:500; color:var(--cream); letter-spacing:-1.5px; line-height:1.08; margin-bottom:16px; }
+.w-solution-h2 { font-family:var(--serif-body); font-size:clamp(28px,3.5vw,52px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.08; margin-bottom:16px; }
 .w-solution-h2 em { font-style:italic; color:var(--accent-light); }
 .w-solution-sub { font-size:14px; color:rgba(237,234,230,0.38); line-height:1.75; font-weight:300; max-width:400px; margin-bottom:32px; }
 .w-flow { display:flex; align-items:center; gap:0; margin-bottom:36px; }
@@ -157,7 +157,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-different { background: var(--dark); padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
 .w-different-inner { max-width:1100px; margin:0 auto; }
 .w-different-top { text-align:center; margin-bottom:48px; }
-.w-different-h2 { font-family:var(--serif-body); font-size:clamp(28px,4vw,56px); font-weight:500; color:var(--cream); letter-spacing:-1.5px; line-height:1.08; margin-bottom:12px; }
+.w-different-h2 { font-family:var(--serif-body); font-size:clamp(28px,4vw,56px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.08; margin-bottom:12px; }
 .w-different-h2 em { font-style:italic; color:var(--accent-light); }
 .w-different-sub { font-size:13px; color:rgba(237,234,230,0.35); font-weight:300; }
 .w-table { width:100%; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.06); }
@@ -195,7 +195,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-vision { background: var(--dark); padding: 100px 48px; border-top:1px solid rgba(255,255,255,0.06); }
 .w-vision-inner { max-width:1100px; margin:0 auto; }
 .w-vision-top { margin-bottom:52px; max-width:600px; }
-.w-vision-h2 { font-family:var(--serif-body); font-size:clamp(28px,3.5vw,48px); font-weight:500; color:var(--cream); letter-spacing:-1.5px; line-height:1.08; margin-bottom:12px; }
+.w-vision-h2 { font-family:var(--serif-body); font-size:clamp(28px,3.5vw,48px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.08; margin-bottom:12px; }
 .w-vision-h2 em { font-style:italic; color:var(--accent-light); }
 .w-vision-sub { font-size:13px; color:rgba(237,234,230,0.35); font-weight:300; line-height:1.7; }
 .w-phases { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
@@ -236,7 +236,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 40%, rgba(138,158,141,0.08) 0%, transparent 60%); pointer-events:none; }
 .w-cta-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; z-index:1; }
 .w-cta-eyebrow { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:24px; }
-.w-cta-h2 { font-family:var(--serif-body); font-size:clamp(32px,4.5vw,66px); font-weight:500; color:var(--cream); letter-spacing:-2px; line-height:1.04; margin-bottom:8px; }
+.w-cta-h2 { font-family:var(--serif-body); font-size:clamp(32px,4.5vw,66px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-2px; line-height:1.04; margin-bottom:8px; }
 .w-cta-h2 em { font-style:italic; color:var(--accent-light); }
 .w-cta-tagline { font-family:var(--serif-body); font-size:clamp(15px,1.8vw,22px); font-style:italic; color:rgba(237,234,230,0.3); margin-bottom:36px; letter-spacing:-0.3px; }
 .w-cta-pillars { display:flex; flex-direction:column; gap:10px; margin-bottom:36px; }
@@ -372,7 +372,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   <div class="w-hero-inner">
     <div>
       <div class="w-hero-eyebrow fade-up">AmplifyU</div>
-      <h1 class="w-hero-h1 fade-up delay-1">The unwritten skills<br>behind career success.<br><em>Now finally taught.</em></h1>
+      <h1 class="w-hero-h1 fade-up delay-1">The unwritten skills<br>behind career success<br><span>Now finally taught</span></h1>
       <div class="w-hero-rule fade-up delay-2"></div>
       <p class="w-hero-sub fade-up delay-2">AI-powered coaching for communication, influence, leadership and career growth. Built for professionals who know that how you communicate determines how far you go.</p>
       <div class="w-hero-tag fade-up delay-3">
@@ -397,7 +397,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   <div class="w-problem-inner">
     <div>
       <div class="eyebrow fade-up">The Problem</div>
-      <h2 class="w-problem-h2 fade-up delay-1">The skills that shape careers are rarely taught.</h2>
+      <h2 class="w-problem-h2 fade-up delay-1">The skills that shape careers are rarely taught</h2>
       <p class="w-problem-sub fade-up delay-1">Every professional is trained for the job. Almost none are trained for the career.</p>
       <div class="w-problem-callout fade-up delay-2">
         <p>Yet these are precisely the skills that determine who gets promoted, who gets recognised, and who gets remembered.</p>
@@ -431,7 +431,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   <div class="w-gap-inner">
     <div>
       <div class="eyebrow-dark eyebrow fade-up">The Cost</div>
-      <h2 class="w-gap-h2 fade-up delay-1">Technical skills get you hired.<br><em>Communication skills get you promoted.</em></h2>
+      <h2 class="w-gap-h2 fade-up delay-1">Technical skills get you hired<br><em>Communication skills get you promoted</em></h2>
       <p class="w-gap-sub fade-up delay-1">Professionals know these skills matter. Most spend years trying to learn them anyway — through fragmented, inconsistent, and inaccessible routes.</p>
       <div class="w-gap-quote fade-up delay-2">
         <p>The cost isn't just money. It's years of missed promotions, unrecognised potential, and careers that plateau long before they should.</p>
@@ -501,7 +501,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     <div class="w-curriculum-top">
       <div class="eyebrow-dark eyebrow fade-up">The Curriculum</div>
       <div class="w-curriculum-rule"></div>
-      <h2 class="w-curriculum-h2 fade-up delay-1">A modern curriculum for modern careers.</h2>
+      <h2 class="w-curriculum-h2 fade-up delay-1">A modern curriculum for modern careers</h2>
       <p class="w-curriculum-sub fade-up delay-1">Structured across three pillars: Communicate. Lead. Thrive.</p>
     </div>
     <div class="w-grid">
@@ -560,7 +560,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   <div class="w-different-inner">
     <div class="w-different-top">
       <div class="eyebrow fade-up">Why Different</div>
-      <h2 class="w-different-h2 fade-up delay-1">Most platforms <em>teach.</em><br>AmplifyU <em>coaches.</em></h2>
+      <h2 class="w-different-h2 fade-up delay-1">Most platforms <em>teach</em><br>AmplifyU <em>coaches</em></h2>
       <p class="w-different-sub fade-up delay-1">The difference is felt in every session — and measured in every feedback report.</p>
     </div>
     <div class="w-table fade-up delay-1">
@@ -621,7 +621,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   <div class="w-whynow-inner">
     <div>
       <div class="eyebrow-dark eyebrow fade-up">Why Now</div>
-      <h2 class="w-whynow-h2 fade-up delay-1">Three forces creating a once-in-a-decade opportunity.</h2>
+      <h2 class="w-whynow-h2 fade-up delay-1">Three forces creating a once-in-a-decade opportunity</h2>
       <p class="w-whynow-sub fade-up delay-1">The conditions that make AmplifyU not just possible but necessary have never been stronger.</p>
       <div class="w-stats fade-up delay-2">
         <div class="w-stat"><div class="w-stat-num">£1.4<span>bn</span></div><div class="w-stat-label">UK L&amp;D market</div></div>
@@ -663,7 +663,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   <div class="w-vision-inner">
     <div class="w-vision-top">
       <div class="eyebrow fade-up">The Roadmap</div>
-      <h2 class="w-vision-h2 fade-up delay-1">From communication coach<br>to <em>career growth platform.</em></h2>
+      <h2 class="w-vision-h2 fade-up delay-1">From communication coach<br>to <em>career growth platform</em></h2>
       <p class="w-vision-sub fade-up delay-1">The 14-day programme is the entry point — not the destination.</p>
     </div>
     <div class="w-phases">
@@ -744,7 +744,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   <div class="w-cta-inner">
     <div>
       <div class="w-cta-eyebrow fade-up">Start Today</div>
-      <h2 class="w-cta-h2 fade-up delay-1">Great communication<br>is <em>learnable.</em></h2>
+      <h2 class="w-cta-h2 fade-up delay-1">Great communication<br>is <em>learnable</em></h2>
       <p class="w-cta-tagline fade-up delay-1">14 sessions. 15 minutes a day. A different communicator.</p>
       <div class="w-cta-pillars fade-up delay-2">
         <div class="w-cta-pillar">Communicate with clarity and confidence</div>
