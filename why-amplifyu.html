@@ -3286,24 +3286,18 @@
 }
 
 /* ── APP PREVIEW ── */
-.section-app-preview { background:var(--dark); padding:100px 8%; border-top:1px solid rgba(255,255,255,0.06); }
-.app-preview-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-.app-preview-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:20px; }
-.app-preview-h2 { font-family:var(--serif-display); font-size:clamp(28px,3.5vw,48px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.08; margin-bottom:20px; }
-.app-preview-h2 em { font-style:italic; color:var(--accent-light); }
-.app-preview-p { font-family:var(--sans); font-size:14px; color:rgba(237,234,230,0.45); line-height:1.8; font-weight:300; max-width:400px; }
-.app-preview-phones { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:center; }
+.section-app-preview { background:var(--dark); padding:0 8% 60px; }
+.app-preview-phones { max-width:900px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:end; }
 .app-preview-phone { border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); box-shadow:0 24px 60px rgba(0,0,0,0.55); }
 .app-preview-phone img { width:100%; display:block; }
-.app-preview-phone:nth-child(1) { margin-top:48px; }
-.app-preview-phone:nth-child(2) { margin-top:0; }
-.app-preview-phone:nth-child(3) { margin-top:72px; }
+.app-preview-phone:nth-child(1) { margin-bottom:48px; }
+.app-preview-phone:nth-child(2) { margin-bottom:0; }
+.app-preview-phone:nth-child(3) { margin-bottom:72px; }
 @media (max-width:768px) {
-  .section-app-preview { padding:64px 24px; }
-  .app-preview-inner { grid-template-columns:1fr; gap:44px; }
-  .app-preview-phones { grid-template-columns:repeat(3,1fr); gap:10px; }
-  .app-preview-phone:nth-child(1) { margin-top:20px; }
-  .app-preview-phone:nth-child(3) { margin-top:30px; }
+  .section-app-preview { padding:0 16px 40px; }
+  .app-preview-phones { gap:10px; }
+  .app-preview-phone:nth-child(1) { margin-bottom:20px; }
+  .app-preview-phone:nth-child(3) { margin-bottom:30px; }
 }
 </style>
 </head>
@@ -3343,22 +3337,15 @@
 
 <!-- ══ APP PREVIEW ══ -->
 <section class="section-app-preview">
-  <div class="app-preview-inner">
-    <div>
-      <div class="app-preview-eyebrow fade-up">Inside the Programme</div>
-      <h2 class="app-preview-h2 fade-up delay-1">Real sessions.<br>Real coaching.<br><em>Real change.</em></h2>
-      <p class="app-preview-p fade-up delay-2">Every session puts you in a live scenario — coached in real time, built around the skill that matters most for your career right now. Visibility, rapport, influence. Practised before the moment arrives.</p>
+  <div class="app-preview-phones fade-up">
+    <div class="app-preview-phone">
+      <img src="img_card_exposure.jpeg" alt="Day 13 — Visibility: Exposure">
     </div>
-    <div class="app-preview-phones">
-      <div class="app-preview-phone fade-up">
-        <img src="img_card_exposure.jpeg" alt="Day 13 — Visibility: Exposure">
-      </div>
-      <div class="app-preview-phone fade-up delay-1">
-        <img src="img_card_connection.jpeg" alt="Day 9 — Rapport: Connection">
-      </div>
-      <div class="app-preview-phone fade-up delay-2">
-        <img src="img_card_influence.jpeg" alt="Day 12 — Nonverbal: Influence">
-      </div>
+    <div class="app-preview-phone">
+      <img src="img_card_connection.jpeg" alt="Day 9 — Rapport: Connection">
+    </div>
+    <div class="app-preview-phone">
+      <img src="img_card_influence.jpeg" alt="Day 12 — Nonverbal: Influence">
     </div>
   </div>
 </section>
