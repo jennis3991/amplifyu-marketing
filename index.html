@@ -105,7 +105,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 
 /* ─── PROBLEM ─── */
 .w-problem { background: var(--dark); padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
-.w-problem-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.w-problem-inner { max-width:900px; margin:0 auto; }
 .w-problem-h2 { font-family:var(--serif-body); font-size:clamp(30px,4vw,58px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.08; margin-bottom:20px; }
 .w-problem-sub { font-size:13px; color:rgba(237,234,230,0.35); line-height:1.7; font-weight:300; max-width:380px; }
 .w-problem-callout { padding:20px 24px; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.15); border-left:2px solid var(--gold); border-radius:0 6px 6px 0; }
@@ -119,6 +119,36 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-col-icon.yes { background:rgba(138,158,141,0.15); color:var(--accent-light); }
 .w-col-icon.no { background:rgba(192,112,85,0.15); color:#c07055; }
 .w-col-text { font-family:var(--serif-body); font-size:18px; color:rgba(237,234,230,0.8); line-height:1.3; }
+
+
+/* ─── CLARITY ─── */
+.w-clarity { background:var(--dark); padding:0 48px 100px; }
+.w-clarity-inner { max-width:1100px; margin:0 auto; }
+.wc-header { text-align:center; padding-bottom:52px; }
+.wc-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:18px; }
+.wc-sub { font-family:var(--serif-body); font-size:clamp(18px,2vw,26px); font-weight:300; color:rgba(237,234,230,0.6); line-height:1.55; max-width:560px; margin:0 auto; }
+.wc-panels { display:grid; grid-template-columns:1fr 1.45fr; gap:10px; margin-bottom:10px; }
+.wc-panel { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:6px; overflow:hidden; }
+.wc-panel-hdr { display:flex; align-items:center; gap:14px; padding:22px 28px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.wc-badge { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.wc-badge--check { background:rgba(138,158,141,0.12); border:1px solid rgba(138,158,141,0.25); }
+.wc-badge--x { background:rgba(192,112,85,0.15); border:1px solid rgba(192,112,85,0.3); }
+.wc-panel-lbl { font-family:var(--sans); font-size:10px; letter-spacing:0.25em; text-transform:uppercase; font-weight:500; color:rgba(237,234,230,0.4); }
+.wc-row { display:flex; align-items:center; gap:16px; padding:18px 28px; border-bottom:1px solid rgba(255,255,255,0.04); }
+.wc-row:last-child { border-bottom:none; }
+.wc-icon { width:38px; height:38px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.wc-panel--taught .wc-icon { color:rgba(237,234,230,0.22); }
+.wc-panel--not .wc-icon { color:rgba(192,112,85,0.75); }
+.wc-row-title { font-family:var(--serif-body); font-size:18px; font-weight:400; color:rgba(237,234,230,0.88); line-height:1.2; margin-bottom:2px; }
+.wc-row-desc { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.28); letter-spacing:0.02em; }
+.wc-callout { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:6px; padding:36px 40px; display:grid; grid-template-columns:auto 1fr auto; gap:36px; align-items:center; }
+.wc-callout-icon { width:68px; height:68px; border-radius:50%; background:rgba(138,158,141,0.1); border:1px solid rgba(138,158,141,0.2); display:flex; align-items:center; justify-content:center; color:var(--accent-light); flex-shrink:0; }
+.wc-callout-h { font-family:var(--serif-body); font-size:clamp(20px,2.2vw,32px); font-weight:500; color:rgba(237,234,230,0.92); letter-spacing:-0.5px; line-height:1.2; margin-bottom:10px; }
+.wc-callout-p { font-family:var(--sans); font-size:13px; line-height:1.7; color:rgba(237,234,230,0.35); }
+.wc-callout-cta { text-align:center; flex-shrink:0; }
+.wc-callout-btn { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; background:rgba(237,234,230,0.07); color:var(--cream); border:1px solid rgba(237,234,230,0.18); border-radius:40px; padding:14px 30px; text-decoration:none; transition:background 0.25s, border-color 0.25s; white-space:nowrap; }
+.wc-callout-btn:hover { background:var(--accent); border-color:var(--accent); }
+.wc-callout-note { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.2); margin-top:9px; display:block; }
 
 /* ─── GAP / OPPORTUNITY ─── */
 .w-gap { background: var(--cream); padding: 100px 48px; }
@@ -412,6 +442,14 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-phase-items li { color: rgba(237,234,230,0.7); }
   .w-cta-tagline { color: rgba(237,234,230,0.65); }
 
+
+  .w-clarity { padding: 0 24px 80px; }
+  .wc-panels { grid-template-columns: 1fr; }
+  .wc-callout { grid-template-columns: 1fr; gap: 24px; text-align: center; padding: 28px 24px; }
+  .wc-callout-icon { margin: 0 auto; }
+  .wc-callout-cta { width: 100%; }
+  .wc-callout-btn { width: 100%; text-align: center; display: block; }
+
   footer { flex-direction:column; text-align:center; gap:16px; padding:24px; }
 }
 
@@ -509,24 +547,89 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         <p>Yet these are precisely the skills that determine who gets promoted, who gets recognised, and who gets remembered.</p>
       </div>
     </div>
-    <div class="fade-up delay-1">
-      <div class="w-cols">
-        <div>
-          <div class="w-col-label green">What IS taught</div>
-          <div class="w-col-item"><div class="w-col-icon yes">✓</div><div class="w-col-text">Technical skills</div></div>
-          <div class="w-col-item"><div class="w-col-icon yes">✓</div><div class="w-col-text">Processes &amp; systems</div></div>
-          <div class="w-col-item"><div class="w-col-icon yes">✓</div><div class="w-col-text">Qualifications</div></div>
-          <div class="w-col-item"><div class="w-col-icon yes">✓</div><div class="w-col-text">Domain expertise</div></div>
+
+  </div>
+</section>
+
+<!-- ══ CLARITY ══ -->
+<section class="w-clarity">
+  <div class="w-clarity-inner">
+    <div class="wc-header fade-up">
+      <p class="wc-eyebrow">AmplifyU Brings Clarity</p>
+      <p class="wc-sub">We teach the career-shaping skills that drive recognition, growth and long-term impact.</p>
+    </div>
+    <div class="wc-panels">
+      <!-- WHAT IS TAUGHT -->
+      <div class="wc-panel wc-panel--taught fade-up">
+        <div class="wc-panel-hdr">
+          <div class="wc-badge wc-badge--check">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(138,158,141,0.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="wc-panel-lbl">What is Taught</span>
         </div>
-        <div>
-          <div class="w-col-label red">What is NOT taught</div>
-          <div class="w-col-item"><div class="w-col-icon no">✕</div><div class="w-col-text">Influence</div></div>
-          <div class="w-col-item"><div class="w-col-icon no">✕</div><div class="w-col-text">Storytelling</div></div>
-          <div class="w-col-item"><div class="w-col-icon no">✕</div><div class="w-col-text">Executive presence</div></div>
-          <div class="w-col-item"><div class="w-col-icon no">✕</div><div class="w-col-text">Difficult conversations</div></div>
-          <div class="w-col-item"><div class="w-col-icon no">✕</div><div class="w-col-text">Personal brand</div></div>
-          <div class="w-col-item"><div class="w-col-icon no">✕</div><div class="w-col-text">Workplace visibility</div></div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <div><div class="wc-row-title">Technical skills</div><div class="wc-row-desc">Build expertise</div></div>
         </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13H5v2M12 13h7v2"/></svg></div>
+          <div><div class="wc-row-title">Processes &amp; systems</div><div class="wc-row-desc">Work smarter</div></div>
+        </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+          <div><div class="wc-row-title">Qualifications</div><div class="wc-row-desc">Get certified</div></div>
+        </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div><div class="wc-row-title">Domain expertise</div><div class="wc-row-desc">Deepen knowledge</div></div>
+        </div>
+      </div>
+      <!-- WHAT IS NOT TAUGHT -->
+      <div class="wc-panel wc-panel--not fade-up delay-1">
+        <div class="wc-panel-hdr">
+          <div class="wc-badge wc-badge--x">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(192,112,85,0.9)" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
+          <span class="wc-panel-lbl">What is Not Taught</span>
+        </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M4 20c0-3.87 3.58-7 8-7s8 3.13 8 7"/><path d="M17.5 3.5l1 1-1 1M19.5 5.5l1-1"/></svg></div>
+          <div><div class="wc-row-title">Influence</div><div class="wc-row-desc">Build credibility</div></div>
+        </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><div class="wc-row-title">Storytelling</div><div class="wc-row-desc">Communicate impact</div></div>
+        </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div><div class="wc-row-title">Executive presence</div><div class="wc-row-desc">Lead with confidence</div></div>
+        </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <div><div class="wc-row-title">Difficult conversations</div><div class="wc-row-desc">Navigate with clarity</div></div>
+        </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="7" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h0"/><path d="M19 12v6M22 15h-6" stroke-width="1.8"/></svg></div>
+          <div><div class="wc-row-title">Personal brand</div><div class="wc-row-desc">Stand out authentically</div></div>
+        </div>
+        <div class="wc-row">
+          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div><div class="wc-row-title">Workplace visibility</div><div class="wc-row-desc">Be seen for your value</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- CALLOUT QUOTE -->
+    <div class="wc-callout fade-up delay-1">
+      <div class="wc-callout-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+      </div>
+      <div>
+        <p class="wc-callout-h">AmplifyU develops the skills that accelerate careers.</p>
+        <p class="wc-callout-p">Because the future belongs to those who are not just capable — but visible, influential and irreplaceable.</p>
+      </div>
+      <div class="wc-callout-cta">
+        <a href="#" class="wc-callout-btn">Get AmplifyU</a>
+        <span class="wc-callout-note">Start building your edge today.</span>
       </div>
     </div>
   </div>
