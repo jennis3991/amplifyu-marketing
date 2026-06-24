@@ -222,7 +222,7 @@
   }
   .nav-logo > span { color: #ffffff; }
   .nav-u { color: var(--accent-light); }
-  .nav-logo-img { height: 64px; width: auto; object-fit: contain; display: block; flex-shrink: 0;   filter: invert(1); mix-blend-mode: screen;
+  .nav-logo-img { height: 64px; width: auto; object-fit: contain; display: block; flex-shrink: 0;   filter: brightness(0) invert(1);
   }
   .nav-wordmark { font-family: 'Josefin Sans', sans-serif; font-size: 13px; font-weight: 400; color: #fff; letter-spacing: 0.22em; text-transform: uppercase; line-height: 1; }
   .nav-sep { display: inline-block; width: 1px; height: 28px; background: rgba(255,255,255,0.2); margin: 0 14px; flex-shrink: 0; }
@@ -2987,7 +2987,7 @@
   .nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   @media (max-width: 768px) {
     #nav { background: rgba(15,13,10,0.92); backdrop-filter: blur(8px); }
-    .nav-logo-img { height: 80px; width: auto; filter: brightness(0) invert(1); mix-blend-mode: normal; }
+    .nav-logo-img { height: 80px; }
     .nav-hamburger { display: flex; }
     .nav-links {
       position: absolute; top: 100%; left: 0; right: 0;
@@ -3299,10 +3299,7 @@
 <body>
 <nav id="nav">
   <a href="index.html" class="nav-logo">
-    <picture>
-      <source media="(max-width: 768px)" srcset="logo-a-transparent.png">
-      <img src="logo-a-cream.png" alt="" class="nav-logo-img">
-    </picture>
+    <img src="logo-a-transparent.png" alt="" class="nav-logo-img">
   </a>
   <div class="nav-links">
     <a href="why.html" class="nav-link" data-page="why">Home</a>
