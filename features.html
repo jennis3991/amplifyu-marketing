@@ -35,7 +35,8 @@
     gap: 0; }
   .nav-logo > span { color: #ffffff; }
   .nav-u { color: var(--accent-light); }
-  .nav-logo-img { width: 28px; height: 28px; object-fit: contain; display: block; flex-shrink: 0; filter: invert(1); mix-blend-mode: screen; }
+  .nav-logo-img { width: 28px; height: 28px; object-fit: contain; display: block; flex-shrink: 0;
+  mix-blend-mode: screen; }
 .nav-wordmark { font-family: 'Josefin Sans', sans-serif; font-size: 13px; font-weight: 400; color: #fff; letter-spacing: 0.22em; text-transform: uppercase; line-height: 1; }
   .nav-sep { display: inline-block; width: 1px; height: 28px; background: rgba(255,255,255,0.2); margin: 0 14px; flex-shrink: 0; }
   .nav-links { display: flex; align-items: center; gap: 36px; }
@@ -232,6 +233,36 @@
     #nav.nav-open .nav-links { max-height: 70vh; }
     .nav-cta.nav-cta--app { display: none; }
   }
+
+/* ─── COMPACT NAV ALL SCREENS ─── */
+.nav-hamburger { display: flex !important; }
+.nav-links {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  background: rgba(26,23,20,0.97) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(107,124,110,0.12) !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.35s ease !important;
+}
+.nav-links .nav-link {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 16px 28px !important;
+  border-bottom: 1px solid rgba(240,235,226,0.08) !important;
+  font-size: 14px !important;
+}
+#nav.nav-open .nav-links, .nav-open .nav-links { max-height: 80vh !important; }
+.nav-cta--get { display: none !important; }
+@media (max-width: 768px) {
+  .nav-cta--get { display: inline-block !important; }
+}
 </style>
 </head>
 <body>
