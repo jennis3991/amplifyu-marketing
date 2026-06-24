@@ -159,6 +159,9 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-screens { display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start; }
 .w-screen { border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); box-shadow:0 16px 40px rgba(0,0,0,0.4); }
 .w-screen img { width:100%; display:block; object-fit:cover; object-position:center top; }
+.w-app-preview { display:flex; align-items:center; }
+.w-app-img { width:100%; border-radius:12px; box-shadow:0 24px 64px rgba(0,0,0,0.55); border:1px solid rgba(255,255,255,0.08); display:block; }
+.w-app-preview-mob { display:none; }
 
 /* ─── CURRICULUM ─── */
 .w-curriculum { background: var(--cream-mid); padding: 100px 48px; }
@@ -373,6 +376,9 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-solution-h2 { margin-bottom:24px; }
   .w-solution-sub { margin-bottom:40px; line-height:1.85; }
   .w-screens { display:none; }
+  .w-app-preview { display:none; }
+  .w-app-preview-mob { display:block; padding:0 24px 40px; }
+  .w-solution-inner { grid-template-columns:1fr; }
 
   .w-curriculum { padding: 96px 32px; }
   .w-curriculum-top { margin-bottom:48px; }
@@ -577,12 +583,12 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         <span class="w-tag">AI coach</span>
       </div>
     </div>
-    <div class="w-screens fade-up delay-1">
-      <div class="w-screen"><img src="img_insight.jpeg" alt="" style="height:255px"></div>
-      <div class="w-screen" style="margin-top:24px"><img src="img_theory_piano.jpeg" alt="" style="height:220px"></div>
-      <div class="w-screen"><img src="img_simulation.jpeg" alt="" style="height:220px"></div>
-      <div class="w-screen" style="margin-top:24px"><img src="img_toolkit1.jpeg" alt="" style="height:255px"></div>
+    <div class="w-app-preview fade-up delay-1">
+      <img src="img_app_home.png" alt="AmplifyU app home screen" class="w-app-img">
     </div>
+  </div>
+  <div class="w-app-preview-mob">
+    <img src="img_app_home.png" alt="AmplifyU app home screen" class="w-app-img">
   </div>
 </section>
 
