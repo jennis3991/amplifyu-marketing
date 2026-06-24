@@ -221,6 +221,7 @@
   .nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   @media (max-width: 768px) {
     #nav { background: rgba(15,13,10,0.92); backdrop-filter: blur(8px); }
+    .nav-logo-img { height: 80px; width: auto; filter: brightness(0) invert(1); mix-blend-mode: normal; }
     .nav-hamburger { display: flex; }
     .nav-links {
       position: absolute; top: 100%; left: 0; right: 0;
@@ -238,7 +239,12 @@
 <body>
 
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="logo-a-cream.png" alt="" class="nav-logo-img"></a>
+  <a href="index.html" class="nav-logo">
+    <picture>
+      <source media="(max-width: 768px)" srcset="logo-a-transparent.png">
+      <img src="logo-a-cream.png" alt="" class="nav-logo-img">
+    </picture>
+  </a>
   <div class="nav-links">
     <a href="why.html" class="nav-link" data-page="why">Home</a>
     <a href="index.html" class="nav-link" data-page="home">Why AmplifyU</a>

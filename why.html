@@ -399,7 +399,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-cta-screens { display:none; }
 
   #nav { background: rgba(15,13,10,0.92); backdrop-filter: blur(8px); }
-  .nav-logo-img { height: 80px; filter: invert(1); mix-blend-mode: screen; }
+  .nav-logo-img { height: 80px; width: auto; filter: brightness(0) invert(1); mix-blend-mode: normal; }
 
   .w-problem-sub { color: rgba(237,234,230,0.75); }
   .w-different-sub { color: rgba(237,234,230,0.75); }
@@ -430,7 +430,10 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 <!-- NAV -->
 <nav id="nav">
   <a href="index.html" class="nav-logo">
-    <img src="logo-a-cream.png" alt="" class="nav-logo-img">
+    <picture>
+      <source media="(max-width: 900px)" srcset="logo-a-transparent.png">
+      <img src="logo-a-cream.png" alt="" class="nav-logo-img">
+    </picture>
   </a>
   <div class="nav-links">
     <a href="why.html" class="nav-link active" data-page="why">Home</a>
