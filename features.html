@@ -192,7 +192,8 @@
   }
 
   /* ── MOBILE NAV ── */
-  .nav-hamburger {
+.nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-hamburger {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -246,12 +247,14 @@
     <a href="features.html" class="nav-link" data-page="features">Features</a>
     <a href="story.html" class="nav-link" data-page="story">Story</a>
   </div>
-  <a href="#" class="nav-cta nav-cta--get">Get AmplifyU</a>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+  <div class="nav-right">
+    <a href="#" class="nav-cta nav-cta--get">Get AmplifyU</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
 </div>
 
@@ -559,7 +562,7 @@
 </body>
 </html>
 .nav-cta--get {
-  background: #8a9e8d;
+  background: #6b7c6e;
   color: #ffffff;
   border-color: transparent;
   border-radius: 24px;
@@ -570,5 +573,5 @@
   font-size: 12px;
   transition: background 0.2s;
 }
-.nav-cta--get:hover { background: #6b7c6e; border-color: transparent; color: #ffffff; }
+.nav-cta--get:hover { background: #4e5e51; border-color: transparent; color: #ffffff; }
 
