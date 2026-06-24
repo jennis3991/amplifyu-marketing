@@ -461,11 +461,14 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-cell.trad { color: rgba(237,234,230,0.6); }
   .w-phase-items li { color: rgba(237,234,230,0.7); }
   .w-cta-tagline { color: rgba(237,234,230,0.65); }
-  .testimonials-grid { grid-template-columns:1fr; }
+  .testimonials-grid { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; gap:0; background:transparent; padding-bottom:4px; }
+  .testimonials-grid::-webkit-scrollbar { display:none; }
+  .testimonial { flex:0 0 88%; scroll-snap-align:start; border:1px solid var(--cream-dark); border-radius:6px; margin-right:12px; padding:32px 24px; }
+  .testimonial:last-child { margin-right:24px; }
   .stats-strip-inner { grid-template-columns:repeat(2,1fr); }
-  .section-transform-ba { padding:60px 24px 80px; }
+  .section-transform-ba { padding:60px 0 80px; }
+  .ba-header { padding:0 24px; }
   .stats-strip { padding:60px 24px; }
-  .testimonial { padding:32px 24px; }
 
 
   .w-clarity { padding: 0 24px 80px; }
