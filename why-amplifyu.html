@@ -2189,7 +2189,7 @@
 }
 .hero-grid {
   width:100%; display:grid;
-  grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+  grid-template-columns:1fr; gap:48px; align-items:center;
 }
 .hero-left { display:flex; flex-direction:column; gap:0; position:relative; }
 .hero-eyebrow-new {
@@ -2535,9 +2535,30 @@
 }
 
 /* ── MOTIVATIONAL INTRO ── */
+.hero-stats-strip {
+  background: var(--dark);
+  padding: 28px 8%;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.hero-stats-tagline {
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 8px;
+}
+.hero-stats-sub {
+  font-family: var(--serif-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(237,234,230,0.6);
+}
 .transform-intro {
   background:var(--cream);
-  padding:120px 8% 80px;
+  padding:60px 8% 80px;
 }
 .transform-intro-inner {
   max-width:1300px; margin:0 auto;
@@ -3326,177 +3347,14 @@
       <p class="hero-eyebrow-new">Why AmplifyU</p>
       <h1 class="hero-h1">Great communication is strategic<br><span class="hero-rotate-wrap"><em class="hero-rotate-text">Master every move</em></span></h1>
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
-      <p class="hero-mobile-tagline">14 Sessions · AI-Coached · 15 Min/Day · Science Backed</p>
-      <p class="hero-mobile-sub">More influence. More impact. 14 days.</p>
-      <!-- MOBILE SCROLL INDICATOR -->
-    </div>
-    <div class="hero-right fade-up delay-2" style="height:560px;overflow:hidden;position:relative;margin-left:80px;margin-right:-60px;">
-      <!-- SCREENSHOT CAROUSEL -->
-<div class="sc-carousel" aria-hidden="true">
-  <div class="sc-col sc-col--up">
-      <div class="sc-track">
-        <div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Communication Framework" loading="lazy">
-        <div class="sc-label">Communication Framework</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 2 · Voice Advantage" loading="lazy">
-        <div class="sc-label">Day 2 · Voice Advantage</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 3 · Eliminate Fillers" loading="lazy">
-        <div class="sc-label">Day 3 · Eliminate Fillers</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 8 · Story Architect" loading="lazy">
-        <div class="sc-label">Day 8 · Story Architect</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="AI Coach · Feedback" loading="lazy">
-        <div class="sc-label">AI Coach · Feedback</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Toolkit" loading="lazy">
-        <div class="sc-label">Toolkit</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Onboarding · Reflection" loading="lazy">
-        <div class="sc-label">Onboarding · Reflection</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 11 · Brand Identity" loading="lazy">
-        <div class="sc-label">Day 11 · Brand Identity</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 13 · Exposure" loading="lazy">
-        <div class="sc-label">Day 13 · Exposure</div>
-      </div>
-        <div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Communication Framework" loading="lazy">
-        <div class="sc-label">Communication Framework</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 2 · Voice Advantage" loading="lazy">
-        <div class="sc-label">Day 2 · Voice Advantage</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 3 · Eliminate Fillers" loading="lazy">
-        <div class="sc-label">Day 3 · Eliminate Fillers</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 8 · Story Architect" loading="lazy">
-        <div class="sc-label">Day 8 · Story Architect</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="AI Coach · Feedback" loading="lazy">
-        <div class="sc-label">AI Coach · Feedback</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Toolkit" loading="lazy">
-        <div class="sc-label">Toolkit</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Onboarding · Reflection" loading="lazy">
-        <div class="sc-label">Onboarding · Reflection</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 11 · Brand Identity" loading="lazy">
-        <div class="sc-label">Day 11 · Brand Identity</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 13 · Exposure" loading="lazy">
-        <div class="sc-label">Day 13 · Exposure</div>
-      </div>
-      </div>
-    </div>
-  <div class="sc-col sc-col--down">
-      <div class="sc-track">
-        <div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Your Programme" loading="lazy">
-        <div class="sc-label">Your Programme</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 2 · The 88 Keys" loading="lazy">
-        <div class="sc-label">Day 2 · The 88 Keys</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 6 · High-Stakes" loading="lazy">
-        <div class="sc-label">Day 6 · High-Stakes</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 8 · Story Framework" loading="lazy">
-        <div class="sc-label">Day 8 · Story Framework</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="AI Coach · Clarity Profile" loading="lazy">
-        <div class="sc-label">AI Coach · Clarity Profile</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Toolkit · Story Architect" loading="lazy">
-        <div class="sc-label">Toolkit · Story Architect</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Onboarding · Reflection" loading="lazy">
-        <div class="sc-label">Onboarding · Reflection</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Your Practice" loading="lazy">
-        <div class="sc-label">Your Practice</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 2 · Simulation" loading="lazy">
-        <div class="sc-label">Day 2 · Simulation</div>
-      </div>
-        <div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Your Programme" loading="lazy">
-        <div class="sc-label">Your Programme</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 2 · The 88 Keys" loading="lazy">
-        <div class="sc-label">Day 2 · The 88 Keys</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 6 · High-Stakes" loading="lazy">
-        <div class="sc-label">Day 6 · High-Stakes</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 8 · Story Framework" loading="lazy">
-        <div class="sc-label">Day 8 · Story Framework</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="AI Coach · Clarity Profile" loading="lazy">
-        <div class="sc-label">AI Coach · Clarity Profile</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Toolkit · Story Architect" loading="lazy">
-        <div class="sc-label">Toolkit · Story Architect</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Onboarding · Reflection" loading="lazy">
-        <div class="sc-label">Onboarding · Reflection</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Your Practice" loading="lazy">
-        <div class="sc-label">Your Practice</div>
-      </div><div class="sc-card">
-        <img src="idx-sim-1.jpg" alt="Day 2 · Simulation" loading="lazy">
-        <div class="sc-label">Day 2 · Simulation</div>
-      </div>
-      </div>
-    </div>
-</div>
     </div>
   </div>
 </section>
-<!-- MOBILE CAROUSEL SECTION (shown only on mobile, appears after scrolling past hero) -->
-<div class="mob-carousel-section" aria-hidden="true">
-  <div class="mob-grid">
-    <div class="mob-col mob-col--left">
-      <div class="mob-card"><img src="mob2.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob3.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob4.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob5.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob6.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob2.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob3.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob4.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob5.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob6.jpg" alt=""></div>
-    </div>
-    <div class="mob-col mob-col--right">
-      <div class="mob-card"><img src="mob7.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob8.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob9.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob10.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob12.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob7.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob8.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob9.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob10.jpg" alt=""></div>
-      <div class="mob-card"><img src="mob12.jpg" alt=""></div>
-    </div>
-  </div>
-</div>
+
 <!-- WHY COMMUNICATION SECTION -->
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot">♛</span>AmplifyU Communication Coach</span>
-    <span class="ticker-item"><span class="ticker-dot">◆</span>Story Architect</span>
-    <span class="ticker-item"><span class="ticker-dot">◆</span>Conversation Simulator</span>
-    <span class="ticker-item"><span class="ticker-dot">◆</span>Voice Analysis</span>
-    <span class="ticker-item"><span class="ticker-dot">◆</span>Brand Builder</span>
-    <span class="ticker-item"><span class="ticker-dot">◆</span>Executive Presence Training</span>
-  </div>
+<div class="hero-stats-strip">
+  <p class="hero-stats-tagline">14 Sessions · AI-Coached · 15 Min/Day · Science Backed</p>
+  <p class="hero-stats-sub">More influence. More impact. 14 days.</p>
 </div>
 <!-- COMMUNICATION FRAMEWORK -->
 <div class="transform-intro">
