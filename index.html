@@ -104,51 +104,27 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-mob-demo { display: none; }
 
 /* ─── PROBLEM ─── */
+/* ─── PROBLEM REFRAME ─── */
 .w-problem { background: var(--dark); padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
-.w-problem-inner { max-width:900px; margin:0 auto; }
-.w-problem-h2 { font-family:var(--serif-body); font-size:clamp(30px,4vw,58px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.08; margin-bottom:20px; }
-.w-problem-sub { font-size:13px; color:rgba(237,234,230,0.35); line-height:1.7; font-weight:300; max-width:380px; }
-.w-problem-callout { padding:20px 24px; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.15); border-left:2px solid var(--gold); border-radius:0 6px 6px 0; }
-.w-problem-callout p { font-family:var(--serif-body); font-size:17px; font-style:italic; color:rgba(237,234,230,0.6); line-height:1.6; }
-.w-cols { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
-.w-col-label { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; font-weight:600; margin-bottom:18px; }
-.w-col-label.green { color:var(--accent-light); }
-.w-col-label.red { color:#c07055; }
-.w-col-item { display:flex; align-items:flex-start; gap:10px; margin-bottom:14px; }
-.w-col-icon { width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; font-size:9px; font-weight:700; font-family:var(--sans); }
-.w-col-icon.yes { background:rgba(138,158,141,0.15); color:var(--accent-light); }
-.w-col-icon.no { background:rgba(192,112,85,0.15); color:#c07055; }
-.w-col-text { font-family:var(--serif-body); font-size:18px; color:rgba(237,234,230,0.8); line-height:1.3; }
+.w-problem-inner { max-width:1100px; margin:0 auto; }
+.w-problem-lede { display:flex; gap:32px; align-items:flex-start; margin-bottom:80px; }
+.w-problem-bar { width:3px; background:var(--accent); border-radius:2px; flex-shrink:0; min-height:120px; }
+.w-problem-lede-body {}
+.w-problem-h2 { font-family:var(--serif-body); font-size:clamp(32px,4vw,60px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-2px; line-height:1.06; margin-bottom:18px; }
+.w-problem-tagline { font-family:var(--serif-body); font-size:clamp(16px,1.8vw,22px); font-style:italic; font-weight:300; color:var(--accent-light); line-height:1.5; margin-bottom:22px; }
+.w-problem-sub { font-size:14px; color:rgba(237,234,230,0.45); line-height:1.8; font-weight:300; max-width:540px; }
+.w-teaches-hdr { text-align:center; margin-bottom:48px; }
+.w-teaches-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:rgba(237,234,230,0.45); font-weight:500; margin-bottom:14px; }
+.w-teaches-rule { width:36px; height:2px; background:var(--accent); margin:0 auto 20px; }
+.w-teaches-sub { font-family:var(--serif-body); font-size:clamp(16px,1.6vw,20px); font-weight:300; color:rgba(237,234,230,0.5); line-height:1.6; max-width:480px; margin:0 auto; }
+.w-skill-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.w-skill-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:6px; padding:32px 28px 28px; display:flex; flex-direction:column; align-items:flex-start; transition:border-color 0.2s, background 0.2s; }
+.w-skill-card:hover { background:rgba(255,255,255,0.05); border-color:rgba(138,158,141,0.2); }
+.w-skill-icon { width:52px; height:52px; border-radius:50%; background:rgba(138,158,141,0.08); border:1px solid rgba(138,158,141,0.15); display:flex; align-items:center; justify-content:center; color:rgba(237,234,230,0.5); margin-bottom:24px; }
+.w-skill-name { font-family:var(--serif-body); font-size:clamp(18px,1.8vw,24px); font-weight:400; color:rgba(237,234,230,0.9); line-height:1.2; margin-bottom:12px; }
+.w-skill-line { width:28px; height:1.5px; background:var(--accent); margin-bottom:14px; }
+.w-skill-desc { font-family:var(--sans); font-size:13px; color:rgba(237,234,230,0.38); line-height:1.7; }
 
-
-/* ─── CLARITY ─── */
-.w-clarity { background:var(--dark); padding:0 48px 100px; }
-.w-clarity-inner { max-width:1100px; margin:0 auto; }
-.wc-header { text-align:center; padding-bottom:52px; }
-.wc-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:18px; }
-.wc-sub { font-family:var(--serif-body); font-size:clamp(18px,2vw,26px); font-weight:300; color:rgba(237,234,230,0.6); line-height:1.55; max-width:560px; margin:0 auto; }
-.wc-panels { display:grid; grid-template-columns:1fr 1.45fr; gap:10px; margin-bottom:10px; }
-.wc-panel { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:6px; overflow:hidden; }
-.wc-panel-hdr { display:flex; align-items:center; gap:14px; padding:22px 28px; border-bottom:1px solid rgba(255,255,255,0.06); }
-.wc-badge { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.wc-badge--check { background:rgba(138,158,141,0.12); border:1px solid rgba(138,158,141,0.25); }
-.wc-badge--x { background:rgba(192,112,85,0.15); border:1px solid rgba(192,112,85,0.3); }
-.wc-panel-lbl { font-family:var(--sans); font-size:10px; letter-spacing:0.25em; text-transform:uppercase; font-weight:500; color:rgba(237,234,230,0.4); }
-.wc-row { display:flex; align-items:center; gap:16px; padding:18px 28px; border-bottom:1px solid rgba(255,255,255,0.04); }
-.wc-row:last-child { border-bottom:none; }
-.wc-icon { width:38px; height:38px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
-.wc-panel--taught .wc-icon { color:rgba(237,234,230,0.22); }
-.wc-panel--not .wc-icon { color:rgba(192,112,85,0.75); }
-.wc-row-title { font-family:var(--serif-body); font-size:18px; font-weight:400; color:rgba(237,234,230,0.88); line-height:1.2; margin-bottom:2px; }
-.wc-row-desc { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.28); letter-spacing:0.02em; }
-.wc-callout { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:6px; padding:36px 40px; display:grid; grid-template-columns:auto 1fr auto; gap:36px; align-items:center; }
-.wc-callout-icon { width:68px; height:68px; border-radius:50%; background:rgba(138,158,141,0.1); border:1px solid rgba(138,158,141,0.2); display:flex; align-items:center; justify-content:center; color:var(--accent-light); flex-shrink:0; }
-.wc-callout-h { font-family:var(--serif-body); font-size:clamp(20px,2.2vw,32px); font-weight:500; color:rgba(237,234,230,0.92); letter-spacing:-0.5px; line-height:1.2; margin-bottom:10px; }
-.wc-callout-p { font-family:var(--sans); font-size:13px; line-height:1.7; color:rgba(237,234,230,0.35); }
-.wc-callout-cta { text-align:center; flex-shrink:0; }
-.wc-callout-btn { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; background:rgba(237,234,230,0.07); color:var(--cream); border:1px solid rgba(237,234,230,0.18); border-radius:40px; padding:14px 30px; text-decoration:none; transition:background 0.25s, border-color 0.25s; white-space:nowrap; }
-.wc-callout-btn:hover { background:var(--accent); border-color:var(--accent); }
-.wc-callout-note { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.2); margin-top:9px; display:block; }
 
 /* ─── GAP / OPPORTUNITY ─── */
 .w-gap { background: var(--cream); padding: 100px 48px; }
@@ -375,10 +351,17 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-hero-h1 { font-size: clamp(36px, 9vw, 54px); }
   .w-hero-sub { max-width:100%; }
 
-  .w-problem { padding: 96px 32px; }
-  .w-problem-inner { grid-template-columns:1fr; gap:60px; }
-  .w-problem-h2 { margin-bottom:28px; }
-  .w-problem-sub { margin-bottom:36px; line-height:1.85; }
+  .w-problem { padding: 80px 24px; }
+  .w-problem-lede { gap:20px; }
+  .w-problem-bar { min-height:80px; }
+  .w-skill-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  .w-skill-card { padding:24px 18px 20px; }
+  .w-clarity { padding: 0 24px 80px; }
+  .wc-panels { grid-template-columns: 1fr; }
+  .wc-callout { grid-template-columns: 1fr; gap: 24px; text-align: center; padding: 28px 24px; }
+  .wc-callout-icon { margin: 0 auto; }
+  .wc-callout-cta { width: 100%; }
+  .wc-callout-btn { width: 100%; text-align: center; display: block; }
 
   .w-gap { padding: 96px 32px; }
   .w-gap-inner { grid-template-columns:1fr; gap:60px; }
@@ -536,100 +519,60 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   </div>
 </section>
 
-<!-- ══ PROBLEM ══ -->
+<!-- ══ PROBLEM / WHAT WE TEACH ══ -->
 <section class="w-problem">
   <div class="w-problem-inner">
-    <div>
-      <div class="eyebrow fade-up">The Problem</div>
-      <h2 class="w-problem-h2 fade-up delay-1">The skills that shape careers are rarely taught</h2>
-      <p class="w-problem-sub fade-up delay-1">Every professional is trained for the job. Almost none are trained for the career.</p>
-      <div class="w-problem-callout fade-up delay-2">
-        <p>Yet these are precisely the skills that determine who gets promoted, who gets recognised, and who gets remembered.</p>
+    <!-- LEDE -->
+    <div class="w-problem-lede fade-up">
+      <div class="w-problem-bar"></div>
+      <div class="w-problem-lede-body">
+        <h2 class="w-problem-h2">The skills that shape careers are rarely taught.</h2>
+        <p class="w-problem-tagline">AmplifyU teaches the career-shaping skills that drive recognition, growth, and long-term impact.</p>
+        <p class="w-problem-sub">Most professionals are trained for the job.<br>Few are taught how to influence, communicate, and show up in ways that accelerate their careers.</p>
       </div>
     </div>
-
-  </div>
-</section>
-
-<!-- ══ CLARITY ══ -->
-<section class="w-clarity">
-  <div class="w-clarity-inner">
-    <div class="wc-header fade-up">
-      <p class="wc-eyebrow">AmplifyU Brings Clarity</p>
-      <p class="wc-sub">We teach the career-shaping skills that drive recognition, growth and long-term impact.</p>
+    <!-- WHAT AMPLIFYU TEACHES -->
+    <div class="w-teaches-hdr fade-up">
+      <p class="w-teaches-eyebrow">What AmplifyU Teaches</p>
+      <div class="w-teaches-rule"></div>
+      <p class="w-teaches-sub">The six career-defining skills that create visibility, build trust, and open doors to what's next.</p>
     </div>
-    <div class="wc-panels">
-      <!-- WHAT IS TAUGHT -->
-      <div class="wc-panel wc-panel--taught fade-up">
-        <div class="wc-panel-hdr">
-          <div class="wc-badge wc-badge--check">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(138,158,141,0.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <span class="wc-panel-lbl">What is Taught</span>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-          <div><div class="wc-row-title">Technical skills</div><div class="wc-row-desc">Build expertise</div></div>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13H5v2M12 13h7v2"/></svg></div>
-          <div><div class="wc-row-title">Processes &amp; systems</div><div class="wc-row-desc">Work smarter</div></div>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-          <div><div class="wc-row-title">Qualifications</div><div class="wc-row-desc">Get certified</div></div>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-          <div><div class="wc-row-title">Domain expertise</div><div class="wc-row-desc">Deepen knowledge</div></div>
-        </div>
+    <div class="w-skill-grid">
+      <div class="w-skill-card fade-up">
+        <div class="w-skill-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="7" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h0"/><path d="M19 12v6M22 15h-6" stroke-width="1.8"/></svg></div>
+        <div class="w-skill-name">Influence</div>
+        <div class="w-skill-line"></div>
+        <p class="w-skill-desc">Gain buy-in and support for your ideas.</p>
       </div>
-      <!-- WHAT IS NOT TAUGHT -->
-      <div class="wc-panel wc-panel--not fade-up delay-1">
-        <div class="wc-panel-hdr">
-          <div class="wc-badge wc-badge--x">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(192,112,85,0.9)" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </div>
-          <span class="wc-panel-lbl">What is Not Taught</span>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M4 20c0-3.87 3.58-7 8-7s8 3.13 8 7"/><path d="M17.5 3.5l1 1-1 1M19.5 5.5l1-1"/></svg></div>
-          <div><div class="wc-row-title">Influence</div><div class="wc-row-desc">Build credibility</div></div>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <div><div class="wc-row-title">Storytelling</div><div class="wc-row-desc">Communicate impact</div></div>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div><div class="wc-row-title">Executive presence</div><div class="wc-row-desc">Lead with confidence</div></div>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-          <div><div class="wc-row-title">Difficult conversations</div><div class="wc-row-desc">Navigate with clarity</div></div>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="7" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h0"/><path d="M19 12v6M22 15h-6" stroke-width="1.8"/></svg></div>
-          <div><div class="wc-row-title">Personal brand</div><div class="wc-row-desc">Stand out authentically</div></div>
-        </div>
-        <div class="wc-row">
-          <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <div><div class="wc-row-title">Workplace visibility</div><div class="wc-row-desc">Be seen for your value</div></div>
-        </div>
+      <div class="w-skill-card fade-up delay-1">
+        <div class="w-skill-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="w-skill-name">Storytelling</div>
+        <div class="w-skill-line"></div>
+        <p class="w-skill-desc">Turn complex ideas into messages people remember.</p>
       </div>
-    </div>
-    <!-- CALLOUT QUOTE -->
-    <div class="wc-callout fade-up delay-1">
-      <div class="wc-callout-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+      <div class="w-skill-card fade-up delay-2">
+        <div class="w-skill-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="w-skill-name">Executive Presence</div>
+        <div class="w-skill-line"></div>
+        <p class="w-skill-desc">Lead with confidence and command attention in high-stakes moments.</p>
       </div>
-      <div>
-        <p class="wc-callout-h">AmplifyU develops the skills that accelerate careers.</p>
-        <p class="wc-callout-p">Because the future belongs to those who are not just capable — but visible, influential and irreplaceable.</p>
+      <div class="w-skill-card fade-up delay-1">
+        <div class="w-skill-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <div class="w-skill-name">Difficult Conversations</div>
+        <div class="w-skill-line"></div>
+        <p class="w-skill-desc">Navigate challenge and conflict with clarity and respect.</p>
       </div>
-      <div class="wc-callout-cta">
-        <a href="#" class="wc-callout-btn">Get AmplifyU</a>
-        <span class="wc-callout-note">Start building your edge today.</span>
+      <div class="w-skill-card fade-up delay-2">
+        <div class="w-skill-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="w-skill-name">Workplace Visibility</div>
+        <div class="w-skill-line"></div>
+        <p class="w-skill-desc">Be seen, valued, and recognised for the impact you create.</p>
+      </div>
+      <div class="w-skill-card fade-up delay-3">
+        <div class="w-skill-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.87 3.58-7 8-7s8 3.13 8 7"/></svg></div>
+        <div class="w-skill-name">Personal Brand</div>
+        <div class="w-skill-line"></div>
+        <p class="w-skill-desc">Build credibility and stand out for the right reasons.</p>
       </div>
     </div>
   </div>
