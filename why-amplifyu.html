@@ -2803,11 +2803,11 @@
 }
 @media(max-width:900px) {
   .hero-new { padding:100px 24px 60px; }
-  .hero-grid { grid-template-columns:1fr; gap:40px; }
-  .wa-phone-stack { justify-content:center; }
-  .wa-phone-mock:first-child { width:120px !important; height:260px !important; }
-  .wa-phone-mock:not(:first-child) { width:110px !important; }
-  .wa-phone-mock { border-radius:16px; }
+  .hero-grid { grid-template-columns:1fr; gap:20px; }
+  .wa-phone-stack { flex-direction:row; justify-content:center; align-items:flex-start; gap:10px; }
+  .wa-phone-stack > div { display:contents; }
+  .wa-phone-mock { border-radius:14px; width:calc(30vw) !important; height:calc(30vw * 1.85) !important; margin-bottom:0 !important; }
+  .wa-phone-mock img { object-position:center 8%; }
   .nav-links { gap:18px; }
   .transform-intro { padding:80px 24px 60px; }
   .transform-intro-inner { grid-template-columns:1fr; gap:48px; }
