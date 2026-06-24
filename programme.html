@@ -1927,19 +1927,7 @@
     position: relative;
     overflow: hidden;
   }
-  .section-cta::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 400px;
-    height: 400px;
-    background: url('logo-watermark.jpeg') center/contain no-repeat;
-    mix-blend-mode: screen;
-    opacity: 1;
-    pointer-events: none;
-  }
+  .section-cta::before { display: none; }
   .cta-eyebrow {
     font-family: var(--sans);
     font-size: 10px;
