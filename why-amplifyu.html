@@ -2148,7 +2148,7 @@
 /* ── HERO SPLIT ── */
 .hero-new {
   display:flex; align-items:center;
-  background:#000; padding:110px 8% 32px;
+  background:#000; padding:110px 8% 80px;
   position:relative; overflow:hidden;
 }
 .hero-new::before {
@@ -3286,19 +3286,17 @@
 }
 
 /* ── APP PREVIEW ── */
-.section-app-preview { background:#000; padding:0 8% 60px; }
-.app-preview-phones { max-width:900px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:center; }
+.app-preview-phones { max-width:900px; margin:48px auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:center; }
 .app-preview-phone { border-radius:18px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); box-shadow:0 24px 60px rgba(0,0,0,0.55); }
 .app-preview-phone img { width:100%; display:block; }
-.app-preview-phone:nth-child(1) { transform:translateY(60px); }
-.app-preview-phone:nth-child(2) { transform:translateY(-30px); }
-.app-preview-phone:nth-child(3) { transform:translateY(60px); }
+.app-preview-phone:nth-child(1) { transform:translateY(40px); }
+.app-preview-phone:nth-child(2) { transform:translateY(-20px); }
+.app-preview-phone:nth-child(3) { transform:translateY(40px); }
 @media (max-width:768px) {
-  .section-app-preview { padding:0 16px 40px; }
-  .app-preview-phones { gap:10px; }
-  .app-preview-phone:nth-child(1) { transform:translateY(20px); }
-  .app-preview-phone:nth-child(2) { transform:translateY(-10px); }
-  .app-preview-phone:nth-child(3) { transform:translateY(20px); }
+  .app-preview-phones { margin-top:32px; gap:10px; }
+  .app-preview-phone:nth-child(1) { transform:translateY(16px); }
+  .app-preview-phone:nth-child(2) { transform:translateY(-8px); }
+  .app-preview-phone:nth-child(3) { transform:translateY(16px); }
 }
 </style>
 </head>
@@ -3334,10 +3332,7 @@
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
     </div>
   </div>
-</section>
-
-<!-- ══ APP PREVIEW ══ -->
-<section class="section-app-preview">
+  <!-- ══ APP PREVIEW ══ -->
   <div class="app-preview-phones fade-up">
     <div class="app-preview-phone">
       <img src="img_card_exposure.jpeg" alt="Day 13 — Visibility: Exposure">
