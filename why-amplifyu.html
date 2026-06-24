@@ -2148,7 +2148,7 @@
 /* ── HERO SPLIT ── */
 .hero-new {
   display:flex; align-items:center;
-  background:#000; padding:110px 8% 40px;
+  background:#000; padding:110px 8% 100px;
   position:relative; overflow:hidden;
 }
 .hero-new::before {
@@ -2159,9 +2159,12 @@
   pointer-events:none;
 }
 .hero-grid {
-  width:100%; display:grid;
-  grid-template-columns:1fr; gap:48px; align-items:center;
+  width:100%; max-width:1100px; margin:0 auto; display:grid;
+  grid-template-columns:1fr 1fr; gap:80px; align-items:center;
 }
+.wa-phone-stack { display:flex; gap:14px; align-items:center; justify-content:flex-end; }
+.wa-phone-mock { border-radius:22px; border:1.5px solid rgba(255,255,255,0.1); overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5); flex-shrink:0; }
+.wa-phone-mock img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
 .hero-left { display:flex; flex-direction:column; gap:0; position:relative; }
 .hero-eyebrow-new {
   font-family:var(--sans); font-size:10px; letter-spacing:0.35em; font-weight:500;
@@ -2800,7 +2803,11 @@
 }
 @media(max-width:900px) {
   .hero-new { padding:100px 24px 60px; }
-  .hero-grid { grid-template-columns:1fr; gap:48px; }
+  .hero-grid { grid-template-columns:1fr; gap:40px; }
+  .wa-phone-stack { justify-content:center; }
+  .wa-phone-mock:first-child { width:120px !important; height:260px !important; }
+  .wa-phone-mock:not(:first-child) { width:110px !important; }
+  .wa-phone-mock { border-radius:16px; }
   .nav-links { gap:18px; }
   .transform-intro { padding:80px 24px 60px; }
   .transform-intro-inner { grid-template-columns:1fr; gap:48px; }
@@ -3326,19 +3333,20 @@
       <h1 class="hero-h1">Great communication is strategic<br><span class="hero-rotate-wrap"><em class="hero-rotate-text">Master every move</em></span></h1>
       <div class="hs-rule" style="width:40px;height:1px;background:rgba(107,124,110,0.4);margin:14px 0 14px;"></div>
     </div>
-  </div>
-</section>
-<!-- ══ APP PREVIEW ══ -->
-<section class="section-app-preview">
-  <div class="app-preview-phones fade-up">
-    <div class="app-preview-phone">
-      <img src="img_card_exposure.jpeg" alt="Day 13 — Visibility: Exposure">
-    </div>
-    <div class="app-preview-phone">
-      <img src="img_card_connection.jpeg" alt="Day 9 — Rapport: Connection">
-    </div>
-    <div class="app-preview-phone">
-      <img src="img_card_influence.jpeg" alt="Day 12 — Nonverbal: Influence">
+    <div class="fade-up delay-2">
+      <div class="wa-phone-stack">
+        <div class="wa-phone-mock" style="width:160px;height:340px;">
+          <img src="img_card_exposure.jpeg" alt="Day 13 — Visibility: Exposure">
+        </div>
+        <div>
+          <div class="wa-phone-mock" style="width:150px;height:260px;margin-bottom:14px;">
+            <img src="img_card_connection.jpeg" alt="Day 9 — Rapport: Connection">
+          </div>
+          <div class="wa-phone-mock" style="width:150px;height:220px;">
+            <img src="img_card_influence.jpeg" alt="Day 12 — Nonverbal: Influence">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
