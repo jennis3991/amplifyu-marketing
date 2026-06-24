@@ -379,11 +379,21 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-curriculum-h2 { margin-bottom:20px; }
   .w-grid { grid-template-columns: 1fr 1fr; gap:14px; }
 
-  .w-different { padding: 96px 32px; }
+  .w-different { padding: 80px 24px; }
   .w-different-top { margin-bottom:44px; }
   .w-different-h2 { margin-bottom:20px; }
-  .w-th, .w-cell { padding: 12px 14px; font-size: 11px; }
-  .w-cell.category { font-size: 13px; }
+
+  /* Stacked cards for Why Different on mobile */
+  .w-table { border:none; border-radius:0; overflow:visible; display:flex; flex-direction:column; gap:10px; }
+  .w-thead { display:none; }
+  .w-row { display:grid; grid-template-columns:36px 1fr; grid-template-rows:auto auto auto; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-top:1px solid rgba(255,255,255,0.07); border-radius:8px; overflow:hidden; }
+  .w-chess { grid-column:1; grid-row:1; align-self:center; padding:14px 0 14px 12px; }
+  .w-cell { padding:10px 14px; font-size:13px; }
+  .w-cell.category { grid-column:2; grid-row:1; font-size:14px; padding:14px 14px 14px 8px; border-right:none; align-self:center; }
+  .w-cell.trad { grid-column:1 / -1; grid-row:2; display:flex; flex-direction:column; align-items:flex-start; gap:4px; border-top:1px solid rgba(255,255,255,0.06); padding:10px 14px; color:rgba(237,234,230,0.4); }
+  .w-cell.trad::before { content:'TRADITIONAL'; display:block; font-size:8px; letter-spacing:0.3em; color:rgba(237,234,230,0.22); font-weight:600; font-family:var(--sans); }
+  .w-cell.au-cell { grid-column:1 / -1; grid-row:3; display:flex; flex-direction:column; align-items:flex-start; gap:4px; border-top:1px solid rgba(255,255,255,0.06); padding:10px 14px 14px; }
+  .w-cell.au-cell::before { content:'AMPLIFYU'; display:block; font-size:8px; letter-spacing:0.3em; color:var(--accent-light); font-weight:600; font-family:var(--sans); width:auto; height:auto; border-radius:0; background:transparent; }
 
   .w-whynow { padding: 96px 32px; }
   .w-whynow-inner { grid-template-columns:1fr; gap:60px; }
@@ -441,11 +451,6 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-phases { grid-template-columns: 1fr; }
   .w-stats { gap:20px; }
   .w-stat-num { font-size:36px; }
-  .w-thead, .w-row { grid-template-columns: 0 1fr 0 1fr; }
-  .w-chess, .w-th:first-child, .w-cell:nth-child(3) { display: none; }
-  .w-cell.trad { display:none; }
-  .w-thead { grid-template-columns: 1fr 1fr; }
-  .w-row { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
