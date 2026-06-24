@@ -225,12 +225,13 @@
   .nav-logo-img {
     width: 28px;
     height: 28px;
-    border-radius: 7px;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
     display: block;
     flex-shrink: 0;
+    filter: invert(1);
+    mix-blend-mode: screen;
   }
+  .nav-wordmark { font-family: var(--serif-body); font-size: 15px; font-weight: 500; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
   .nav-cta {
     font-family: var(--sans);
     font-size: 12px;
@@ -3300,7 +3301,7 @@
 </head>
 <body>
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="logo-dark.jpeg" alt="" class="nav-logo-img"></a>
+  <a href="index.html" class="nav-logo"><img src="logo-a-cream.png" alt="" class="nav-logo-img"><span class="nav-wordmark">AMPLIFYU</span></a>
   <div class="nav-links">
     <a href="why.html" class="nav-link" data-page="why">Home</a>
     <a href="index.html" class="nav-link active" data-page="home">Why AmplifyU</a>
@@ -3323,7 +3324,7 @@
     <div class="hero-left fade-up">
       <p class="hero-eyebrow-new">A Private Coaching Programme</p>
       <div class="mob-hero-logo-wrap" aria-hidden="true">
-        <img src="logo-dark.jpeg" alt="" class="mob-hero-logo">
+        <img src="logo-a-cream.png" alt="" class="mob-hero-logo">
       </div>
       <h1 class="hero-h1">Great communication is strategic<br><span class="hero-rotate-wrap"><em class="hero-rotate-text">Master every move</em></span></h1>
       <p class="hero-sub-new">The unwritten skills behind career success.<br><em style="font-style:italic; color:var(--accent); font-weight:400; opacity:1; line-height:1.2; display:inline-block; margin-top:2px;">Now finally taught</em></p>
@@ -3517,7 +3518,7 @@
   </div>
 </div>
 <section class="section-why-comm">
-  <img src="logo-mark.jpeg" alt="" class="why-comm-bg-logo" aria-hidden="true">
+  <img src="logo-a-cream.png" alt="" class="why-comm-bg-logo" aria-hidden="true">
   <div class="why-comm-inner">
     <div class="why-comm-grid">
 
@@ -3816,7 +3817,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
-    <img src="logo-mark.jpeg" alt="" class="footer-logo-img" aria-hidden="true">
+    <img src="logo-a-cream.png" alt="" class="footer-logo-img" aria-hidden="true">
     Amplify<span>U</span>
   </div>
   <div class="footer-socials">

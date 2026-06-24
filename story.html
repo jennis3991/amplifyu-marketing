@@ -67,7 +67,8 @@
   }
   .nav-logo > span { color: #ffffff; }
   .nav-u { color: var(--accent-light); }
-  .nav-logo-img { width: 28px; height: 28px; border-radius: 7px; object-fit: cover; object-position: center; display: block; flex-shrink: 0; }
+  .nav-logo-img { width: 28px; height: 28px; object-fit: contain; display: block; flex-shrink: 0; filter: invert(1); mix-blend-mode: screen; }
+.nav-wordmark { font-family: var(--serif-body); font-size: 15px; font-weight: 500; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
   .nav-links { display: flex; align-items: center; gap: 36px; }
   .nav-link {
     font-family: var(--sans); font-size: 12px; font-weight: 400;
@@ -108,7 +109,7 @@
     transform: translate(-50%, -50%);
     width: 480px; height: 480px;
     background: url('logo-watermark.jpeg') center/contain no-repeat;
-    mix-blend-mode: multiply; opacity: 1;
+    mix-blend-mode: screen; opacity: 1;
     pointer-events: none;
   }
   .hero-inner { position: relative; z-index: 1; max-width: 820px; }
@@ -555,7 +556,7 @@
     transform: translate(-50%, -50%);
     width: 400px; height: 400px;
     background: url('logo-watermark.jpeg') center/contain no-repeat;
-    mix-blend-mode: multiply; opacity: 1;
+    mix-blend-mode: screen; opacity: 1;
     pointer-events: none;
   }
   .cta-eyebrow {
@@ -595,7 +596,7 @@
     color: var(--text-mid); letter-spacing: 0.04em;
     display: flex; flex-direction: column; align-items: flex-start; gap: 8px; white-space: nowrap;
   }
-  .footer-logo-img { width: 52px; height: auto; display: block; mix-blend-mode: multiply; opacity: 0.75; }
+  .footer-logo-img { width: 52px; height: auto; display: block; mix-blend-mode: screen; opacity: 1; }
   .footer-logo span { color: var(--accent); }
   .footer-note {
     font-family: var(--sans); font-size: 11px;
@@ -679,7 +680,7 @@
 <body>
 
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="logo-dark.jpeg" alt="" class="nav-logo-img"></a>
+  <a href="index.html" class="nav-logo"><img src="logo-a-cream.png" alt="" class="nav-logo-img"><span class="nav-wordmark">AMPLIFYU</span></a>
   <div class="nav-links">
     <a href="why.html" class="nav-link" data-page="why">Home</a>
     <a href="index.html" class="nav-link" data-page="home">Why AmplifyU</a>
@@ -996,7 +997,7 @@
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-logo">
-    <img src="logo-mark.jpeg" alt="" class="footer-logo-img" aria-hidden="true">
+    <img src="logo-a-cream.png" alt="" class="footer-logo-img" aria-hidden="true">
     Amplify<span>U</span>
   </div>
   <div class="footer-socials">

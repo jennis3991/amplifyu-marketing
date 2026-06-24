@@ -35,7 +35,8 @@
     gap: 10px; }
   .nav-logo > span { color: #ffffff; }
   .nav-u { color: var(--accent-light); }
-  .nav-logo-img { width: 28px; height: 28px; border-radius: 7px; object-fit: cover; object-position: center; display: block; flex-shrink: 0; }
+  .nav-logo-img { width: 28px; height: 28px; object-fit: contain; display: block; flex-shrink: 0; filter: invert(1); mix-blend-mode: screen; }
+.nav-wordmark { font-family: var(--serif-body); font-size: 15px; font-weight: 500; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
   .nav-links { display: flex; align-items: center; gap: 36px; }
   .nav-link { font-family: var(--sans); font-size: 12px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,235,226,0.5); text-decoration: none; transition: color 0.2s; }
   .nav-link:hover, .nav-link.active { color: var(--cream); }
@@ -47,7 +48,7 @@
     min-height: 72vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 140px 48px 80px; position: relative; background: var(--dark); overflow: hidden;
   }
   .features-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(107,124,110,0.07) 0%, transparent 70%); pointer-events: none; }
-  .features-hero::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 460px; height: 460px; background: url('logo-watermark.jpeg') center/contain no-repeat; mix-blend-mode: multiply; opacity: 1; pointer-events: none; }
+  .features-hero::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 460px; height: 460px; background: url('logo-watermark.jpeg') center/contain no-repeat; mix-blend-mode: screen; opacity: 1; pointer-events: none; }
   .fh-inner { position: relative; z-index: 1; max-width: 860px; }
   .fh-eyebrow { font-family: var(--sans); font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent-light); font-weight: 500;
     margin-bottom: 24px; }
@@ -149,7 +150,7 @@
 
   /* ─── CTA ─── */
   .section-cta { padding: 120px 48px; background: var(--dark); text-align: center; position: relative; overflow: hidden; }
-  .section-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; background: url('logo-watermark.jpeg') center/contain no-repeat; mix-blend-mode: multiply; opacity: 1; pointer-events: none; }
+  .section-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; background: url('logo-watermark.jpeg') center/contain no-repeat; mix-blend-mode: screen; opacity: 1; pointer-events: none; }
   .cta-eyebrow { font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; }
   .cta-h2 { font-family: var(--serif-display); font-size: clamp(40px, 5.5vw, 72px); font-weight: 400; color: var(--cream); line-height: 1.06; max-width: 760px; margin: 0 auto 28px; }
   .cta-h2 em { font-style: italic; color: var(--accent-light); }
@@ -159,7 +160,7 @@
   /* ─── FOOTER ─── */
   footer { padding: 60px 48px; background: var(--cream-mid); border-top: 1px solid var(--cream-dark); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .footer-logo { font-family: var(--serif-display); font-size: 18px; font-weight: 500; color: var(--text-mid); letter-spacing: 0.04em; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; white-space: nowrap; }
-  .footer-logo-img { width: 52px; height: auto; display: block; mix-blend-mode: multiply; opacity: 0.75; }
+  .footer-logo-img { width: 52px; height: auto; display: block; mix-blend-mode: screen; opacity: 1; }
   .footer-logo span { color: var(--accent); }
   .footer-socials { display: flex; align-items: center; gap: 20px; }
   .footer-social { color: var(--text-light); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; }
@@ -234,7 +235,7 @@
 <body>
 
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="logo-dark.jpeg" alt="" class="nav-logo-img"></a>
+  <a href="index.html" class="nav-logo"><img src="logo-a-cream.png" alt="" class="nav-logo-img"><span class="nav-wordmark">AMPLIFYU</span></a>
   <div class="nav-links">
     <a href="why.html" class="nav-link" data-page="why">Home</a>
     <a href="index.html" class="nav-link" data-page="home">Why AmplifyU</a>
@@ -527,7 +528,7 @@
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-logo">
-    <img src="logo-mark.jpeg" alt="" class="footer-logo-img" aria-hidden="true">
+    <img src="logo-a-cream.png" alt="" class="footer-logo-img" aria-hidden="true">
     Amplify<span>U</span>
   </div>
   <div class="footer-socials">
