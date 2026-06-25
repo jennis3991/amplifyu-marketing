@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Built on Evidence: The Cognitive Science Behind Every AmplifyU Session | AmplifyU</title>
+<meta name="description" content="AmplifyU isn't opinion-based coaching. Every session is grounded in peer-reviewed cognitive science — from Miller's Law to Dual Coding Theory. Here's the evidence behind the programme.">
+<meta name="keywords" content="communication science, cognitive load theory, Miller's Law, Feynman Technique, dual coding theory, PIE model career, communication skills research, AmplifyU science">
+<link rel="canonical" href="https://amplifyu.app/the-science-behind-amplifyu.html">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --dark:#0f0d0a;
+  --cream:#edeae6;
+  --cream-mid:#e5e2de;
+  --cream-dark:#d2cecc;
+  --accent:#6b7c6e;
+  --accent-light:#8a9e8d;
+  --text-mid:#6e6b66;
+  --text-light:#9a9895;
+  --serif-display:'Cormorant Garamond', Georgia, serif;
+  --serif-body:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', system-ui, sans-serif;
+}
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--dark); font-family:var(--sans); font-size:16px; line-height:1.6; overflow-x:hidden; }
+
+/* ─── NAV ─── */
+#nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; background:rgba(15,13,10,0); transition:background 0.3s; }
+#nav.scrolled { background:rgba(15,13,10,0.95); backdrop-filter:blur(8px); }
+.nav-logo { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-img { height:64px; width:auto; display:block; filter:brightness(0) invert(1); }
+.nav-links { display:flex; align-items:center; gap:32px; }
+.nav-link { font-family:var(--sans); font-size:13px; font-weight:400; letter-spacing:0.02em; color:rgba(237,234,230,0.55); text-decoration:none; transition:color 0.2s; }
+.nav-link:hover, .nav-link.active { color:#fff; }
+.nav-right { display:flex; align-items:center; gap:16px; }
+.nav-cta { font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:10px 22px; border-radius:3px; transition:background 0.2s, color 0.2s; }
+.nav-cta--get { background:#6b7c6e; color:#fff; border-color:transparent; border-radius:24px; transition:background 0.2s; }
+.nav-cta--get:hover { background:#4e5e51; }
+.nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.nav-hamburger span { display:block; width:22px; height:1.5px; background:rgba(237,234,230,0.7); transition:0.2s; }
+
+/* ─── ARTICLE HERO ─── */
+.art-hero { background:var(--dark); padding:140px 48px 80px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.art-hero-inner { max-width:780px; margin:0 auto; }
+.art-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-bottom:40px; transition:color 0.2s; }
+.art-back:hover { color:#fff; }
+.art-back svg { transition:transform 0.2s; }
+.art-back:hover svg { transform:translateX(-3px); }
+.art-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:20px; }
+.art-h1 { font-family:var(--serif-body); font-size:clamp(32px,4.5vw,56px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.06; margin-bottom:24px; }
+.art-h1 em { font-style:italic; color:var(--accent-light); }
+.art-meta { display:flex; align-items:center; gap:24px; font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.35); letter-spacing:0.05em; }
+.art-meta-dot { width:3px; height:3px; border-radius:50%; background:rgba(237,234,230,0.2); }
+
+/* ─── ARTICLE BODY ─── */
+.art-body { max-width:780px; margin:0 auto; padding:72px 48px 100px; }
+.art-intro { font-family:var(--serif-body); font-size:clamp(18px,2vw,22px); font-weight:300; color:var(--text-mid); line-height:1.7; margin-bottom:56px; }
+.art-section { margin-bottom:64px; }
+.art-h2 { font-family:var(--serif-body); font-size:clamp(22px,2.8vw,32px); font-weight:500; color:var(--dark); letter-spacing:-0.8px; line-height:1.15; margin-bottom:8px; }
+.art-label { font-family:var(--sans); font-size:9px; letter-spacing:0.28em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:10px; }
+.art-p { font-family:var(--sans); font-size:15px; color:var(--text-mid); line-height:1.85; font-weight:300; margin-bottom:18px; }
+.art-p strong { color:var(--dark); font-weight:500; }
+.art-p:last-child { margin-bottom:0; }
+.art-rule { width:40px; height:2px; background:var(--accent); margin:48px 0; opacity:0.4; }
+
+/* ─── SCIENCE CARDS ─── */
+.sci-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(210,206,204,0.5); border:1px solid var(--cream-dark); border-radius:8px; overflow:hidden; margin:40px 0; }
+.sci-card { background:var(--cream); padding:32px 28px; }
+.sci-card-label { font-family:var(--sans); font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:10px; }
+.sci-card-title { font-family:var(--serif-body); font-size:20px; font-weight:500; color:var(--dark); margin-bottom:10px; line-height:1.2; }
+.sci-card-desc { font-family:var(--sans); font-size:12px; color:var(--text-mid); line-height:1.65; font-weight:300; }
+
+/* ─── IMAGE CARDS ─── */
+.img-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:40px 0; }
+.img-card { border-radius:6px; overflow:hidden; border:1px solid var(--cream-dark); box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+.img-card img { width:100%; height:160px; object-fit:cover; object-position:center 15%; display:block; }
+.img-card-body { padding:12px 14px 16px; background:#fff; }
+.img-card-label { font-family:var(--sans); font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); margin-bottom:4px; }
+.img-card-title { font-family:var(--serif-body); font-size:15px; font-weight:500; color:var(--dark); line-height:1.25; }
+
+/* ─── CALLOUT ─── */
+.art-callout { border-left:3px solid var(--accent); padding:24px 28px; background:var(--cream-mid); border-radius:0 6px 6px 0; margin:40px 0; }
+.art-callout p { font-family:var(--serif-body); font-size:clamp(18px,2vw,22px); font-style:italic; color:var(--dark); line-height:1.55; font-weight:400; }
+
+/* ─── CTA ─── */
+.art-cta { background:var(--dark); padding:80px 48px; text-align:center; }
+.art-cta-inner { max-width:600px; margin:0 auto; }
+.art-cta-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:20px; }
+.art-cta-h2 { font-family:var(--serif-body); font-size:clamp(28px,4vw,48px); font-weight:500; color:#fff; letter-spacing:-1.5px; line-height:1.08; margin-bottom:16px; }
+.art-cta-h2 em { font-style:italic; color:var(--accent-light); }
+.art-cta-sub { font-family:var(--sans); font-size:14px; color:rgba(237,234,230,0.45); line-height:1.7; font-weight:300; margin-bottom:36px; }
+.art-cta-btn { display:inline-flex; align-items:center; justify-content:center; background:var(--accent-light); color:#fff; font-family:var(--sans); font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:16px 36px; border-radius:3px; text-decoration:none; transition:background 0.2s; }
+.art-cta-btn:hover { background:var(--accent); }
+
+/* ─── FOOTER ─── */
+footer { display:flex; align-items:center; justify-content:space-between; padding:32px 48px; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.footer-logo { display:flex; align-items:center; gap:10px; font-family:var(--sans); font-size:13px; font-weight:600; color:var(--accent-light); letter-spacing:0.15em; text-transform:uppercase; white-space:nowrap; }
+.footer-logo img { width:36px; height:36px; object-fit:contain; display:block; filter:brightness(0) invert(1); }
+.footer-socials { display:flex; align-items:center; gap:20px; }
+.footer-social { color:var(--accent-light); filter:drop-shadow(0 0 5px rgba(138,158,141,0.5)); transition:color 0.2s, filter 0.2s; display:flex; align-items:center; text-decoration:none; }
+.footer-social:hover { color:#ffffff; filter:drop-shadow(0 0 12px rgba(138,158,141,0.9)); }
+
+/* ─── MOBILE ─── */
+@media (max-width:768px) {
+  #nav { padding:0 20px; height:64px; background:rgba(15,13,10,0.92); backdrop-filter:blur(8px); }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+  .art-hero { padding:100px 24px 60px; }
+  .art-body { padding:48px 24px 72px; }
+  .sci-grid { grid-template-columns:1fr; }
+  .img-cards { grid-template-columns:1fr; }
+  .art-cta { padding:60px 24px; }
+  footer { flex-direction:column; text-align:center; gap:16px; padding:24px; }
+  .nav-logo-img { height:52px; }
+}
+
+.fade-up { opacity:0; transform:translateY(18px); transition:opacity 0.55s ease, transform 0.55s ease; }
+.fade-up.visible { opacity:1; transform:none; }
+.delay-1 { transition-delay:0.1s; }
+.delay-2 { transition-delay:0.2s; }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-a-transparent.png" alt="AmplifyU" class="nav-logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="why-amplifyu.html" class="nav-link">Why AmplifyU</a>
+    <a href="programme.html" class="nav-link active">Programme</a>
+    <a href="coach.html" class="nav-link">AI Coach</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="story.html" class="nav-link">Story</a>
+  </div>
+  <div class="nav-right">
+    <a href="#" class="nav-cta nav-cta--get">Get AmplifyU</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="art-hero">
+  <div class="art-hero-inner">
+    <a href="programme.html" class="art-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 12L6 8l4-4"/></svg>
+      Back to Programme
+    </a>
+    <div class="art-eyebrow fade-up">Built on Evidence</div>
+    <h1 class="art-h1 fade-up delay-1">The cognitive science behind<br><em>every AmplifyU session</em></h1>
+    <div class="art-meta fade-up delay-2">
+      <span>AmplifyU</span>
+      <span class="art-meta-dot"></span>
+      <span>4 min read</span>
+      <span class="art-meta-dot"></span>
+      <span>Cognitive Science</span>
+    </div>
+  </div>
+</section>
+
+<article>
+  <div class="art-body">
+
+    <p class="art-intro fade-up">AmplifyU isn't opinion-based coaching. Every session is grounded in peer-reviewed research — from how the brain processes information, to the science of what makes a communicator memorable. Here is the evidence that shapes every module.</p>
+
+    <div class="art-callout fade-up">
+      <p>"Most communication training tells you what to do. The science tells you why it works — and why so much advice doesn't."</p>
+    </div>
+
+    <div class="art-rule fade-up"></div>
+
+    <div class="art-section fade-up">
+      <p class="art-label">Cognitive Science</p>
+      <h2 class="art-h2">The Feynman Technique</h2>
+      <p class="art-p">Richard Feynman won the Nobel Prize in Physics and could explain quantum mechanics to a 12-year-old. His principle: <strong>if you can't explain it simply, you don't understand it well enough.</strong></p>
+      <p class="art-p">This is the foundation of Day 1 — the Clarity session. AmplifyU trains you to strip ideas to their simplest form before adding any complexity back. The result is communication that lands with anyone, at any level, under any pressure.</p>
+    </div>
+
+    <div class="art-section fade-up">
+      <p class="art-label">Memory & Attention</p>
+      <h2 class="art-h2">Miller's Law</h2>
+      <p class="art-p">In 1956, psychologist George Miller discovered something fundamental about how humans think: <strong>working memory can only hold 7 (±2) chunks of information at once.</strong></p>
+      <p class="art-p">Every sentence you speak creates a memory load. Stack too many ideas and your listener loses the thread — not because they're not trying, but because their brain can't physically hold it. Every precision and editing session in AmplifyU is built around this reality. Say less. Land more.</p>
+    </div>
+
+    <div class="img-cards fade-up">
+      <div class="img-card">
+        <img src="prog-sim-2.jpg" alt="Miller's Law session" loading="lazy">
+        <div class="img-card-body">
+          <p class="img-card-label">Memory & Attention</p>
+          <p class="img-card-title">Miller's Law</p>
+        </div>
+      </div>
+      <div class="img-card">
+        <img src="prog-sim-3.jpg" alt="The Halo Effect session" loading="lazy">
+        <div class="img-card-body">
+          <p class="img-card-label">Personal Brand Science</p>
+          <p class="img-card-title">The Halo Effect</p>
+        </div>
+      </div>
+      <div class="img-card">
+        <img src="prog-sim-4.jpg" alt="The Feynman Technique session" loading="lazy">
+        <div class="img-card-body">
+          <p class="img-card-label">Cognitive Science</p>
+          <p class="img-card-title">The Feynman Technique</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="art-section fade-up">
+      <p class="art-label">Learning Theory</p>
+      <h2 class="art-h2">Cognitive Load Theory</h2>
+      <p class="art-p">When working memory is overloaded, comprehension collapses. <strong>The listener stops processing — not because they've lost interest, but because their brain has hit capacity.</strong></p>
+      <p class="art-p">AmplifyU teaches you to communicate in a way that reduces cognitive load in your audience: shorter sentences, cleaner structure, deliberate pauses that give the brain time to absorb. The result is ideas that land faster and stick longer.</p>
+    </div>
+
+    <div class="art-section fade-up">
+      <p class="art-label">Vocal Psychology</p>
+      <h2 class="art-h2">Prosody & Processing Fluency</h2>
+      <p class="art-p">Research into vocal delivery reveals something counterintuitive: <strong>easy to hear means easy to trust.</strong> When speech is fluent — well-paced, well-paused, with natural pitch variation — listeners rate the content as more credible, even when the words are identical.</p>
+      <p class="art-p">This is Processing Fluency: the brain associates ease of processing with truth and competence. AmplifyU's vocal sessions are built around this — training pace, pause, and pitch until they become unconscious tools rather than conscious performance.</p>
+    </div>
+
+    <div class="art-callout fade-up">
+      <p>"Easy to hear means easy to trust. The way you say something changes how much people believe it."</p>
+    </div>
+
+    <div class="art-section fade-up">
+      <p class="art-label">Narrative Science</p>
+      <h2 class="art-h2">Dual Coding Theory</h2>
+      <p class="art-p">Allan Paivio's research showed that information presented through both words and mental imagery is retained far more effectively than words alone. <strong>Stories activate both verbal and visual channels simultaneously. Facts alone activate only one.</strong></p>
+      <p class="art-p">This is the cognitive reason stories move people — and data rarely does on its own. AmplifyU's storytelling modules are designed around this: training professionals to translate data, ideas, and arguments into narratives that create mental images and stick.</p>
+    </div>
+
+    <div class="sci-grid fade-up">
+      <div class="sci-card">
+        <p class="sci-card-label">Cognitive Science</p>
+        <h3 class="sci-card-title">The Feynman Technique</h3>
+        <p class="sci-card-desc">If you can't explain it simply, you don't understand it well enough. The foundation of Day 1 — clarity as the ultimate form of intelligence.</p>
+      </div>
+      <div class="sci-card">
+        <p class="sci-card-label">Memory & Attention</p>
+        <h3 class="sci-card-title">Miller's Law</h3>
+        <p class="sci-card-desc">The human brain can hold 7 (±2) chunks of information at once. Every precision and editing session is built around this — say less, land more.</p>
+      </div>
+      <div class="sci-card">
+        <p class="sci-card-label">Learning Theory</p>
+        <h3 class="sci-card-title">Cognitive Load Theory</h3>
+        <p class="sci-card-desc">When working memory is overloaded, comprehension collapses. AmplifyU teaches you to reduce cognitive load in your listener — so your ideas land faster and stick longer.</p>
+      </div>
+      <div class="sci-card">
+        <p class="sci-card-label">Vocal Psychology</p>
+        <h3 class="sci-card-title">Prosody & Processing Fluency</h3>
+        <p class="sci-card-desc">Easy to hear means easy to trust. The science behind why pace, pause, and pitch change how people receive — and remember — what you say.</p>
+      </div>
+      <div class="sci-card">
+        <p class="sci-card-label">Narrative Science</p>
+        <h3 class="sci-card-title">Dual Coding Theory</h3>
+        <p class="sci-card-desc">Stories activate both verbal and visual channels simultaneously. Facts alone activate only one. The reason stories move people — and data alone rarely does.</p>
+      </div>
+      <div class="sci-card">
+        <p class="sci-card-label">Career Research</p>
+        <h3 class="sci-card-title">The PIE Model</h3>
+        <p class="sci-card-desc">Harvey Coleman's research shows performance accounts for just 10% of career advancement. Image and exposure — how you're seen and who sees you — account for the rest.</p>
+      </div>
+    </div>
+
+    <div class="art-section fade-up">
+      <p class="art-label">Career Research</p>
+      <h2 class="art-h2">The PIE Model</h2>
+      <p class="art-p">Harvey Coleman's landmark research at IBM revealed something most professionals never want to accept: <strong>performance accounts for only 10% of career advancement.</strong> Image — how you're perceived — accounts for 30%. Exposure — who sees you and how — accounts for 60%.</p>
+      <p class="art-p">AmplifyU doesn't just teach you to communicate better in the room. It teaches you to be seen differently — to shape your professional image and increase the quality of your exposure at every level of your organisation.</p>
+    </div>
+
+    <div class="art-rule fade-up"></div>
+
+    <p class="art-p fade-up" style="font-family:var(--serif-body);font-size:clamp(17px,1.8vw,20px);color:var(--text-mid);line-height:1.7;font-weight:300;">The science doesn't change what communication is. It changes how deliberately you can practise it — and how much faster you can improve when every session is built around how the brain actually works.</p>
+
+  </div>
+</article>
+
+<section class="art-cta">
+  <div class="art-cta-inner fade-up">
+    <p class="art-cta-eyebrow">AmplifyU Programme</p>
+    <h2 class="art-cta-h2">Science-backed.<br><em>Career-changing.</em></h2>
+    <p class="art-cta-sub">14 sessions. 15 minutes a day. Every module built on the research — and coached by AI until it becomes instinct.</p>
+    <a href="programme.html" class="art-cta-btn">See the Programme</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo-a-transparent.png" alt="" aria-hidden="true">
+    AMPLIFYU
+  </div>
+  <div class="footer-socials">
+    <a href="#" class="footer-social" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" class="footer-social" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="#" class="footer-social" aria-label="TikTok">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+  var navEl = document.getElementById('nav');
+  window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 40); });
+  document.getElementById('navHamburger').addEventListener('click', function() {
+    var isOpen = navEl.classList.toggle('nav-open');
+    this.setAttribute('aria-expanded', isOpen);
+  });
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold:0.06, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+  setTimeout(function() { document.querySelectorAll('.art-hero .fade-up').forEach(function(el) { el.classList.add('visible'); }); }, 80);
+</script>
+</body>
+</html>
