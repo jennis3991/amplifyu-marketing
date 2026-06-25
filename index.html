@@ -297,20 +297,20 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 /* ─── CTA ─── */
 .w-cta { background: var(--dark); padding: 60px 48px 120px; position:relative; overflow:hidden; }
 .w-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 40%, rgba(138,158,141,0.08) 0%, transparent 60%); pointer-events:none; }
-.w-cta-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; z-index:1; }
+.w-cta-inner { max-width:780px; margin:0 auto; text-align:center; position:relative; z-index:1; }
 .w-cta-eyebrow { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:24px; }
 .w-cta-h2 { font-family:var(--serif-body); font-size:clamp(32px,4.5vw,66px); font-weight:500; color:#ffffff; letter-spacing:-2px; line-height:1.04; margin-bottom:8px; }
 .w-cta-h2 em { font-style:italic; color:var(--accent-light); }
 .w-cta-rotate-wrap { display:inline-block; overflow:hidden; vertical-align:bottom; line-height:1.2em; height:2.6em; }
 .w-cta-rotate-text { display:inline-block; font-style:italic; color:var(--accent-light); transform:translateY(100%); transition:transform 0.7s cubic-bezier(0.16,1,0.3,1); }
 .w-cta-tagline { font-family:var(--serif-body); font-size:clamp(15px,1.8vw,22px); font-style:italic; color:rgba(237,234,230,0.3); margin-bottom:36px; letter-spacing:-0.3px; }
-.w-cta-pillars { display:flex; flex-direction:column; gap:10px; margin-bottom:36px; }
-.w-cta-pillar { display:flex; align-items:center; gap:14px; font-family:var(--sans); font-size:13px; letter-spacing:0.02em; color:rgba(237,234,230,0.45); }
-.w-cta-pillar::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--accent-light); flex-shrink:0; }
+.w-cta-pillars { display:flex; flex-direction:row; justify-content:center; flex-wrap:wrap; gap:8px 28px; margin-bottom:40px; }
+.w-cta-pillar { display:flex; align-items:center; gap:10px; font-family:var(--sans); font-size:13px; letter-spacing:0.02em; color:rgba(237,234,230,0.45); }
+.w-cta-pillar::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--accent-light); flex-shrink:0; }
 .w-cta-btn { display:inline-flex; align-items:center; justify-content:center; background:var(--accent-light); color:white; font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:16px 36px; border-radius:3px; text-decoration:none; transition:background 0.2s; border:none; cursor:pointer; }
 .w-cta-btn:hover { background:var(--accent); }
 .w-hero-cta { margin-top: 32px; display: inline-flex; }
-.w-cta-screens { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+.w-cta-screens { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:60px; max-width:520px; margin-left:auto; margin-right:auto; }
 .w-cta-scr { border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); box-shadow:0 12px 32px rgba(0,0,0,0.4); }
 .w-cta-scr img { width:100%; display:block; object-fit:cover; object-position:center top; }
 
@@ -468,7 +468,6 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-founder-body { gap:0; }
 
   .w-cta { padding: 56px 32px 100px; }
-  .w-cta-inner { grid-template-columns:1fr; gap:56px; }
   .w-cta-h2 { margin-bottom:16px; }
   .w-cta-tagline { margin-bottom:44px; }
   .w-cta-pillars { gap:16px; margin-bottom:44px; }
@@ -941,18 +940,16 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 <!-- ══ CTA ══ -->
 <section class="w-cta">
   <div class="w-cta-inner">
-    <div>
-      <div class="w-cta-eyebrow fade-up">Start Today</div>
-      <h2 class="w-cta-h2 fade-up delay-1">Great communication is strategic<br><span class="w-cta-rotate-wrap"><em class="w-cta-rotate-text">Present with impact</em></span></h2>
-      <p class="w-cta-tagline fade-up delay-1">14 sessions. 15 minutes a day. A different communicator.</p>
-      <div class="w-cta-pillars fade-up delay-2">
-        <div class="w-cta-pillar">Communicate with clarity and confidence</div>
-        <div class="w-cta-pillar">Lead with influence at every level</div>
-        <div class="w-cta-pillar">Build the career your skills deserve</div>
-      </div>
-      <a href="#" class="w-cta-btn fade-up delay-2">Start Your Programme</a>
+    <div class="w-cta-eyebrow fade-up">Start Today</div>
+    <h2 class="w-cta-h2 fade-up delay-1">Great communication is strategic<br><span class="w-cta-rotate-wrap"><em class="w-cta-rotate-text">Present with impact</em></span></h2>
+    <p class="w-cta-tagline fade-up delay-1">14 sessions. 15 minutes a day. A different communicator.</p>
+    <div class="w-cta-pillars fade-up delay-2">
+      <div class="w-cta-pillar">Communicate with clarity and confidence</div>
+      <div class="w-cta-pillar">Lead with influence at every level</div>
+      <div class="w-cta-pillar">Build the career your skills deserve</div>
     </div>
-    <div class="w-cta-screens fade-up delay-1">
+    <a href="#" class="w-cta-btn fade-up delay-2">Start Your Programme</a>
+    <div class="w-cta-screens fade-up delay-2">
       <div class="w-cta-scr"><img src="img_insight.jpeg" alt=""></div>
       <div class="w-cta-scr" style="margin-top:20px"><img src="img_toolkit2.jpeg" alt=""></div>
       <div class="w-cta-scr"><img src="img_review.jpeg" alt=""></div>
