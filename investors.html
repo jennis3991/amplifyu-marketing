@@ -154,6 +154,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 @media (max-width:1100px) {
   #nav { padding:0 20px; height:64px; background:rgba(15,13,10,0.92); backdrop-filter:blur(8px); }
   .nav-hamburger { display:flex; }
+  .nav-cta { display:none; }
   .nav-links {
     position:absolute; top:100%; left:0; right:0;
     display:flex; flex-direction:column; align-items:stretch; gap:0;
@@ -456,9 +457,16 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 <script>
   var navEl = document.getElementById('nav');
   window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 40); });
-  document.getElementById('navHamburger').addEventListener('click', function() {
+  var hamburger = document.getElementById('navHamburger');
+  hamburger.addEventListener('click', function() {
     var isOpen = navEl.classList.toggle('nav-open');
     this.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navEl.classList.remove('nav-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
   });
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
