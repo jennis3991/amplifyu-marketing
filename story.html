@@ -96,7 +96,7 @@
     min-height: 70vh;
     display: flex; flex-direction: column;
     align-items: flex-start; justify-content: center;
-    padding: 140px 48px 80px;
+    padding: 140px 48px 60px;
     position: relative;
     background: var(--dark);
     overflow: hidden;
@@ -172,7 +172,7 @@
 
   /* ─── STORY INTRO — THE CONTEXT ─── */
   .section-context {
-    padding: 120px 48px;
+    padding: 80px 48px;
     background: var(--cream);
     color: var(--text-dark);
     position: relative;
@@ -189,7 +189,7 @@
   .context-headline {
     font-family: var(--serif-display);
     font-size: clamp(38px, 4.5vw, 58px);
-    font-weight: 400; line-height: 1.1; color: var(--text-dark);
+    font-weight: 400; line-height: 1.05; color: var(--text-dark);
     margin-bottom: 28px;
   }
   .context-headline em { font-style: italic; color: var(--sage); }
@@ -220,7 +220,7 @@
 
   /* ─── PIXAR STORYBOARD ─── */
   .section-storyboard {
-    padding: 140px 48px;
+    padding: 100px 48px;
     background: var(--dark);
     position: relative;
     overflow: hidden;
@@ -272,8 +272,8 @@
     color: rgba(240,235,226,0.2); margin-bottom: 6px;
   }
   .beat-cue {
-    font-family: var(--serif-display); font-size: 17px; font-weight: 500;
-    color: rgba(240,235,226,0.5); line-height: 1.2;
+    font-family: var(--serif-display); font-size: 19px; font-weight: 500;
+    color: rgba(240,235,226,0.75); line-height: 1.2;
   }
   .beat-content-col {
     padding: 32px 0 32px 48px;
@@ -594,21 +594,28 @@
   @media (max-width: 900px) {
     nav { padding: 20px 24px; }
     .nav-links { gap: 16px; }
-    .story-hero { padding: 140px 24px 100px; }
-    .context-inner { grid-template-columns: 1fr; gap: 56px; }
+    .story-hero { padding: 130px 24px 56px; min-height: unset; }
+    .hero-sub { font-size: 17px; color: rgba(237,234,230,0.7); line-height: 1.65; }
+    .section-context { padding: 56px 24px; }
+    .context-inner { grid-template-columns: 1fr; gap: 40px; }
+    .section-storyboard { padding: 64px 24px; }
+    .storyboard-header { margin-bottom: 48px; }
     .storyboard-beats .beat { grid-template-columns: 140px 1fr; }
     .beat-content-col { padding-left: 24px; }
+    .section-pullquote { padding: 64px 24px; }
     .skills-grid { grid-template-columns: 1fr; }
     .skill-card--dark { grid-column: span 1; grid-template-columns: 1fr; gap: 32px; }
-    .micro-inner { grid-template-columns: 1fr; gap: 56px; }
+    .section-skills { padding: 64px 24px; }
+    .micro-inner { grid-template-columns: 1fr; gap: 40px; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .pcb-inner { flex-direction: column; align-items: flex-start; }
     footer { flex-direction: column; text-align: center; }
     section { padding-left: 24px !important; padding-right: 24px !important; }
-    .beat { grid-template-columns: 120px 1fr; }
-    .beat-label-col { padding: 24px 20px 24px 0; }
-    .beat-content-col { padding: 24px 0 24px 20px; }
+    .beat { grid-template-columns: 110px 1fr; }
+    .beat-label-col { padding: 20px 16px 20px 0; }
+    .beat-content-col { padding: 20px 0 20px 16px; }
     .beat-text { font-size: 17px; }
+    .beat-cue { font-size: 17px; }
   }
 
   /* ── MOBILE NAV ── */
