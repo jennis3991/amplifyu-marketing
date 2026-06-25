@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investor Overview 2026 — AmplifyU Technologies</title>
+<meta name="description" content="AmplifyU Technologies — investor overview. The skills that shape careers are finally teachable. AI-powered communication coaching at scale.">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --dark:#0f0d0a;
+  --cream:#edeae6;
+  --cream-mid:#e5e2de;
+  --cream-dark:#d2cecc;
+  --accent:#6b7c6e;
+  --accent-light:#8a9e8d;
+  --text-mid:#6e6b66;
+  --text-light:#9a9895;
+  --serif-body:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', system-ui, sans-serif;
+}
+html { scroll-behavior:smooth; }
+body { background:var(--dark); color:var(--cream); font-family:var(--sans); font-size:16px; line-height:1.7; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+
+/* ─── NAV ─── */
+#nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; background:rgba(15,13,10,0); transition:background 0.3s; }
+#nav.scrolled { background:rgba(15,13,10,0.95); backdrop-filter:blur(8px); }
+.nav-logo { display:flex; align-items:center; gap:16px; text-decoration:none; }
+.nav-logo-img { height:64px; width:auto; display:block; filter:brightness(0) invert(1); }
+.nav-logo-label { font-family:var(--sans); font-size:10px; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:rgba(237,234,230,0.35); border-left:1px solid rgba(138,158,141,0.3); padding-left:16px; }
+.nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+.nav-links a { font-family:var(--sans); font-size:13px; font-weight:400; letter-spacing:0.02em; color:rgba(237,234,230,0.55); text-decoration:none; transition:color 0.2s; }
+.nav-links a:hover { color:var(--cream); }
+.nav-right { display:flex; align-items:center; gap:16px; }
+.nav-cta { font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:10px 22px; background:var(--accent-light); color:#fff; border-radius:24px; transition:background 0.2s; }
+.nav-cta:hover { background:var(--accent); }
+.nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.nav-hamburger span { display:block; width:22px; height:1.5px; background:rgba(237,234,230,0.7); }
+
+/* ─── LAYOUT ─── */
+.container { max-width:900px; margin:0 auto; padding:0 48px; }
+.container-wide { max-width:1100px; margin:0 auto; padding:0 48px; }
+
+/* ─── EYEBROW ─── */
+.eyebrow { font-family:var(--sans); font-size:10px; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:var(--accent-light); margin-bottom:20px; display:flex; align-items:center; gap:14px; }
+.eyebrow::after { content:''; display:block; width:32px; height:1px; background:var(--accent-light); opacity:0.5; }
+.eyebrow--dark { color:var(--accent); }
+.eyebrow--dark::after { background:var(--accent); }
+
+/* ─── HERO ─── */
+#hero { min-height:100vh; display:flex; align-items:center; padding-top:72px; background:var(--dark); border-bottom:1px solid rgba(255,255,255,0.06); position:relative; overflow:hidden; }
+#hero::before { content:''; position:absolute; top:-20%; right:-10%; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(138,158,141,0.06) 0%, transparent 70%); pointer-events:none; }
+.hero-content { position:relative; z-index:1; padding:80px 0; }
+.hero-super { font-family:var(--sans); font-size:10px; font-weight:500; letter-spacing:0.3em; text-transform:uppercase; color:var(--accent-light); margin-bottom:40px; }
+.hero-h1 { font-family:var(--serif-body); font-size:clamp(3rem,7vw,5.5rem); font-weight:300; line-height:1.06; letter-spacing:-2px; color:rgba(247,243,236,0.95); margin-bottom:32px; }
+.hero-h1 em { font-style:italic; color:var(--accent-light); }
+.hero-sub { font-family:var(--sans); font-size:15px; font-weight:300; color:rgba(237,234,230,0.5); max-width:520px; line-height:1.8; margin-bottom:56px; }
+.hero-stats { display:flex; gap:48px; flex-wrap:wrap; }
+.hero-stat-value { font-family:var(--serif-body); font-size:2.6rem; font-weight:400; color:var(--cream); display:block; line-height:1; margin-bottom:6px; letter-spacing:-1px; }
+.hero-stat-label { font-family:var(--sans); font-size:10px; font-weight:400; letter-spacing:0.1em; color:rgba(237,234,230,0.35); text-transform:uppercase; }
+
+/* ─── SECTION BASE ─── */
+.inv-section { padding:100px 0; }
+.section-h2 { font-family:var(--serif-body); font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.1; letter-spacing:-1px; color:rgba(247,243,236,0.95); margin-bottom:16px; }
+.section-h2 em { font-style:italic; color:var(--accent-light); }
+.section-body { font-family:var(--sans); font-size:14px; font-weight:300; color:rgba(237,234,230,0.5); line-height:1.85; max-width:620px; margin-top:12px; }
+
+/* ─── PROBLEM ─── */
+#problem { background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.problem-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; margin-top:56px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.06); }
+.problem-cell { padding:40px 36px; background:var(--dark); }
+.problem-num { font-family:var(--serif-body); font-size:3rem; font-weight:300; color:var(--accent-light); line-height:1; margin-bottom:10px; letter-spacing:-1px; }
+.problem-label { font-family:var(--sans); font-size:10px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(237,234,230,0.7); margin-bottom:10px; }
+.problem-desc { font-family:var(--sans); font-size:13px; font-weight:300; color:rgba(237,234,230,0.4); line-height:1.7; }
+
+/* ─── WHY NOW ─── */
+#why-now { background:#0c0a08; border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06); }
+.trends-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:56px; background:rgba(138,158,141,0.12); border:1px solid rgba(138,158,141,0.12); }
+.trend-card { padding:36px 32px; background:#0c0a08; }
+.trend-number { font-family:var(--serif-body); font-size:11px; font-weight:400; color:var(--accent-light); letter-spacing:0.18em; margin-bottom:20px; display:block; }
+.trend-title { font-family:var(--serif-body); font-size:19px; font-weight:500; color:rgba(247,243,236,0.9); margin-bottom:12px; line-height:1.25; }
+.trend-body { font-family:var(--sans); font-size:13px; font-weight:300; color:rgba(237,234,230,0.45); line-height:1.75; }
+
+/* ─── SOLUTION ─── */
+#solution { background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.solution-statement { font-family:var(--serif-body); font-size:clamp(1.4rem,3vw,2.2rem); font-weight:300; line-height:1.4; color:rgba(247,243,236,0.9); border-left:2px solid var(--accent); padding-left:32px; margin:48px 0; font-style:italic; letter-spacing:-0.5px; }
+.solution-pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:40px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.06); }
+.pillar { padding:32px 28px; background:var(--dark); }
+.pillar-icon { font-size:20px; margin-bottom:14px; display:block; opacity:0.5; }
+.pillar-title { font-family:var(--sans); font-size:10px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:rgba(237,234,230,0.7); margin-bottom:8px; }
+.pillar-desc { font-family:var(--sans); font-size:12px; font-weight:300; color:rgba(237,234,230,0.4); line-height:1.65; }
+.solution-link { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-top:40px; border-bottom:1px solid rgba(138,158,141,0.3); padding-bottom:4px; transition:color 0.2s, border-color 0.2s; }
+.solution-link:hover { color:var(--cream); border-color:var(--cream); }
+
+/* ─── TRACTION ─── */
+#traction { background:var(--cream); }
+.traction-numbers { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--cream-dark); border:1px solid var(--cream-dark); margin-top:56px; }
+.traction-cell { background:var(--cream); padding:40px 28px; text-align:center; }
+.traction-value { font-family:var(--serif-body); font-size:3.2rem; font-weight:400; color:var(--dark); display:block; line-height:1; margin-bottom:10px; letter-spacing:-1px; }
+.traction-desc { font-family:var(--sans); font-size:10px; font-weight:400; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; line-height:1.6; }
+.traction-context { margin-top:32px; font-family:var(--sans); font-size:13px; font-weight:300; color:var(--text-mid); line-height:1.8; max-width:580px; }
+
+/* ─── ROADMAP ─── */
+#roadmap { background:#0c0a08; border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06); }
+.roadmap-track { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:56px; position:relative; }
+.roadmap-track::before { content:''; position:absolute; top:5px; left:0; right:0; height:1px; background:rgba(138,158,141,0.2); }
+.roadmap-phase { padding:0 32px 0 0; position:relative; }
+.roadmap-dot { width:10px; height:10px; border-radius:50%; background:var(--accent); margin-bottom:24px; position:relative; z-index:1; flex-shrink:0; }
+.roadmap-dot.active { background:var(--cream); box-shadow:0 0 0 3px rgba(237,234,230,0.15); }
+.roadmap-when { font-family:var(--sans); font-size:10px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-light); margin-bottom:8px; }
+.roadmap-phase-title { font-family:var(--serif-body); font-size:18px; font-weight:500; color:rgba(247,243,236,0.9); margin-bottom:16px; line-height:1.25; }
+.roadmap-features { list-style:none; }
+.roadmap-features li { font-family:var(--sans); font-size:12px; font-weight:300; color:rgba(237,234,230,0.4); line-height:1.65; padding:2px 0 2px 16px; position:relative; }
+.roadmap-features li::before { content:'—'; position:absolute; left:0; color:var(--accent-light); font-size:10px; top:4px; opacity:0.6; }
+
+/* ─── FOUNDER ─── */
+#founder { background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.founder-layout { display:grid; grid-template-columns:220px 1fr; gap:64px; align-items:start; margin-top:48px; }
+.founder-img-wrap { position:relative; }
+.founder-img-wrap img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top; display:block; filter:grayscale(15%); }
+.founder-img-wrap::after { content:''; position:absolute; inset:0; border:1px solid rgba(138,158,141,0.2); pointer-events:none; }
+.founder-name { font-family:var(--serif-body); font-size:2.4rem; font-weight:300; color:rgba(247,243,236,0.95); margin-bottom:6px; letter-spacing:-0.5px; }
+.founder-role { font-family:var(--sans); font-size:10px; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent-light); margin-bottom:32px; }
+.founder-bio { font-family:var(--sans); font-size:14px; font-weight:300; color:rgba(237,234,230,0.55); line-height:1.85; margin-bottom:18px; }
+.founder-credentials { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
+.credential { font-family:var(--sans); font-size:10px; font-weight:400; letter-spacing:0.1em; color:var(--accent-light); border:1px solid rgba(138,158,141,0.25); padding:6px 14px; }
+
+/* ─── CONTACT ─── */
+#contact { background:var(--cream); }
+.contact-headline { font-family:var(--serif-body); font-size:clamp(2rem,4vw,3rem); font-weight:400; line-height:1.1; letter-spacing:-1px; color:var(--dark); margin-bottom:16px; }
+.contact-sub { font-family:var(--sans); font-size:14px; font-weight:300; color:var(--text-mid); line-height:1.8; max-width:520px; margin-bottom:40px; }
+.contact-actions { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:28px; }
+.btn-primary { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#fff; background:var(--dark); padding:16px 32px; text-decoration:none; border-radius:3px; transition:background 0.2s; }
+.btn-primary:hover { background:var(--accent); }
+.btn-secondary { display:inline-block; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--dark); background:transparent; border:1px solid rgba(15,13,10,0.25); padding:16px 32px; text-decoration:none; border-radius:3px; transition:border-color 0.2s; }
+.btn-secondary:hover { border-color:var(--dark); }
+.contact-email { display:inline-block; font-family:var(--sans); font-size:13px; font-weight:400; color:var(--text-mid); text-decoration:none; margin-bottom:8px; transition:color 0.2s; }
+.contact-email:hover { color:var(--dark); }
+.contact-note { font-family:var(--sans); font-size:11px; font-weight:300; color:var(--text-light); letter-spacing:0.04em; margin-bottom:40px; }
+
+/* ─── FOOTER ─── */
+footer { display:flex; align-items:center; justify-content:space-between; padding:32px 48px; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.footer-logo { display:flex; align-items:center; gap:10px; font-family:var(--sans); font-size:13px; font-weight:600; color:var(--accent-light); letter-spacing:0.15em; text-transform:uppercase; }
+.footer-logo img { width:36px; height:36px; object-fit:contain; display:block; filter:brightness(0) invert(1); }
+.footer-legal { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.2); letter-spacing:0.05em; }
+.footer-legal a { color:rgba(237,234,230,0.35); text-decoration:none; }
+
+/* ─── MOBILE ─── */
+@media (max-width:768px) {
+  #nav { padding:0 20px; height:64px; background:rgba(15,13,10,0.92); backdrop-filter:blur(8px); }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+  .nav-logo-label { display:none; }
+  .nav-logo-img { height:52px; }
+  .container, .container-wide { padding:0 24px; }
+  .inv-section { padding:72px 0; }
+  .hero-content { padding:48px 0; }
+  .problem-grid { grid-template-columns:1fr; }
+  .trends-grid { grid-template-columns:1fr; gap:1px; }
+  .solution-pillars { grid-template-columns:1fr; gap:1px; }
+  .traction-numbers { grid-template-columns:1fr 1fr; }
+  .roadmap-track { grid-template-columns:1fr 1fr; gap:48px; }
+  .roadmap-track::before { display:none; }
+  .founder-layout { grid-template-columns:1fr; gap:32px; }
+  .founder-img-wrap { max-width:200px; }
+  .hero-stats { gap:28px; }
+  footer { flex-direction:column; gap:16px; padding:24px; text-align:center; }
+}
+
+/* ─── FADE ANIMATION ─── */
+.fade-up { opacity:0; transform:translateY(20px); transition:opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.visible { opacity:1; transform:none; }
+.delay-1 { transition-delay:0.1s; }
+.delay-2 { transition-delay:0.2s; }
+.delay-3 { transition-delay:0.3s; }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-a-transparent.png" alt="AmplifyU" class="nav-logo-img">
+    <span class="nav-logo-label">Investor Relations</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#founder">Founder</a></li>
+    <li><a href="#problem">Market</a></li>
+    <li><a href="#solution">Product</a></li>
+    <li><a href="#traction">Traction</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta">Request Deck</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-super fade-up">AmplifyU Technologies Ltd · Investor Overview 2026</p>
+      <h1 class="hero-h1 fade-up delay-1">The skills that<br>shape careers are<br><em>finally teachable</em></h1>
+      <p class="hero-sub fade-up delay-2">A £1.4bn learning market. A generation of professionals who know communication determines their career — and no structured, scalable way to learn it. Until now.</p>
+      <div class="hero-stats fade-up delay-3">
+        <div>
+          <span class="hero-stat-value">£1.4bn</span>
+          <span class="hero-stat-label">UK L&amp;D market</span>
+        </div>
+        <div>
+          <span class="hero-stat-value">85%</span>
+          <span class="hero-stat-label">Jobs requiring soft skills</span>
+        </div>
+        <div>
+          <span class="hero-stat-value">3×</span>
+          <span class="hero-stat-label">Growth in AI coaching</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOUNDER ══ -->
+<section id="founder" class="inv-section">
+  <div class="container">
+    <div class="eyebrow fade-up">The Founder</div>
+    <div class="founder-layout">
+      <div class="founder-img-wrap fade-up">
+        <img src="jenni.png" alt="Jenni Singh, Founder & CEO of AmplifyU">
+      </div>
+      <div>
+        <h2 class="founder-name fade-up">Jenni Singh</h2>
+        <p class="founder-role fade-up delay-1">Founder &amp; CEO · AmplifyU Technologies Ltd</p>
+        <p class="founder-bio fade-up delay-1">I spent years in digital transformation and leadership environments, helping organisations navigate change, build teams, and develop people. One pattern kept repeating: the professionals who advanced fastest weren't always the most technically capable. They were the ones who could communicate with clarity, influence decisions, and make their value visible.</p>
+        <p class="founder-bio fade-up delay-2">When I returned from maternity leave with two young children and a career that mattered deeply to me, I realised that communication wasn't just another skill — it was the multiplier behind every other skill I had. I built AmplifyU because the tools I needed didn't exist.</p>
+        <p class="founder-bio fade-up delay-2">AmplifyU is registered at Companies House as AmplifyU Technologies Ltd. UK IPO trademark protection is in progress under Class 41.</p>
+        <div class="founder-credentials fade-up delay-3">
+          <span class="credential">Digital Transformation</span>
+          <span class="credential">Leadership Development</span>
+          <span class="credential">Product Founder</span>
+          <span class="credential">AI Coaching</span>
+          <span class="credential">Shell</span>
+          <span class="credential">Companies House Registered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROBLEM ══ -->
+<section id="problem" class="inv-section">
+  <div class="container">
+    <div class="eyebrow fade-up">The Problem</div>
+    <h2 class="section-h2 fade-up delay-1">A multi-billion gap<br>hiding in plain sight</h2>
+    <p class="section-body fade-up delay-1">Communication is the single most cited factor in promotion decisions, leadership potential, and career trajectory. Yet no structured, accessible, AI-powered solution exists for the professional who needs it most — the one already in the room, trying to be heard.</p>
+    <div class="problem-grid fade-up delay-2">
+      <div class="problem-cell">
+        <div class="problem-num">£300–600</div>
+        <div class="problem-label">Per hour</div>
+        <div class="problem-desc">The cost of executive coaching — the only structured route to these skills. Available to fewer than 1% of professionals.</div>
+      </div>
+      <div class="problem-cell">
+        <div class="problem-num">85%</div>
+        <div class="problem-label">Of hiring managers say</div>
+        <div class="problem-desc">Communication skills determine whether a technically strong candidate gets promoted — yet no employer consistently teaches them.</div>
+      </div>
+      <div class="problem-cell">
+        <div class="problem-num">1 day</div>
+        <div class="problem-label">Retention window</div>
+        <div class="problem-desc">Corporate training workshops are forgotten within 24 hours. High cost, low retention, no practice mechanism, no personalisation.</div>
+      </div>
+      <div class="problem-cell">
+        <div class="problem-num">0</div>
+        <div class="problem-label">Structured alternatives</div>
+        <div class="problem-desc">Books are passive. YouTube is generic. Apps like Duolingo proved the model works — no one has built it for professional communication.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY NOW ══ -->
+<section id="why-now" class="inv-section">
+  <div class="container">
+    <div class="eyebrow fade-up">Why Now</div>
+    <h2 class="section-h2 fade-up delay-1">Three forces converging<br>at exactly this moment</h2>
+    <div class="trends-grid fade-up delay-2">
+      <div class="trend-card">
+        <span class="trend-number">01</span>
+        <div class="trend-title">AI makes coaching scalable</div>
+        <div class="trend-body">What once required a £500/hr coach can now be delivered at scale, personalised in real time, and available 24/7. The infrastructure is ready.</div>
+      </div>
+      <div class="trend-card">
+        <span class="trend-number">02</span>
+        <div class="trend-title">The visibility gap is widening</div>
+        <div class="trend-body">Hybrid and remote work have made communication the single biggest differentiator between professionals. Those who can influence at a distance advance. Those who can't plateau.</div>
+      </div>
+      <div class="trend-card">
+        <span class="trend-number">03</span>
+        <div class="trend-title">Professionals are investing in themselves</div>
+        <div class="trend-body">The personal development market is growing fast. Under-40 professionals expect digital-first, on-demand coaching — and are already spending on fragmented alternatives.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOLUTION ══ -->
+<section id="solution" class="inv-section">
+  <div class="container">
+    <div class="eyebrow fade-up">The Solution</div>
+    <h2 class="section-h2 fade-up delay-1">AmplifyU</h2>
+    <blockquote class="solution-statement fade-up delay-1">An AI-powered coaching platform that teaches communication, influence and leadership in 14 structured sessions — personalised to role, adaptive to the learner, and accessible to every professional.</blockquote>
+    <div class="solution-pillars fade-up delay-2">
+      <div class="pillar">
+        <span class="pillar-icon">♟</span>
+        <div class="pillar-title">Communicate</div>
+        <div class="pillar-desc">Clarity, storytelling, and executive presence — taught through theory, examples, and AI-coached practice.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">♛</span>
+        <div class="pillar-title">Lead</div>
+        <div class="pillar-desc">Influence, personal brand, and difficult conversations — the skills that define how far a career goes.</div>
+      </div>
+      <div class="pillar">
+        <span class="pillar-icon">♝</span>
+        <div class="pillar-title">Thrive</div>
+        <div class="pillar-desc">Composure, confidence, and the mindset to sustain high performance without burning out.</div>
+      </div>
+    </div>
+    <a href="index.html" class="solution-link fade-up delay-2">Explore the platform →</a>
+  </div>
+</section>
+
+<!-- ══ TRACTION ══ -->
+<section id="traction" class="inv-section">
+  <div class="container">
+    <div class="eyebrow eyebrow--dark fade-up">Traction</div>
+    <h2 class="section-h2 fade-up delay-1" style="color:var(--dark);">Early results that<br><em style="color:var(--accent);">speak clearly</em></h2>
+    <div class="traction-numbers fade-up delay-2">
+      <div class="traction-cell">
+        <span class="traction-value">94%</span>
+        <span class="traction-desc">Greater confidence<br>in high-stakes moments</span>
+      </div>
+      <div class="traction-cell">
+        <span class="traction-value">91%</span>
+        <span class="traction-desc">Communicate more clearly<br>under pressure</span>
+      </div>
+      <div class="traction-cell">
+        <span class="traction-value">89%</span>
+        <span class="traction-desc">More visible and<br>recognised at work</span>
+      </div>
+      <div class="traction-cell">
+        <span class="traction-value">4.9★</span>
+        <span class="traction-desc">Average programme<br>rating</span>
+      </div>
+    </div>
+    <p class="traction-context fade-up delay-2">Early programme cohort data. Users report measurable shifts in how they show up, how they're perceived, and how they perform — across seniority levels from individual contributor to senior leader.</p>
+  </div>
+</section>
+
+<!-- ══ ROADMAP ══ -->
+<section id="roadmap" class="inv-section">
+  <div class="container-wide">
+    <div class="container" style="padding:0;">
+      <div class="eyebrow fade-up">Roadmap</div>
+      <h2 class="section-h2 fade-up delay-1">From communication coach<br>to career growth platform</h2>
+      <p class="section-body fade-up delay-1">The 14-day programme is the entry point, not the destination. Every phase expands the addressable market and deepens the product moat.</p>
+    </div>
+    <div class="roadmap-track fade-up delay-2">
+      <div class="roadmap-phase">
+        <div class="roadmap-dot active"></div>
+        <div class="roadmap-when">Now · 2026</div>
+        <div class="roadmap-phase-title">Communication Coach</div>
+        <ul class="roadmap-features">
+          <li>14-day programme</li>
+          <li>AI coaching &amp; feedback</li>
+          <li>Role-personalised content</li>
+          <li>Toolkit &amp; practice tools</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-when">2027</div>
+        <div class="roadmap-phase-title">Career Growth Platform</div>
+        <ul class="roadmap-features">
+          <li>Meeting coaching</li>
+          <li>Presentation preparation</li>
+          <li>Leadership pathways</li>
+          <li>Industry-specific tracks</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-when">2028</div>
+        <div class="roadmap-phase-title">Enterprise Learning</div>
+        <ul class="roadmap-features">
+          <li>Team-level analytics</li>
+          <li>Manager dashboards</li>
+          <li>B2B deployment</li>
+          <li>L&amp;D integration</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase">
+        <div class="roadmap-dot"></div>
+        <div class="roadmap-when">Future</div>
+        <div class="roadmap-phase-title">Career Intelligence</div>
+        <ul class="roadmap-features">
+          <li>Live meeting analysis</li>
+          <li>Career progression AI</li>
+          <li>Real-time coaching layer</li>
+          <li>Global expansion</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="inv-section">
+  <div class="container">
+    <div class="eyebrow eyebrow--dark fade-up">Get in Touch</div>
+    <h2 class="contact-headline fade-up delay-1">Let's talk about<br>the opportunity</h2>
+    <p class="contact-sub fade-up delay-1">If you're an investor, accelerator, or strategic partner interested in the future of professional development, we'd love to hear from you. Request the full investor deck or schedule a conversation directly.</p>
+    <div class="contact-actions fade-up delay-2">
+      <a href="mailto:littlemissjenni@hotmail.com?subject=Investor%20Enquiry%20%E2%80%94%20AmplifyU" class="btn-primary">Request investor deck</a>
+      <a href="mailto:littlemissjenni@hotmail.com?subject=Schedule%20a%20conversation%20%E2%80%94%20AmplifyU" class="btn-secondary">Schedule a conversation</a>
+    </div>
+    <p class="contact-note fade-up delay-2">All enquiries are responded to within 48 hours.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo-a-transparent.png" alt="" aria-hidden="true">
+    AMPLIFYU
+  </div>
+  <p class="footer-legal">© 2026 AmplifyU Technologies Ltd · Registered in England &amp; Wales · <a href="index.html">amplifyu.app</a></p>
+</footer>
+
+<script>
+  var navEl = document.getElementById('nav');
+  window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 40); });
+  document.getElementById('navHamburger').addEventListener('click', function() {
+    var isOpen = navEl.classList.toggle('nav-open');
+    this.setAttribute('aria-expanded', isOpen);
+  });
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+  setTimeout(function() { document.querySelectorAll('#hero .fade-up').forEach(function(el) { el.classList.add('visible'); }); }, 80);
+</script>
+</body>
+</html>
