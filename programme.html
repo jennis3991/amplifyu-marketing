@@ -1241,117 +1241,151 @@
 
   /* ─── PROGRAMME ─── */
   .section-programme {
-    padding: 80px 48px;
+    padding: 0 8% 120px;
     background: var(--dark);
+    border-top: 1px solid rgba(240,235,226,0.06);
   }
   .programme-inner {
     max-width: 1200px;
     margin: 0 auto;
   }
-  .programme-weeks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-  @media (max-width: 900px) {
-    .programme-weeks { grid-template-columns: 1fr; }
-  }
   .programme-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: end;
+    padding-top: 100px;
     margin-bottom: 80px;
+    max-width: 780px;
   }
   .programme-header h2 {
     font-family: var(--serif-display);
-    font-size: clamp(38px, 4.5vw, 56px);
+    font-size: clamp(38px, 4.5vw, 60px);
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.05;
     color: var(--cream);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
   }
   .programme-header p {
     font-family: var(--serif-body);
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 300;
-    color: rgba(240,235,226,0.5);
+    color: rgba(240,235,226,0.45);
     line-height: 1.7;
+    max-width: 560px;
   }
+  .programme-weeks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: start;
+    border-top: 1px solid rgba(240,235,226,0.08);
+  }
+  .programme-week-col {
+    padding: 56px 56px 56px 0;
+    position: relative;
+  }
+  .programme-week-col:first-child {
+    border-right: 1px solid rgba(240,235,226,0.08);
+    padding-right: 72px;
+  }
+  .programme-week-col:last-child {
+    padding-left: 72px;
+    padding-right: 0;
+  }
+  .week-num {
+    font-family: var(--serif-display);
+    font-size: 120px;
+    font-weight: 400;
+    color: rgba(240,235,226,0.04);
+    line-height: 1;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    pointer-events: none;
+    letter-spacing: -0.04em;
+  }
+  .programme-week-col:last-child .week-num { right: 0; }
   .week-label {
     font-family: var(--sans);
-    font-size: 10px;
-    letter-spacing: 0.2em;
+    font-size: 9px;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .week-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: rgba(107,124,110,0.2);
+    margin-bottom: 16px;
   }
   .week-title {
     font-family: var(--serif-display);
-    font-size: 28px;
+    font-size: clamp(26px, 2.5vw, 36px);
     font-weight: 400;
+    font-style: italic;
     color: var(--cream);
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    line-height: 1.15;
   }
   .week-subtitle {
     font-family: var(--serif-body);
-    font-size: 16px;
-    font-style: italic;
-    color: rgba(240,235,226,0.35);
-    margin-bottom: 32px;
+    font-size: 15px;
+    color: rgba(240,235,226,0.3);
+    margin-bottom: 40px;
+    line-height: 1.5;
   }
   .sessions-list {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin-bottom: 0;
   }
   .session-row {
     display: grid;
-    grid-template-columns: 56px 1fr auto;
+    grid-template-columns: 44px 1fr auto;
     align-items: center;
-    gap: 24px;
-    padding: 14px 0;
+    gap: 20px;
+    padding: 18px 0 18px 12px;
     border-bottom: 1px solid rgba(240,235,226,0.06);
-    transition: background 0.15s;
+    border-left: 2px solid transparent;
+    margin-left: -14px;
+    transition: border-color 0.2s, padding-left 0.2s;
+  }
+  .session-row:hover {
+    border-left-color: var(--accent);
+    padding-left: 18px;
   }
   .session-num {
     font-family: var(--serif-display);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
-    color: rgba(240,235,226,0.15);
+    color: rgba(240,235,226,0.18);
     text-align: center;
+    transition: color 0.2s;
   }
+  .session-row:hover .session-num { color: rgba(240,235,226,0.35); }
   .session-info {}
   .session-cat {
     font-family: var(--sans);
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    font-size: 8px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent-light);
-    margin-bottom: 4px;
+    margin-bottom: 3px;
+    opacity: 0.7;
   }
   .session-name {
     font-family: var(--serif-body);
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 400;
     color: var(--cream);
+    transition: color 0.2s;
   }
+  .session-row:hover .session-name { color: #fff; }
   .session-arrow {
-    font-size: 14px;
-    color: rgba(240,235,226,0.15);
+    font-size: 13px;
+    color: rgba(240,235,226,0.12);
     transition: color 0.2s, transform 0.2s;
+    font-family: var(--sans);
   }
-  .session-row:hover .session-arrow { color: var(--accent); transform: translateX(4px); }
+  .session-row:hover .session-arrow { color: var(--accent); transform: translateX(5px); }
+  @media (max-width: 900px) {
+    .programme-weeks { grid-template-columns: 1fr; border-top: none; }
+    .programme-week-col { padding: 40px 0 !important; border-right: none !important; border-top: 1px solid rgba(240,235,226,0.08); }
+    .week-num { font-size: 80px; }
+    .session-row { margin-left: -10px; padding-left: 10px; }
+  }
 
   /* ─── MODULE SPOTLIGHTS ─── */
   .section-modules {
@@ -1998,7 +2032,6 @@
     .hero { padding: 120px 24px 80px; }
     .chess-header,
     .pain-inner,
-    .programme-header,
     .module-spotlight,
     .module-spotlight.reverse { grid-template-columns: 1fr; gap: 48px; direction: ltr; }
     .chess-pieces { grid-template-columns: repeat(2, 1fr); }
@@ -2360,6 +2393,52 @@
   </div>
 </div><!-- HOW IT WORKS -->
 
+<!-- PROGRAMME -->
+<section class="section-programme">
+  <div class="programme-inner">
+
+    <div class="programme-header fade-up">
+      <h2>14 sessions. Two weeks that change how you're heard.</h2>
+      <p>Each session ~15 minutes · Insight, science, examples, practice, AI simulation, review · Persona-tailored from day one.</p>
+    </div>
+
+    <div class="programme-weeks">
+      <div class="programme-week-col fade-up">
+        <div class="week-num" aria-hidden="true">01</div>
+        <div class="week-label">Week One</div>
+        <div class="week-title">Voice, Clarity &amp; Structure</div>
+        <div class="week-subtitle">The foundations of commanding communication.</div>
+        <div class="sessions-list">
+          <div class="session-row"><div class="session-num">1</div><div class="session-info"><div class="session-cat">Clarity</div><div class="session-name">Speak Clearly</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">2</div><div class="session-info"><div class="session-cat">Voice</div><div class="session-name">The Voice Advantage</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">3</div><div class="session-info"><div class="session-cat">Credibility</div><div class="session-name">Eliminate Fillers</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">4</div><div class="session-info"><div class="session-cat">Editing</div><div class="session-name">Short Sentences</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">5</div><div class="session-info"><div class="session-cat">Framework</div><div class="session-name">Structure: PRE</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">6</div><div class="session-info"><div class="session-cat">Composure</div><div class="session-name">High-Stakes Conversations</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">7</div><div class="session-info"><div class="session-cat">Integration</div><div class="session-name">Week 1 Review</div></div><div class="session-arrow">→</div></div>
+        </div>
+      </div>
+
+      <div class="programme-week-col fade-up delay-1">
+        <div class="week-num" aria-hidden="true">02</div>
+        <div class="week-label">Week Two</div>
+        <div class="week-title">Storytelling, Brand &amp; Ambition</div>
+        <div class="week-subtitle">Communicate with impact, presence, and purpose.</div>
+        <div class="sessions-list">
+          <div class="session-row"><div class="session-num">8</div><div class="session-info"><div class="session-cat">Storytelling</div><div class="session-name">Narrative Transportation</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">9</div><div class="session-info"><div class="session-cat">Rapport</div><div class="session-name">Connection</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">10</div><div class="session-info"><div class="session-cat">Impact</div><div class="session-name">Performance</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">11</div><div class="session-info"><div class="session-cat">Presence</div><div class="session-name">Brand Identity</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">12</div><div class="session-info"><div class="session-cat">Nonverbal</div><div class="session-name">Influence</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">13</div><div class="session-info"><div class="session-cat">Visibility</div><div class="session-name">Exposure</div></div><div class="session-arrow">→</div></div>
+          <div class="session-row"><div class="session-num">14</div><div class="session-info"><div class="session-cat">Capstone</div><div class="session-name">Amplified</div></div><div class="session-arrow">→</div></div>
+        </div>
+      </div>
+    </div><!-- /programme-weeks -->
+
+  </div>
+</section>
+
 <!-- APP CAROUSEL -->
 <section class="section-app-carousel">
   <div class="carousel-header fade-up">
@@ -2572,52 +2651,6 @@
 
 
 
-<!-- PROGRAMME -->
-<section class="section-programme">
-  <div class="programme-inner">
-
-    <div class="programme-header fade-up">
-      <div>
-        <h2>14 sessions. Two weeks that change how you're heard.</h2>
-      </div>
-      <div>
-        <p>Each session takes ~15 minutes and follows six steps: insight, science, real-world examples, practice challenge, AI simulation, and review. Persona-tailored from the start.</p>
-      </div>
-    </div>
-
-    <div class="programme-weeks">
-    <div class="fade-up">
-      <div class="week-label">Week One</div>
-      <div class="week-title">Voice, Clarity & Structure</div>
-      <div class="week-subtitle">The foundations of commanding communication.</div>
-      <div class="sessions-list">
-        <div class="session-row"><div class="session-num">1</div><div class="session-info"><div class="session-cat">Clarity</div><div class="session-name">Speak Clearly</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">2</div><div class="session-info"><div class="session-cat">Voice</div><div class="session-name">The Voice Advantage</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">3</div><div class="session-info"><div class="session-cat">Credibility</div><div class="session-name">Eliminate Fillers</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">4</div><div class="session-info"><div class="session-cat">Editing</div><div class="session-name">Short Sentences</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">5</div><div class="session-info"><div class="session-cat">Framework</div><div class="session-name">Structure: PRE</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">6</div><div class="session-info"><div class="session-cat">Composure</div><div class="session-name">High-Stakes Conversations</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">7</div><div class="session-info"><div class="session-cat">Integration</div><div class="session-name">Week 1 Review</div></div><div class="session-arrow">→</div></div>
-      </div>
-    </div>
-
-    <div class="fade-up delay-1">
-      <div class="week-label">Week Two</div>
-      <div class="week-title">Storytelling, Brand & Ambition</div>
-      <div class="week-subtitle">Communicate with impact, presence, and purpose.</div>
-      <div class="sessions-list">
-        <div class="session-row"><div class="session-num">8</div><div class="session-info"><div class="session-cat">Storytelling</div><div class="session-name">Narrative Transportation</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">9</div><div class="session-info"><div class="session-cat">Rapport</div><div class="session-name">Connection</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">10</div><div class="session-info"><div class="session-cat">Impact</div><div class="session-name">Performance</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">11</div><div class="session-info"><div class="session-cat">Presence</div><div class="session-name">Brand Identity</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">12</div><div class="session-info"><div class="session-cat">Nonverbal</div><div class="session-name">Influence</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">13</div><div class="session-info"><div class="session-cat">Visibility</div><div class="session-name">Exposure</div></div><div class="session-arrow">→</div></div>
-        <div class="session-row"><div class="session-num">14</div><div class="session-info"><div class="session-cat">Capstone</div><div class="session-name">Amplified</div></div><div class="session-arrow">→</div></div>
-      </div>
-    </div>
-    </div><!-- /programme-weeks -->
-  </div>
-</section>
 
 
 <section class="section-cta">
