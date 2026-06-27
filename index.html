@@ -113,7 +113,8 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-problem-h2 { font-family:var(--serif-body); font-size:clamp(32px,4vw,60px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-2px; line-height:1.06; margin-bottom:18px; }
 .w-problem-tagline { font-family:var(--serif-body); font-size:clamp(16px,1.8vw,22px); font-style:italic; font-weight:300; color:var(--accent-light); line-height:1.5; margin-bottom:22px; }
 .w-problem-sub { font-size:14px; color:rgba(237,234,230,0.45); line-height:1.8; font-weight:300; max-width:540px; }
-.w-problem-video-label { font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(237,234,230,0.45); margin-bottom:14px; }
+.w-problem-video-label { font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(237,234,230,0.45); margin-bottom:14px; text-align:center; }
+.w-problem-video-label span { color:var(--accent-light); }
 .w-problem-video-wrap { position:relative; padding-bottom:56.25%; border-radius:12px; overflow:hidden; background:#0a0907; box-shadow:0 24px 64px rgba(0,0,0,0.55); cursor:pointer; border:1px solid rgba(255,255,255,0.18); }
 .w-problem-video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
 .w-problem-video-thumb { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:opacity 0.3s; }
@@ -521,7 +522,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       </div>
     </div>
     <div class="w-problem-video fade-up delay-1">
-      <p class="w-problem-video-label">&#9654;&nbsp; Watch the demo</p>
+      <p class="w-problem-video-label"><span>&#9654;</span>&nbsp; Watch the demo</p>
       <div class="w-problem-video-wrap" id="demoWrap">
         <iframe id="demoFrame" src="" data-src="https://player.vimeo.com/video/1203200840?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="AmplifyU Demo"></iframe>
         <img class="w-problem-video-thumb" src="demo-thumbnail.jpeg" alt="Watch the AmplifyU demo">
