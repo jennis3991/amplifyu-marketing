@@ -117,7 +117,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-problem-video-label span { color:var(--accent-light); }
 .w-problem-video-wrap { position:relative; padding-bottom:56.25%; border-radius:12px; overflow:hidden; background:#0a0907; box-shadow:0 24px 64px rgba(0,0,0,0.55); cursor:pointer; border:1px solid rgba(255,255,255,0.18); }
 .w-problem-video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
-.w-problem-video-thumb { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition:opacity 0.3s; }
+.w-problem-video-thumb { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:contain; transition:opacity 0.3s; }
 .w-problem-video-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.6); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background 0.2s, transform 0.2s; pointer-events:none; }
 .w-problem-video-play svg { margin-left:4px; }
 .w-problem-video-wrap:hover .w-problem-video-play { background:rgba(255,255,255,0.28); transform:translate(-50%,-50%) scale(1.08); }
