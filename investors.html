@@ -96,6 +96,15 @@ body { background:var(--dark); color:var(--cream); font-family:var(--sans); font
 .pillar-desc { font-family:var(--sans); font-size:12px; font-weight:300; color:rgba(237,234,230,0.4); line-height:1.65; }
 .solution-link { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-top:40px; border-bottom:1px solid rgba(138,158,141,0.3); padding-bottom:4px; transition:color 0.2s, border-color 0.2s; }
 .solution-link:hover { color:var(--cream); border-color:var(--cream); }
+.inv-demo-label { font-family:var(--sans); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(237,234,230,0.45); margin-bottom:14px; text-align:center; }
+.inv-demo-label span { color:var(--accent-light); }
+.inv-demo-wrap { position:relative; padding-bottom:56.25%; border-radius:12px; overflow:hidden; background:#0a0907; box-shadow:0 24px 64px rgba(0,0,0,0.55); cursor:pointer; border:1px solid rgba(255,255,255,0.18); }
+.inv-demo-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+.inv-demo-thumb { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:contain; transition:opacity 0.3s; }
+.inv-demo-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:64px; height:64px; background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.6); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background 0.2s, transform 0.2s; pointer-events:none; }
+.inv-demo-play svg { margin-left:4px; }
+.inv-demo-wrap:hover .inv-demo-play { background:rgba(255,255,255,0.28); transform:translate(-50%,-50%) scale(1.08); }
+.inv-demo-wrap.playing .inv-demo-thumb, .inv-demo-wrap.playing .inv-demo-play { opacity:0; pointer-events:none; }
 
 /* ─── TRACTION ─── */
 #traction { background:var(--cream); }
@@ -349,6 +358,20 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   </div>
 </section>
 
+<!-- ══ DEMO VIDEO ══ -->
+<section class="inv-section" style="padding-top:0;">
+  <div class="container">
+    <p class="inv-demo-label"><span>&#9654;</span>&nbsp; Watch the demo</p>
+    <div class="inv-demo-wrap" id="invDemoWrap">
+      <iframe id="invDemoFrame" src="" data-src="https://player.vimeo.com/video/1203200840?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="AmplifyU Demo"></iframe>
+      <img class="inv-demo-thumb" src="demo-thumbnail.jpeg" alt="Watch the AmplifyU demo">
+      <div class="inv-demo-play">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polygon points="7,4 19,11 7,18" fill="white"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ TRACTION ══ -->
 <section id="traction" class="inv-section">
   <div class="container">
@@ -474,6 +497,16 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   }, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
   document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
   setTimeout(function() { document.querySelectorAll('#hero .fade-up').forEach(function(el) { el.classList.add('visible'); }); }, 80);
+  (function() {
+    var wrap = document.getElementById('invDemoWrap');
+    var frame = document.getElementById('invDemoFrame');
+    if (wrap && frame) {
+      wrap.addEventListener('click', function() {
+        frame.src = frame.dataset.src;
+        wrap.classList.add('playing');
+      });
+    }
+  }());
 </script>
 </body>
 </html>
