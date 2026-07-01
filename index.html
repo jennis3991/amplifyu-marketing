@@ -854,12 +854,12 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   });
   setInterval(function() {
     el.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.6,1)';
-    el.style.transform = 'translateY(-110%)';
+    el.style.transform = 'translateY(110%)';
     setTimeout(function() {
       idx = (idx + 1) % phrases.length;
       el.textContent = phrases[idx];
       el.style.transition = 'none';
-      el.style.transform = 'translateY(110%)';
+      el.style.transform = 'translateY(-110%)';
       void el.offsetWidth;
       el.style.transition = 'transform 0.65s cubic-bezier(0.16,1,0.3,1)';
       el.style.transform = 'translateY(0)';
