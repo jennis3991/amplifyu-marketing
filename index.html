@@ -853,7 +853,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     el.style.transform = 'translateY(0)';
   });
   setInterval(function() {
-    el.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.6,1)';
+    el.style.transition = 'transform 0.5s cubic-bezier(0.4,0,0.2,1)';
     el.style.transform = 'translateY(110%)';
     setTimeout(function() {
       idx = (idx + 1) % phrases.length;
@@ -861,9 +861,9 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       el.style.transition = 'none';
       el.style.transform = 'translateY(-110%)';
       void el.offsetWidth;
-      el.style.transition = 'transform 0.65s cubic-bezier(0.16,1,0.3,1)';
+      el.style.transition = 'transform 0.5s cubic-bezier(0.4,0,0.2,1)';
       el.style.transform = 'translateY(0)';
-    }, 460);
+    }, 510);
   }, 2800);
 })();
 </script>
