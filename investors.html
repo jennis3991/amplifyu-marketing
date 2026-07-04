@@ -128,10 +128,10 @@ body { background:var(--dark); color:var(--cream); font-family:var(--sans); font
 .roadmap-features li::before { content:'—'; position:absolute; left:0; color:var(--accent-light); font-size:10px; top:4px; opacity:0.6; }
 
 /* ─── BACK LINK ─── */
-.back-link { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-bottom:32px; transition:color 0.2s; }
+.back-link { display:flex; justify-content:flex-end; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-bottom:32px; transition:color 0.2s; }
 .back-link:hover { color:#fff; }
 .back-link svg { transition:transform 0.2s; }
-.back-link:hover svg { transform:translateX(-3px); }
+.back-link:hover svg { transform:translateX(3px); }
 
 /* ─── FOUNDER ─── */
 #founder { background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
@@ -259,8 +259,8 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 <section id="founder" class="inv-section">
   <div class="container">
     <a href="index.html" class="back-link fade-up">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 12L6 8l4-4"/></svg>
       Back to site
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>
     </a>
     <div class="eyebrow fade-up">The Founder</div>
     <div class="founder-layout">
