@@ -159,10 +159,12 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-gap-h2 em { font-style:italic; color:var(--accent-light); }
 .w-gap-sub { font-family:var(--serif-body); font-size:16px; color:rgba(240,235,226,0.45); line-height:1.7; font-weight:300; max-width:560px; }
 .w-gap-stats { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; border:1px solid rgba(240,235,226,0.08); }
-.w-stat-cell { padding:64px 60px; }
-.w-stat-cell:nth-child(odd) { border-right:1px solid rgba(240,235,226,0.08); }
-.w-stat-cell:nth-child(-n+2) { border-bottom:1px solid rgba(240,235,226,0.08); }
-.w-stat-num { font-family:var(--serif-display); font-size:clamp(64px,8vw,100px); font-weight:300; color:rgba(240,235,226,0.7); line-height:0.95; margin-bottom:20px; }
+.w-stat-cell { padding:64px 60px; transition:background 0.25s; cursor:default; }
+.w-stat-cell:hover { background:rgba(255,255,255,0.04); }
+.w-stat-cell:nth-child(odd):not(:last-child) { border-right:1px solid rgba(240,235,226,0.08); }
+.w-stat-cell:not(:last-child) { border-bottom:1px solid rgba(240,235,226,0.08); }
+.w-stat-cell--wide { grid-column:1 / -1; }
+.w-stat-num { font-family:var(--serif-display); font-size:clamp(44px,5vw,68px); font-weight:300; color:rgba(240,235,226,0.7); line-height:0.95; margin-bottom:20px; }
 .w-stat-label { font-family:var(--sans); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; color:rgba(240,235,226,0.4); margin-bottom:20px; }
 .w-stat-body { font-family:var(--serif-body); font-size:16px; font-weight:300; color:rgba(240,235,226,0.4); line-height:1.7; }
 
@@ -370,10 +372,10 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-gap-header { margin-bottom:48px; }
   .w-gap-h2 { margin-bottom:16px; }
   .w-gap-stats { grid-template-columns:1fr; }
-  .w-stat-cell:nth-child(odd) { border-right:none; }
-  .w-stat-cell:nth-child(-n+2) { border-bottom:none; }
-  .w-stat-cell { border-bottom:1px solid rgba(240,235,226,0.08); padding:44px 32px; }
-  .w-stat-cell:last-child { border-bottom:none; }
+  .w-stat-cell:nth-child(odd):not(:last-child) { border-right:none; }
+  .w-stat-cell--wide { grid-column:1; }
+  .w-stat-cell { border-bottom:1px solid rgba(240,235,226,0.08) !important; padding:44px 32px; }
+  .w-stat-cell:last-child { border-bottom:none !important; }
 
   .w-solution { padding: 48px 24px 0; }
   .w-solution-inner { grid-template-columns:1fr; gap:32px; }
@@ -679,6 +681,11 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <div class="w-stat-num">0</div>
       <div class="w-stat-label">Structured Alternatives</div>
       <p class="w-stat-body">Books are passive. YouTube is generic. Apps like Duolingo proved the model works — no one has built it for professional communication.</p>
+    </div>
+    <div class="w-stat-cell w-stat-cell--wide">
+      <div class="w-stat-num">Hit or miss</div>
+      <div class="w-stat-label">Managers &amp; Mentors</div>
+      <p class="w-stat-body">Inconsistent, unavailable, unstructured. Most professionals rely on their manager for growth — yet time pressure, no feedback framework, and unpredictable availability make this the least reliable route of all.</p>
     </div>
   </div>
 </section>
