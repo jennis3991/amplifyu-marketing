@@ -153,21 +153,18 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 
 
 /* ─── GAP / OPPORTUNITY ─── */
-.w-gap { background: var(--cream); padding: 80px 48px 100px; }
-.w-gap-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
-.w-gap-h2 { font-family:var(--serif-body); font-size:clamp(30px,4vw,58px); font-weight:500; color:var(--dark); letter-spacing:-1.5px; line-height:1.08; margin-bottom:20px; }
-.w-gap-h2 em { font-style:italic; color:var(--accent); }
-.w-gap-sub { font-size:14px; color:var(--text-mid); line-height:1.75; font-weight:300; max-width:380px; margin-bottom:28px; }
-.w-gap-quote { border-left:2px solid var(--accent); padding-left:18px; }
-.w-gap-quote p { font-family:var(--serif-body); font-size:19px; font-style:italic; color:var(--text-mid); line-height:1.55; }
-.w-cost-label { font-size:9px; letter-spacing:0.3em; text-transform:uppercase; font-weight:600; color:var(--accent); margin-bottom:20px; }
-.w-cost-item { display:flex; align-items:center; gap:0; padding:18px 0; border-bottom:1px solid var(--cream-dark); }
-.w-cost-item:first-of-type { border-top:1px solid var(--cream-dark); }
-.w-cost-num { font-family:var(--serif-body); font-size:38px; font-weight:500; color:var(--cream-dark); letter-spacing:-2px; line-height:1; width:52px; flex-shrink:0; }
-.w-cost-vline { width:1px; height:36px; background:var(--cream-dark); flex-shrink:0; margin-right:18px; }
-.w-cost-title { font-family:var(--serif-body); font-size:19px; font-weight:500; color:var(--dark); letter-spacing:-0.3px; margin-bottom:3px; }
-.w-cost-sub { font-size:12px; color:var(--text-mid); line-height:1.4; }
-.w-cost-price { margin-left:auto; font-size:11px; color:#c07055; font-weight:600; letter-spacing:0.3px; white-space:nowrap; padding-left:16px; }
+.w-gap { background: var(--dark); padding: 100px 48px; }
+.w-gap-header { max-width:1100px; margin:0 auto 72px; }
+.w-gap-h2 { font-family:var(--serif-display); font-size:clamp(36px,4.5vw,60px); font-weight:400; color:var(--cream); letter-spacing:-0.5px; line-height:1.08; margin-bottom:20px; }
+.w-gap-h2 em { font-style:italic; color:var(--accent-light); }
+.w-gap-sub { font-family:var(--serif-body); font-size:16px; color:rgba(240,235,226,0.45); line-height:1.7; font-weight:300; max-width:560px; }
+.w-gap-stats { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; border:1px solid rgba(240,235,226,0.08); }
+.w-stat-cell { padding:64px 60px; }
+.w-stat-cell:nth-child(odd) { border-right:1px solid rgba(240,235,226,0.08); }
+.w-stat-cell:nth-child(-n+2) { border-bottom:1px solid rgba(240,235,226,0.08); }
+.w-stat-num { font-family:var(--serif-display); font-size:clamp(64px,8vw,100px); font-weight:300; color:rgba(240,235,226,0.7); line-height:0.95; margin-bottom:20px; }
+.w-stat-label { font-family:var(--sans); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; color:rgba(240,235,226,0.4); margin-bottom:20px; }
+.w-stat-body { font-family:var(--serif-body); font-size:16px; font-weight:300; color:rgba(240,235,226,0.4); line-height:1.7; }
 
 /* ─── SOLUTION ─── */
 .w-solution { background: var(--dark); padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
@@ -369,10 +366,14 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .wc-callout-btn { width: 100%; text-align: center; display: block; }
 
   .w-teaches-coda { font-size:22px; }
-  .w-gap { padding: 72px 32px 96px; }
-  .w-gap-inner { grid-template-columns:1fr; gap:60px; }
-  .w-gap-h2 { margin-bottom:28px; }
-  .w-gap-sub { margin-bottom:40px; line-height:1.85; }
+  .w-gap { padding: 72px 24px; }
+  .w-gap-header { margin-bottom:48px; }
+  .w-gap-h2 { margin-bottom:16px; }
+  .w-gap-stats { grid-template-columns:1fr; }
+  .w-stat-cell:nth-child(odd) { border-right:none; }
+  .w-stat-cell:nth-child(-n+2) { border-bottom:none; }
+  .w-stat-cell { border-bottom:1px solid rgba(240,235,226,0.08); padding:44px 32px; }
+  .w-stat-cell:last-child { border-bottom:none; }
 
   .w-solution { padding: 48px 24px 0; }
   .w-solution-inner { grid-template-columns:1fr; gap:32px; }
@@ -653,24 +654,31 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 
 <!-- ══ THE GAP ══ -->
 <section class="w-gap">
-  <div class="w-gap-inner">
-    <div>
-      <div class="eyebrow-dark eyebrow fade-up">The Cost</div>
-      <h2 class="w-gap-h2 fade-up delay-1">Technical skills get you hired<br><em>Communication skills get you promoted</em></h2>
-      <p class="w-gap-sub fade-up delay-1">Professionals know these skills matter. Most spend years trying to learn them anyway — through fragmented, inconsistent, and inaccessible routes.</p>
-      <div class="w-gap-quote fade-up delay-2">
-        <p>The cost isn't just money. It's years of missed promotions, unrecognised potential, and careers that plateau long before they should.</p>
-      </div>
+  <div class="w-gap-header">
+    <div class="eyebrow fade-up">The Cost</div>
+    <h2 class="w-gap-h2 fade-up delay-1">Technical skills get you hired<br><em>Communication skills get you promoted</em></h2>
+    <p class="w-gap-sub fade-up delay-1">Professionals know these skills matter. Most spend years trying to learn them anyway — through fragmented, inconsistent, and inaccessible routes.</p>
+  </div>
+  <div class="w-gap-stats fade-up delay-2">
+    <div class="w-stat-cell">
+      <div class="w-stat-num">£300–600</div>
+      <div class="w-stat-label">Per Hour</div>
+      <p class="w-stat-body">The cost of executive coaching — the only structured route to these skills. Available to fewer than 1% of professionals.</p>
     </div>
-    <div class="fade-up delay-1">
-      <div class="w-cost-label">How professionals try to close the gap today</div>
-      <div>
-        <div class="w-cost-item"><div class="w-cost-num">01</div><div class="w-cost-vline"></div><div><div class="w-cost-title">Trial and error</div><div class="w-cost-sub">Learn by failing in high-stakes moments</div></div><div class="w-cost-price">Years lost</div></div>
-        <div class="w-cost-item"><div class="w-cost-num">02</div><div class="w-cost-vline"></div><div><div class="w-cost-title">Managers &amp; mentors</div><div class="w-cost-sub">Inconsistent, unavailable, unstructured</div></div><div class="w-cost-price">Hit or miss</div></div>
-        <div class="w-cost-item"><div class="w-cost-num">03</div><div class="w-cost-vline"></div><div><div class="w-cost-title">Books &amp; YouTube</div><div class="w-cost-sub">Passive, generic, no accountability</div></div><div class="w-cost-price">No practice</div></div>
-        <div class="w-cost-item"><div class="w-cost-num">04</div><div class="w-cost-vline"></div><div><div class="w-cost-title">Executive coaching</div><div class="w-cost-sub">£300–£600/hour. Reserved for the few.</div></div><div class="w-cost-price">£10k+ / year</div></div>
-        <div class="w-cost-item"><div class="w-cost-num">05</div><div class="w-cost-vline"></div><div><div class="w-cost-title">Corporate training</div><div class="w-cost-sub">One-day workshops. Forgotten by Friday.</div></div><div class="w-cost-price">Low retention</div></div>
-      </div>
+    <div class="w-stat-cell">
+      <div class="w-stat-num">85%</div>
+      <div class="w-stat-label">Of Hiring Managers Say</div>
+      <p class="w-stat-body">Communication skills determine whether a technically strong candidate gets promoted — yet no employer consistently teaches them.</p>
+    </div>
+    <div class="w-stat-cell">
+      <div class="w-stat-num">1 day</div>
+      <div class="w-stat-label">Retention Window</div>
+      <p class="w-stat-body">Corporate training workshops are forgotten within 24 hours. High cost, low retention, no practice mechanism, no personalisation.</p>
+    </div>
+    <div class="w-stat-cell">
+      <div class="w-stat-num">0</div>
+      <div class="w-stat-label">Structured Alternatives</div>
+      <p class="w-stat-body">Books are passive. YouTube is generic. Apps like Duolingo proved the model works — no one has built it for professional communication.</p>
     </div>
   </div>
 </section>
