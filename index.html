@@ -221,6 +221,12 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-different-article:hover { border-color:rgba(138,158,141,0.5); background:rgba(138,158,141,0.05); }
 .w-different-article-label { font-family:var(--sans); font-size:9px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:600; }
 .w-different-article-title { font-family:var(--serif-body); font-size:clamp(16px,1.8vw,20px); color:rgba(237,234,230,0.8); font-weight:400; line-height:1.4; }
+.w-diff-card { display:flex; flex-direction:column; max-width:520px; margin:0 auto; border:1px solid rgba(138,158,141,0.25); border-radius:6px; overflow:hidden; text-decoration:none; transition:border-color 0.2s, background 0.2s; }
+.w-diff-card:hover { border-color:rgba(138,158,141,0.5); background:rgba(138,158,141,0.05); }
+.w-diff-card-img { height:220px; overflow:hidden; flex-shrink:0; }
+.w-diff-card-img img { width:100%; height:100%; object-fit:cover; object-position:center 50%; display:block; transition:transform 0.4s; }
+.w-diff-card:hover .w-diff-card-img img { transform:scale(1.03); }
+.w-diff-card-body { padding:24px 28px 28px; display:flex; flex-direction:column; gap:8px; text-align:left; }
 .w-table { width:100%; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.06); }
 .w-thead { display:grid; grid-template-columns:44px 1fr 1fr 1fr; background:rgba(255,255,255,0.04); }
 .w-th { padding:12px 20px; font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(237,234,230,0.25); font-weight:600; }
@@ -705,9 +711,14 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <div class="eyebrow fade-up">Why Different</div>
       <h2 class="w-different-h2 fade-up delay-1">Most platforms <em>teach</em><br>AmplifyU <em>coaches</em></h2>
       <p class="w-different-sub fade-up delay-1">The difference is felt in every session — and measured in every feedback report.</p>
-      <a href="what-makes-amplifyu-different.html" class="w-different-article fade-up delay-2">
-        <span class="w-different-article-label">Read the article</span>
-        <span class="w-different-article-title">Why AmplifyU is different: AI coaching vs. traditional learning →</span>
+      <a href="what-makes-amplifyu-different.html" class="w-diff-card fade-up delay-2">
+        <div class="w-diff-card-img">
+          <img src="img-different-chess.jpeg" alt="Chess pieces — strategy and skill" loading="lazy">
+        </div>
+        <div class="w-diff-card-body">
+          <span class="w-different-article-label">Read the article</span>
+          <span class="w-different-article-title">Why AmplifyU is different: AI coaching vs. traditional learning →</span>
+        </div>
       </a>
     </div>
   </div>
