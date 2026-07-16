@@ -260,6 +260,13 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .stat-n sup { font-size:0.5em; color:var(--accent); vertical-align:super; }
 .stat-l { font-family:var(--sans); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-mid); }
 /* ─── CTA ─── */
+.w-teams { background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); padding:48px 48px; }
+.w-teams-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:48px; }
+.w-teams-left { flex:1; }
+.w-teams-eyebrow { font-family:var(--sans); font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:var(--accent-light); font-weight:600; margin-bottom:10px; }
+.w-teams-text { font-family:var(--sans); font-size:14px; font-weight:300; color:rgba(237,234,230,0.55); line-height:1.75; max-width:580px; }
+.w-teams-link { font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; white-space:nowrap; border-bottom:1px solid rgba(138,158,141,0.3); padding-bottom:3px; transition:color 0.2s, border-color 0.2s; flex-shrink:0; }
+.w-teams-link:hover { color:var(--cream); border-color:var(--cream); }
 .w-cta { background: var(--dark); padding: 60px 48px 120px; position:relative; overflow:hidden; }
 .w-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 40%, rgba(138,158,141,0.08) 0%, transparent 60%); pointer-events:none; }
 .w-cta-inner { max-width:780px; margin:0 auto; text-align:center; position:relative; z-index:1; }
@@ -415,6 +422,8 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-cell.au-cell { grid-column:1 / -1; grid-row:3; display:flex; flex-direction:column; align-items:flex-start; gap:4px; border-top:1px solid rgba(255,255,255,0.06); padding:10px 14px 14px; }
   .w-cell.au-cell::before { content:'AMPLIFYU'; display:block; font-size:8px; letter-spacing:0.3em; color:var(--accent-light); font-weight:600; font-family:var(--sans); width:auto; height:auto; border-radius:0; background:transparent; }
 
+  .w-teams { padding: 36px 24px; }
+  .w-teams-inner { flex-direction:column; align-items:flex-start; gap:20px; }
   .w-cta { padding: 56px 32px 100px; }
   .w-cta-h2 { margin-bottom:16px; }
   .w-cta-tagline { margin-bottom:44px; }
@@ -782,6 +791,17 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <span class="w-different-article-label">Read the article</span>
       <span class="w-different-article-title">Why communication is the most underrated career accelerator →</span>
     </a>
+  </div>
+</section>
+
+<!-- ══ FOR TEAMS ══ -->
+<section class="w-teams">
+  <div class="w-teams-inner">
+    <div class="w-teams-left">
+      <p class="w-teams-eyebrow">For Training Providers</p>
+      <p class="w-teams-text">AmplifyU works in facilitated cohort settings. A trainer leads the group through each session — participants complete the AI-coached practice privately on their own devices.</p>
+    </div>
+    <a href="investors.html" class="w-teams-link">Find out more →</a>
   </div>
 </section>
 
