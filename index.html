@@ -221,12 +221,16 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-different-article:hover { border-color:rgba(138,158,141,0.5); background:rgba(138,158,141,0.05); }
 .w-different-article-label { font-family:var(--sans); font-size:9px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:600; }
 .w-different-article-title { font-family:var(--serif-body); font-size:clamp(16px,1.8vw,20px); color:rgba(237,234,230,0.8); font-weight:400; line-height:1.4; }
-.w-diff-card { display:flex; flex-direction:column; max-width:520px; margin:0 auto; border:1px solid rgba(138,158,141,0.25); border-radius:6px; overflow:hidden; text-decoration:none; transition:border-color 0.2s, background 0.2s; }
-.w-diff-card:hover { border-color:rgba(138,158,141,0.5); background:rgba(138,158,141,0.05); }
-.w-diff-card-img { height:320px; overflow:hidden; flex-shrink:0; background:#1a1714; display:flex; align-items:center; justify-content:center; }
-.w-diff-card-img img { width:auto; height:100%; object-fit:contain; display:block; transition:transform 0.4s; }
+.w-articles-grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.w-diff-card { display:flex; flex-direction:column; border:1px solid rgba(138,158,141,0.25); border-radius:6px; overflow:hidden; text-decoration:none; transition:border-color 0.2s, background 0.2s; }
+.w-diff-card:hover { border-color:rgba(138,158,141,0.5); background:rgba(255,255,255,0.03); }
+.w-diff-card-img { height:260px; overflow:hidden; flex-shrink:0; background:#1a1714; }
+.w-diff-card-img img { width:100%; height:100%; object-fit:cover; object-position:center 35%; display:block; transition:transform 0.4s; }
 .w-diff-card:hover .w-diff-card-img img { transform:scale(1.03); }
-.w-diff-card-body { padding:24px 28px 28px; display:flex; flex-direction:column; gap:8px; text-align:left; }
+.w-diff-card-body { padding:28px 30px 32px; display:flex; flex-direction:column; gap:10px; text-align:left; }
+.w-diff-card-title { font-family:var(--serif-display); font-size:22px; font-weight:500; color:var(--cream); line-height:1.2; }
+.w-diff-card-desc { font-family:var(--sans); font-size:13px; color:rgba(240,235,226,0.5); line-height:1.65; }
+.w-diff-card-link { font-family:var(--sans); font-size:12px; letter-spacing:0.08em; color:var(--accent-light); margin-top:6px; }
 .w-table { width:100%; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.06); }
 .w-thead { display:grid; grid-template-columns:44px 1fr 1fr 1fr; background:rgba(255,255,255,0.04); }
 .w-th { padding:12px 20px; font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(237,234,230,0.25); font-weight:600; }
@@ -408,6 +412,8 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 
   .w-different { padding: 80px 24px; }
   .w-different-top { margin-bottom:44px; }
+  .w-articles-grid { grid-template-columns:1fr; }
+  .w-diff-card-img { height:200px; }
   .w-different-h2 { margin-bottom:20px; }
 
   /* Stacked cards for Why Different on mobile */
@@ -720,13 +726,28 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <div class="eyebrow fade-up">Why Different</div>
       <h2 class="w-different-h2 fade-up delay-1">Most platforms <em>teach</em><br>AmplifyU <em>coaches</em></h2>
       <p class="w-different-sub fade-up delay-1">The difference is felt in every session — and measured in every feedback report.</p>
-      <a href="what-makes-amplifyu-different.html" class="w-diff-card fade-up delay-2">
+    </div>
+    <div class="w-articles-grid fade-up delay-2">
+      <a href="what-makes-amplifyu-different.html" class="w-diff-card">
         <div class="w-diff-card-img">
-          <img src="img-different-chess.jpeg" alt="Chess pieces — strategy and skill" loading="lazy">
+          <img src="img-different-chess.jpeg" alt="Chess piece — strategy and skill" loading="lazy">
         </div>
         <div class="w-diff-card-body">
-          <span class="w-different-article-label">Read the article</span>
-          <span class="w-different-article-title">Why AmplifyU is different: AI coaching vs. traditional learning →</span>
+          <span class="w-different-article-label">Why Different · Read the article</span>
+          <h3 class="w-diff-card-title">Why AmplifyU is different: AI coaching vs. traditional learning</h3>
+          <p class="w-diff-card-desc">Most platforms deliver content. AmplifyU delivers coaching — feedback, practice, personalisation, and a system built to make the change stick.</p>
+          <span class="w-diff-card-link">Read the article →</span>
+        </div>
+      </a>
+      <a href="why-amplifyu.html" class="w-diff-card">
+        <div class="w-diff-card-img">
+          <img src="img-accelerator-chess.png" alt="Chess queen — communication as career strategy" loading="lazy">
+        </div>
+        <div class="w-diff-card-body">
+          <span class="w-different-article-label">Career Development · Read the article</span>
+          <h3 class="w-diff-card-title">Why communication is the most underrated career accelerator</h3>
+          <p class="w-diff-card-desc">The skill that determines who gets promoted, who gets heard, and who gets remembered. And why almost no one is ever taught it.</p>
+          <span class="w-diff-card-link">Read the article →</span>
         </div>
       </a>
     </div>
@@ -787,10 +808,6 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 <section class="w-compound">
   <div class="w-compound-inner">
     <p class="w-compound-quote fade-up">When you communicate with skill,<br><em>everything else compounds.</em></p>
-    <a href="why-amplifyu.html" class="w-different-article fade-up delay-1" style="margin-top:36px;">
-      <span class="w-different-article-label">Read the article</span>
-      <span class="w-different-article-title">Why communication is the most underrated career accelerator →</span>
-    </a>
   </div>
 </section>
 
