@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Learn from the Masters: The Communicators AmplifyU Studies | AmplifyU</title>
-<meta name="description" content="Every AmplifyU module draws on real examples from people who have mastered communication at the highest level — so you see exactly what great looks like in practice.">
-<meta name="keywords" content="communication masters, David Attenborough storytelling, Morgan Freeman vocal technique, Taylor Swift connection, executive presence, Jensen Huang communication, Richard Branson personal brand, professional communication examples">
+<meta name="description" content="AmplifyU's 14-day programme is built around 28 master communicators — two a day — from David Attenborough to Barack Obama. See who they are and what each one teaches.">
+<meta name="keywords" content="communication masters, David Attenborough storytelling, Morgan Freeman vocal technique, Taylor Swift connection, Barack Obama storytelling, executive presence, Jensen Huang communication, Richard Branson personal brand, professional communication examples">
 <link rel="canonical" href="https://amplifyu.app/learning-from-the-masters.html">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
@@ -78,6 +78,18 @@ body { background:var(--cream); color:var(--dark); font-family:var(--sans); font
 .master-detail { font-family:var(--sans); font-size:13px; color:var(--text-mid); line-height:1.75; font-weight:300; }
 .master-quote { border-left:2px solid rgba(107,124,110,0.3); padding-left:16px; margin-top:16px; font-family:var(--serif-body); font-size:15px; font-style:italic; color:var(--text-mid); line-height:1.6; }
 
+/* ─── MASTERS MORE (COMPACT LIST) ─── */
+.masters-more { margin:8px 0 48px; }
+.masters-more-head { margin-bottom:28px; }
+.masters-more-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:12px; }
+.masters-more-lede { font-family:var(--serif-body); font-size:clamp(17px,1.8vw,20px); font-weight:400; color:var(--dark); line-height:1.5; }
+.masters-more-grid { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--cream-dark); }
+.masters-more-item { display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:14px 0; border-bottom:1px solid var(--cream-dark); }
+.masters-more-item:nth-child(odd) { padding-right:24px; border-right:1px solid var(--cream-dark); }
+.masters-more-item:nth-child(even) { padding-left:24px; }
+.masters-more-name { font-family:var(--serif-body); font-size:16px; color:var(--dark); font-weight:500; white-space:nowrap; }
+.masters-more-tag { font-family:var(--sans); font-size:10px; letter-spacing:0.05em; color:var(--text-mid); text-transform:uppercase; text-align:right; }
+
 /* ─── CALLOUT ─── */
 .art-callout { border-left:3px solid var(--accent); padding:24px 28px; background:var(--cream-mid); border-radius:0 6px 6px 0; margin:40px 0; }
 .art-callout p { font-family:var(--serif-body); font-size:clamp(18px,2vw,22px); font-style:italic; color:var(--dark); line-height:1.55; font-weight:400; }
@@ -113,6 +125,9 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .art-body { padding:48px 24px 72px; }
   .master-entry { grid-template-columns:1fr; gap:20px; }
   .master-num { font-size:36px; margin-bottom:8px; }
+  .masters-more-grid { grid-template-columns:1fr; }
+  .masters-more-item:nth-child(odd) { padding-right:0; border-right:none; }
+  .masters-more-item:nth-child(even) { padding-left:0; }
   .art-cta { padding:60px 24px; }
   footer { flex-direction:column; text-align:center; gap:16px; padding:24px; }
   .nav-logo-img { height:52px; }
@@ -157,7 +172,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     <div class="art-meta fade-up delay-2">
       <span>AmplifyU</span>
       <span class="art-meta-dot"></span>
-      <span>4 min read</span>
+      <span>5 min read</span>
       <span class="art-meta-dot"></span>
       <span>Communication Mastery</span>
     </div>
@@ -167,7 +182,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 <article>
   <div class="art-body">
 
-    <p class="art-intro fade-up">Great communication isn't abstract. It has a face, a voice, a moment you can study. Every AmplifyU module draws on the people who have mastered these skills at the highest level — not as inspiration, but as instruction. Here is what we studied and why.</p>
+    <p class="art-intro fade-up">Great communication isn't abstract. It has a face, a voice, a moment you can study. Across AmplifyU's 14-day programme, every single day pairs two master communicators — 28 in total — each chosen for one specific, teachable technique. Here are seven of them, and what they taught us.</p>
 
     <div class="art-callout fade-up">
       <p>"You don't learn to communicate well by being told what to do. You learn by seeing what great looks like — then practising it until it becomes yours."</p>
@@ -259,9 +274,49 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       </div>
     </div>
 
+    <div class="master-entry fade-up">
+      <div class="master-left">
+        <div class="master-num">07</div>
+        <div class="master-name">Barack Obama</div>
+        <div class="master-skill-tag">Human-First Storytelling</div>
+      </div>
+      <div class="master-right">
+        <p class="master-lesson">Turning policy into a story people actually feel.</p>
+        <p class="master-detail">Obama's speeches rarely open with the issue — they open with a person. A name, a place, a specific moment. The argument arrives afterwards, already carried by someone the audience has started to care about. It's narrative before it's persuasion.</p>
+        <p class="master-detail">AmplifyU's storytelling sessions use this as the model for making any message land: lead with the human stakes, not the headline. The technique transfers directly to the workplace — the update, the pitch, the difficult conversation all work better once there's a person in the first sentence, not a summary.</p>
+        <p class="master-quote">"The best way to not feel hopeless is to get up and do something."</p>
+      </div>
+    </div>
+
     <div class="art-rule fade-up"></div>
 
-    <p class="art-p fade-up" style="font-family:var(--serif-body);font-size:clamp(17px,1.8vw,20px);color:var(--text-mid);line-height:1.7;font-weight:300;">These are not people to admire from a distance. They are instruction manuals. AmplifyU takes what each of them does exceptionally — isolates the technique, explains the science behind it, and builds it into a session you can practise today.</p>
+    <div class="masters-more fade-up">
+      <div class="masters-more-head">
+        <p class="masters-more-eyebrow">28 masters. Two every day.</p>
+        <p class="masters-more-lede">These seven are a starting point. Every session in the 14-day programme pairs a different technique with a different master — here are more of who else is in the room.</p>
+      </div>
+      <div class="masters-more-grid">
+        <div class="masters-more-item"><span class="masters-more-name">Simon Sinek</span><span class="masters-more-tag">Voice &amp; Message</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Meryl Streep</span><span class="masters-more-tag">Precision &amp; Presence</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Anna Wintour</span><span class="masters-more-tag">Filler-Free Authority</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Ernest Hemingway</span><span class="masters-more-tag">Brevity</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Indra Nooyi</span><span class="masters-more-tag">Performance With Purpose</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Lewis Hamilton</span><span class="masters-more-tag">Composure Under Pressure</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Amal Clooney</span><span class="masters-more-tag">Composure Under Pressure</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">The Pixar Framework</span><span class="masters-more-tag">Story Structure</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Prince William</span><span class="masters-more-tag">Connection Through Listening</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Jacinda Ardern</span><span class="masters-more-tag">Empathetic Leadership</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">James Dyson</span><span class="masters-more-tag">Relentless Improvement</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Jeff Bezos</span><span class="masters-more-tag">Repeatable Excellence</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Disney</span><span class="masters-more-tag">Brand Consistency</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Kennedy vs Nixon</span><span class="masters-more-tag">Executive Presence</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Steve Jobs</span><span class="masters-more-tag">Purposeful Presence</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Michelle Obama</span><span class="masters-more-tag">Warm Presence</span></div>
+        <div class="masters-more-item"><span class="masters-more-name">Jamie Oliver</span><span class="masters-more-tag">Approachable Authority</span></div>
+      </div>
+    </div>
+
+    <p class="art-p fade-up" style="font-family:var(--serif-body);font-size:clamp(17px,1.8vw,20px);color:var(--text-mid);line-height:1.7;font-weight:300;">These are not people to admire from a distance. They are instruction manuals. Across all 28 — two for every day of the programme — AmplifyU isolates one technique each does exceptionally, explains the science behind it, and builds it into a session you can practise that day.</p>
 
   </div>
 </article>
