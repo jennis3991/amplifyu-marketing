@@ -55,16 +55,16 @@
 
   /* ─── HERO ─── */
   .features-hero {
-    min-height: 72vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 140px 48px 80px; position: relative; background: var(--dark); overflow: hidden;
+    min-height: 72vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 140px 48px 100px; position: relative; background: var(--dark); overflow: hidden;
   }
   .features-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(107,124,110,0.07) 0%, transparent 70%); pointer-events: none; }
   .features-hero::after { display: none; }
-  .fh-inner { position: relative; z-index: 1; max-width: 860px; }
+  .fh-inner { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
   .fh-eyebrow { font-family: var(--sans); font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent-light); font-weight: 500;
-    margin-bottom: 24px; }
-  .fh-h1 { font-family: var(--serif-body); font-size: clamp(36px,4.5vw,68px); font-weight: 500; line-height: 1.04; letter-spacing: -2px; color: var(--cream); margin-bottom: 28px; }
+    margin-bottom: 48px; }
+  .fh-h1 { font-family: var(--serif-body); font-size: clamp(36px,4.5vw,68px); font-weight: 500; line-height: 1.04; letter-spacing: -2px; color: var(--cream); margin-bottom: 48px; max-width:860px; }
   .fh-h1 em { font-style: italic; color: var(--accent-light); }
-  .fh-rule { width: 32px; height: 1px; background: var(--accent); opacity: 0.5; margin-bottom: 20px; }
+  .fh-rule { width: 32px; height: 1px; background: var(--accent); opacity: 0.5; margin-bottom: 40px; }
   .fh-sub { font-family: var(--sans); font-size: 16px; font-weight: 300; line-height: 1.75; color: rgba(237,234,230,0.6); max-width: 600px; margin-bottom: 0; }
 
   /* ─── CTA BANNER ─── */
@@ -188,7 +188,7 @@
   @media (max-width: 900px) {
     nav { padding: 20px 24px; }
     .nav-links { gap: 16px; }
-    .features-hero { padding: 130px 24px 70px; }
+    .features-hero { padding: 100px 24px 60px; }
     .fh-sub { font-size: 17px; color: rgba(237,234,230,0.7); line-height: 1.65; }
     .prov-inner, .feature-block, .feature-block.reverse { grid-template-columns: 1fr; direction: ltr; }
     .fb-editorial { padding: 60px 32px; min-height: 280px; }
