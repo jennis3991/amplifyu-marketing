@@ -1251,25 +1251,20 @@
     color: var(--accent-light);
     margin-top: 6px;
   }
-  @media (max-width: 900px) {
+  /* Mobile card layout: small square thumbnail on the side instead of a
+     full-width banner image on top. Combines three independent checks
+     (viewport width, touch capability, physical screen size) as an OR so
+     it reliably applies even if a phone's zoom/display settings throw off
+     the logical CSS viewport width. */
+  @media (max-width: 900px), (hover: none) and (pointer: coarse), (max-device-width: 926px) {
     .section-go-deeper { padding: 64px 24px; }
-    .go-deeper-cards { grid-template-columns: 1fr; }
-    .gd-card-img { height: 90px; }
-  }
-  /* Safety net: touch devices reporting a wide viewport (e.g. Safari's
-     "Request Desktop Website") still get the compact thumbnail treatment,
-     since the width-based breakpoint above can't catch that case. */
-  @media (hover: none) and (pointer: coarse) {
-    .go-deeper-cards { grid-template-columns: 1fr; }
-    .gd-card-img { height: 90px; }
-  }
-  /* Second safety net: targets the physical screen (device-width), which
-     isn't affected by Safari zoom/display-scaling settings that can throw
-     off the logical viewport-width checks above on some phones. Covers
-     every current phone; real desktop/laptop screens are always wider. */
-  @media (max-device-width: 926px) {
-    .go-deeper-cards { grid-template-columns: 1fr; }
-    .gd-card-img { height: 90px; }
+    .go-deeper-cards { grid-template-columns: 1fr; gap: 16px; }
+    .gd-card { flex-direction: row; }
+    .gd-card-img { width: 96px; height: auto; }
+    .gd-card-body { padding: 14px 16px; gap: 6px; }
+    .gd-card-title { font-size: 16px; }
+    .gd-card-sub { font-size: 11px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .gd-card-link { margin-top: 2px; }
   }
 
   /* ─── PROGRAMME ─── */
