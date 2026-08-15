@@ -1263,6 +1263,14 @@
     .go-deeper-cards { grid-template-columns: 1fr; }
     .gd-card-img { height: 90px; }
   }
+  /* Second safety net: targets the physical screen (device-width), which
+     isn't affected by Safari zoom/display-scaling settings that can throw
+     off the logical viewport-width checks above on some phones. Covers
+     every current phone; real desktop/laptop screens are always wider. */
+  @media (max-device-width: 926px) {
+    .go-deeper-cards { grid-template-columns: 1fr; }
+    .gd-card-img { height: 90px; }
+  }
 
   /* ─── PROGRAMME ─── */
   .section-programme {
