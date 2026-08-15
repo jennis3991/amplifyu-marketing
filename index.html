@@ -169,6 +169,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .go-deeper-eyebrow { font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
 .go-deeper-h2 { font-family: var(--serif-display); font-size: clamp(28px, 3.5vw, 44px); font-weight: 400; color: var(--cream); line-height: 1.15; margin-bottom: 14px; }
 .go-deeper-sub { font-family: var(--serif-display); font-size: clamp(16px, 1.8vw, 22px); font-weight: 300; font-style: italic; color: rgba(237,234,230,0.4); line-height: 1.5; margin-bottom: 0; }
+.go-deeper-quote { font-family: var(--serif-body); font-size: clamp(1.2rem, 2.4vw, 1.7rem); font-weight: 300; font-style: italic; line-height: 1.5; color: rgba(247,243,236,0.9); letter-spacing: -0.3px; border-left: 2px solid var(--accent); padding-left: 28px; max-width: 780px; margin: 40px 0 56px; }
 .go-deeper-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
 .gd-card { display: flex; flex-direction: column; background: rgba(255,255,255,0.04); border: 1px solid rgba(240,235,226,0.1); border-radius: 6px; overflow: hidden; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
 .gd-card:hover { border-color: rgba(107,124,110,0.5); background: rgba(255,255,255,0.07); }
@@ -187,6 +188,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
    the logical CSS viewport width. */
 @media (max-width: 900px), (hover: none) and (pointer: coarse), (max-device-width: 926px) {
   .section-go-deeper { padding: 64px 24px; }
+  .go-deeper-quote { padding-left: 20px; margin: 28px 0 40px; }
   .go-deeper-cards { grid-template-columns: 1fr; gap: 16px; }
   .gd-card { flex-direction: row; }
   .gd-card-img { width: 96px; height: auto; }
@@ -747,6 +749,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <h2 class="go-deeper-h2">Every session is grounded in science.</h2>
       <p class="go-deeper-sub">Every example is drawn from the best.<br>Every outcome is built to compound.</p>
     </div>
+    <blockquote class="go-deeper-quote fade-up">For the first time, we can combine behavioural science, the wisdom of the world's greatest communicators, and personalised coaching into something everyone can access. That's what AmplifyU is building.</blockquote>
     <div class="go-deeper-cards fade-up delay-1">
       <a href="the-science-behind-amplifyu.html" class="gd-card">
         <div class="gd-card-img">
