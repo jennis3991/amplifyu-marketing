@@ -1251,8 +1251,15 @@
     color: var(--accent-light);
     margin-top: 6px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .section-go-deeper { padding: 64px 24px; }
+    .go-deeper-cards { grid-template-columns: 1fr; }
+    .gd-card-img { height: 90px; }
+  }
+  /* Safety net: touch devices reporting a wide viewport (e.g. Safari's
+     "Request Desktop Website") still get the compact thumbnail treatment,
+     since the width-based breakpoint above can't catch that case. */
+  @media (hover: none) and (pointer: coarse) {
     .go-deeper-cards { grid-template-columns: 1fr; }
     .gd-card-img { height: 90px; }
   }
