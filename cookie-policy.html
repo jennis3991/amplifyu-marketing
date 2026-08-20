@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cookie Policy | AmplifyU</title>
 <meta name="description" content="How AmplifyU uses cookies and similar technologies, and how to manage your preferences.">
-<meta name="robots" content="noindex">
 <link rel="canonical" href="https://www.amplifyu.app/cookie-policy">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
@@ -53,11 +52,10 @@ body { background:var(--cream); color:var(--dark); font-family:var(--sans); font
 .pg-back:hover svg { transform:translateX(-3px); }
 .pg-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:20px; }
 .pg-h1 { font-family:var(--serif-body); font-size:clamp(30px,4.5vw,48px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1px; line-height:1.1; }
+.pg-updated { font-family:var(--sans); font-size:12px; color:rgba(237,234,230,0.4); margin-top:16px; font-style:italic; }
 
 /* ─── PAGE BODY ─── */
 .pg-body { max-width:780px; margin:0 auto; padding:64px 48px 100px; }
-.pg-notice { border-left:3px solid var(--accent); padding:20px 24px; background:var(--cream-mid); border-radius:0 6px 6px 0; margin-bottom:56px; font-family:var(--sans); font-size:14px; color:var(--text-mid); line-height:1.7; }
-.pg-notice strong { color:var(--dark); }
 .pg-section { margin-bottom:44px; }
 .pg-h2 { font-family:var(--serif-body); font-size:clamp(20px,2.5vw,26px); font-weight:500; color:var(--dark); letter-spacing:-0.5px; margin-bottom:12px; }
 .pg-p { font-family:var(--sans); font-size:15px; color:var(--text-mid); line-height:1.85; font-weight:300; margin-bottom:14px; }
@@ -67,6 +65,9 @@ body { background:var(--cream); color:var(--dark); font-family:var(--sans); font
 .pg-table th, .pg-table td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--cream-dark); vertical-align:top; }
 .pg-table th { font-weight:500; color:var(--dark); font-size:11px; letter-spacing:0.05em; text-transform:uppercase; }
 .pg-table td { color:var(--text-mid); font-weight:300; }
+.pg-code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; background:var(--cream-mid); border:1px solid var(--cream-dark); border-radius:4px; padding:2px 6px; color:var(--dark); }
+.pg-rule { width:100%; height:1px; background:var(--cream-dark); margin:48px 0 24px; }
+.pg-footnote { font-family:var(--serif-body); font-size:15px; font-style:italic; color:var(--text-mid); }
 
 /* ─── FOOTER ─── */
 footer { display:flex; align-items:center; justify-content:space-between; padding:32px 48px; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
@@ -122,19 +123,16 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     </a>
     <div class="pg-eyebrow">Legal</div>
     <h1 class="pg-h1">Cookie Policy</h1>
+    <p class="pg-updated">Last updated 20 August 2026</p>
   </div>
 </section>
 
 <main>
   <div class="pg-body">
 
-    <div class="pg-notice">
-      <strong>Placeholder page.</strong> This is a working draft so the Cookie Policy link in our consent banner has somewhere to go. The outline below reflects how the site currently behaves — full legal copy to follow.
-    </div>
-
     <div class="pg-section">
       <h2 class="pg-h2">Overview</h2>
-      <p class="pg-p">AmplifyU (amplifyu.app) is a static site with no user accounts, forms, or backend — so we don't currently set any strictly necessary cookies for things like sessions or security. The only cookies in play come from optional analytics, and only after you accept them.</p>
+      <p class="pg-p">AmplifyU (amplifyu.app) is a static website with no user accounts, forms, or backend — so we don't set any strictly necessary cookies for things like sessions or security. The only cookies in play come from optional analytics, and only after you accept them.</p>
     </div>
 
     <div class="pg-section">
@@ -144,10 +142,10 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
           <tr><th>Name</th><th>Purpose</th><th>Set when</th></tr>
         </thead>
         <tbody>
-          <tr><td>_ga, _ga_*, _gid</td><td>Google Analytics (GA4) — understands how the site is used, in aggregate.</td><td>Only after you click "Accept All"</td></tr>
+          <tr><td><span class="pg-code">_ga</span>, <span class="pg-code">_ga_*</span>, <span class="pg-code">_gid</span></td><td>Google Analytics (GA4) — helps us understand how the site is used, in aggregate</td><td>Only after you click "Accept All"</td></tr>
         </tbody>
       </table>
-      <p class="pg-p" style="margin-top:16px;">We also store your cookie preference itself in your browser's local storage (not a cookie) so we don't ask again on every visit.</p>
+      <p class="pg-p" style="margin-top:16px;">We also store your cookie preference itself in your browser's local storage (not a cookie), so we don't ask again on every visit.</p>
     </div>
 
     <div class="pg-section">
@@ -156,9 +154,17 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     </div>
 
     <div class="pg-section">
+      <h2 class="pg-h2">What Google Analytics tells us</h2>
+      <p class="pg-p">When accepted, GA4 helps us understand things like which pages are visited and general usage patterns, so we can improve the site. This data is aggregated and isn't used to identify you personally. For more detail on how Google handles this data, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+    </div>
+
+    <div class="pg-section">
       <h2 class="pg-h2">Questions</h2>
       <p class="pg-p">Reach us at <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a>.</p>
     </div>
+
+    <div class="pg-rule"></div>
+    <p class="pg-footnote">See also our Privacy Policy for how we handle personal data more broadly.</p>
 
   </div>
 </main>
