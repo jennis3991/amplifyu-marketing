@@ -198,11 +198,6 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
   .gd-card-title { font-size: 16px; }
   .gd-card-sub { font-size: 11px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .gd-card-link { margin-top: 2px; }
-  /* At the narrow thumbnail aspect ratio the centered crop cuts off
-     content (the marble bowl on science, the "90%...waterline" caption
-     on career) -- repositioned per-image based on rendered-crop checks. */
-  .gd-img-science { object-position: 65% 30% !important; }
-  .gd-img-career { object-position: 15% 48% !important; transform-origin: 15% 48% !important; }
 }
 
 /* ─── SOLUTION ─── */
@@ -721,7 +716,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     <div class="go-deeper-cards fade-up delay-1">
       <a href="the-science-behind-amplifyu.html" class="gd-card">
         <div class="gd-card-img">
-          <img src="img-science-theory.jpeg" alt="The science behind AmplifyU" loading="lazy" class="gd-img-science" style="object-position:center 30%;">
+          <img src="img-science-theory.jpeg" alt="The science behind AmplifyU" loading="lazy" style="object-position:center 40%;">
         </div>
         <div class="gd-card-body">
           <p class="gd-card-label">Built on Evidence · 3 min read</p>
@@ -732,7 +727,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       </a>
       <a href="learning-from-the-masters.html" class="gd-card">
         <div class="gd-card-img">
-          <img src="img-masters-branson.png" alt="Learning from the masters" loading="lazy" style="object-position:center 50%;">
+          <img src="img-masters-journal.jpeg" alt="Learning from the masters" loading="lazy" style="object-position:center 45%;">
         </div>
         <div class="gd-card-body">
           <p class="gd-card-label">Learn from the Masters · 3 min read</p>
@@ -744,7 +739,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       </a>
       <a href="why-amplifyu.html" class="gd-card">
         <div class="gd-card-img">
-          <img src="img-career-iceberg.jpeg" alt="Why communication is the most underrated career accelerator" loading="lazy" class="gd-img-career" style="object-position:center 48%; transform:scale(1.12); transform-origin:center 48%;">
+          <img src="img-career-iceberg.jpeg" alt="Why communication is the most underrated career accelerator" loading="lazy" style="object-position:center 45%;">
         </div>
         <div class="gd-card-body">
           <p class="gd-card-label">Career Strategy · 3 min read</p>
