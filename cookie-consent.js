@@ -18,6 +18,8 @@
   }
 
   function loadGA() {
+    window['ga-disable-' + GA_ID] = false;
+
     if (window.__amplifyuGaLoaded) return;
     window.__amplifyuGaLoaded = true;
 
@@ -30,6 +32,38 @@
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(script);
+  }
+
+  // Stops any GA instance already loaded this session (e.g. the user
+  // accepted earlier, then reopened Cookie Settings and rejected) from
+  // sending further hits — gtag.js checks this flag before every hit.
+  function disableGA() {
+    window['ga-disable-' + GA_ID] = true;
+  }
+
+  // Wipes any GA cookies for this domain, covering both cookies gtag.js
+  // itself would have set (_ga, _ga_<container-id>, _gid, _gat...) and
+  // any left over from before this consent banner existed.
+  function clearGACookies() {
+    var GA_COOKIE_PATTERN = /^_ga(_.*)?$|^_gid$|^_gat(_.*)?$|^_gac_.*$/i;
+    var host = window.location.hostname;
+    var hostParts = host.split('.');
+    var rootDomain = hostParts.length > 2 ? hostParts.slice(-2).join('.') : host;
+    var domainVariants = ['', host, '.' + host];
+    if (rootDomain !== host) {
+      domainVariants.push(rootDomain, '.' + rootDomain);
+    }
+
+    document.cookie.split(';').forEach(function (chunk) {
+      var name = chunk.split('=')[0].trim();
+      if (!name || !GA_COOKIE_PATTERN.test(name)) return;
+
+      domainVariants.forEach(function (domain) {
+        var cookieStr = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+        if (domain) cookieStr += '; domain=' + domain;
+        document.cookie = cookieStr;
+      });
+    });
   }
 
   function injectStyles() {
@@ -89,6 +123,8 @@
     el.querySelector('.cc-reject').addEventListener('click', function () {
       setConsent('rejected');
       hideBanner();
+      disableGA();
+      clearGACookies();
     });
 
     return el;
