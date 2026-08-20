@@ -162,7 +162,11 @@
     var consent = getConsent();
     if (consent === 'accepted') {
       loadGA();
-    } else if (consent !== 'rejected') {
+    } else if (consent === 'rejected') {
+      // Catches lingering GA cookies for returning visitors who rejected
+      // under the old setup, before this cleanup step existed.
+      clearGACookies();
+    } else {
       showBanner();
     }
 
