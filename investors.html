@@ -196,8 +196,21 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .problem-grid { grid-template-columns:1fr; }
   .trends-grid { grid-template-columns:1fr; gap:1px; }
   .solution-pillars { grid-template-columns:1fr; gap:1px; }
-  .roadmap-track { grid-template-columns:1fr 1fr; gap:48px; }
+  .cohort-grid {
+    display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch; gap:0; background:transparent;
+    border:none; padding-bottom:4px;
+  }
+  .cohort-grid::-webkit-scrollbar { display:none; }
+  .cohort-card {
+    flex:0 0 85%; scroll-snap-align:start;
+    border:1px solid rgba(255,255,255,0.1); border-radius:6px;
+    padding:28px 24px; margin-right:12px;
+  }
+  .cohort-card:last-child { margin-right:24px; }
+  .roadmap-track { grid-template-columns:1fr; gap:40px; }
   .roadmap-track::before { display:none; }
+  .roadmap-phase { padding:0; }
   .founder-layout { grid-template-columns:1fr; gap:22px; }
   .founder-img-wrap { max-width:200px; }
   footer { flex-direction:column; gap:16px; padding:24px; text-align:center; }
