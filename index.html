@@ -109,6 +109,47 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .phone-mock img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
 .w-mob-demo { display: none; }
 
+/* ─── OUTCOMES CAROUSEL ─── */
+.w-outcomes { background:var(--dark); padding:96px 0 100px; border-top:1px solid rgba(255,255,255,0.06); overflow:hidden; }
+.w-outcomes-header { max-width:1200px; margin:0 auto 48px; padding:0 48px; display:flex; justify-content:space-between; align-items:flex-end; gap:40px; }
+.w-outcomes-header-text { max-width:640px; }
+.w-outcomes-h2 { font-family:var(--serif-display); font-size:clamp(32px,4vw,52px); font-weight:400; color:rgba(247,243,236,0.95); line-height:1.12; letter-spacing:-1px; margin-bottom:16px; }
+.w-outcomes-sub { font-family:var(--sans); font-size:16px; font-weight:300; color:rgba(237,234,230,0.55); line-height:1.7; max-width:480px; }
+.w-outcomes-arrows { display:flex; gap:10px; flex-shrink:0; padding-bottom:4px; }
+.w-outcomes-arrow { width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,0.15); background:transparent; color:rgba(247,243,236,0.85); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:border-color 0.2s, background 0.2s, color 0.2s; padding:0; }
+.w-outcomes-arrow:hover { border-color:var(--accent-light); background:rgba(138,158,141,0.08); color:var(--accent-light); }
+.w-outcomes-arrow:disabled { opacity:0.3; cursor:default; }
+.w-outcomes-arrow:disabled:hover { border-color:rgba(255,255,255,0.15); background:transparent; color:rgba(247,243,236,0.85); }
+
+.w-outcomes-track {
+  display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x proximity;
+  padding:6px 48px 24px; margin:0;
+  cursor:grab; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none; -ms-overflow-style:none;
+}
+.w-outcomes-track::-webkit-scrollbar { display:none; }
+.w-outcomes-track.is-dragging { cursor:grabbing; scroll-snap-type:none; }
+.w-outcomes-track.is-dragging .w-outcome-card { pointer-events:none; }
+
+.w-outcome-card {
+  flex:0 0 auto; width:280px; height:400px; position:relative;
+  border-radius:10px; overflow:hidden; scroll-snap-align:start;
+  background-color:#161310; background-size:cover; background-position:center;
+  border:1px solid rgba(255,255,255,0.08); user-select:none;
+  -webkit-user-drag:none;
+}
+.w-outcome-card--placeholder {
+  background-image:linear-gradient(155deg, #1e1a15 0%, #120f0c 55%, #080705 100%);
+}
+.w-outcome-card::after {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(15,13,10,0.05) 0%, rgba(15,13,10,0.25) 45%, rgba(15,13,10,0.94) 100%);
+}
+.w-outcome-card-overlay { position:relative; z-index:1; height:100%; display:flex; flex-direction:column; padding:26px 24px; }
+.w-outcome-day { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:0.16em; color:var(--gold); margin-bottom:8px; }
+.w-outcome-topic { font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,243,236,0.75); }
+.w-outcome-text { font-family:var(--serif-body); font-size:23px; font-weight:400; color:#fff; line-height:1.28; letter-spacing:-0.3px; margin-top:auto; }
+
 /* ─── PROBLEM ─── */
 /* ─── PROBLEM REFRAME ─── */
 .w-problem { background: var(--dark); padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
@@ -380,6 +421,13 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-hero-h1 { font-size: clamp(36px, 9vw, 54px); }
   .w-hero-sub { max-width:100%; }
 
+  .w-outcomes { padding:64px 0 72px; }
+  .w-outcomes-header { flex-direction:column; align-items:flex-start; gap:20px; padding:0 24px; margin-bottom:32px; }
+  .w-outcomes-arrows { display:none; }
+  .w-outcomes-track { padding:6px 24px 20px; gap:14px; }
+  .w-outcome-card { width:240px; height:340px; }
+  .w-outcome-text { font-size:19px; }
+
   .w-problem { padding: 52px 24px; }
   .w-problem-inner { grid-template-columns:1fr; gap:40px; }
   .w-problem-lede { gap:20px; }
@@ -554,6 +602,26 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       </div>
     </div>
   </div>
+</section>
+
+<!-- ══ OUTCOMES CAROUSEL ══ -->
+<section class="w-outcomes">
+  <div class="w-outcomes-header">
+    <div class="w-outcomes-header-text">
+      <div class="eyebrow fade-up">The AmplifyU Transformation</div>
+      <h2 class="w-outcomes-h2 fade-up delay-1">14 days. 14 ways to show up differently.</h2>
+      <p class="w-outcomes-sub fade-up delay-1">One skill a day. Built around the moments that shape your career.</p>
+    </div>
+    <div class="w-outcomes-arrows fade-up delay-1">
+      <button class="w-outcomes-arrow" id="outcomesPrev" type="button" aria-label="Previous outcome">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 12L6 8l4-4"/></svg>
+      </button>
+      <button class="w-outcomes-arrow" id="outcomesNext" type="button" aria-label="Next outcome">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="w-outcomes-track fade-up delay-2" id="outcomesTrack"></div>
 </section>
 
 <!-- ══ PROBLEM / WHAT WE TEACH ══ -->
@@ -935,6 +1003,100 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       el.style.opacity = '1';
     }, 510);
   }, 2800);
+})();
+</script>
+<script>
+// ── OUTCOMES CAROUSEL ──
+// To add a real photo for a day, just set its `img` field below
+// (e.g. img: 'outcomes/day-01.jpg') — the text layer needs no changes.
+var OUTCOMES = [
+  { day: '01', topic: 'Clarity', outcome: 'Speak so clearly, no one has to work to understand you.', img: '' },
+  { day: '02', topic: 'Voice', outcome: 'Make your voice work for you.', img: '' },
+  { day: '03', topic: 'Credibility', outcome: 'Cut the filler. Keep the authority.', img: '' },
+  { day: '04', topic: 'Editing', outcome: 'Say more by saying less.', img: '' },
+  { day: '05', topic: 'Framework', outcome: 'Land your point, every time.', img: '' },
+  { day: '06', topic: 'High-Stakes Conversations', outcome: 'Walk into the conversation that matters, ready for anything.', img: '' },
+  { day: '07', topic: 'Integration', outcome: 'Turn seven days of practice into a skill you can use.', img: '' },
+  { day: '08', topic: 'Storytelling', outcome: 'Tell the story people remember.', img: '' },
+  { day: '09', topic: 'Connections', outcome: 'Build rapport that makes people want to work with you.', img: '' },
+  { day: '10', topic: 'Performance', outcome: 'Command attention the moment you speak.', img: '' },
+  { day: '11', topic: 'Brand Identity', outcome: 'Build a LinkedIn profile that opens doors.', img: '' },
+  { day: '12', topic: 'Nonverbal Influence', outcome: 'Communicate confidence before you say a word.', img: '' },
+  { day: '13', topic: 'Visibility', outcome: 'Make your work impossible to overlook.', img: '' },
+  { day: '14', topic: 'Capstone', outcome: 'Leave with a blueprint for how you communicate, lead and grow.', img: '' }
+];
+
+(function() {
+  var track = document.getElementById('outcomesTrack');
+  if (!track) return;
+
+  track.innerHTML = OUTCOMES.map(function(c) {
+    var hasImg = !!c.img;
+    var cls = 'w-outcome-card' + (hasImg ? '' : ' w-outcome-card--placeholder');
+    var style = hasImg ? ' style="background-image:url(\'' + c.img + '\')"' : '';
+    return (
+      '<div class="' + cls + '"' + style + '>' +
+        '<div class="w-outcome-card-overlay">' +
+          '<span class="w-outcome-day">Day ' + c.day + '</span>' +
+          '<span class="w-outcome-topic">' + c.topic + '</span>' +
+          '<p class="w-outcome-text">' + c.outcome + '</p>' +
+        '</div>' +
+      '</div>'
+    );
+  }).join('');
+
+  // Mouse drag-to-scroll (touch devices already get native momentum scroll).
+  var isDown = false, dragged = false, startX = 0, startScroll = 0;
+
+  track.addEventListener('pointerdown', function(e) {
+    if (e.pointerType === 'touch') return;
+    isDown = true; dragged = false;
+    startX = e.clientX;
+    startScroll = track.scrollLeft;
+    track.classList.add('is-dragging');
+    if (track.setPointerCapture) track.setPointerCapture(e.pointerId);
+  });
+  track.addEventListener('pointermove', function(e) {
+    if (!isDown) return;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 4) dragged = true;
+    track.scrollLeft = startScroll - dx;
+  });
+  function stopDrag() {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('is-dragging');
+  }
+  track.addEventListener('pointerup', stopDrag);
+  track.addEventListener('pointerleave', stopDrag);
+  track.addEventListener('pointercancel', stopDrag);
+  track.addEventListener('click', function(e) {
+    if (dragged) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+
+  // Arrow buttons scroll by roughly one card width.
+  var prevBtn = document.getElementById('outcomesPrev');
+  var nextBtn = document.getElementById('outcomesNext');
+  function cardStep() {
+    var card = track.querySelector('.w-outcome-card');
+    if (!card) return 300;
+    var style = getComputedStyle(track);
+    return card.getBoundingClientRect().width + parseFloat(style.gap || 20);
+  }
+  function updateArrows() {
+    if (!prevBtn || !nextBtn) return;
+    var max = track.scrollWidth - track.clientWidth - 2;
+    prevBtn.disabled = track.scrollLeft <= 2;
+    nextBtn.disabled = track.scrollLeft >= max;
+  }
+  if (prevBtn) prevBtn.addEventListener('click', function() {
+    track.scrollBy({ left: -cardStep(), behavior: 'smooth' });
+  });
+  if (nextBtn) nextBtn.addEventListener('click', function() {
+    track.scrollBy({ left: cardStep(), behavior: 'smooth' });
+  });
+  track.addEventListener('scroll', updateArrows);
+  updateArrows();
 })();
 </script>
 </body>
