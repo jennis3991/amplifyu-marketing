@@ -79,11 +79,11 @@
       '#cookie-consent-banner .cc-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;flex:0 0 auto;}' +
       '#cookie-consent-banner button{font-family:"Inter",system-ui,sans-serif;font-size:11px;font-weight:500;' +
       'letter-spacing:0.08em;text-transform:uppercase;padding:13px 24px;border-radius:3px;cursor:pointer;' +
-      'border:1px solid transparent;transition:opacity 0.2s ease,border-color 0.2s ease,color 0.2s ease;white-space:nowrap;}' +
-      '#cookie-consent-banner .cc-accept{background:#C9A96E;color:#1a1714;}' +
-      '#cookie-consent-banner .cc-accept:hover{opacity:0.85;}' +
-      '#cookie-consent-banner .cc-reject{background:transparent;color:#F7F3EC;border-color:rgba(247,243,236,0.3);}' +
-      '#cookie-consent-banner .cc-reject:hover{border-color:#8A9E84;color:#8A9E84;}' +
+      'background:transparent;color:#F7F3EC;border:1px solid rgba(247,243,236,0.35);' +
+      'transition:border-color 0.2s ease,color 0.2s ease;white-space:nowrap;}' +
+      '#cookie-consent-banner button:hover{border-color:#8A9E84;color:#8A9E84;}' +
+      '#cookie-consent-banner .cc-link{color:#C9A96E;text-decoration:underline;text-underline-offset:2px;}' +
+      '#cookie-consent-banner .cc-link:hover{color:#8A9E84;}' +
       '#cookie-settings-bar{background:#0F0D0A;border-top:1px solid rgba(255,255,255,0.06);' +
       'padding:14px 48px;text-align:center;}' +
       '.cookie-settings-link{font-family:"Inter",system-ui,sans-serif;font-size:11px;color:rgba(247,243,236,0.4);' +
@@ -107,8 +107,8 @@
     el.setAttribute('aria-label', 'Cookie consent');
     el.innerHTML =
       '<div class="cc-text"><span class="cc-title">We use cookies</span>' +
-      'Essential cookies keep this site running. With your permission, we’d also like to use analytics ' +
-      'cookies to understand how the site is used — they only load if you accept.</div>' +
+      'We’d like to use optional analytics cookies to understand how this site is used — they only load ' +
+      'if you accept. <a href="cookie-policy.html" class="cc-link">Learn more in our Cookie Policy</a>.</div>' +
       '<div class="cc-actions">' +
         '<button type="button" class="cc-reject">Reject Non-Essential</button>' +
         '<button type="button" class="cc-accept">Accept All</button>' +

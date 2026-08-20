@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Policy | AmplifyU</title>
+<meta name="description" content="How AmplifyU uses cookies and similar technologies, and how to manage your preferences.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.amplifyu.app/cookie-policy">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --dark:#0f0d0a;
+  --cream:#edeae6;
+  --cream-mid:#e5e2de;
+  --cream-dark:#d2cecc;
+  --accent:#6b7c6e;
+  --accent-light:#8a9e8d;
+  --text-mid:#6e6b66;
+  --text-light:#9a9895;
+  --serif-body:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', system-ui, sans-serif;
+}
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--dark); font-family:var(--sans); font-size:16px; line-height:1.6; overflow-x:hidden; }
+
+/* ─── NAV ─── */
+#nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; background:rgba(15,13,10,0); transition:background 0.3s; }
+#nav.scrolled { background:rgba(15,13,10,0.95); backdrop-filter:blur(8px); }
+.nav-logo { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-img { height:64px; width:auto; display:block; filter:brightness(0) invert(1); }
+.nav-links { display:flex; align-items:center; gap:22px; }
+.nav-link { font-family:var(--sans); font-size:13px; font-weight:400; letter-spacing:0.02em; color:rgba(237,234,230,0.55); text-decoration:none; transition:color 0.2s; }
+.nav-link:hover, .nav-link.active { color:#fff; }
+.nav-right { display:flex; align-items:center; gap:16px; }
+.nav-cta { font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:10px 22px; border-radius:3px; transition:background 0.2s, color 0.2s; }
+.nav-cta--get { background:#6b7c6e; color:#fff; border-color:transparent; border-radius:24px; transition:background 0.2s; }
+.nav-cta--get:hover { background:#4e5e51; }
+.nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.nav-hamburger span { display:block; width:22px; height:1.5px; background:rgba(237,234,230,0.7); transition:0.2s; }
+
+/* ─── PAGE HERO ─── */
+.pg-hero { background:var(--dark); padding:140px 48px 64px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.pg-hero-inner { max-width:780px; margin:0 auto; }
+.pg-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-bottom:32px; transition:color 0.2s; }
+.pg-back:hover { color:#fff; }
+.pg-back svg { transition:transform 0.2s; }
+.pg-back:hover svg { transform:translateX(-3px); }
+.pg-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:20px; }
+.pg-h1 { font-family:var(--serif-body); font-size:clamp(30px,4.5vw,48px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1px; line-height:1.1; }
+
+/* ─── PAGE BODY ─── */
+.pg-body { max-width:780px; margin:0 auto; padding:64px 48px 100px; }
+.pg-notice { border-left:3px solid var(--accent); padding:20px 24px; background:var(--cream-mid); border-radius:0 6px 6px 0; margin-bottom:56px; font-family:var(--sans); font-size:14px; color:var(--text-mid); line-height:1.7; }
+.pg-notice strong { color:var(--dark); }
+.pg-section { margin-bottom:44px; }
+.pg-h2 { font-family:var(--serif-body); font-size:clamp(20px,2.5vw,26px); font-weight:500; color:var(--dark); letter-spacing:-0.5px; margin-bottom:12px; }
+.pg-p { font-family:var(--sans); font-size:15px; color:var(--text-mid); line-height:1.85; font-weight:300; margin-bottom:14px; }
+.pg-p:last-child { margin-bottom:0; }
+.pg-p a { color:var(--accent); }
+.pg-table { width:100%; border-collapse:collapse; margin-top:8px; font-family:var(--sans); font-size:13px; }
+.pg-table th, .pg-table td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--cream-dark); vertical-align:top; }
+.pg-table th { font-weight:500; color:var(--dark); font-size:11px; letter-spacing:0.05em; text-transform:uppercase; }
+.pg-table td { color:var(--text-mid); font-weight:300; }
+
+/* ─── FOOTER ─── */
+footer { display:flex; align-items:center; justify-content:space-between; padding:32px 48px; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.footer-logo { display:flex; align-items:center; gap:10px; font-family:var(--sans); font-size:13px; font-weight:600; color:var(--accent-light); letter-spacing:0.15em; text-transform:uppercase; white-space:nowrap; }
+.footer-logo img { width:36px; height:36px; object-fit:contain; display:block; filter:brightness(0) invert(1); }
+.footer-legal { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.2); letter-spacing:0.05em; text-align:center; }
+.footer-tm { font-size:0.75em; letter-spacing:0; vertical-align:super; margin-left:-0.12em; }
+
+/* ─── MOBILE ─── */
+@media (max-width:1100px) {
+  #nav { padding:0 20px; height:64px; background:rgba(15,13,10,0.92); backdrop-filter:blur(8px); }
+  .nav-hamburger { display:flex; }
+  .nav-links { position:absolute; top:100%; left:0; right:0; display:flex; flex-direction:column; align-items:stretch; gap:0; background:rgba(15,13,10,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(107,124,110,0.12); max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .nav-links .nav-link { width:100%; box-sizing:border-box; padding:16px 24px; border-bottom:1px solid rgba(240,235,226,0.08); }
+  #nav.nav-open .nav-links { max-height:70vh; }
+  .nav-logo-img { height:52px; }
+  .pg-hero { padding:100px 24px 48px; }
+  .pg-body { padding:48px 24px 72px; }
+  .pg-table { display:block; overflow-x:auto; }
+  footer { flex-direction:column; text-align:center; gap:16px; padding:24px; }
+}
+</style>
+<!-- Cookie consent + gated GA4 (see cookie-consent.js) -->
+<script src="cookie-consent.js" defer></script>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-a-transparent.png" alt="AmplifyU" class="nav-logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="programme.html" class="nav-link">Programme</a>
+    <a href="coach.html" class="nav-link">AI Coach</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="investors.html" class="nav-link">Investors</a>
+  </div>
+  <div class="nav-right">
+    <a href="coming-soon.html" class="nav-cta nav-cta--get">Get AmplifyU</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="pg-hero">
+  <div class="pg-hero-inner">
+    <a href="index.html" class="pg-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 12L6 8l4-4"/></svg>
+      Back to Home
+    </a>
+    <div class="pg-eyebrow">Legal</div>
+    <h1 class="pg-h1">Cookie Policy</h1>
+  </div>
+</section>
+
+<main>
+  <div class="pg-body">
+
+    <div class="pg-notice">
+      <strong>Placeholder page.</strong> This is a working draft so the Cookie Policy link in our consent banner has somewhere to go. The outline below reflects how the site currently behaves — full legal copy to follow.
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">Overview</h2>
+      <p class="pg-p">AmplifyU (amplifyu.app) is a static site with no user accounts, forms, or backend — so we don't currently set any strictly necessary cookies for things like sessions or security. The only cookies in play come from optional analytics, and only after you accept them.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">Cookies we use</h2>
+      <table class="pg-table">
+        <thead>
+          <tr><th>Name</th><th>Purpose</th><th>Set when</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>_ga, _ga_*, _gid</td><td>Google Analytics (GA4) — understands how the site is used, in aggregate.</td><td>Only after you click "Accept All"</td></tr>
+        </tbody>
+      </table>
+      <p class="pg-p" style="margin-top:16px;">We also store your cookie preference itself in your browser's local storage (not a cookie) so we don't ask again on every visit.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">Managing your preferences</h2>
+      <p class="pg-p">You can change your choice at any time using "Cookie Settings" at the bottom of any page. Choosing "Reject Non-Essential" clears any analytics cookies already set for this domain.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">Questions</h2>
+      <p class="pg-p">Reach us at <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a>.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo-a-transparent.png" alt="" aria-hidden="true">
+    AMPLIFYU<sup class="footer-tm">™</sup>
+  </div>
+  <p class="footer-legal">© 2026 AmplifyU Technologies Ltd · Registered in England &amp; Wales · AmplifyU™ UK IPO Trademark Approved</p>
+</footer>
+
+<script>
+  var navEl = document.getElementById('nav');
+  window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 40); });
+  document.getElementById('navHamburger').addEventListener('click', function() {
+    var isOpen = navEl.classList.toggle('nav-open');
+    this.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+</body>
+</html>
