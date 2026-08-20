@@ -35,7 +35,7 @@
   --gold: #c9a96e;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body { background: var(--cream); color: var(--dark); font-family: var(--sans); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
 /* ─── NAV ─── */
@@ -122,18 +122,18 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-outcomes-arrow:disabled:hover { border-color:rgba(255,255,255,0.15); background:transparent; color:rgba(247,243,236,0.85); }
 
 .w-outcomes-track {
-  display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x proximity;
+  display:flex; gap:20px; overflow-x:auto;
   padding:6px 48px 24px; margin:0;
   cursor:grab; -webkit-overflow-scrolling:touch;
   scrollbar-width:none; -ms-overflow-style:none;
 }
 .w-outcomes-track::-webkit-scrollbar { display:none; }
-.w-outcomes-track.is-dragging { cursor:grabbing; scroll-snap-type:none; }
+.w-outcomes-track.is-dragging { cursor:grabbing; }
 .w-outcomes-track.is-dragging .w-outcome-card { pointer-events:none; }
 
 .w-outcome-card {
-  flex:0 0 auto; width:280px; height:400px; position:relative;
-  border-radius:10px; overflow:hidden; scroll-snap-align:start;
+  flex:0 0 auto; width:340px; height:440px; position:relative;
+  border-radius:10px; overflow:hidden;
   background-color:#161310; background-size:cover; background-position:center;
   border:1px solid rgba(255,255,255,0.08); user-select:none;
   -webkit-user-drag:none;
@@ -143,12 +143,16 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 }
 .w-outcome-card::after {
   content:''; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(180deg, rgba(15,13,10,0.05) 0%, rgba(15,13,10,0.25) 45%, rgba(15,13,10,0.94) 100%);
+  background:linear-gradient(180deg, rgba(15,13,10,0.35) 0%, rgba(15,13,10,0.45) 45%, rgba(15,13,10,0.8) 100%);
 }
-.w-outcome-card-overlay { position:relative; z-index:1; height:100%; display:flex; flex-direction:column; padding:26px 24px; }
-.w-outcome-day { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:0.16em; color:var(--gold); margin-bottom:8px; }
-.w-outcome-topic { font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(247,243,236,0.75); }
-.w-outcome-text { font-family:var(--serif-body); font-size:23px; font-weight:400; color:#fff; line-height:1.28; letter-spacing:-0.3px; margin-top:auto; }
+.w-outcome-card-overlay {
+  position:relative; z-index:1; height:100%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:36px 30px; gap:14px;
+}
+.w-outcome-day { font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.18em; color:var(--gold); }
+.w-outcome-topic { font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(247,243,236,0.8); }
+.w-outcome-text { font-family:var(--serif-body); font-size:32px; font-weight:400; color:#fff; line-height:1.24; letter-spacing:-0.3px; margin-top:4px; }
 
 /* ─── PROBLEM ─── */
 /* ─── PROBLEM REFRAME ─── */
@@ -425,8 +429,11 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-outcomes-header { flex-direction:column; align-items:flex-start; gap:20px; padding:0 24px; margin-bottom:32px; }
   .w-outcomes-arrows { display:none; }
   .w-outcomes-track { padding:6px 24px 20px; gap:14px; }
-  .w-outcome-card { width:240px; height:340px; }
-  .w-outcome-text { font-size:19px; }
+  .w-outcome-card { width:270px; height:380px; }
+  .w-outcome-card-overlay { padding:28px 24px; gap:10px; }
+  .w-outcome-day { font-size:12px; }
+  .w-outcome-topic { font-size:13px; }
+  .w-outcome-text { font-size:25px; }
 
   .w-problem { padding: 52px 24px; }
   .w-problem-inner { grid-template-columns:1fr; gap:40px; }
@@ -1030,7 +1037,7 @@ var OUTCOMES = [
   var track = document.getElementById('outcomesTrack');
   if (!track) return;
 
-  track.innerHTML = OUTCOMES.map(function(c) {
+  function cardMarkup(c) {
     var hasImg = !!c.img;
     var cls = 'w-outcome-card' + (hasImg ? '' : ' w-outcome-card--placeholder');
     var style = hasImg ? ' style="background-image:url(\'' + c.img + '\')"' : '';
@@ -1043,12 +1050,76 @@ var OUTCOMES = [
         '</div>' +
       '</div>'
     );
-  }).join('');
+  }
+
+  // Render the 14 cards twice back-to-back so the auto-scroll can loop
+  // seamlessly (jumping back by exactly one set's width is invisible
+  // since the next set is an identical duplicate).
+  var once = OUTCOMES.map(cardMarkup).join('');
+  track.innerHTML = once + once;
+
+  var loopWidth = 0;
+  function measureLoop() {
+    var cards = track.querySelectorAll('.w-outcome-card');
+    if (cards.length < OUTCOMES.length * 2) return;
+    loopWidth = cards[OUTCOMES.length].offsetLeft - cards[0].offsetLeft;
+  }
+  measureLoop();
+  window.addEventListener('resize', measureLoop);
+
+  // ── Slow ambient auto-scroll, pauses on any user interaction ──
+  // scrollLeft always reads back as an integer, so accumulating a
+  // sub-pixel-per-frame speed directly on it (`scrollLeft += 0.35`)
+  // never actually moves anything -- each frame's fractional part gets
+  // rounded away before the next frame reads it back. Track the real
+  // (fractional) position ourselves instead, and only write the
+  // rounded result to scrollLeft.
+  var AUTOSCROLL_SPEED = 0.35; // px per frame (~60fps) — a slow, steady drift
+  var scrollPos = track.scrollLeft;
+  var paused = false;
+  var resumeTimer = null;
+
+  function pause() {
+    paused = true;
+    if (resumeTimer) { clearTimeout(resumeTimer); resumeTimer = null; }
+  }
+  function scheduleResume(delay) {
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(function() { paused = false; }, delay || 1400);
+  }
+  function tick() {
+    if (!paused && loopWidth > 0) {
+      scrollPos += AUTOSCROLL_SPEED;
+      if (scrollPos >= loopWidth) scrollPos -= loopWidth;
+      track.scrollLeft = scrollPos;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // Keep scrollLeft inside the single-set range so it can drift forever
+  // (applies to any scroll, ours or the user's). Once scrolling settles
+  // (debounced, so this ignores our own continuous auto-scroll frames
+  // and only fires once genuine user interaction stops), resync our
+  // fractional accumulator to the real, settled position.
+  var scrollIdleTimer = null;
+  track.addEventListener('scroll', function() {
+    if (loopWidth > 0) {
+      if (track.scrollLeft >= loopWidth) track.scrollLeft -= loopWidth;
+      else if (track.scrollLeft < 0) track.scrollLeft += loopWidth;
+    }
+    clearTimeout(scrollIdleTimer);
+    scrollIdleTimer = setTimeout(function() { scrollPos = track.scrollLeft; }, 120);
+  });
+
+  track.addEventListener('mouseenter', pause);
+  track.addEventListener('mouseleave', function() { scheduleResume(400); });
 
   // Mouse drag-to-scroll (touch devices already get native momentum scroll).
   var isDown = false, dragged = false, startX = 0, startScroll = 0;
 
   track.addEventListener('pointerdown', function(e) {
+    pause();
     if (e.pointerType === 'touch') return;
     isDown = true; dragged = false;
     startX = e.clientX;
@@ -1063,13 +1134,16 @@ var OUTCOMES = [
     track.scrollLeft = startScroll - dx;
   });
   function stopDrag() {
-    if (!isDown) return;
-    isDown = false;
-    track.classList.remove('is-dragging');
+    if (isDown) {
+      isDown = false;
+      track.classList.remove('is-dragging');
+    }
+    scheduleResume(1500);
   }
   track.addEventListener('pointerup', stopDrag);
   track.addEventListener('pointerleave', stopDrag);
   track.addEventListener('pointercancel', stopDrag);
+  track.addEventListener('touchend', function() { scheduleResume(1500); });
   track.addEventListener('click', function(e) {
     if (dragged) { e.preventDefault(); e.stopPropagation(); }
   }, true);
@@ -1083,20 +1157,16 @@ var OUTCOMES = [
     var style = getComputedStyle(track);
     return card.getBoundingClientRect().width + parseFloat(style.gap || 20);
   }
-  function updateArrows() {
-    if (!prevBtn || !nextBtn) return;
-    var max = track.scrollWidth - track.clientWidth - 2;
-    prevBtn.disabled = track.scrollLeft <= 2;
-    nextBtn.disabled = track.scrollLeft >= max;
-  }
   if (prevBtn) prevBtn.addEventListener('click', function() {
+    pause();
     track.scrollBy({ left: -cardStep(), behavior: 'smooth' });
+    scheduleResume(1800);
   });
   if (nextBtn) nextBtn.addEventListener('click', function() {
+    pause();
     track.scrollBy({ left: cardStep(), behavior: 'smooth' });
+    scheduleResume(1800);
   });
-  track.addEventListener('scroll', updateArrows);
-  updateArrows();
 })();
 </script>
 </body>
