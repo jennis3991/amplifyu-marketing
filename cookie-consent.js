@@ -89,9 +89,12 @@
       '.cookie-settings-link{font-family:"Inter",system-ui,sans-serif;font-size:11px;color:rgba(247,243,236,0.4);' +
       'text-decoration:underline;text-underline-offset:2px;cursor:pointer;background:none;border:none;padding:0;}' +
       '.cookie-settings-link:hover{color:#8A9E84;}' +
-      '@media (max-width:640px){#cookie-consent-banner{padding:20px;flex-direction:column;align-items:stretch;}' +
-      '#cookie-consent-banner .cc-actions{flex-direction:column;}' +
-      '#cookie-consent-banner button{width:100%;}}';
+      '@media (max-width:640px){' +
+      '#cookie-consent-banner{padding:14px 16px;flex-direction:column;align-items:stretch;gap:10px;}' +
+      '#cookie-consent-banner .cc-title{font-size:14px;margin-bottom:2px;}' +
+      '#cookie-consent-banner .cc-text{font-size:12px;line-height:1.5;flex-basis:auto;}' +
+      '#cookie-consent-banner .cc-actions{flex-direction:row;gap:8px;}' +
+      '#cookie-consent-banner button{flex:1;padding:11px 14px;font-size:10px;white-space:normal;}}';
 
     var style = document.createElement('style');
     style.textContent = css;
