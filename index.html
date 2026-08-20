@@ -1094,19 +1094,26 @@ var OUTCOMES = [
   }
   requestAnimationFrame(tick);
 
-  // Keep scrollLeft inside the single-set range so it can drift forever
-  // (applies to any scroll, ours or the user's). Once scrolling settles
-  // (debounced, so this ignores our own continuous auto-scroll frames
-  // and only fires once genuine user interaction stops), resync our
-  // fractional accumulator to the real, settled position.
+  // Once scrolling settles (debounced, so this ignores our own continuous
+  // auto-scroll frames and only fires once genuine user interaction
+  // stops), wrap scrollLeft back into the single-set range and resync our
+  // fractional accumulator to match. This is deliberately NOT done in
+  // real time during the scroll itself -- writing to scrollLeft mid-swipe
+  // (e.g. while a native touch gesture is still active on mobile) is
+  // what causes a visible "jump"/snap. Letting the user freely scroll
+  // into the duplicated second set and correcting only after they've
+  // stopped is invisible, since that second set looks identical to the
+  // first.
   var scrollIdleTimer = null;
   track.addEventListener('scroll', function() {
-    if (loopWidth > 0) {
-      if (track.scrollLeft >= loopWidth) track.scrollLeft -= loopWidth;
-      else if (track.scrollLeft < 0) track.scrollLeft += loopWidth;
-    }
     clearTimeout(scrollIdleTimer);
-    scrollIdleTimer = setTimeout(function() { scrollPos = track.scrollLeft; }, 120);
+    scrollIdleTimer = setTimeout(function() {
+      if (loopWidth > 0) {
+        if (track.scrollLeft >= loopWidth) track.scrollLeft -= loopWidth;
+        else if (track.scrollLeft < 0) track.scrollLeft += loopWidth;
+      }
+      scrollPos = track.scrollLeft;
+    }, 120);
   });
 
   track.addEventListener('mouseenter', pause);
