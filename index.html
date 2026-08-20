@@ -147,12 +147,11 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 }
 .w-outcome-card-overlay {
   position:relative; z-index:1; height:100%;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; padding:36px 30px; gap:14px;
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-end;
+  text-align:left; padding:32px 28px;
 }
-.w-outcome-day { font-family:var(--sans); font-size:18px; font-weight:600; letter-spacing:0.16em; color:var(--gold); }
-.w-outcome-topic { font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(247,243,236,0.8); }
-.w-outcome-text { font-family:var(--serif-body); font-size:32px; font-weight:400; color:#fff; line-height:1.24; letter-spacing:-0.3px; margin-top:4px; }
+.w-outcome-day { font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-light); margin-bottom:10px; }
+.w-outcome-text { font-family:var(--serif-body); font-size:32px; font-weight:400; color:#fff; line-height:1.22; letter-spacing:-0.3px; }
 
 /* ─── PROBLEM ─── */
 /* ─── PROBLEM REFRAME ─── */
@@ -430,9 +429,8 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-outcomes-arrows { display:none; }
   .w-outcomes-track { padding:6px 24px 20px; gap:14px; }
   .w-outcome-card { width:270px; height:380px; }
-  .w-outcome-card-overlay { padding:28px 24px; gap:10px; }
-  .w-outcome-day { font-size:16px; }
-  .w-outcome-topic { font-size:13px; }
+  .w-outcome-card-overlay { padding:26px 22px; }
+  .w-outcome-day { font-size:11px; margin-bottom:8px; }
   .w-outcome-text { font-size:25px; }
 
   .w-problem { padding: 52px 24px; }
@@ -1044,8 +1042,7 @@ var OUTCOMES = [
     return (
       '<div class="' + cls + '"' + style + '>' +
         '<div class="w-outcome-card-overlay">' +
-          '<span class="w-outcome-day">Day ' + c.day + '</span>' +
-          '<span class="w-outcome-topic">' + c.topic + '</span>' +
+          '<span class="w-outcome-day">Day ' + c.day + ' &middot; ' + c.topic + '</span>' +
           '<p class="w-outcome-text">' + c.outcome + '</p>' +
         '</div>' +
       '</div>'
