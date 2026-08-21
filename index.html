@@ -94,7 +94,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .eyebrow-dark { color: var(--accent); }
 
 /* ─── HERO ─── */
-.w-hero { background: var(--dark); padding: 140px 48px 100px; position: relative; overflow: hidden; }
+.w-hero { background: var(--dark); padding: 140px 48px 60px; position: relative; overflow: hidden; }
 .w-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(138,158,141,0.07) 0%, transparent 55%); pointer-events:none; }
 .w-hero-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
 .w-hero-eyebrow { font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:48px; }
@@ -167,7 +167,8 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-problem-video-label span { color:var(--accent-light); }
 .w-problem-video-wrap { position:relative; padding-bottom:56.25%; border-radius:12px; overflow:hidden; background:#0a0907; box-shadow:0 24px 64px rgba(0,0,0,0.55); border:1px solid rgba(255,255,255,0.18); }
 .w-problem-video-wrap video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:contain; }
-.w-hero-cta-wrap { grid-column:2; margin-top:28px; text-align:center; }
+.w-hero-media-col { display:flex; flex-direction:column; }
+.w-hero-cta-wrap { margin-top:16px; text-align:center; }
 .w-hero-cta { display:inline-flex; align-items:center; gap:8px; background:#6b7c6e; color:#ffffff; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.04em; padding:15px 34px; border-radius:30px; text-decoration:none; transition:background 0.2s; }
 .w-hero-cta:hover { background:#4e5e51; }
 .w-hero-cta-note { margin-top:12px; font-family:var(--sans); font-size:11px; letter-spacing:0.04em; color:rgba(237,234,230,0.4); }
@@ -373,9 +374,9 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   #nav.nav-open .nav-links { max-height: 70vh; }
   .nav-cta.nav-cta--app { display: none; }
 
-  .w-hero { padding: 100px 24px 60px; }
+  .w-hero { padding: 100px 24px 40px; }
   .w-hero-inner { grid-template-columns:1fr; gap:0; }
-  .w-hero-cta-wrap { grid-column:auto; margin-top:32px; }
+  .w-hero-cta-wrap { margin-top:24px; }
   .w-hero .w-problem-video { display:none; }
   .w-hero-eyebrow { text-align:center; }
   .w-hero-h1 { text-align:center; }
@@ -602,17 +603,19 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         </div>
       </div>
     </div>
-    <div class="w-problem-video fade-up delay-2">
-      <p class="w-problem-video-label"><span>&#9654;</span>&nbsp; Watch the demo</p>
-      <div class="w-problem-video-wrap">
-        <video controls preload="metadata" playsinline poster="video-poster-chess.jpg">
-          <source src="https://zdrjbgc9xr1duqxo.public.blob.vercel-storage.com/hero-video.mp4" type="video/mp4">
-        </video>
+    <div class="w-hero-media-col fade-up delay-2">
+      <div class="w-problem-video">
+        <p class="w-problem-video-label"><span>&#9654;</span>&nbsp; Watch the demo</p>
+        <div class="w-problem-video-wrap">
+          <video controls preload="metadata" playsinline poster="video-poster-chess.jpg">
+            <source src="https://zdrjbgc9xr1duqxo.public.blob.vercel-storage.com/hero-video.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
-    </div>
-    <div class="w-hero-cta-wrap fade-up delay-2">
-      <a href="https://www.amplifyu.app/coming-soon" class="w-hero-cta">Start for free →</a>
-      <p class="w-hero-cta-note">No card required.</p>
+      <div class="w-hero-cta-wrap">
+        <a href="https://www.amplifyu.app/coming-soon" class="w-hero-cta">Start for free →</a>
+        <p class="w-hero-cta-note">No card required.</p>
+      </div>
     </div>
   </div>
 </section>
