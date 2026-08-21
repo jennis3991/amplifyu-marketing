@@ -371,7 +371,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 
   .w-hero { padding: 100px 24px 60px; }
   .w-hero-inner { grid-template-columns:1fr; gap:0; }
-  .phone-stack { display:none; }
+  .w-hero .w-problem-video { display:none; }
   .w-hero-eyebrow { text-align:center; }
   .w-hero-h1 { text-align:center; }
   .w-hero-rule { margin:0 auto 20px; }
@@ -597,13 +597,12 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         </div>
       </div>
     </div>
-    <div class="fade-up delay-2" style="align-self:center;">
-      <div class="phone-stack">
-        <div class="phone-mock" style="width:148px;height:314px"><img src="img_insight.png" alt="AmplifyU app — coaching insight view"></div>
-        <div>
-          <div class="phone-mock" style="width:148px;height:286px;margin-bottom:14px"><img src="img_programme1.png" alt="AmplifyU app — programme session screen"></div>
-          <div class="phone-mock" style="width:148px;height:245px"><img src="img_toolkit1.png" alt="AmplifyU app — communication toolkit"></div>
-        </div>
+    <div class="w-problem-video fade-up delay-2">
+      <p class="w-problem-video-label"><span>&#9654;</span>&nbsp; Watch the demo</p>
+      <div class="w-problem-video-wrap">
+        <video controls preload="metadata" playsinline poster="https://zdrjbgc9xr1duqxo.public.blob.vercel-storage.com/poster-candidate-1.jpg">
+          <source src="https://zdrjbgc9xr1duqxo.public.blob.vercel-storage.com/hero-video.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
@@ -641,12 +640,13 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         <p class="w-problem-sub">Most professionals are trained for the job.<br>Few are taught how to influence, communicate, and show up in ways that accelerate their careers.</p>
       </div>
     </div>
-    <div class="w-problem-video fade-up delay-1">
-      <p class="w-problem-video-label"><span>&#9654;</span>&nbsp; Watch the demo</p>
-      <div class="w-problem-video-wrap">
-        <video controls preload="metadata" playsinline poster="https://zdrjbgc9xr1duqxo.public.blob.vercel-storage.com/poster-candidate-1.jpg">
-          <source src="https://zdrjbgc9xr1duqxo.public.blob.vercel-storage.com/hero-video.mp4" type="video/mp4">
-        </video>
+    <div class="fade-up delay-1" style="display:flex; justify-content:center;">
+      <div class="phone-stack">
+        <div class="phone-mock" style="width:148px;height:314px"><img src="img_insight.png" alt="AmplifyU app — coaching insight view"></div>
+        <div>
+          <div class="phone-mock" style="width:148px;height:286px;margin-bottom:14px"><img src="img_programme1.png" alt="AmplifyU app — programme session screen"></div>
+          <div class="phone-mock" style="width:148px;height:245px"><img src="img_toolkit1.png" alt="AmplifyU app — communication toolkit"></div>
+        </div>
       </div>
     </div>
   </div>
