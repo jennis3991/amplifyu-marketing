@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | AmplifyU</title>
+<meta name="description" content="How AmplifyU collects, uses, and protects your personal data across our app and website.">
+<link rel="canonical" href="https://www.amplifyu.app/privacy-policy">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="fonts.css">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --dark:#0f0d0a;
+  --cream:#edeae6;
+  --cream-mid:#e5e2de;
+  --cream-dark:#d2cecc;
+  --accent:#6b7c6e;
+  --accent-light:#8a9e8d;
+  --text-mid:#6e6b66;
+  --text-light:#9a9895;
+  --serif-body:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', system-ui, sans-serif;
+}
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--dark); font-family:var(--sans); font-size:16px; line-height:1.6; overflow-x:hidden; }
+
+/* ─── NAV ─── */
+#nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; background:rgba(15,13,10,0); transition:background 0.3s; }
+#nav.scrolled { background:rgba(15,13,10,0.95); backdrop-filter:blur(8px); }
+.nav-logo { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-img { height:64px; width:auto; display:block; filter:brightness(0) invert(1); }
+.nav-links { display:flex; align-items:center; gap:22px; }
+.nav-link { font-family:var(--sans); font-size:13px; font-weight:400; letter-spacing:0.02em; color:rgba(237,234,230,0.55); text-decoration:none; transition:color 0.2s; }
+.nav-link:hover, .nav-link.active { color:#fff; }
+.nav-right { display:flex; align-items:center; gap:16px; }
+.nav-cta { font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:10px 22px; border-radius:3px; transition:background 0.2s, color 0.2s; }
+.nav-cta--get { background:#6b7c6e; color:#fff; border-color:transparent; border-radius:24px; transition:background 0.2s; }
+.nav-cta--get:hover { background:#4e5e51; }
+.nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.nav-hamburger span { display:block; width:22px; height:1.5px; background:rgba(237,234,230,0.7); transition:0.2s; }
+
+/* ─── PAGE HERO ─── */
+.pg-hero { background:var(--dark); padding:140px 48px 64px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.pg-hero-inner { max-width:780px; margin:0 auto; }
+.pg-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-bottom:32px; transition:color 0.2s; }
+.pg-back:hover { color:#fff; }
+.pg-back svg { transition:transform 0.2s; }
+.pg-back:hover svg { transform:translateX(-3px); }
+.pg-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:20px; }
+.pg-h1 { font-family:var(--serif-body); font-size:clamp(30px,4.5vw,48px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1px; line-height:1.1; }
+.pg-updated { font-family:var(--sans); font-size:12px; color:rgba(237,234,230,0.4); margin-top:16px; font-style:italic; }
+
+/* ─── PAGE BODY ─── */
+.pg-body { max-width:780px; margin:0 auto; padding:64px 48px 100px; }
+.pg-section { margin-bottom:44px; }
+.pg-h2 { font-family:var(--serif-body); font-size:clamp(20px,2.5vw,26px); font-weight:500; color:var(--dark); letter-spacing:-0.5px; margin-bottom:12px; }
+.pg-h3 { font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--dark); margin:20px 0 8px; }
+.pg-p { font-family:var(--sans); font-size:15px; color:var(--text-mid); line-height:1.85; font-weight:300; margin-bottom:14px; }
+.pg-p:last-child { margin-bottom:0; }
+.pg-p a { color:var(--accent); }
+.pg-list { list-style:disc; padding-left:20px; margin-bottom:14px; }
+.pg-list li { font-family:var(--sans); font-size:15px; color:var(--text-mid); line-height:1.85; font-weight:300; margin-bottom:8px; }
+.pg-list li:last-child { margin-bottom:0; }
+.pg-list a { color:var(--accent); }
+.pg-table { width:100%; border-collapse:collapse; margin-top:8px; font-family:var(--sans); font-size:13px; }
+.pg-table th, .pg-table td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--cream-dark); vertical-align:top; }
+.pg-table th { font-weight:500; color:var(--dark); font-size:11px; letter-spacing:0.05em; text-transform:uppercase; }
+.pg-table td { color:var(--text-mid); font-weight:300; }
+.pg-code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; background:var(--cream-mid); border:1px solid var(--cream-dark); border-radius:4px; padding:2px 6px; color:var(--dark); }
+.pg-rule { width:100%; height:1px; background:var(--cream-dark); margin:48px 0 24px; }
+.pg-footnote { font-family:var(--serif-body); font-size:15px; font-style:italic; color:var(--text-mid); }
+.pg-footnote a { color:var(--accent); }
+
+/* ─── FOOTER ─── */
+footer { display:flex; align-items:center; justify-content:space-between; padding:32px 48px; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.footer-logo { display:flex; align-items:center; gap:10px; font-family:var(--sans); font-size:13px; font-weight:600; color:var(--accent-light); letter-spacing:0.15em; text-transform:uppercase; white-space:nowrap; }
+.footer-logo img { width:36px; height:36px; object-fit:contain; display:block; filter:brightness(0) invert(1); }
+.footer-legal { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.2); letter-spacing:0.05em; text-align:center; }
+.footer-legal a { color:rgba(237,234,230,0.35); text-decoration:none; }
+.footer-legal a:hover { color:rgba(237,234,230,0.6); }
+.footer-tm { font-size:0.75em; letter-spacing:0; vertical-align:super; margin-left:-0.12em; }
+
+/* ─── MOBILE ─── */
+@media (max-width:1100px) {
+  #nav { padding:0 20px; height:64px; background:rgba(15,13,10,0.92); backdrop-filter:blur(8px); }
+  .nav-hamburger { display:flex; }
+  .nav-links { position:absolute; top:100%; left:0; right:0; display:flex; flex-direction:column; align-items:stretch; gap:0; background:rgba(15,13,10,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(107,124,110,0.12); max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .nav-links .nav-link { width:100%; box-sizing:border-box; padding:16px 24px; border-bottom:1px solid rgba(240,235,226,0.08); }
+  #nav.nav-open .nav-links { max-height:70vh; }
+  .nav-logo-img { height:52px; }
+  .pg-hero { padding:100px 24px 48px; }
+  .pg-body { padding:48px 24px 72px; }
+  .pg-table { display:block; overflow-x:auto; }
+  footer { flex-direction:column; text-align:center; gap:16px; padding:24px; }
+}
+</style>
+<!-- Cookie consent + gated GA4 (see cookie-consent.js) -->
+<script src="cookie-consent.js" defer></script>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-a-transparent.png" alt="AmplifyU" class="nav-logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="programme.html" class="nav-link">Programme</a>
+    <a href="coach.html" class="nav-link">AI Coach</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="investors.html" class="nav-link">Investors</a>
+  </div>
+  <div class="nav-right">
+    <a href="coming-soon.html" class="nav-cta nav-cta--get">Get AmplifyU</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="pg-hero">
+  <div class="pg-hero-inner">
+    <a href="index.html" class="pg-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 12L6 8l4-4"/></svg>
+      Back to Home
+    </a>
+    <div class="pg-eyebrow">Legal</div>
+    <h1 class="pg-h1">Privacy Policy</h1>
+    <p class="pg-updated">Last updated 8 September 2026</p>
+  </div>
+</section>
+
+<main>
+  <div class="pg-body">
+
+    <div class="pg-section">
+      <h2 class="pg-h2">1. Who we are</h2>
+      <p class="pg-p">AmplifyU is provided by AmplifyU Technologies Ltd, a company registered in the United Kingdom.</p>
+      <p class="pg-p">Company number: 17283627<br>Registered office: 14/2E Docklands Business Centre, 10-16 Tiller Road, London, E14 8PX<br>Contact: <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a></p>
+      <p class="pg-p">We are the data controller for the personal data described in this policy. AmplifyU does not require a Data Protection Officer, confirmed directly with the ICO.</p>
+      <p class="pg-p">This policy covers both our website (amplifyu.app) and our app.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">2. Your privacy at a glance</h2>
+      <ul class="pg-list">
+        <li>Your core AmplifyU programme responses are stored locally on your device, not in an AmplifyU database.</li>
+        <li>When you use AI coaching or voice practice, certain information is temporarily sent to our AI and technology providers so they can provide the requested feature.</li>
+        <li>We don't sell your personal information or use it for advertising.</li>
+        <li>We don't currently require you to create an account with your name or email address to use the programme.</li>
+        <li>You can delete the programme data stored on your device at any time.</li>
+        <li>Our website uses optional analytics cookies, only with your consent.</li>
+      </ul>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">3. What information we collect</h2>
+
+      <h3 class="pg-h3">A. Information you provide</h3>
+      <ul class="pg-list">
+        <li>Onboarding reflections (e.g. what's holding you back, where you want to grow, how you'd describe yourself, where you want to be)</li>
+        <li>Your professional role category</li>
+        <li>Day 14 blueprint questions (your current role, what you most want to be known for in 12 months, what held you back most at the start, where you felt the biggest change, and what still feels hardest)</li>
+        <li>Creative and practice content you submit for specific features, including: notes for narrative/storytelling exercises (e.g. Day 8), briefs for the AmplifyU Speech Writer, and context for High-Stakes Conversation practice (your role, who you're meeting, the purpose of the meeting, your industry, and any additional context or notes on pressure/style you choose to add)</li>
+        <li>Your LinkedIn profile content, if you choose to use the LinkedIn audit/rewrite feature — either as pasted text, or as an uploaded screenshot image</li>
+        <li>Any other answers you voluntarily provide within the programme</li>
+      </ul>
+
+      <h3 class="pg-h3">B. Voice and practice data</h3>
+      <ul class="pg-list">
+        <li>Where the programme includes voice-based practice (including High-Stakes Conversation rehearsal), we access your microphone and process the resulting audio to provide coaching feedback (see Section 7).</li>
+        <li>On Day 2, AmplifyU measures vocal pitch, energy, and pauses using on-device audio analysis, and calculates your speaking pace from your transcript's word count and timing. These descriptive scores are sent to Anthropic as text to generate feedback. Day 3 measures only pause timing on-device and sends this as descriptive text to Anthropic. Day 7 measures pitch and pauses on-device, but uses these locally to adjust feedback rather than sending them to Anthropic. None of this identifies who is speaking, produces a voiceprint, or detects emotion (see Section 12).</li>
+        <li>AmplifyU uses your camera in the Day 12 Simulation exercise to record a short self-practice video (60–90 seconds) so you can watch yourself back and improve your body language, eye contact, and presence. This recording stays on your device and is never uploaded, transmitted to any AI provider, or shared.</li>
+      </ul>
+
+      <h3 class="pg-h3">C. Access and purchase information</h3>
+      <p class="pg-p">AmplifyU does not require you to create an account, and we do not collect your email address, name, or other identifying contact details to use the app.</p>
+      <p class="pg-p">Paid content is unlocked via Apple's In-App Purchase system. When you make a purchase, Apple processes the payment as the merchant of record — AmplifyU does not receive your card details, and does not automatically receive your email or name through this process. AmplifyU receives only a signed confirmation from Apple that the purchase was made, which is used to unlock the relevant content on your device.</p>
+      <p class="pg-p">If you get a new device or reinstall the app, you can restore your purchase via Apple's standard "Restore Purchases" mechanism, which is tied to your Apple ID and does not require AmplifyU to hold any personal account information.</p>
+      <p class="pg-p">Your purchase itself (payment method, billing, App Store account) is governed by Apple's own privacy policy, not this one.</p>
+
+      <h3 class="pg-h3">D. Website information</h3>
+      <p class="pg-p">Cookie and analytics information, only after you consent via our cookie banner (see Section 16 and our <a href="cookie-policy.html">Cookie Policy</a>).</p>
+
+      <h3 class="pg-h3">E. Contact information</h3>
+      <p class="pg-p">If you email us, we process your email address, name if provided, and the contents of your message, in order to respond and maintain appropriate records.</p>
+
+      <h3 class="pg-h3">F. Information about other people that you provide</h3>
+      <p class="pg-p">Certain features (particularly High-Stakes Conversation practice) invite you to describe who you're meeting and the context of that meeting. If you include identifying details about another person (e.g. a colleague, manager, or client), that information is processed in the same way as your own responses — sent to our AI providers to generate your practice scenario. We'd encourage you to use roles or initials rather than full names or other identifying details about other people where possible.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">4. What stays on your device</h2>
+      <p class="pg-p">AmplifyU does not maintain a separate server-side copy of your core programme data. Your onboarding reflections and Day 14 blueprint inputs are stored locally on your device. This means:</p>
+      <ul class="pg-list">
+        <li>We cannot access this data ourselves, even if we wanted to</li>
+        <li>Deleting the app, or clearing its data via your device settings, permanently removes it</li>
+        <li>If you switch devices or reinstall the app, this data does not carry over, since it never leaves your device</li>
+      </ul>
+      <p class="pg-p">Stored locally on your device:</p>
+      <ul class="pg-list">
+        <li>Onboarding reflection answers</li>
+        <li>Day 14 Blueprint inputs and outputs — including your Communication Archetype, which Anthropic generates as part of the Blueprint (see Section 5)</li>
+        <li>Stories, speeches, and other content generated via features like the AmplifyU Speech Writer, which you can save to your device</li>
+        <li>Your Day 12 self-practice video recording — camera access is used solely to create this recording for your own playback; it never leaves your device</li>
+      </ul>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">5. What leaves your device</h2>
+      <p class="pg-p">None of this data is stored by AmplifyU itself — it is processed by these providers to generate a response, which is returned to your device.</p>
+      <table class="pg-table">
+        <thead>
+          <tr><th>Feature</th><th>Information sent</th><th>Why</th><th>Provider</th><th>Retained by provider?</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI coaching / blueprint generation</td>
+            <td>Your reflection and blueprint answers</td>
+            <td>To generate personalised coaching content</td>
+            <td>Anthropic</td>
+            <td>30 days from receipt/generation, then automatically deleted, under Anthropic's standard API terms; not used to train Anthropic's models (see Section 9)</td>
+          </tr>
+          <tr>
+            <td>Voice practice</td>
+            <td>Audio</td>
+            <td>Transcription, to generate feedback (Whisper)</td>
+            <td>OpenAI</td>
+            <td>Not retained at all — OpenAI's Audio API applies no abuse-monitoring or application-state retention by default (see Section 9)</td>
+          </tr>
+          <tr>
+            <td>High-Stakes Conversation practice</td>
+            <td>Your role, who you're meeting, meeting context (may include third-party information — see Section 3F)</td>
+            <td>Generate likely questions and scenario for practice</td>
+            <td>Anthropic</td>
+            <td>As above — 30 days, not used for training (see Section 9)</td>
+          </tr>
+          <tr>
+            <td>Narrative Transportation, AmplifyU Speech Writer, and Story Architect cover image (Day 8)</td>
+            <td>Your story notes/brief</td>
+            <td>One continuous feature: notes generate story text, then a second call builds an image-generation prompt from that story</td>
+            <td>Anthropic (text, then a second call for the image prompt), then OpenAI (image)</td>
+            <td>Anthropic: 30 days, not used for training. OpenAI (Images API): retained up to 30 days for abuse-monitoring only, not used for training (see Section 9)</td>
+          </tr>
+          <tr>
+            <td>LinkedIn audit/rewrite</td>
+            <td>Your LinkedIn profile — as pasted text, or as an uploaded screenshot image</td>
+            <td>Analyse and/or rewrite your profile</td>
+            <td>Anthropic — both the pasted-text and screenshot-image paths are processed by Anthropic's vision-capable model only, not OpenAI</td>
+            <td>As above — 30 days, not used for training (see Section 9)</td>
+          </tr>
+          <tr>
+            <td>Website analytics</td>
+            <td>Website usage/cookie data</td>
+            <td>Understand website use</td>
+            <td>Google Analytics</td>
+            <td>Per Google's own retention settings — see <a href="cookie-policy.html">Cookie Policy</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="pg-p" style="margin-top:16px;">Separately, on Days 2, 3, and 7, AmplifyU performs vocal delivery analysis entirely on your device — no audio for this analysis is sent anywhere. Day 2 sends descriptive pitch/energy/pause/pace scores to Anthropic as text; Day 3 sends only a descriptive pause-timing score; Day 7's locally-measured scores are used to adjust the feedback already generated by Anthropic and are not sent to Anthropic at all.</p>
+
+      <h3 class="pg-h3">5A. Outbound links to third-party retailers</h3>
+      <p class="pg-p">At the end of each chapter, the Review tab recommends two books, with links to purchase them on Amazon. Where these are live, they are Amazon Associates affiliate links — AmplifyU earns a small commission on qualifying purchases made through them, at no extra cost to you. This affiliate relationship is disclosed directly in the app, next to the book recommendations themselves.</p>
+      <p class="pg-p">Clicking these links takes you to Amazon's website, which is not operated by AmplifyU and is governed by Amazon's own privacy policy and terms, not this one. Amazon may use its own cookies or tracking to attribute the referral and calculate commission, in line with its own privacy practices — AmplifyU has no visibility into or control over this.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">6. How AmplifyU uses AI</h2>
+      <p class="pg-p">AmplifyU uses third-party AI services to provide certain coaching features. Depending on the feature you use, information you provide may be sent securely to an AI provider to generate a response — such as coaching feedback, a transcription, or a personalised exercise.</p>
+      <p class="pg-p"><strong>Does AmplifyU use your data to train our own AI models?</strong> No — AmplifyU does not operate its own AI models; we use third-party providers (Anthropic, OpenAI).</p>
+      <p class="pg-p"><strong>Do our AI providers use your data to train their models?</strong> No, not by default. Both Anthropic and OpenAI's standard commercial/API terms state that data submitted via their APIs is not used to train their models, unless a customer explicitly opts into a separate programme to allow this. AmplifyU has not opted into any such programme with either provider. This does not apply to Vercel, which is a hosting/CDN provider, not an AI model provider, and has no equivalent setting.</p>
+      <p class="pg-p">AI-generated feedback is produced automatically and may not always be accurate or appropriate to your individual circumstances.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">7. Voice and audio processing</h2>
+      <p class="pg-p">Where you choose to use a voice-based practice feature, AmplifyU accesses your microphone and processes the resulting audio to provide that feature. Your audio is transmitted to OpenAI's Whisper service (Audio API) to produce a text transcript.</p>
+      <p class="pg-p">OpenAI's Audio API applies no abuse-monitoring or application-state retention by default, confirmed against their published API documentation — meaning your audio is not retained by OpenAI after the transcript is generated and returned. AmplifyU does not maintain a permanent copy of your raw audio on our own systems. The resulting transcript is used to generate your coaching feedback via Anthropic.</p>
+
+      <h3 class="pg-h3">7A. LinkedIn screenshots and image data</h3>
+      <p class="pg-p">If you use the LinkedIn audit feature by uploading a screenshot rather than pasting text, that image may contain your photograph, your full name, your employer, and — depending on what's visible in the screenshot — the names or photos of other people (e.g. connections or recommendations shown on your profile page).</p>
+      <p class="pg-p">This image is processed by Anthropic's vision-capable model to extract your profile content as text, which then feeds into the same analysis used for pasted text. No OpenAI involvement, no OCR, no separate image-processing provider.</p>
+      <p class="pg-p">The image itself is not retained by AmplifyU at any point — it exists only in the app's temporary in-memory state on your device and is never written to local storage or any AmplifyU server. It is processed by Anthropic under their standard API terms (see Section 9) and not retained beyond their standard 30-day window.</p>
+      <p class="pg-p">Because this feature can surface identifying information about people other than you, we'd recommend pasting only the text of your own profile where possible, rather than a full-page screenshot, if you'd prefer not to share this additional visual information.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">8. Why we use your information and our legal bases</h2>
+      <p class="pg-p">We use your personal information only where we have a lawful basis to do so under UK data protection law. The lawful basis we rely on depends on why we are using your information.</p>
+      <table class="pg-table">
+        <thead>
+          <tr><th>Why we use your information</th><th>What we use</th><th>Our legal basis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>To provide and personalise the AmplifyU programme</td><td>Your onboarding responses, programme answers, Blueprint inputs and other content you choose to provide</td><td>Performance of our contract with you</td></tr>
+          <tr><td>To provide AI-powered coaching and exercises</td><td>Relevant reflection answers, practice content and other information you provide for the feature you choose to use</td><td>Performance of our contract with you</td></tr>
+          <tr><td>To provide voice-based practice and feedback</td><td>Audio you choose to submit, transcripts and relevant vocal-delivery information</td><td>Performance of our contract with you</td></tr>
+          <tr><td>To provide optional features such as LinkedIn analysis, Speech Writer and High-Stakes Conversation practice</td><td>The information you choose to provide for those features</td><td>Performance of our contract with you</td></tr>
+          <tr><td>To process payments and unlock paid content</td><td>Purchase confirmation and information necessary to validate your purchase</td><td>Performance of our contract with you</td></tr>
+          <tr><td>To keep the service secure and prevent misuse</td><td>Technical, security and access information</td><td>Legitimate interests</td></tr>
+          <tr><td>To respond to enquiries and provide support</td><td>Your email address, name if provided and the contents of your message</td><td>Legitimate interests and, where relevant, performance of our contract with you</td></tr>
+          <tr><td>To comply with legal obligations</td><td>Information we are legally required to retain or provide</td><td>Legal obligation</td></tr>
+          <tr><td>To understand how people use our website</td><td>Website analytics and cookie information</td><td>Consent</td></tr>
+        </tbody>
+      </table>
+      <p class="pg-p" style="margin-top:16px;">Where we rely on legitimate interests, we consider whether our interests are necessary and proportionate and whether they are outweighed by your rights and freedoms.</p>
+      <p class="pg-p">Where we rely on consent, you can withdraw your consent at any time. Withdrawing consent does not affect the lawfulness of processing carried out before you withdrew it.</p>
+      <p class="pg-p">Our AI-enabled features are designed to provide learning and professional-development support. They are not used to make decisions about your employment, promotion, credit, insurance or other legal or similarly significant outcomes.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">9. Who processes your information</h2>
+      <p class="pg-p">Where a third party processes personal data on AmplifyU's behalf, UK GDPR (Article 28) requires a written contract governing that processing — a Data Processing Agreement (DPA). This sets out what the provider can and can't do with the data, how long they can keep it, their security and breach-notification obligations, which sub-processors they may use, and (for providers outside the UK) the legal transfer mechanism relied on to move data to them lawfully.</p>
+
+      <h3 class="pg-h3">Anthropic</h3>
+      <ul class="pg-list">
+        <li><strong>Purpose:</strong> AI coaching content and Day 14 blueprint generation</li>
+        <li><strong>Data:</strong> reflection and blueprint answers</li>
+        <li><strong>Role:</strong> Anthropic is AmplifyU's processor (confirmed via Anthropic's published Data Processing Addendum, Section B.1)</li>
+        <li><strong>Location:</strong> United States</li>
+        <li><strong>Retention:</strong> inputs and outputs are automatically deleted within 30 days of receipt or generation under Anthropic's standard commercial API terms, unless a longer period is required to enforce Anthropic's Usage Policy or comply with law. Not used to train Anthropic's models under these terms</li>
+        <li><strong>Transfer mechanism:</strong> Standard Contractual Clauses (DPA Section I.1), with the UK Addendum for UK-GDPR-scoped data (DPA Schedule 3, Section B)</li>
+        <li><strong>Data Processing Agreement:</strong> in place, automatically incorporated into Anthropic's Commercial Terms of Service for API customers</li>
+      </ul>
+
+      <h3 class="pg-h3">OpenAI</h3>
+      <ul class="pg-list">
+        <li><strong>Purpose:</strong> voice transcription (Whisper, via the Audio API); cover image generation for Story Architect (via the Images API)</li>
+        <li><strong>Data:</strong> audio (Whisper); a derived text prompt summarising story content (Images API) — not raw user-typed text</li>
+        <li><strong>Role:</strong> OpenAI acts as a Data Processor on AmplifyU's behalf (signed DPA, clause 1.1)</li>
+        <li><strong>Location:</strong> United States</li>
+        <li><strong>Retention:</strong> Audio API (Whisper) — no retention at all by default. Images API — retained up to 30 days for abuse-monitoring purposes only, with no application-state/reuse retention. Neither endpoint uses submitted data to train OpenAI's models by default</li>
+        <li><strong>Transfer mechanism:</strong> Standard Contractual Clauses as amended by the UK Addendum (DPA clause 4.2), with the ICO named as the competent supervisory authority (DPA clause 8.2(ix))</li>
+        <li><strong>Data Processing Agreement:</strong> signed 5 September 2026 between AmplifyU Technologies Ltd and OpenAI</li>
+      </ul>
+
+      <h3 class="pg-h3">Vercel</h3>
+      <ul class="pg-list">
+        <li><strong>Purpose:</strong> hosting our app and website; serverless functions briefly handle raw reflection answers and audio in-transit before forwarding to Anthropic/OpenAI</li>
+        <li><strong>Data:</strong> transient request data. Server-side logging is limited to configuration warnings, error messages, and byte/character counts — no full request bodies, raw audio, transcripts, or story content are logged</li>
+        <li><strong>Location:</strong> North America (function region iad1, Washington D.C., USA)</li>
+        <li><strong>Role:</strong> Vercel is AmplifyU's processor for Customer Data (the app's actual content/data), per Vercel's published DPA (Section 4.1). Vercel is separately a controller only for its own account/billing information, which does not apply to app content</li>
+        <li><strong>Log retention:</strong> no Log Drains configured, so logs are never forwarded to a third party; the default retention window on the Pro plan is 1 day (24 hours)</li>
+        <li><strong>Transfer mechanism:</strong> Standard Contractual Clauses (Module Two) with the UK International Data Transfer Addendum incorporated by reference (DPA Schedule 3, Sections 2–3)</li>
+        <li><strong>Data Processing Agreement:</strong> incorporated by reference into Vercel's Terms of Service for Pro and Enterprise plan customers; AmplifyU is on the Pro plan</li>
+      </ul>
+
+      <h3 class="pg-h3">Google Analytics</h3>
+      <ul class="pg-list">
+        <li><strong>Purpose:</strong> website analytics only</li>
+        <li><strong>Consent:</strong> required and obtained via cookie banner before any data collection</li>
+        <li><strong>Data/retention:</strong> see <a href="cookie-policy.html">Cookie Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">10. International transfers</h2>
+      <p class="pg-p">Some of our providers are located outside the United Kingdom. Where personal data is transferred internationally, we rely on an appropriate legal mechanism and safeguards in accordance with UK data protection law. OpenAI and Anthropic rely on Standard Contractual Clauses with the UK Addendum; Vercel relies on Standard Contractual Clauses with the UK International Data Transfer Agreement (see Section 9 for each).</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">11. How long we keep information</h2>
+      <table class="pg-table">
+        <thead>
+          <tr><th>Data type</th><th>Retention</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Stored on your device</td><td>Until you delete the app or clear its data — entirely within your control</td></tr>
+          <tr><td>Voice/audio in transit</td><td>Not stored by AmplifyU; not retained by OpenAI's Audio API by default</td></tr>
+          <tr><td>AI requests and responses (Anthropic)</td><td>Up to 30 days, then deleted</td></tr>
+          <tr><td>AI requests and responses (OpenAI Whisper)</td><td>Not retained at all</td></tr>
+          <tr><td>AI requests and responses (OpenAI Images API)</td><td>Up to 30 days, for abuse-monitoring only</td></tr>
+          <tr><td>Website analytics</td><td>Per Google's settings — see <a href="cookie-policy.html">Cookie Policy</a></td></tr>
+          <tr><td>Support correspondence (email)</td><td>12 months</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">12. How we protect your information</h2>
+      <ul class="pg-list">
+        <li>Data in transit between your device and our servers/AI providers is encrypted (HTTPS/TLS) — TLS 1.2 minimum enforced by default, with TLS 1.3 supported for compatible clients; older insecure versions are not supported, and all HTTP traffic is automatically redirected to HTTPS</li>
+        <li>Access to our hosting and provider accounts (Vercel, Anthropic, OpenAI) is restricted and access-controlled — two-factor authentication (authenticator app) on Vercel; email-based verification code required at login for Anthropic and OpenAI</li>
+        <li>Because AmplifyU stores most of your data locally rather than on our servers, the security of that data also depends on your own device's protections (passcode, biometric lock, disk encryption) — we'd encourage you to use these</li>
+        <li>At-rest encryption: environment variables are encrypted at rest, and file storage/build artifacts are encrypted at rest using AES-256</li>
+      </ul>
+      <p class="pg-p">AmplifyU does not perform facial recognition, biometric identification (i.e. identifying who is speaking or appearing on camera), or emotion detection from your voice or video. AmplifyU does analyse generic vocal delivery qualities on-device on three days, and this varies by day: Day 2 measures pitch, energy, and pauses via on-device audio analysis, plus a speaking-pace score calculated from your transcript's word count and timing — these descriptive scores are sent to Anthropic as text to generate feedback. Day 3 measures only pause timing on-device, sent to Anthropic as descriptive text. Day 7 measures pitch and pauses on-device, but these are used locally to adjust feedback already generated by Anthropic, rather than being sent to Anthropic at all. None of this identifies who is speaking, produces a voiceprint, or detects emotion. Separately, voice recordings used for transcription (see Section 7) produce only a text transcript via OpenAI's Whisper, with no additional analysis requested or performed on that audio. The Day 12 video recording is for your own personal playback and self-review only — no frame is ever extracted from it and it never leaves your device.</p>
+      <p class="pg-p">Under UK GDPR, voice can become biometric data where it is used for the purpose of uniquely identifying a person. AmplifyU's vocal delivery analysis works differently: it measures how you sound (delivery characteristics such as pitch, energy, pauses, and pace) in order to generate coaching feedback, rather than building a biometric template used to identify who you are. AmplifyU does not process biometric data for the purpose of uniquely identifying users, and does not create voiceprints or identify speakers.</p>
+
+      <h3 class="pg-h3">12A. Data breach notification</h3>
+      <p class="pg-p">If a personal data breach occurs that creates a risk to your rights and freedoms, we will notify the ICO without undue delay, and in accordance with UK GDPR requirements. Where the breach is likely to result in a high risk to you, we will also notify you directly, without undue delay.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">13. Your privacy rights</h2>
+      <ul class="pg-list">
+        <li>Access the personal data we hold about you</li>
+        <li>Correct inaccurate data</li>
+        <li>Delete your data ("right to be forgotten")</li>
+        <li>Restrict or object to certain processing, where applicable</li>
+        <li>Data portability, where applicable</li>
+        <li>Withdraw consent, where we rely on consent as our legal basis</li>
+        <li>Rights relating to automated decision-making, where applicable (see Section 14)</li>
+      </ul>
+      <p class="pg-p">Because most of your programme data is stored locally on your device rather than on our servers, you can exercise your right to delete this data directly, at any time, by clearing the app's data or deleting the app. Deleting the app removes programme data stored locally on your device. Information that has already been transmitted to our service providers for processing (see Sections 5 and 9) is subject to the retention periods described in this policy, rather than being erased immediately on deletion of the app.</p>
+      <p class="pg-p">In the meantime, or for any other question about your rights, email <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a> — we will respond within one month, as required by law. You also have the right to complain to the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">14. AI, profiling, and automated decision-making</h2>
+      <p class="pg-p">AmplifyU uses AI to generate coaching feedback, your Communication Archetype display, and your Day 14 Blueprint. These outputs are intended to support your learning and development. They do not determine your employment, promotion, access to services, credit, insurance, or any other legal or similarly significant outcome.</p>
+      <p class="pg-p">AmplifyU may use automated processing to generate personalised coaching content and identify patterns in the information you provide. This may constitute profiling under UK data protection law. However, these outputs are provided solely for your personal learning and development and are not used to make decisions producing legal or similarly significant effects concerning you. Because AmplifyU's profiling does not trigger Article 22 of the UK GDPR, it is not subject to that Article's additional restrictions and safeguards — but it remains subject to the same transparency, lawful-basis, and rights obligations that apply to all processing described in this policy.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">15. Sensitive information</h2>
+      <p class="pg-p">AmplifyU is not designed to request or intentionally infer special-category personal data. Please do not include information about health conditions, political opinions, religious or philosophical beliefs, racial or ethnic origin, sexual orientation, sex life, trade union membership, or other special-category information in free-text responses, unless a specific feature asks for it.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">16. Cookies and analytics</h2>
+      <p class="pg-p">Our website uses cookies for optional analytics (Google Analytics), only after you give consent via our cookie banner. You can manage your preferences at any time via "Cookie Settings" at the bottom of any page on amplifyu.app. See our full <a href="cookie-policy.html">Cookie Policy</a> for detail.</p>
+      <p class="pg-p">Our app does not currently use cookies, analytics, or tracking of any kind.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">17. Contacting us</h2>
+      <p class="pg-p">If you contact us, we may process your email address, name if provided, and the contents of your message, in order to respond to your enquiry and maintain appropriate records. Retention period: 12 months.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">18. Children's privacy</h2>
+      <p class="pg-p">AmplifyU is designed for working professionals and is not intended for use by anyone under the age of 18. We do not knowingly collect data from anyone under 18. This position is also reflected in our <a href="terms-of-service.html">Terms of Service</a>.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">19. Changes to this policy</h2>
+      <p class="pg-p">We may update this policy from time to time. If we make material changes, we will notify you via the app or website before the change takes effect. We will not use your personal data for a materially different purpose without providing appropriate information about that new use first. The "last updated" date at the top reflects the most recent version.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">20. Contact us and the ICO</h2>
+      <p class="pg-p">AmplifyU Technologies Ltd<br>Email: <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a><br>Company number: 17283627<br>Registered office: 14/2E Docklands Business Centre, 10-16 Tiller Road, London, E14 8PX</p>
+      <p class="pg-p">You have the right to complain to the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> if you believe we have not handled your data properly.</p>
+    </div>
+
+    <div class="pg-rule"></div>
+    <p class="pg-footnote">See also our <a href="terms-of-service.html">Terms of Service</a> and <a href="cookie-policy.html">Cookie Policy</a>.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo-a-transparent.png" alt="" aria-hidden="true">
+    AMPLIFYU<sup class="footer-tm">™</sup>
+  </div>
+  <p class="footer-legal">© 2026 AmplifyU Technologies Ltd · Registered in England &amp; Wales · AmplifyU™ UK IPO Trademark Approved · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a> · <a href="cookie-policy.html">Cookie Policy</a></p>
+</footer>
+
+<script>
+  var navEl = document.getElementById('nav');
+  window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 40); });
+  document.getElementById('navHamburger').addEventListener('click', function() {
+    var isOpen = navEl.classList.toggle('nav-open');
+    this.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+</body>
+</html>

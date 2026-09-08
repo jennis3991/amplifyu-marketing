@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | AmplifyU</title>
+<meta name="description" content="The terms that govern your use of the AmplifyU app and website.">
+<link rel="canonical" href="https://www.amplifyu.app/terms-of-service">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="fonts.css">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --dark:#0f0d0a;
+  --cream:#edeae6;
+  --cream-mid:#e5e2de;
+  --cream-dark:#d2cecc;
+  --accent:#6b7c6e;
+  --accent-light:#8a9e8d;
+  --text-mid:#6e6b66;
+  --text-light:#9a9895;
+  --serif-body:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', system-ui, sans-serif;
+}
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--dark); font-family:var(--sans); font-size:16px; line-height:1.6; overflow-x:hidden; }
+
+/* ─── NAV ─── */
+#nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; background:rgba(15,13,10,0); transition:background 0.3s; }
+#nav.scrolled { background:rgba(15,13,10,0.95); backdrop-filter:blur(8px); }
+.nav-logo { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-img { height:64px; width:auto; display:block; filter:brightness(0) invert(1); }
+.nav-links { display:flex; align-items:center; gap:22px; }
+.nav-link { font-family:var(--sans); font-size:13px; font-weight:400; letter-spacing:0.02em; color:rgba(237,234,230,0.55); text-decoration:none; transition:color 0.2s; }
+.nav-link:hover, .nav-link.active { color:#fff; }
+.nav-right { display:flex; align-items:center; gap:16px; }
+.nav-cta { font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:10px 22px; border-radius:3px; transition:background 0.2s, color 0.2s; }
+.nav-cta--get { background:#6b7c6e; color:#fff; border-color:transparent; border-radius:24px; transition:background 0.2s; }
+.nav-cta--get:hover { background:#4e5e51; }
+.nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.nav-hamburger span { display:block; width:22px; height:1.5px; background:rgba(237,234,230,0.7); transition:0.2s; }
+
+/* ─── PAGE HERO ─── */
+.pg-hero { background:var(--dark); padding:140px 48px 64px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.pg-hero-inner { max-width:780px; margin:0 auto; }
+.pg-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-bottom:32px; transition:color 0.2s; }
+.pg-back:hover { color:#fff; }
+.pg-back svg { transition:transform 0.2s; }
+.pg-back:hover svg { transform:translateX(-3px); }
+.pg-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:20px; }
+.pg-h1 { font-family:var(--serif-body); font-size:clamp(30px,4.5vw,48px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1px; line-height:1.1; }
+.pg-updated { font-family:var(--sans); font-size:12px; color:rgba(237,234,230,0.4); margin-top:16px; font-style:italic; }
+
+/* ─── PAGE BODY ─── */
+.pg-body { max-width:780px; margin:0 auto; padding:64px 48px 100px; }
+.pg-section { margin-bottom:44px; }
+.pg-h2 { font-family:var(--serif-body); font-size:clamp(20px,2.5vw,26px); font-weight:500; color:var(--dark); letter-spacing:-0.5px; margin-bottom:12px; }
+.pg-h3 { font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--dark); margin:20px 0 8px; }
+.pg-p { font-family:var(--sans); font-size:15px; color:var(--text-mid); line-height:1.85; font-weight:300; margin-bottom:14px; }
+.pg-p:last-child { margin-bottom:0; }
+.pg-p a { color:var(--accent); }
+.pg-list { list-style:disc; padding-left:20px; margin-bottom:14px; }
+.pg-list li { font-family:var(--sans); font-size:15px; color:var(--text-mid); line-height:1.85; font-weight:300; margin-bottom:8px; }
+.pg-list li:last-child { margin-bottom:0; }
+.pg-list a { color:var(--accent); }
+.pg-table { width:100%; border-collapse:collapse; margin-top:8px; font-family:var(--sans); font-size:13px; }
+.pg-table th, .pg-table td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--cream-dark); vertical-align:top; }
+.pg-table th { font-weight:500; color:var(--dark); font-size:11px; letter-spacing:0.05em; text-transform:uppercase; }
+.pg-table td { color:var(--text-mid); font-weight:300; }
+.pg-code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; background:var(--cream-mid); border:1px solid var(--cream-dark); border-radius:4px; padding:2px 6px; color:var(--dark); }
+.pg-rule { width:100%; height:1px; background:var(--cream-dark); margin:48px 0 24px; }
+.pg-footnote { font-family:var(--serif-body); font-size:15px; font-style:italic; color:var(--text-mid); }
+.pg-footnote a { color:var(--accent); }
+
+/* ─── FOOTER ─── */
+footer { display:flex; align-items:center; justify-content:space-between; padding:32px 48px; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.footer-logo { display:flex; align-items:center; gap:10px; font-family:var(--sans); font-size:13px; font-weight:600; color:var(--accent-light); letter-spacing:0.15em; text-transform:uppercase; white-space:nowrap; }
+.footer-logo img { width:36px; height:36px; object-fit:contain; display:block; filter:brightness(0) invert(1); }
+.footer-legal { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.2); letter-spacing:0.05em; text-align:center; }
+.footer-legal a { color:rgba(237,234,230,0.35); text-decoration:none; }
+.footer-legal a:hover { color:rgba(237,234,230,0.6); }
+.footer-tm { font-size:0.75em; letter-spacing:0; vertical-align:super; margin-left:-0.12em; }
+
+/* ─── MOBILE ─── */
+@media (max-width:1100px) {
+  #nav { padding:0 20px; height:64px; background:rgba(15,13,10,0.92); backdrop-filter:blur(8px); }
+  .nav-hamburger { display:flex; }
+  .nav-links { position:absolute; top:100%; left:0; right:0; display:flex; flex-direction:column; align-items:stretch; gap:0; background:rgba(15,13,10,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(107,124,110,0.12); max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .nav-links .nav-link { width:100%; box-sizing:border-box; padding:16px 24px; border-bottom:1px solid rgba(240,235,226,0.08); }
+  #nav.nav-open .nav-links { max-height:70vh; }
+  .nav-logo-img { height:52px; }
+  .pg-hero { padding:100px 24px 48px; }
+  .pg-body { padding:48px 24px 72px; }
+  .pg-table { display:block; overflow-x:auto; }
+  footer { flex-direction:column; text-align:center; gap:16px; padding:24px; }
+}
+</style>
+<!-- Cookie consent + gated GA4 (see cookie-consent.js) -->
+<script src="cookie-consent.js" defer></script>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-a-transparent.png" alt="AmplifyU" class="nav-logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="programme.html" class="nav-link">Programme</a>
+    <a href="coach.html" class="nav-link">AI Coach</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="investors.html" class="nav-link">Investors</a>
+  </div>
+  <div class="nav-right">
+    <a href="coming-soon.html" class="nav-cta nav-cta--get">Get AmplifyU</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="pg-hero">
+  <div class="pg-hero-inner">
+    <a href="index.html" class="pg-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 12L6 8l4-4"/></svg>
+      Back to Home
+    </a>
+    <div class="pg-eyebrow">Legal</div>
+    <h1 class="pg-h1">Terms of Service</h1>
+    <p class="pg-updated">Last updated 8 September 2026</p>
+  </div>
+</section>
+
+<main>
+  <div class="pg-body">
+
+    <div class="pg-section">
+      <h2 class="pg-h2">1. Who we are</h2>
+      <p class="pg-p">AmplifyU is provided by AmplifyU Technologies Ltd, a company registered in the United Kingdom ("AmplifyU", "we", "us", "our"). By using the AmplifyU app or website (amplifyu.app), you agree to these Terms.</p>
+      <p class="pg-p">If you have any questions, contact us at <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a>.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">2. What AmplifyU is</h2>
+      <p class="pg-p">AmplifyU is a 14-day AI-powered communication coaching programme delivered via our iOS app. It provides educational content, practice exercises, and AI-generated feedback intended to help you develop communication skills. It is not a substitute for professional coaching, therapy, medical, psychological, or legal advice.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">3. Age restriction</h2>
+      <p class="pg-p">AmplifyU is designed for working professionals and is intended for use only by individuals aged 18 or over. By using AmplifyU, you confirm that you are at least 18 years old. We do not knowingly permit use of the app by anyone under 18, consistent with our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">4. Access and content</h2>
+      <p class="pg-p">Some AmplifyU content is available without payment; the remainder requires an active subscription, as described within the app at the relevant point. Certain features (such as Day 1's Rehearsal and Simulation exercises, and Today's Challenge) offer a limited number of free attempts before requiring an active subscription to continue using that feature; the number of free attempts, and which features offer them, may change at our discretion. We may change which content is free or paid, and how the programme is structured or paced, at any time, including after you've started using it. Where changes affect your access, we'll aim to communicate this clearly within the app.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">5. Payment and subscriptions</h2>
+      <p class="pg-p">Purchases and subscriptions are processed through Apple's In-App Purchase system. By subscribing, you agree to Apple's applicable terms for subscriptions, including auto-renewal, cancellation, and billing, in addition to these Terms.</p>
+      <p class="pg-p"><strong>Refunds:</strong> because purchases are processed by Apple, refund requests are handled by Apple, not directly by AmplifyU. You can request a refund through your Apple ID account or Apple's support channels. AmplifyU does not independently guarantee refunds for App Store purchases.</p>
+      <p class="pg-p"><strong>Immediate access and your right to cancel:</strong> under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013, you would ordinarily have a 14-day cooling-off period after entering into a contract for digital content or services purchased online, during which you could cancel and receive a refund. AmplifyU provides access to paid content immediately upon purchase, rather than after a delay. By completing a purchase, you expressly request that we begin providing this content to you immediately, and you acknowledge that, once we do, you lose your statutory right to cancel under these Regulations for that purchase. If you would prefer to keep this cancellation right, please do not access the paid content you have purchased until 14 days have passed. Regardless of this waiver, any refund request is still handled by Apple, not AmplifyU, in accordance with the paragraph above.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">6. Acceptable use</h2>
+      <p class="pg-p">You agree not to:</p>
+      <ul class="pg-list">
+        <li>Copy, reproduce, screenshot for redistribution, scrape, republish, or create derivative works from AmplifyU's content (including but not limited to programme curriculum, exercises, gallery content, and AI-generated feedback) for any purpose beyond your personal use of the programme</li>
+        <li>Attempt to reverse-engineer, extract, or bulk-download AmplifyU's content or underlying systems</li>
+        <li>Use AmplifyU for any unlawful purpose, or in a way that could harm, disable, or overburden our systems</li>
+        <li>Share your account access or subscription with others in a way that circumvents our pricing</li>
+      </ul>
+      <p class="pg-p">AmplifyU's content, including all programme curriculum, written material, design, and branding, is the intellectual property of AmplifyU Technologies Ltd and is protected by copyright and other applicable laws. Unauthorised reproduction or distribution is a violation of these Terms and may infringe our legal rights.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">7. Your content and data</h2>
+      <p class="pg-p">Information you provide during the programme (such as reflection answers and practice session data) is handled in accordance with our <a href="privacy-policy.html">Privacy Policy</a>. By using AmplifyU, you consent to that processing as described there.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">8. AI-generated feedback</h2>
+      <p class="pg-p">AmplifyU uses AI (including third-party AI providers) to generate coaching feedback and summaries based on your practice sessions. While we aim for this feedback to be genuinely useful, AI-generated content can be imperfect. AmplifyU does not guarantee the accuracy, completeness, or suitability of any AI-generated feedback for your specific circumstances.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">9. References to public figures</h2>
+      <p class="pg-p">AmplifyU's content, including the "Masters of X" galleries and related articles, sometimes analyses the publicly observable communication styles of well-known individuals for educational purposes. This is AmplifyU's independent analysis, based on publicly available material. It does not imply that these individuals endorse, are affiliated with, or have any relationship with AmplifyU, and no such endorsement or affiliation should be inferred.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">10. Third-party links</h2>
+      <p class="pg-p">AmplifyU may contain links to third-party websites, including retailer links such as Amazon (see our <a href="privacy-policy.html">Privacy Policy</a> for detail on affiliate links). We do not control, and are not responsible for, the content, policies, or practices of any third-party website. Your use of any third-party website is at your own risk and is subject to that website's own terms.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">11. Disclaimers</h2>
+      <p class="pg-p">AmplifyU is provided on an "as is" and "as available" basis. To the fullest extent permitted by law, we do not warrant that the app will be uninterrupted, timely, secure, or error-free, or that any defects will be corrected. AmplifyU is a coaching and educational tool; it does not guarantee any particular outcome, career result, or improvement in your communication skills from your use of the programme.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">12. Liability</h2>
+      <p class="pg-p">To the fullest extent permitted by law, AmplifyU Technologies Ltd is not liable for any indirect, incidental, or consequential loss arising from your use of the app, including but not limited to career, business, or reputational outcomes. Nothing in these Terms excludes or limits liability that cannot be excluded or limited under UK law, including liability for death, personal injury caused by negligence, or fraud.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">13. Indemnification</h2>
+      <p class="pg-p">You agree to indemnify and hold harmless AmplifyU Technologies Ltd, its directors, employees, and agents from any claim, loss, or demand, including reasonable legal fees, arising out of your breach of these Terms or your misuse of the app, except to the extent caused by our own negligence or breach of these Terms.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">14. Termination</h2>
+      <p class="pg-p">We may suspend or terminate your access to AmplifyU if you breach these Terms, including the acceptable use provisions in Section 6. You may stop using AmplifyU and cancel your subscription at any time via your Apple ID account settings.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">15. Changes to these Terms</h2>
+      <p class="pg-p">We may update these Terms from time to time. If we make material changes, we will notify you via the app. Continued use of AmplifyU after changes take effect constitutes acceptance of the updated Terms.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">16. General provisions</h2>
+      <p class="pg-p"><strong>Severability:</strong> if any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+      <p class="pg-p"><strong>Entire agreement:</strong> these Terms, together with our Privacy Policy, constitute the entire agreement between you and AmplifyU regarding your use of the app, superseding any prior agreements or understandings.</p>
+      <p class="pg-p"><strong>No waiver:</strong> our failure to enforce any provision of these Terms will not be treated as a waiver of our right to enforce it later.</p>
+      <p class="pg-p"><strong>Assignment:</strong> we may assign or transfer these Terms, including in connection with a merger, acquisition, or sale of assets. You may not assign or transfer these Terms without our prior written consent.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">17. App Store terms</h2>
+      <p class="pg-p">Because AmplifyU is distributed via Apple's App Store, the following additional terms apply between you, AmplifyU, and Apple:</p>
+      <ul class="pg-list">
+        <li><strong>Acknowledgement:</strong> these Terms are an agreement between you and AmplifyU Technologies Ltd only, and not with Apple. AmplifyU, not Apple, is solely responsible for the app and its content.</li>
+        <li><strong>Scope of licence:</strong> Apple grants you a licence to use the app on Apple-branded devices that you own or control, in accordance with Apple's Usage Rules set out in the App Store Terms of Service.</li>
+        <li><strong>Maintenance and support:</strong> AmplifyU, not Apple, is responsible for providing any maintenance and support for the app. Apple has no obligation to furnish any maintenance or support for the app.</li>
+        <li><strong>Warranty:</strong> in the event of any failure of the app to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the app to you, where applicable. To the maximum extent permitted by law, Apple has no other warranty obligation with respect to the app, and any other claims, losses, liabilities, damages, costs, or expenses attributable to any failure to conform to any warranty are AmplifyU's responsibility.</li>
+        <li><strong>Product claims:</strong> AmplifyU, not Apple, is responsible for addressing any claims by you or any third party relating to the app, including product liability claims, claims that the app fails to conform to legal or regulatory requirements, and claims arising under consumer protection or similar legislation.</li>
+        <li><strong>Intellectual property:</strong> in the event of any third-party claim that the app, or your possession and use of it, infringes that third party's intellectual property rights, AmplifyU, not Apple, is solely responsible for the investigation, defence, settlement, and discharge of any such claim.</li>
+        <li><strong>Legal compliance:</strong> you represent that you are not located in a country subject to a US government embargo or designated by the US government as a "terrorist supporting" country, and that you are not listed on any US government list of prohibited or restricted parties.</li>
+        <li><strong>Third-party agreements:</strong> you must comply with any applicable third-party agreement terms (for example, your mobile device or data service agreement) when using the app.</li>
+        <li><strong>Developer contact information:</strong> any questions, complaints, or claims relating to the app should be directed to AmplifyU Technologies Ltd at <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a> (see Section 19, Contact us).</li>
+        <li><strong>Third-party beneficiary:</strong> you acknowledge and agree that Apple and Apple's subsidiaries are third-party beneficiaries of these Terms, and that, upon your acceptance of these Terms, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary of these Terms.</li>
+      </ul>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">18. Governing law</h2>
+      <p class="pg-p">These Terms are governed by the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+    </div>
+
+    <div class="pg-section">
+      <h2 class="pg-h2">19. Contact us</h2>
+      <p class="pg-p">AmplifyU Technologies Ltd<br>Email: <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a></p>
+    </div>
+
+    <div class="pg-rule"></div>
+    <p class="pg-footnote">See also our <a href="privacy-policy.html">Privacy Policy</a> and <a href="cookie-policy.html">Cookie Policy</a>.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo-a-transparent.png" alt="" aria-hidden="true">
+    AMPLIFYU<sup class="footer-tm">™</sup>
+  </div>
+  <p class="footer-legal">© 2026 AmplifyU Technologies Ltd · Registered in England &amp; Wales · AmplifyU™ UK IPO Trademark Approved · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a> · <a href="cookie-policy.html">Cookie Policy</a></p>
+</footer>
+
+<script>
+  var navEl = document.getElementById('nav');
+  window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 40); });
+  document.getElementById('navHamburger').addEventListener('click', function() {
+    var isOpen = navEl.classList.toggle('nav-open');
+    this.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+</body>
+</html>
