@@ -40,7 +40,9 @@
       title: "The Practice",
       quote: "Every session made improvement visible.",
       body: "The programme moves through fourteen deliberate modules: clarity, structure, voice. Then storytelling, connection, managing pressure. Then the hardest work: building presence, communicating ambition, creating exposure. Every session includes coaching that responds to your specific words, tools to rewrite and rehearse.",
-      emotion: "Focus"
+      emotion: "Focus",
+      image: "story-phone-practice.jpg",
+      imagePosition: "40% center"
     },
     {
       title: "The Transformation",
