@@ -326,12 +326,29 @@
   }
   .storyreel-inner {
     width: 100%; max-width: 1500px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: center;
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: stretch;
   }
-  .storyreel-caption .hero-sub { max-width: 420px; margin: 0; color: var(--text-mid); }
-  .storyreel-caption .hero-sub em { color: var(--text-dark); }
   .storyreel-col { position: relative; width: 100%; aspect-ratio: 16 / 9; }
   .storyreel-col .story-reel-card { box-shadow: 0 40px 100px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.06); }
+
+  .storyreel-photo {
+    position: relative; width: 100%; height: 100%; min-height: 360px;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.06);
+  }
+  .storyreel-photo-img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center 15%;
+  }
+  .storyreel-photo-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(15,13,10,0) 10%, rgba(15,13,10,0.75) 55%, rgba(15,13,10,0.96) 100%);
+  }
+  .storyreel-photo-quote {
+    position: absolute; left: 32px; right: 32px; bottom: 32px; z-index: 1;
+    font-family: var(--serif-body); font-size: 18px; font-style: italic; font-weight: 300;
+    color: var(--sage-light); line-height: 1.55; margin: 0;
+  }
 
   /* ─── PULL QUOTE ─── */
   .section-pullquote {
@@ -583,8 +600,9 @@
     .story-hero { padding: 100px 24px 60px; min-height: 90vh; }
     .hero-sub { font-size: 14px; color: rgba(237,234,230,0.7); line-height: 1.65; }
     .section-storyreel { min-height: unset; padding: 56px 24px; }
-    .storyreel-inner { grid-template-columns: 1fr; gap: 32px; }
-    .storyreel-caption .hero-sub { max-width: none; }
+    .storyreel-inner { grid-template-columns: 1fr; gap: 24px; }
+    .storyreel-photo { min-height: 280px; aspect-ratio: 4 / 3; }
+    .storyreel-photo-quote { font-size: 15px; left: 20px; right: 20px; bottom: 20px; }
     .storyreel-col { aspect-ratio: 4 / 3; }
     .section-context { padding: 56px 24px; }
     .context-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -693,8 +711,10 @@
 <!-- ─── STORY REEL (page 2) ─── -->
 <section class="section-storyreel">
   <div class="storyreel-inner">
-    <div class="storyreel-caption fade-up">
-      <p class="hero-sub"><em>"I needed an app designed for real life — something practical, personal and backed by science."</em> But what I was looking for didn't exist. So that's why I built it. AmplifyU is the product I wish I had throughout my career.</p>
+    <div class="storyreel-photo fade-up">
+      <img src="founder-photo.jpg" alt="Jenni, founder of AmplifyU" class="storyreel-photo-img">
+      <div class="storyreel-photo-overlay"></div>
+      <p class="storyreel-photo-quote">"I needed an app designed for real life — something practical, personal and backed by science." But what I was looking for didn't exist. So that's why I built it. AmplifyU is the product I wish I had throughout my career.</p>
     </div>
     <div class="storyreel-col fade-up delay-1">
       <div id="story-reel"></div>

@@ -69,19 +69,25 @@
     '.story-reel-card{width:100%;height:100%;}' +
     '.story-reel-body{display:flex;flex-direction:row;height:100%;}' +
     '.story-reel-media{flex:0 0 40%;}' +
-    '.story-reel-content{padding:18px 20px;}' +
-    '.story-reel-eyebrow{font-size:9px;margin-bottom:6px;}' +
-    '.story-reel-quote{font-size:16px;margin:0 0 6px;line-height:1.25;}' +
-    '.story-reel-bodytext{font-size:11.5px;line-height:1.45;margin:0 0 8px;}' +
+    '.story-reel-content{padding:16px 18px;}' +
+    '.story-reel-eyebrow{font-size:8px;margin-bottom:5px;}' +
+    '.story-reel-quote{font-size:14px;margin:0 0 5px;line-height:1.25;}' +
+    '.story-reel-bodytext{font-size:10.5px;line-height:1.42;margin:0 0 7px;}' +
+    '.story-reel-navbtn{font-size:10px;}' +
+    '.story-reel-navlabel{font-size:9px;}' +
+    '.story-reel-mediacap{left:14px;right:14px;bottom:12px;}' +
+    '.story-reel-mediaeyebrow{font-size:8px;margin-bottom:3px;}' +
+    '.story-reel-mediaheadline{font-size:11px;line-height:1.25;}' +
+    '@media (min-width:900px){' +
+    '.story-reel-content{padding:28px 34px;}' +
+    '.story-reel-eyebrow{font-size:10px;margin-bottom:10px;}' +
+    '.story-reel-quote{font-size:19px;margin:0 0 10px;line-height:1.3;}' +
+    '.story-reel-bodytext{font-size:13.5px;line-height:1.55;margin:0 0 14px;}' +
+    '.story-reel-mediacap{left:24px;right:24px;bottom:20px;}' +
+    '.story-reel-mediaeyebrow{font-size:10px;margin-bottom:5px;}' +
+    '.story-reel-mediaheadline{font-size:15px;line-height:1.25;}' +
     '.story-reel-navbtn{font-size:11px;}' +
     '.story-reel-navlabel{font-size:10px;}' +
-    '@media (min-width:900px){' +
-    '.story-reel-content{padding:36px 44px;}' +
-    '.story-reel-eyebrow{font-size:12px;margin-bottom:14px;}' +
-    '.story-reel-quote{font-size:26px;margin:0 0 14px;line-height:1.28;}' +
-    '.story-reel-bodytext{font-size:16px;line-height:1.6;margin:0 0 18px;}' +
-    '.story-reel-navbtn{font-size:13px;}' +
-    '.story-reel-navlabel{font-size:12px;}' +
     '}' +
     '@media (prefers-reduced-motion:reduce){.story-reel-kenburns{animation:none !important;}}';
   document.head.appendChild(STYLE);
@@ -170,7 +176,7 @@
       });
 
       // Segmented progress bar
-      var bar = h('div', { style: { display: 'flex', gap: '4px', padding: '18px 22px 0', position: 'relative', zIndex: '2' } });
+      var bar = h('div', { style: { display: 'flex', gap: '4px', padding: '14px 18px 0', position: 'absolute', top: '0', left: '0', right: '0', zIndex: '3' } });
       scenes.forEach(function (sc, i) {
         var track = h('div', { style: { height: '2px', borderRadius: '1px', background: 'rgba(240,235,226,0.28)', overflow: 'hidden' } });
         var fill = h('div', { className: 'story-reel-fill', style: { height: '100%', background: SAGE, width: '0%' } });
@@ -199,9 +205,9 @@
       var mediaGradient = h('div', { style: { position: 'absolute', inset: '0', background: 'linear-gradient(180deg, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.7) 100%)' } });
       var mediaCaption = null;
       if (opts.mediaEyebrow || opts.mediaHeadline) {
-        mediaCaption = h('div', { style: { position: 'absolute', bottom: '24px', left: '26px', right: '26px' } }, [
-          opts.mediaEyebrow ? h('div', { style: { fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)', marginBottom: '6px' } }, [opts.mediaEyebrow]) : null,
-          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, fontSize: '20px', lineHeight: '1.2', letterSpacing: '-0.3px' } }, [opts.mediaHeadline]) : null
+        mediaCaption = h('div', { className: 'story-reel-mediacap', style: { position: 'absolute' } }, [
+          opts.mediaEyebrow ? h('div', { className: 'story-reel-mediaeyebrow', style: { fontFamily: FONT_SANS, fontWeight: '700', letterSpacing: '1.2px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)' } }, [opts.mediaEyebrow]) : null,
+          opts.mediaHeadline ? h('div', { className: 'story-reel-mediaheadline', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, letterSpacing: '-0.2px' } }, [opts.mediaHeadline]) : null
         ]);
       }
 
