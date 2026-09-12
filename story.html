@@ -98,10 +98,9 @@
 
   /* ─── HERO ─── */
   .story-hero {
-    min-height: 70vh;
     display: flex; flex-direction: column;
     align-items: flex-start; justify-content: center;
-    padding: 140px 48px 100px;
+    padding: 160px 48px 60px;
     position: relative;
     background: var(--dark);
     overflow: hidden;
@@ -113,7 +112,7 @@
     pointer-events: none;
   }
   .story-hero::after { display: none; }
-  .hero-inner { position: relative; z-index: 1; width: 100%; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
+  .hero-inner { position: relative; z-index: 1; width: 100%; max-width: 1100px; margin: 0 auto; }
   .hero-eyebrow {
     font-family: var(--sans); font-size: 10px;
     letter-spacing: 0.35em; text-transform: uppercase;
@@ -315,9 +314,20 @@
     letter-spacing: 0.01em;
   }
 
-  /* Interactive story reel (hero) */
-  .hero-reel-col { position: relative; }
-  .hero-reel-col .story-reel-card, .hero-reel-col #story-reel > button { box-shadow: 0 40px 100px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05); }
+  /* ─── STORY REEL (page 2) ─── */
+  .section-storyreel {
+    padding: 60px 48px 120px;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .storyreel-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+  }
+  .storyreel-caption .hero-sub { max-width: 480px; margin: 0; }
+  .storyreel-col { position: relative; width: 100%; aspect-ratio: 550 / 281; }
+  .storyreel-col .story-reel-card { box-shadow: 0 40px 100px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05); }
 
   /* ─── PULL QUOTE ─── */
   .section-pullquote {
@@ -567,9 +577,10 @@
     nav { padding: 20px 24px; }
     .nav-links { gap: 16px; }
     .story-hero { padding: 100px 24px 60px; min-height: unset; }
-    .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-    .hero-reel-col { max-width: 420px; }
     .hero-sub { font-size: 14px; color: rgba(237,234,230,0.7); line-height: 1.65; }
+    .section-storyreel { padding: 56px 24px; }
+    .storyreel-inner { grid-template-columns: 1fr; gap: 32px; }
+    .storyreel-caption .hero-sub { max-width: none; }
     .section-context { padding: 56px 24px; }
     .context-inner { grid-template-columns: 1fr; gap: 40px; }
     .section-storyboard { padding: 64px 24px; }
@@ -668,16 +679,22 @@
 <!-- ─── HERO ─── -->
 <section class="story-hero">
   <div class="hero-inner">
-    <div class="hero-text-col">
-      <p class="hero-eyebrow fade-up">Our Story</p>
-      <h1 class="hero-h1 fade-up delay-1">Built for professionals like you<br>who have the least time to waste.<br><em>And the most to gain.</em></h1>
-      <p class="hero-sub fade-up delay-2"><em>"I needed an app designed for real life — something practical, personal and backed by science."</em> But what I was looking for didn't exist. So that's why I built it. AmplifyU is the product I wish I had throughout my career.</p>
+    <p class="hero-eyebrow fade-up">Our Story</p>
+    <h1 class="hero-h1 fade-up delay-1">Built for professionals like you<br>who have the least time to waste.<br><em>And the most to gain.</em></h1>
+  </div>
+
+</section>
+
+<!-- ─── STORY REEL (page 2) ─── -->
+<section class="section-storyreel">
+  <div class="storyreel-inner">
+    <div class="storyreel-caption fade-up">
+      <p class="hero-sub"><em>"I needed an app designed for real life — something practical, personal and backed by science."</em> But what I was looking for didn't exist. So that's why I built it. AmplifyU is the product I wish I had throughout my career.</p>
     </div>
-    <div class="hero-reel-col fade-up delay-2">
+    <div class="storyreel-col fade-up delay-1">
       <div id="story-reel"></div>
     </div>
   </div>
-
 </section>
 
 <!-- ─── PAGE CTA BANNER ─── -->

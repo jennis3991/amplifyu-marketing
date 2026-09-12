@@ -1,8 +1,8 @@
 /*
  * AmplifyU StoryReel — vanilla-JS port of the app's React StoryReel.jsx.
- * Self-contained, Instagram-Stories-style scene player. Ported line-for-line
- * from the app component (colors, timing, copy) so the marketing site shows
- * the same widget users see in the app's Story tab.
+ * Self-contained, always-on autoplaying scene carousel: starts playing as
+ * soon as it mounts, loops continuously, fills whatever fixed-size box its
+ * container gives it (so every scene renders at the same size).
  * Include with: <div id="story-reel"></div><script src="story-reel.js" defer></script>
  */
 (function () {
@@ -55,34 +55,23 @@
   ];
 
   var CONFIG = {
-    coverImage: 'founder-photo.jpg',
     backgroundImage: 'd8-story-book.jpg',
-    caption: "Here's my story, crafted with my own AmplifyU Speechwriter.",
     mediaEyebrow: 'The Story Architect',
-    mediaHeadline: 'Build a story that moves people.',
-    introHeadline: 'A working mother rebuilding her career through deliberate communication practice',
-    introSubhead: 'Communication multiplies everything else'
+    mediaHeadline: 'Build a story that moves people.'
   };
 
   var STYLE = document.createElement('style');
   STYLE.textContent =
     '@keyframes storyReelKenBurns{0%{transform:scale(1);}100%{transform:scale(1.14);}}' +
-    '@keyframes storyReelPulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.12);opacity:0.75;}}' +
     '.story-reel-card button{outline:none;-webkit-tap-highlight-color:transparent;font:inherit;}' +
     '.story-reel-kenburns{animation:storyReelKenBurns 32s ease-in-out infinite alternate;}' +
-    '.story-reel-pulse{animation:storyReelPulse 2.2s ease-in-out infinite;}' +
-    '.story-reel-body{display:flex;flex-direction:row;}' +
+    '#story-reel{width:100%;height:100%;}' +
+    '.story-reel-card{width:100%;height:100%;}' +
+    '.story-reel-body{display:flex;flex-direction:row;height:100%;}' +
     '.story-reel-media{flex:0 0 40%;}' +
-    '.story-reel-content{padding:16px 18px 14px;}' +
-    '.story-reel-quote{font-size:14px;}' +
-    '.story-reel-cover-title{font-size:16px;}' +
-    '.story-reel-segment{height:2px;border-radius:1px;}' +
-    '@media (min-width:480px){' +
-    '.story-reel-content{padding:20px 22px 18px;}' +
-    '.story-reel-quote{font-size:15px;}' +
-    '.story-reel-cover-title{font-size:18px;}' +
-    '}' +
-    '@media (prefers-reduced-motion:reduce){.story-reel-kenburns,.story-reel-pulse{animation:none !important;}}';
+    '.story-reel-content{padding:22px 26px;}' +
+    '.story-reel-quote{font-size:17px;}' +
+    '@media (prefers-reduced-motion:reduce){.story-reel-kenburns{animation:none !important;}}';
   document.head.appendChild(STYLE);
 
   function prefersReducedMotion() {
@@ -106,33 +95,15 @@
     return el;
   }
 
-  function playGlyphEl(reducedMotion) {
-    var wrap = h('div', {
-      className: reducedMotion ? '' : 'story-reel-pulse',
-      style: {
-        width: '34px', height: '34px', borderRadius: '50%', background: 'rgba(240,235,226,0.12)',
-        border: '1px solid rgba(240,235,226,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center'
-      }
-    });
-    wrap.innerHTML = '<svg width="12" height="13" viewBox="0 0 18 20" fill="none"><path d="M1 1.5v17l16-8.5-16-8.5z" fill="' + CREAM + '"/></svg>';
-    return wrap;
-  }
-
-  function closeIconSVG() {
-    return '<svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1.5 1.5l11 11M12.5 1.5l-11 11" stroke="' + CREAM + '" stroke-width="1.6" stroke-linecap="round"/></svg>';
-  }
-
   function StoryReel(root, opts) {
     var scenes = opts.scenes, total = scenes.length;
     var reducedMotion = prefersReducedMotion();
-    var state = { isOpen: false, started: !opts.introHeadline, activeScene: 0, isPaused: false };
+    var state = { activeScene: 0, isPaused: false };
 
     var rafId = null, startTs = null, elapsed = 0;
 
     function clearRaf() { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } }
-
-    function isRunning() { return state.isOpen && state.started && !state.isPaused && !reducedMotion; }
-
+    function isRunning() { return !state.isPaused && !reducedMotion; }
     function resetProgress() { elapsed = 0; startTs = null; clearRaf(); }
 
     function tickLoop() {
@@ -151,8 +122,7 @@
       var fills = root.querySelectorAll('.story-reel-fill');
       fills.forEach(function (fill, i) {
         var w;
-        if (!state.started) w = '0%';
-        else if (i < state.activeScene) w = '100%';
+        if (i < state.activeScene) w = '100%';
         else if (i > state.activeScene) w = '0%';
         else w = ((reducedMotion ? 1 : p) * 100) + '%';
         fill.style.width = w;
@@ -163,14 +133,6 @@
     function goTo(i) { state.activeScene = ((i % total) + total) % total; onSceneChange(); }
     function next() { goTo(state.activeScene + 1); }
     function prev() { goTo(state.activeScene - 1); }
-    function begin() { state.started = true; onSceneChange(); }
-    function close() {
-      state.isOpen = false;
-      state.started = !opts.introHeadline;
-      state.activeScene = 0;
-      resetProgress();
-      render();
-    }
     function pauseOn() { state.isPaused = true; syncRaf(); }
     function pauseOff() { state.isPaused = false; syncRaf(); }
 
@@ -185,48 +147,9 @@
       if (isRunning()) tickLoop();
     }
 
-    // ── Cover (closed) state ──
-    function renderCover() {
+    function render() {
       root.innerHTML = '';
-      var btn = h('button', {
-        'aria-label': 'Play: The Story Behind AmplifyU',
-        style: {
-          all: 'unset', cursor: 'pointer', display: 'block', width: '100%', position: 'relative',
-          borderRadius: '14px', overflow: 'hidden', minHeight: '340px'
-        },
-        onClick: function () { state.isOpen = true; resetProgress(); render(); syncRaf(); }
-      });
-
-      var img = h('img', {
-        loading: 'lazy', src: opts.coverImage, alt: '',
-        style: {
-          position: 'absolute', inset: '0', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 12%',
-          filter: 'grayscale(0.5) sepia(0.18) brightness(0.6) contrast(1.05)'
-        }
-      });
-      var vignette = h('div', { style: { position: 'absolute', inset: '0', background: 'radial-gradient(ellipse at 50% 25%, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.94) 88%)' } });
-
-      var inner = h('div', {
-        style: {
-          position: 'relative', minHeight: '170px', padding: '18px 16px', display: 'flex',
-          flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', gap: '6px', textAlign: 'center'
-        }
-      }, [
-        playGlyphEl(reducedMotion),
-        h('h2', { className: 'story-reel-cover-title', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, margin: '0', letterSpacing: '-0.3px' } }, ['The Story Behind AmplifyU']),
-        h('span', { style: { fontFamily: FONT_SANS, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(240,235,226,0.55)' } }, ['Tap to play']),
-        opts.caption ? h('p', { style: { fontFamily: FONT_SERIF, fontSize: '11px', fontStyle: 'italic', color: 'rgba(240,235,226,0.7)', margin: '2px 0 0', maxWidth: '280px' } }, [opts.caption]) : null
-      ]);
-
-      btn.appendChild(img);
-      btn.appendChild(vignette);
-      btn.appendChild(inner);
-      root.appendChild(btn);
-    }
-
-    // ── Open (playing) state ──
-    function renderOpen() {
-      root.innerHTML = '';
+      var scene = scenes[state.activeScene];
       var card = h('div', {
         className: 'story-reel-card',
         style: { position: 'relative', borderRadius: '14px', overflow: 'hidden', background: INK },
@@ -235,35 +158,27 @@
       });
 
       // Segmented progress bar
-      var bar = h('div', { style: { display: 'flex', gap: '3px', padding: '8px 10px 0', position: 'relative', zIndex: '2' } });
+      var bar = h('div', { style: { display: 'flex', gap: '3px', padding: '10px 12px 0', position: 'relative', zIndex: '2' } });
       scenes.forEach(function (sc, i) {
-        var track = h('div', { className: 'story-reel-segment', style: { background: 'rgba(240,235,226,0.28)', overflow: 'hidden' } });
-        var fill = h('div', { className: 'story-reel-segment story-reel-fill', style: { background: SAGE, width: '0%' } });
+        var track = h('div', { style: { height: '2px', borderRadius: '1px', background: 'rgba(240,235,226,0.28)', overflow: 'hidden' } });
+        var fill = h('div', { className: 'story-reel-fill', style: { height: '100%', background: SAGE, width: '0%' } });
         track.appendChild(fill);
         var segBtn = h('button', {
           'aria-label': 'Go to scene ' + (i + 1) + ': ' + sc.title,
-          style: { flex: '1', background: 'transparent', border: 'none', padding: '4px 0', cursor: state.started ? 'pointer' : 'default' },
-          onClick: function () { if (state.started) goTo(i); }
+          style: { flex: '1', background: 'transparent', border: 'none', padding: '4px 0', cursor: 'pointer' },
+          onClick: function () { goTo(i); }
         }, [track]);
         bar.appendChild(segBtn);
       });
 
-      // Tap zones
+      // Tap zones — bottom layer, so real controls win over them
       var tapZones = h('div', { style: { position: 'absolute', inset: '0', display: 'flex', zIndex: '1' } }, [
-        h('button', {
-          'aria-label': state.started ? 'Previous scene' : 'Story intro',
-          style: { flex: '1', background: 'transparent', border: 'none', cursor: state.started ? 'pointer' : 'default' },
-          onClick: function () { if (state.started) prev(); }
-        }),
-        h('button', {
-          'aria-label': state.started ? 'Next scene' : 'Begin story',
-          style: { flex: '1', background: 'transparent', border: 'none', cursor: 'pointer' },
-          onClick: function () { state.started ? next() : begin(); }
-        })
+        h('button', { 'aria-label': 'Previous scene', style: { flex: '1', background: 'transparent', border: 'none', cursor: 'pointer' }, onClick: prev }),
+        h('button', { 'aria-label': 'Next scene', style: { flex: '1', background: 'transparent', border: 'none', cursor: 'pointer' }, onClick: next })
       ]);
 
       // Media pane — each scene can carry its own image (falls back to the shared default)
-      var currentImage = state.started ? (scenes[state.activeScene].image || opts.backgroundImage) : opts.backgroundImage;
+      var currentImage = scene.image || opts.backgroundImage;
       var mediaImg = h('img', {
         loading: 'lazy', src: currentImage, alt: '',
         className: reducedMotion ? '' : 'story-reel-kenburns',
@@ -272,93 +187,70 @@
       var mediaGradient = h('div', { style: { position: 'absolute', inset: '0', background: 'linear-gradient(180deg, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.7) 100%)' } });
       var mediaCaption = null;
       if (opts.mediaEyebrow || opts.mediaHeadline) {
-        mediaCaption = h('div', { style: { position: 'absolute', bottom: '10px', left: '12px', right: '12px' } }, [
-          opts.mediaEyebrow ? h('div', { style: { fontFamily: FONT_SANS, fontSize: '8px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)', marginBottom: '3px' } }, [opts.mediaEyebrow]) : null,
-          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, fontSize: '12px', lineHeight: '1.2', letterSpacing: '-0.2px' } }, [opts.mediaHeadline]) : null
+        mediaCaption = h('div', { style: { position: 'absolute', bottom: '14px', left: '16px', right: '16px' } }, [
+          opts.mediaEyebrow ? h('div', { style: { fontFamily: FONT_SANS, fontSize: '9px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)', marginBottom: '4px' } }, [opts.mediaEyebrow]) : null,
+          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, fontSize: '14px', lineHeight: '1.2', letterSpacing: '-0.2px' } }, [opts.mediaHeadline]) : null
         ]);
       }
-      var closeBtn = h('button', {
-        'aria-label': 'Close story',
-        style: {
-          position: 'absolute', top: '8px', right: '8px', width: '22px', height: '22px', borderRadius: '50%',
-          border: 'none', background: 'rgba(26,23,20,0.5)', cursor: 'pointer', pointerEvents: 'auto',
-          display: 'flex', alignItems: 'center', justifyContent: 'center'
-        },
-        onClick: close
-      });
-      closeBtn.innerHTML = closeIconSVG();
 
       var media = h('div', { className: 'story-reel-media', style: { position: 'relative', overflow: 'hidden' } });
       media.appendChild(mediaImg);
       media.appendChild(mediaGradient);
       if (mediaCaption) media.appendChild(mediaCaption);
-      media.appendChild(closeBtn);
 
       // Content pane
-      var content = h('div', { className: 'story-reel-content', style: { flex: '1', background: CREAM, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' } });
-      var page = h('div', { style: { position: 'relative' } });
+      var content = h('div', { className: 'story-reel-content', style: { position: 'relative', flex: '1', background: CREAM, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' } });
+      var page = h('div', {});
 
-      if (!state.started) {
-        var introInner = h('div', {}, [
-          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, margin: '0 0 6px', lineHeight: '1.25', letterSpacing: '-0.3px' } }, [opts.introHeadline]),
-          opts.introSubhead ? h('p', { style: { fontFamily: FONT_SANS, fontSize: '10.5px', color: 'rgba(26,23,20,0.5)', margin: '0' } }, [opts.introSubhead]) : null
-        ]);
-        page.appendChild(introInner);
-      } else {
-        var scene = scenes[state.activeScene];
-        var sceneInner = h('div', {}, [
-          h('div', { style: { fontFamily: FONT_SANS, fontSize: '8px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(26,23,20,0.42)', marginBottom: '5px' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
-          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, margin: '0 0 6px', lineHeight: '1.25', letterSpacing: '-0.3px' } }, ['“' + scene.quote + '”']),
-          h('p', {
-            style: {
-              fontFamily: FONT_SANS, fontSize: '10.5px', color: 'rgba(26,23,20,0.72)', lineHeight: '1.45', margin: '0 0 8px',
-              display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical', overflow: 'hidden'
-            }
-          }, [scene.body]),
-          h('span', {
-            style: {
-              display: 'inline-block', fontFamily: FONT_SANS, fontSize: '8.5px', fontWeight: '700', letterSpacing: '1px',
-              textTransform: 'uppercase', color: SAGE, background: 'rgba(107,124,110,0.14)', border: '1px solid rgba(107,124,110,0.3)',
-              borderRadius: '14px', padding: '3px 9px', opacity: '0', transform: 'scale(0.85)',
-              transition: reducedMotion ? 'none' : 'opacity 260ms ease 160ms, transform 260ms ease 160ms'
-            }
-          }, [scene.emotion])
-        ]);
-        page.appendChild(sceneInner);
-      }
+      var sceneInner = h('div', {}, [
+        h('div', { style: { fontFamily: FONT_SANS, fontSize: '9px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(26,23,20,0.42)', marginBottom: '8px' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
+        h('h3', { style: { fontFamily: FONT_SERIF, fontSize: '17px', fontWeight: '500', color: INK, margin: '0 0 8px', lineHeight: '1.28', letterSpacing: '-0.3px' } }, ['“' + scene.quote + '”']),
+        h('p', {
+          style: {
+            fontFamily: FONT_SANS, fontSize: '12.5px', color: 'rgba(26,23,20,0.72)', lineHeight: '1.5', margin: '0 0 10px',
+            display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical', overflow: 'hidden'
+          }
+        }, [scene.body]),
+        h('span', {
+          style: {
+            display: 'inline-block', fontFamily: FONT_SANS, fontSize: '9px', fontWeight: '700', letterSpacing: '1px',
+            textTransform: 'uppercase', color: SAGE, background: 'rgba(107,124,110,0.14)', border: '1px solid rgba(107,124,110,0.3)',
+            borderRadius: '14px', padding: '4px 10px', opacity: '0', transform: 'scale(0.85)',
+            transition: reducedMotion ? 'none' : 'opacity 260ms ease 160ms, transform 260ms ease 160ms'
+          }
+        }, [scene.emotion])
+      ]);
+      page.appendChild(sceneInner);
+      content.appendChild(page);
 
-      // Wipe overlay (re-mounted per scene change, matching React's key-remount trick)
+      // Wipe overlay (re-mounted per scene change) — covers the full content
+      // pane (a sibling of `page`, not nested inside it, so it always spans
+      // the card's real height regardless of how much text a scene has).
+      // Set the starting transform, force a synchronous style flush by
+      // reading a layout property, then set the end transform so the
+      // browser is guaranteed to animate between the two states rather than
+      // possibly coalescing them into a single no-op frame.
       if (!reducedMotion) {
         var wipe = h('div', {
           'aria-hidden': 'true',
           style: { position: 'absolute', inset: '0', background: CREAM, pointerEvents: 'none', transform: 'translateX(0%)', transition: 'transform 750ms cubic-bezier(.65,0,.35,1)' }
         });
-        page.appendChild(wipe);
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () { wipe.style.transform = 'translateX(-100%)'; });
-        });
+        content.appendChild(wipe);
+        void wipe.offsetHeight;
+        wipe.style.transform = 'translateX(-100%)';
       }
-
-      content.appendChild(page);
 
       // Nav row
-      var navRow = h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px', pointerEvents: 'auto' } });
-      if (state.started) {
-        navRow.appendChild(h('button', {
-          style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '10.5px', fontWeight: '600', color: INK, padding: '3px 0' },
-          onClick: prev
-        }, ['← Previous']));
-        navRow.appendChild(h('span', { style: { fontFamily: FONT_SANS, fontSize: '9.5px', color: 'rgba(26,23,20,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
-        navRow.appendChild(h('button', {
-          style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '10.5px', fontWeight: '600', color: INK, padding: '3px 0' },
-          onClick: next
-        }, ['Next →']));
-      } else {
-        navRow.appendChild(h('button', {
-          style: { marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '10.5px', fontWeight: '600', color: INK, padding: '3px 0' },
-          onClick: begin
-        }, ['Begin →']));
-      }
+      var navRow = h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '12px', pointerEvents: 'auto' } });
+      navRow.appendChild(h('button', {
+        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '600', color: INK, padding: '3px 0' },
+        onClick: prev
+      }, ['← Previous']));
+      navRow.appendChild(h('span', { style: { fontFamily: FONT_SANS, fontSize: '10px', color: 'rgba(26,23,20,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
+      navRow.appendChild(h('button', {
+        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '600', color: INK, padding: '3px 0' },
+        onClick: next
+      }, ['Next →']));
       content.appendChild(navRow);
 
       var body = h('div', { className: 'story-reel-body', style: { position: 'relative', zIndex: '2', pointerEvents: 'none' } }, [media, content]);
@@ -370,23 +262,17 @@
       updateProgressBar(0);
 
       // Fade in the emotion pill after the wipe has had time to sweep
-      if (state.started) {
-        var pill = card.querySelector('.story-reel-content span');
-        if (pill) {
-          setTimeout(function () {
-            pill.style.opacity = reducedMotion ? '1' : '1';
-            pill.style.transform = 'scale(1)';
-          }, reducedMotion ? 0 : 30);
-        }
+      var pill = card.querySelector('.story-reel-content span');
+      if (pill) {
+        setTimeout(function () {
+          pill.style.opacity = '1';
+          pill.style.transform = 'scale(1)';
+        }, reducedMotion ? 0 : 30);
       }
     }
 
-    function render() {
-      if (!state.isOpen) renderCover();
-      else renderOpen();
-    }
-
     render();
+    syncRaf();
   }
 
   function init() {
@@ -394,13 +280,9 @@
     if (!root) return;
     StoryReel(root, {
       scenes: SCENES,
-      coverImage: CONFIG.coverImage,
       backgroundImage: CONFIG.backgroundImage,
-      caption: CONFIG.caption,
       mediaEyebrow: CONFIG.mediaEyebrow,
-      mediaHeadline: CONFIG.mediaHeadline,
-      introHeadline: CONFIG.introHeadline,
-      introSubhead: CONFIG.introSubhead
+      mediaHeadline: CONFIG.mediaHeadline
     });
   }
 
