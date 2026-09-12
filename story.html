@@ -98,7 +98,7 @@
 
   /* ─── HERO ─── */
   .story-hero {
-    min-height: 100vh;
+    min-height: 66vh;
     display: flex; flex-direction: column;
     align-items: flex-start; justify-content: center;
     padding: 140px 48px 60px;
@@ -331,8 +331,13 @@
   .storyreel-col { position: relative; width: 100%; aspect-ratio: 16 / 9; }
   .storyreel-col .story-reel-card { box-shadow: 0 40px 100px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.06); }
 
+  .storyreel-photo-col { display: flex; flex-direction: column; height: 100%; }
+  .storyreel-eyebrow {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 16px;
+  }
   .storyreel-photo {
-    position: relative; width: 100%; height: 100%; min-height: 360px;
+    position: relative; width: 100%; flex: 1; min-height: 320px;
     border-radius: 14px; overflow: hidden;
     box-shadow: 0 40px 100px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.06);
   }
@@ -597,11 +602,12 @@
   @media (max-width: 900px) {
     nav { padding: 20px 24px; }
     .nav-links { gap: 16px; }
-    .story-hero { padding: 100px 24px 60px; min-height: 90vh; }
+    .story-hero { padding: 100px 24px 60px; min-height: 60vh; }
     .hero-sub { font-size: 14px; color: rgba(237,234,230,0.7); line-height: 1.65; }
     .section-storyreel { min-height: unset; padding: 56px 24px; }
     .storyreel-inner { grid-template-columns: 1fr; gap: 24px; }
-    .storyreel-photo { min-height: 280px; aspect-ratio: 4 / 3; }
+    .storyreel-photo-col { height: auto; }
+    .storyreel-photo { min-height: 280px; aspect-ratio: 4 / 3; flex: none; }
     .storyreel-photo-quote { font-size: 15px; left: 20px; right: 20px; bottom: 20px; }
     .storyreel-col { aspect-ratio: 4 / 3; }
     .section-context { padding: 56px 24px; }
@@ -711,10 +717,13 @@
 <!-- ─── STORY REEL (page 2) ─── -->
 <section class="section-storyreel">
   <div class="storyreel-inner">
-    <div class="storyreel-photo fade-up">
-      <img src="founder-photo.jpg" alt="Jenni, founder of AmplifyU" class="storyreel-photo-img">
-      <div class="storyreel-photo-overlay"></div>
-      <p class="storyreel-photo-quote">"I needed an app designed for real life — something practical, personal and backed by science." But what I was looking for didn't exist. So that's why I built it. AmplifyU is the product I wish I had throughout my career.</p>
+    <div class="storyreel-photo-col fade-up">
+      <p class="storyreel-eyebrow">My Story</p>
+      <div class="storyreel-photo">
+        <img src="founder-photo.jpg" alt="Jenni, founder of AmplifyU" class="storyreel-photo-img">
+        <div class="storyreel-photo-overlay"></div>
+        <p class="storyreel-photo-quote">"I needed an app designed for real life — something practical, personal and backed by science." But what I was looking for didn't exist. So that's why I built it. AmplifyU is the product I wish I had throughout my career.</p>
+      </div>
     </div>
     <div class="storyreel-col fade-up delay-1">
       <div id="story-reel"></div>
