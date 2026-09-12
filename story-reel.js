@@ -69,8 +69,20 @@
     '.story-reel-card{width:100%;height:100%;}' +
     '.story-reel-body{display:flex;flex-direction:row;height:100%;}' +
     '.story-reel-media{flex:0 0 40%;}' +
-    '.story-reel-content{padding:22px 26px;}' +
-    '.story-reel-quote{font-size:17px;}' +
+    '.story-reel-content{padding:18px 20px;}' +
+    '.story-reel-eyebrow{font-size:9px;margin-bottom:6px;}' +
+    '.story-reel-quote{font-size:16px;margin:0 0 6px;line-height:1.25;}' +
+    '.story-reel-bodytext{font-size:11.5px;line-height:1.45;margin:0 0 8px;}' +
+    '.story-reel-navbtn{font-size:11px;}' +
+    '.story-reel-navlabel{font-size:10px;}' +
+    '@media (min-width:900px){' +
+    '.story-reel-content{padding:36px 44px;}' +
+    '.story-reel-eyebrow{font-size:12px;margin-bottom:14px;}' +
+    '.story-reel-quote{font-size:26px;margin:0 0 14px;line-height:1.28;}' +
+    '.story-reel-bodytext{font-size:16px;line-height:1.6;margin:0 0 18px;}' +
+    '.story-reel-navbtn{font-size:13px;}' +
+    '.story-reel-navlabel{font-size:12px;}' +
+    '}' +
     '@media (prefers-reduced-motion:reduce){.story-reel-kenburns{animation:none !important;}}';
   document.head.appendChild(STYLE);
 
@@ -158,7 +170,7 @@
       });
 
       // Segmented progress bar
-      var bar = h('div', { style: { display: 'flex', gap: '3px', padding: '10px 12px 0', position: 'relative', zIndex: '2' } });
+      var bar = h('div', { style: { display: 'flex', gap: '4px', padding: '18px 22px 0', position: 'relative', zIndex: '2' } });
       scenes.forEach(function (sc, i) {
         var track = h('div', { style: { height: '2px', borderRadius: '1px', background: 'rgba(240,235,226,0.28)', overflow: 'hidden' } });
         var fill = h('div', { className: 'story-reel-fill', style: { height: '100%', background: SAGE, width: '0%' } });
@@ -187,9 +199,9 @@
       var mediaGradient = h('div', { style: { position: 'absolute', inset: '0', background: 'linear-gradient(180deg, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.7) 100%)' } });
       var mediaCaption = null;
       if (opts.mediaEyebrow || opts.mediaHeadline) {
-        mediaCaption = h('div', { style: { position: 'absolute', bottom: '14px', left: '16px', right: '16px' } }, [
-          opts.mediaEyebrow ? h('div', { style: { fontFamily: FONT_SANS, fontSize: '9px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)', marginBottom: '4px' } }, [opts.mediaEyebrow]) : null,
-          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, fontSize: '14px', lineHeight: '1.2', letterSpacing: '-0.2px' } }, [opts.mediaHeadline]) : null
+        mediaCaption = h('div', { style: { position: 'absolute', bottom: '24px', left: '26px', right: '26px' } }, [
+          opts.mediaEyebrow ? h('div', { style: { fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)', marginBottom: '6px' } }, [opts.mediaEyebrow]) : null,
+          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, fontSize: '20px', lineHeight: '1.2', letterSpacing: '-0.3px' } }, [opts.mediaHeadline]) : null
         ]);
       }
 
@@ -203,19 +215,17 @@
       var page = h('div', {});
 
       var sceneInner = h('div', {}, [
-        h('div', { style: { fontFamily: FONT_SANS, fontSize: '9px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(26,23,20,0.42)', marginBottom: '8px' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
-        h('h3', { style: { fontFamily: FONT_SERIF, fontSize: '17px', fontWeight: '500', color: INK, margin: '0 0 8px', lineHeight: '1.28', letterSpacing: '-0.3px' } }, ['“' + scene.quote + '”']),
+        h('div', { className: 'story-reel-eyebrow', style: { fontFamily: FONT_SANS, fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(26,23,20,0.42)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
+        h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, letterSpacing: '-0.3px' } }, ['“' + scene.quote + '”']),
         h('p', {
-          style: {
-            fontFamily: FONT_SANS, fontSize: '12.5px', color: 'rgba(26,23,20,0.72)', lineHeight: '1.5', margin: '0 0 10px',
-            display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical', overflow: 'hidden'
-          }
+          className: 'story-reel-bodytext',
+          style: { fontFamily: FONT_SANS, color: 'rgba(26,23,20,0.72)' }
         }, [scene.body]),
         h('span', {
           style: {
-            display: 'inline-block', fontFamily: FONT_SANS, fontSize: '9px', fontWeight: '700', letterSpacing: '1px',
+            display: 'inline-block', fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '700', letterSpacing: '1px',
             textTransform: 'uppercase', color: SAGE, background: 'rgba(107,124,110,0.14)', border: '1px solid rgba(107,124,110,0.3)',
-            borderRadius: '14px', padding: '4px 10px', opacity: '0', transform: 'scale(0.85)',
+            borderRadius: '16px', padding: '6px 14px', opacity: '0', transform: 'scale(0.85)',
             transition: reducedMotion ? 'none' : 'opacity 260ms ease 160ms, transform 260ms ease 160ms'
           }
         }, [scene.emotion])
@@ -241,14 +251,16 @@
       }
 
       // Nav row
-      var navRow = h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '12px', pointerEvents: 'auto' } });
+      var navRow = h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '14px', pointerEvents: 'auto' } });
       navRow.appendChild(h('button', {
-        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '600', color: INK, padding: '3px 0' },
+        className: 'story-reel-navbtn',
+        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '600', color: INK, padding: '4px 0' },
         onClick: prev
       }, ['← Previous']));
-      navRow.appendChild(h('span', { style: { fontFamily: FONT_SANS, fontSize: '10px', color: 'rgba(26,23,20,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
+      navRow.appendChild(h('span', { className: 'story-reel-navlabel', style: { fontFamily: FONT_SANS, color: 'rgba(26,23,20,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
       navRow.appendChild(h('button', {
-        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '600', color: INK, padding: '3px 0' },
+        className: 'story-reel-navbtn',
+        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '600', color: INK, padding: '4px 0' },
         onClick: next
       }, ['Next →']));
       content.appendChild(navRow);
