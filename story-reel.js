@@ -18,7 +18,8 @@
       title: "The Return",
       quote: "I came back to a career that still mattered.",
       body: "A year ago, I returned from maternity leave. Two small children at home, a career that mattered to me, and a hard new reality: I could no longer afford to be anything less than precise. Every meeting, every conversation had to earn its place.",
-      emotion: "Determination"
+      emotion: "Determination",
+      image: "story-laptop-night.jpg"
     },
     {
       title: "The Realisation",
@@ -48,7 +49,8 @@
       title: "The Life It Builds",
       quote: "When you communicate well, everything else expands.",
       body: "This platform was built in the margins of a full life. It is designed to be used in exactly the same way. Because the professionals who need these tools most are also the ones with the least time to waste, and the most to gain.",
-      emotion: "Wholeness"
+      emotion: "Wholeness",
+      image: "story-microphone.jpg"
     }
   ];
 
@@ -72,14 +74,14 @@
     '.story-reel-body{display:flex;flex-direction:column;}' +
     '.story-reel-media{flex:0 0 220px;}' +
     '.story-reel-content{padding:28px 24px 24px;}' +
-    '.story-reel-quote{font-size:20px;}' +
+    '.story-reel-quote{font-size:19px;}' +
     '.story-reel-cover-title{font-size:24px;}' +
     '.story-reel-segment{height:2px;border-radius:1px;}' +
     '@media (min-width:720px){' +
     '.story-reel-body{flex-direction:row;}' +
     '.story-reel-media{flex:0 0 42%;}' +
     '.story-reel-content{padding:44px 48px;}' +
-    '.story-reel-quote{font-size:27px;}' +
+    '.story-reel-quote{font-size:21px;}' +
     '.story-reel-cover-title{font-size:32px;}' +
     '.story-reel-segment{height:3px;border-radius:2px;}' +
     '}' +
@@ -263,9 +265,10 @@
         })
       ]);
 
-      // Media pane
+      // Media pane — each scene can carry its own image (falls back to the shared default)
+      var currentImage = state.started ? (scenes[state.activeScene].image || opts.backgroundImage) : opts.backgroundImage;
       var mediaImg = h('img', {
-        loading: 'lazy', src: opts.backgroundImage, alt: '',
+        loading: 'lazy', src: currentImage, alt: '',
         className: reducedMotion ? '' : 'story-reel-kenburns',
         style: { position: 'absolute', inset: '0', width: '100%', height: '100%', objectFit: 'cover' }
       });
@@ -274,7 +277,7 @@
       if (opts.mediaEyebrow || opts.mediaHeadline) {
         mediaCaption = h('div', { style: { position: 'absolute', bottom: '18px', left: '20px', right: '20px' } }, [
           opts.mediaEyebrow ? h('div', { style: { fontFamily: FONT_SANS, fontSize: '10px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)', marginBottom: '8px' } }, [opts.mediaEyebrow]) : null,
-          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '600', color: CREAM, fontSize: '21px', lineHeight: '1.2', letterSpacing: '-0.2px' } }, [opts.mediaHeadline]) : null
+          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, fontSize: '19px', lineHeight: '1.2', letterSpacing: '-0.3px' } }, [opts.mediaHeadline]) : null
         ]);
       }
       var closeBtn = h('button', {
@@ -300,7 +303,7 @@
 
       if (!state.started) {
         var introInner = h('div', {}, [
-          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '600', color: INK, margin: '0 0 10px', lineHeight: '1.28', letterSpacing: '-0.2px' } }, [opts.introHeadline]),
+          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, margin: '0 0 10px', lineHeight: '1.3', letterSpacing: '-0.3px' } }, [opts.introHeadline]),
           opts.introSubhead ? h('p', { style: { fontFamily: FONT_SANS, fontSize: '13px', color: 'rgba(26,23,20,0.5)', margin: '0' } }, [opts.introSubhead]) : null
         ]);
         page.appendChild(introInner);
@@ -308,7 +311,7 @@
         var scene = scenes[state.activeScene];
         var sceneInner = h('div', {}, [
           h('div', { style: { fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '600', letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(26,23,20,0.42)', marginBottom: '12px' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
-          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '600', color: INK, margin: '0 0 16px', lineHeight: '1.25', letterSpacing: '-0.2px' } }, ['“' + scene.quote + '”']),
+          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, margin: '0 0 16px', lineHeight: '1.3', letterSpacing: '-0.3px' } }, ['“' + scene.quote + '”']),
           h('p', { style: { fontFamily: FONT_SANS, fontSize: '14.5px', color: 'rgba(26,23,20,0.72)', lineHeight: '1.7', margin: '0 0 20px' } }, [scene.body]),
           h('span', {
             style: {
