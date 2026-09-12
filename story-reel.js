@@ -71,19 +71,16 @@
     '.story-reel-card button{outline:none;-webkit-tap-highlight-color:transparent;font:inherit;}' +
     '.story-reel-kenburns{animation:storyReelKenBurns 32s ease-in-out infinite alternate;}' +
     '.story-reel-pulse{animation:storyReelPulse 2.2s ease-in-out infinite;}' +
-    '.story-reel-body{display:flex;flex-direction:column;}' +
-    '.story-reel-media{flex:0 0 220px;}' +
-    '.story-reel-content{padding:28px 24px 24px;}' +
-    '.story-reel-quote{font-size:19px;}' +
-    '.story-reel-cover-title{font-size:24px;}' +
+    '.story-reel-body{display:flex;flex-direction:row;}' +
+    '.story-reel-media{flex:0 0 40%;}' +
+    '.story-reel-content{padding:16px 18px 14px;}' +
+    '.story-reel-quote{font-size:14px;}' +
+    '.story-reel-cover-title{font-size:16px;}' +
     '.story-reel-segment{height:2px;border-radius:1px;}' +
-    '@media (min-width:720px){' +
-    '.story-reel-body{flex-direction:row;}' +
-    '.story-reel-media{flex:0 0 42%;}' +
-    '.story-reel-content{padding:44px 48px;}' +
-    '.story-reel-quote{font-size:21px;}' +
-    '.story-reel-cover-title{font-size:32px;}' +
-    '.story-reel-segment{height:3px;border-radius:2px;}' +
+    '@media (min-width:480px){' +
+    '.story-reel-content{padding:20px 22px 18px;}' +
+    '.story-reel-quote{font-size:15px;}' +
+    '.story-reel-cover-title{font-size:18px;}' +
     '}' +
     '@media (prefers-reduced-motion:reduce){.story-reel-kenburns,.story-reel-pulse{animation:none !important;}}';
   document.head.appendChild(STYLE);
@@ -113,16 +110,16 @@
     var wrap = h('div', {
       className: reducedMotion ? '' : 'story-reel-pulse',
       style: {
-        width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(240,235,226,0.12)',
+        width: '34px', height: '34px', borderRadius: '50%', background: 'rgba(240,235,226,0.12)',
         border: '1px solid rgba(240,235,226,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center'
       }
     });
-    wrap.innerHTML = '<svg width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1 1.5v17l16-8.5-16-8.5z" fill="' + CREAM + '"/></svg>';
+    wrap.innerHTML = '<svg width="12" height="13" viewBox="0 0 18 20" fill="none"><path d="M1 1.5v17l16-8.5-16-8.5z" fill="' + CREAM + '"/></svg>';
     return wrap;
   }
 
   function closeIconSVG() {
-    return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 1.5l11 11M12.5 1.5l-11 11" stroke="' + CREAM + '" stroke-width="1.6" stroke-linecap="round"/></svg>';
+    return '<svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1.5 1.5l11 11M12.5 1.5l-11 11" stroke="' + CREAM + '" stroke-width="1.6" stroke-linecap="round"/></svg>';
   }
 
   function StoryReel(root, opts) {
@@ -211,14 +208,14 @@
 
       var inner = h('div', {
         style: {
-          position: 'relative', minHeight: '340px', padding: '40px 28px', display: 'flex',
-          flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', gap: '16px', textAlign: 'center'
+          position: 'relative', minHeight: '170px', padding: '18px 16px', display: 'flex',
+          flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', gap: '6px', textAlign: 'center'
         }
       }, [
         playGlyphEl(reducedMotion),
-        h('h2', { className: 'story-reel-cover-title', style: { fontFamily: FONT_SERIF, fontWeight: '600', color: CREAM, margin: '0', letterSpacing: '-0.3px' } }, ['The Story Behind AmplifyU']),
-        h('span', { style: { fontFamily: FONT_SANS, fontSize: '11px', letterSpacing: '2.5px', textTransform: 'uppercase', color: 'rgba(240,235,226,0.55)' } }, ['Tap to play']),
-        opts.caption ? h('p', { style: { fontFamily: FONT_SERIF, fontSize: '14px', fontStyle: 'italic', color: 'rgba(240,235,226,0.7)', margin: '4px 0 0', maxWidth: '320px' } }, [opts.caption]) : null
+        h('h2', { className: 'story-reel-cover-title', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, margin: '0', letterSpacing: '-0.3px' } }, ['The Story Behind AmplifyU']),
+        h('span', { style: { fontFamily: FONT_SANS, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(240,235,226,0.55)' } }, ['Tap to play']),
+        opts.caption ? h('p', { style: { fontFamily: FONT_SERIF, fontSize: '11px', fontStyle: 'italic', color: 'rgba(240,235,226,0.7)', margin: '2px 0 0', maxWidth: '280px' } }, [opts.caption]) : null
       ]);
 
       btn.appendChild(img);
@@ -238,14 +235,14 @@
       });
 
       // Segmented progress bar
-      var bar = h('div', { style: { display: 'flex', gap: '4px', padding: '11px 16px 0', position: 'relative', zIndex: '2' } });
+      var bar = h('div', { style: { display: 'flex', gap: '3px', padding: '8px 10px 0', position: 'relative', zIndex: '2' } });
       scenes.forEach(function (sc, i) {
         var track = h('div', { className: 'story-reel-segment', style: { background: 'rgba(240,235,226,0.28)', overflow: 'hidden' } });
         var fill = h('div', { className: 'story-reel-segment story-reel-fill', style: { background: SAGE, width: '0%' } });
         track.appendChild(fill);
         var segBtn = h('button', {
           'aria-label': 'Go to scene ' + (i + 1) + ': ' + sc.title,
-          style: { flex: '1', background: 'transparent', border: 'none', padding: '6px 0', cursor: state.started ? 'pointer' : 'default' },
+          style: { flex: '1', background: 'transparent', border: 'none', padding: '4px 0', cursor: state.started ? 'pointer' : 'default' },
           onClick: function () { if (state.started) goTo(i); }
         }, [track]);
         bar.appendChild(segBtn);
@@ -275,15 +272,15 @@
       var mediaGradient = h('div', { style: { position: 'absolute', inset: '0', background: 'linear-gradient(180deg, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.7) 100%)' } });
       var mediaCaption = null;
       if (opts.mediaEyebrow || opts.mediaHeadline) {
-        mediaCaption = h('div', { style: { position: 'absolute', bottom: '18px', left: '20px', right: '20px' } }, [
-          opts.mediaEyebrow ? h('div', { style: { fontFamily: FONT_SANS, fontSize: '10px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)', marginBottom: '8px' } }, [opts.mediaEyebrow]) : null,
-          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, fontSize: '19px', lineHeight: '1.2', letterSpacing: '-0.3px' } }, [opts.mediaHeadline]) : null
+        mediaCaption = h('div', { style: { position: 'absolute', bottom: '10px', left: '12px', right: '12px' } }, [
+          opts.mediaEyebrow ? h('div', { style: { fontFamily: FONT_SANS, fontSize: '8px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(168,179,163,0.9)', marginBottom: '3px' } }, [opts.mediaEyebrow]) : null,
+          opts.mediaHeadline ? h('div', { style: { fontFamily: FONT_SERIF, fontWeight: '500', color: CREAM, fontSize: '12px', lineHeight: '1.2', letterSpacing: '-0.2px' } }, [opts.mediaHeadline]) : null
         ]);
       }
       var closeBtn = h('button', {
         'aria-label': 'Close story',
         style: {
-          position: 'absolute', top: '14px', right: '14px', width: '30px', height: '30px', borderRadius: '50%',
+          position: 'absolute', top: '8px', right: '8px', width: '22px', height: '22px', borderRadius: '50%',
           border: 'none', background: 'rgba(26,23,20,0.5)', cursor: 'pointer', pointerEvents: 'auto',
           display: 'flex', alignItems: 'center', justifyContent: 'center'
         },
@@ -291,7 +288,7 @@
       });
       closeBtn.innerHTML = closeIconSVG();
 
-      var media = h('div', { className: 'story-reel-media', style: { position: 'relative', overflow: 'hidden', minHeight: '200px' } });
+      var media = h('div', { className: 'story-reel-media', style: { position: 'relative', overflow: 'hidden' } });
       media.appendChild(mediaImg);
       media.appendChild(mediaGradient);
       if (mediaCaption) media.appendChild(mediaCaption);
@@ -303,21 +300,26 @@
 
       if (!state.started) {
         var introInner = h('div', {}, [
-          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, margin: '0 0 10px', lineHeight: '1.3', letterSpacing: '-0.3px' } }, [opts.introHeadline]),
-          opts.introSubhead ? h('p', { style: { fontFamily: FONT_SANS, fontSize: '13px', color: 'rgba(26,23,20,0.5)', margin: '0' } }, [opts.introSubhead]) : null
+          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, margin: '0 0 6px', lineHeight: '1.25', letterSpacing: '-0.3px' } }, [opts.introHeadline]),
+          opts.introSubhead ? h('p', { style: { fontFamily: FONT_SANS, fontSize: '10.5px', color: 'rgba(26,23,20,0.5)', margin: '0' } }, [opts.introSubhead]) : null
         ]);
         page.appendChild(introInner);
       } else {
         var scene = scenes[state.activeScene];
         var sceneInner = h('div', {}, [
-          h('div', { style: { fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '600', letterSpacing: '2px', textTransform: 'uppercase', color: 'rgba(26,23,20,0.42)', marginBottom: '12px' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
-          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, margin: '0 0 16px', lineHeight: '1.3', letterSpacing: '-0.3px' } }, ['“' + scene.quote + '”']),
-          h('p', { style: { fontFamily: FONT_SANS, fontSize: '14.5px', color: 'rgba(26,23,20,0.72)', lineHeight: '1.7', margin: '0 0 20px' } }, [scene.body]),
+          h('div', { style: { fontFamily: FONT_SANS, fontSize: '8px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(26,23,20,0.42)', marginBottom: '5px' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
+          h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, margin: '0 0 6px', lineHeight: '1.25', letterSpacing: '-0.3px' } }, ['“' + scene.quote + '”']),
+          h('p', {
+            style: {
+              fontFamily: FONT_SANS, fontSize: '10.5px', color: 'rgba(26,23,20,0.72)', lineHeight: '1.45', margin: '0 0 8px',
+              display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical', overflow: 'hidden'
+            }
+          }, [scene.body]),
           h('span', {
             style: {
-              display: 'inline-block', fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '700', letterSpacing: '1.5px',
+              display: 'inline-block', fontFamily: FONT_SANS, fontSize: '8.5px', fontWeight: '700', letterSpacing: '1px',
               textTransform: 'uppercase', color: SAGE, background: 'rgba(107,124,110,0.14)', border: '1px solid rgba(107,124,110,0.3)',
-              borderRadius: '20px', padding: '6px 14px', opacity: '0', transform: 'scale(0.85)',
+              borderRadius: '14px', padding: '3px 9px', opacity: '0', transform: 'scale(0.85)',
               transition: reducedMotion ? 'none' : 'opacity 260ms ease 160ms, transform 260ms ease 160ms'
             }
           }, [scene.emotion])
@@ -340,20 +342,20 @@
       content.appendChild(page);
 
       // Nav row
-      var navRow = h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '24px', pointerEvents: 'auto' } });
+      var navRow = h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px', pointerEvents: 'auto' } });
       if (state.started) {
         navRow.appendChild(h('button', {
-          style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '13px', fontWeight: '600', color: INK, padding: '6px 0' },
+          style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '10.5px', fontWeight: '600', color: INK, padding: '3px 0' },
           onClick: prev
         }, ['← Previous']));
-        navRow.appendChild(h('span', { style: { fontFamily: FONT_SANS, fontSize: '12px', color: 'rgba(26,23,20,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
+        navRow.appendChild(h('span', { style: { fontFamily: FONT_SANS, fontSize: '9.5px', color: 'rgba(26,23,20,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
         navRow.appendChild(h('button', {
-          style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '13px', fontWeight: '600', color: INK, padding: '6px 0' },
+          style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '10.5px', fontWeight: '600', color: INK, padding: '3px 0' },
           onClick: next
         }, ['Next →']));
       } else {
         navRow.appendChild(h('button', {
-          style: { marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '13px', fontWeight: '600', color: INK, padding: '6px 0' },
+          style: { marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontSize: '10.5px', fontWeight: '600', color: INK, padding: '3px 0' },
           onClick: begin
         }, ['Begin →']));
       }
