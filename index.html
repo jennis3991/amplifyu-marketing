@@ -205,6 +205,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-skill-card--featured .w-skill-cat { opacity:1; }
 .w-skill-name { font-family:var(--serif-display); font-size:20px; font-weight:500; color:var(--text-dark); margin-bottom:10px; line-height:1.2; }
 .w-skill-desc { font-family:var(--sans); font-size:12px; color:var(--text-light); line-height:1.6; }
+.w-skill-dots { display:none; }
 
 
 
@@ -448,8 +449,17 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-problem-lede { gap:20px; }
   .w-problem-bar { min-height:80px; }
   .w-teaches-header { grid-template-columns:1fr; gap:20px; }
-  .w-skill-grid { grid-template-columns:1fr 1fr; }
-  .w-skill-card { padding:28px 22px; }
+  .w-skill-grid {
+    display:flex; grid-template-columns:none;
+    overflow-x:auto; scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none; -ms-overflow-style:none;
+  }
+  .w-skill-grid::-webkit-scrollbar { display:none; }
+  .w-skill-card { flex:0 0 86%; min-width:0; padding:28px 22px; scroll-snap-align:start; }
+  .w-skill-dots { display:flex; justify-content:center; align-items:center; gap:8px; margin-top:20px; }
+  .w-skill-dot { width:6px; height:6px; border-radius:50%; background:rgba(240,235,226,0.18); flex-shrink:0; transition:background 0.2s, transform 0.2s; }
+  .w-skill-dot.is-active { background:var(--accent-light); transform:scale(1.5); }
   .w-clarity { padding: 0 24px 80px; }
   .wc-panels { grid-template-columns: 1fr; }
   .wc-callout { grid-template-columns: 1fr; gap: 24px; text-align: center; padding: 28px 24px; }
@@ -744,7 +754,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         <p class="w-teaches-sub">The skills that create visibility, build trust, and open doors — developed over 14 sessions through science, real-world examples, and AI practice.</p>
       </div>
     </div>
-    <div class="w-skill-grid">
+    <div class="w-skill-grid" id="skillGrid">
       <div class="w-skill-card fade-up">
         <div class="w-skill-symbol">♟</div>
         <div class="w-skill-cat">01 · The Foundation</div>
@@ -782,9 +792,39 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         <p class="w-skill-desc">Navigate conflict, feedback, and tension with precision. The conversations that define reputations.</p>
       </div>
     </div>
+    <div class="w-skill-dots" id="skillDots" aria-hidden="true">
+      <span class="w-skill-dot is-active"></span>
+      <span class="w-skill-dot"></span>
+      <span class="w-skill-dot"></span>
+      <span class="w-skill-dot"></span>
+      <span class="w-skill-dot"></span>
+      <span class="w-skill-dot"></span>
+    </div>
     <p class="w-teaches-coda fade-up">Build the skills to become more influential... in just 14 days.</p>
   </div>
 </section>
+
+<script>
+(function(){
+  var track = document.getElementById('skillGrid');
+  var dots = document.querySelectorAll('#skillDots .w-skill-dot');
+  if (!track || !dots.length) return;
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var card = track.children[0];
+    if (!card) return;
+    var cardWidth = card.getBoundingClientRect().width;
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var idx = Math.round(track.scrollLeft / (cardWidth + gap));
+    idx = Math.max(0, Math.min(dots.length - 1, idx));
+    dots.forEach(function(d, i){ d.classList.toggle('is-active', i === idx); });
+  }
+  track.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+})();
+</script>
 
 <!-- ══ GO DEEPER ══ -->
 <section class="section-go-deeper">
