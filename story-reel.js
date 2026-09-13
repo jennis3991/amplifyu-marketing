@@ -9,12 +9,11 @@
   var INK = '#1a1714';
   var CREAM = '#f0ebe2';
   var SAGE = '#6b7c6e';
-  // Book-cover panel palette — pulled from the app's theme.js (T.gold,
-  // T.serif) and Day8.jsx's INK constant, so the reel's text panel matches
-  // that panel exactly rather than approximating it.
-  var PANEL_BG = '#0f0d0a';
-  var PANEL_GOLD = '#8A9E84';
-  var PANEL_CREAM = '#F8F5EF';
+  // Book-cover panel palette — cream panel with dark ink text, matching
+  // the site's light sections.
+  var PANEL_BG = CREAM;
+  var PANEL_GOLD = SAGE;
+  var PANEL_CREAM = INK;
   var FONT_SERIF = "'Cormorant Garamond','Georgia',serif";
   var FONT_SANS = "'Inter',-apple-system,sans-serif";
   var SCENE_MS = 7000;
@@ -29,7 +28,7 @@
     },
     {
       title: "The Realisation",
-      quote: "Communication became the skill that multiplied everything else.",
+      quote: "Communication - the skill that multiplies everything.",
       body: "Communicating clearly under pressure became the single highest-leverage skill I could develop — the one that lets me work faster, influence more, and still come home with something left to give.",
       emotion: "Clarity",
       image: "story-communicate-impact.jpg"
@@ -52,8 +51,8 @@
     },
     {
       title: "The Transformation",
-      quote: "It wasn't talent. It was practice.",
-      body: "Not gifted. Not naturally smooth. Just deliberate — practice and repetition that made improvement visible, to themselves and everyone around them.",
+      quote: "My Mission is Simple",
+      body: "Help professionals present with impact, inspire action and accelerate their career.",
       emotion: "Confidence",
       image: "story-boardroom-amplifyu.jpg"
     },
@@ -252,13 +251,13 @@
         h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: PANEL_CREAM, letterSpacing: '-0.3px' } }, [scene.quote]),
         h('p', {
           className: 'story-reel-bodytext',
-          style: { fontFamily: FONT_SANS, fontWeight: '300', color: 'rgba(248,245,239,0.5)' }
+          style: { fontFamily: FONT_SANS, fontWeight: '300', color: 'rgba(26,23,20,0.6)' }
         }, [scene.body]),
         h('span', {
           className: 'story-reel-pill',
           style: {
             display: 'inline-block', fontFamily: FONT_SANS, fontWeight: '700', letterSpacing: '1px',
-            textTransform: 'uppercase', color: PANEL_GOLD, background: 'rgba(138,158,132,0.14)', border: '1px solid rgba(138,158,132,0.35)',
+            textTransform: 'uppercase', color: PANEL_GOLD, background: 'rgba(107,124,110,0.12)', border: '1px solid rgba(107,124,110,0.3)',
             borderRadius: '16px', opacity: '0', transform: 'scale(0.85)',
             transition: reducedMotion ? 'none' : 'opacity 260ms ease 160ms, transform 260ms ease 160ms'
           }
@@ -291,7 +290,7 @@
         style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '400', color: PANEL_CREAM, padding: '4px 0' },
         onClick: prev
       }, ['← Previous']));
-      navRow.appendChild(h('span', { className: 'story-reel-navlabel', style: { fontFamily: FONT_SANS, color: 'rgba(248,245,239,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
+      navRow.appendChild(h('span', { className: 'story-reel-navlabel', style: { fontFamily: FONT_SANS, color: 'rgba(26,23,20,0.45)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
       navRow.appendChild(h('button', {
         className: 'story-reel-navbtn',
         style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '400', color: PANEL_CREAM, padding: '4px 0' },
