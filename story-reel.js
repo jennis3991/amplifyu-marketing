@@ -100,7 +100,7 @@
     '.story-reel-mediacap{left:24px;right:24px;bottom:20px;}' +
     '.story-reel-mediaeyebrow{font-size:10px;margin-bottom:5px;}' +
     '.story-reel-mediaheadline{font-size:15px;line-height:1.25;}' +
-    '.story-reel-card button.story-reel-navbtn{font-size:5px;}' +
+    '.story-reel-card button.story-reel-navbtn{font-size:15px;}' +
     '.story-reel-navlabel{font-size:10px;}' +
     '}' +
     '@media (prefers-reduced-motion:reduce){.story-reel-kenburns{animation:none !important;}}';
