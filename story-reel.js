@@ -87,7 +87,7 @@
     '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;}' +
     '.story-reel-quote{font-size:17px;margin:0 0 8px;line-height:1.15;}' +
     '.story-reel-bodytext{font-size:11px;line-height:1.55;margin:0 0 10px;}' +
-    '.story-reel-navbtn{font-size:10px;}' +
+    '.story-reel-navbtn{font-size:9px;}' +
     '.story-reel-navlabel{font-size:9px;}' +
     '.story-reel-mediacap{left:14px;right:14px;bottom:12px;}' +
     '.story-reel-mediaeyebrow{font-size:8px;margin-bottom:3px;}' +
@@ -100,7 +100,7 @@
     '.story-reel-mediacap{left:24px;right:24px;bottom:20px;}' +
     '.story-reel-mediaeyebrow{font-size:10px;margin-bottom:5px;}' +
     '.story-reel-mediaheadline{font-size:15px;line-height:1.25;}' +
-    '.story-reel-navbtn{font-size:11px;}' +
+    '.story-reel-navbtn{font-size:10px;}' +
     '.story-reel-navlabel{font-size:10px;}' +
     '}' +
     '@media (prefers-reduced-motion:reduce){.story-reel-kenburns{animation:none !important;}}';
@@ -232,7 +232,7 @@
 
       // Content pane
       var content = h('div', { className: 'story-reel-content', style: { position: 'relative', flex: '1', background: PANEL_BG, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' } });
-      var page = h('div', {});
+      var page = h('div', { style: { flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center' } });
 
       var sceneInner = h('div', {}, [
         h('div', { className: 'story-reel-eyebrow', style: { fontFamily: FONT_SANS, fontWeight: '700', letterSpacing: '2.5px', textTransform: 'uppercase', color: PANEL_GOLD } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
@@ -274,13 +274,13 @@
       var navRow = h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '14px', pointerEvents: 'auto' } });
       navRow.appendChild(h('button', {
         className: 'story-reel-navbtn',
-        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '600', color: PANEL_CREAM, padding: '4px 0' },
+        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '400', color: PANEL_CREAM, padding: '4px 0' },
         onClick: prev
       }, ['← Previous']));
       navRow.appendChild(h('span', { className: 'story-reel-navlabel', style: { fontFamily: FONT_SANS, color: 'rgba(248,245,239,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
       navRow.appendChild(h('button', {
         className: 'story-reel-navbtn',
-        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '600', color: PANEL_CREAM, padding: '4px 0' },
+        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '400', color: PANEL_CREAM, padding: '4px 0' },
         onClick: next
       }, ['Next →']));
       content.appendChild(navRow);
