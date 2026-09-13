@@ -87,7 +87,7 @@
     '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;}' +
     '.story-reel-quote{font-size:17px;margin:0 0 8px;line-height:1.15;}' +
     '.story-reel-bodytext{font-size:11px;line-height:1.55;margin:0 0 10px;}' +
-    '.story-reel-navbtn{font-size:9px;}' +
+    '.story-reel-card button.story-reel-navbtn{font-size:4.5px;}' +
     '.story-reel-navlabel{font-size:9px;}' +
     '.story-reel-mediacap{left:14px;right:14px;bottom:12px;}' +
     '.story-reel-mediaeyebrow{font-size:8px;margin-bottom:3px;}' +
@@ -100,7 +100,7 @@
     '.story-reel-mediacap{left:24px;right:24px;bottom:20px;}' +
     '.story-reel-mediaeyebrow{font-size:10px;margin-bottom:5px;}' +
     '.story-reel-mediaheadline{font-size:15px;line-height:1.25;}' +
-    '.story-reel-navbtn{font-size:10px;}' +
+    '.story-reel-card button.story-reel-navbtn{font-size:5px;}' +
     '.story-reel-navlabel{font-size:10px;}' +
     '}' +
     '@media (prefers-reduced-motion:reduce){.story-reel-kenburns{animation:none !important;}}';
