@@ -23,21 +23,21 @@
     {
       title: "The Return",
       quote: "I came back to a career that still mattered.",
-      body: "A year ago, I returned from maternity leave. Two small children at home, a career that mattered to me, and a hard new reality: I could no longer afford to be anything less than precise. Every meeting, every conversation had to earn its place.",
+      body: "A year after maternity leave, with two small children at home, I couldn't afford to be anything less than precise. Every conversation had to earn its place.",
       emotion: "Determination",
       image: "story-laptop-night.jpg"
     },
     {
       title: "The Realisation",
       quote: "Communication became the skill that multiplied everything else.",
-      body: "I quickly realised that my ability to communicate clearly, to structure my thinking under pressure, to tell stories that landed, was the single highest-leverage skill I could develop. When I communicate well, I work faster, influence more, and come home with something left to give.",
+      body: "Communicating clearly under pressure became the single highest-leverage skill I could develop — the one that lets me work faster, influence more, and still come home with something left to give.",
       emotion: "Clarity",
       image: "story-communicate-impact.jpg"
     },
     {
       title: "Building the System",
       quote: "I needed more than instinct. I needed a system.",
-      body: "I had strong instincts for communication and had built real credibility. But coming back, I wanted something I could call on when tired, when stretched, when operating across two full worlds simultaneously. I built AmplifyU because the tools I needed didn't exist.",
+      body: "I had the instincts, but I needed a system I could call on when stretched thin. So I built AmplifyU — because the tools I needed didn't exist.",
       emotion: "Purpose",
       image: "story-session-modules2.jpg",
       imagePosition: "15% center"
@@ -45,7 +45,7 @@
     {
       title: "The Practice",
       quote: "Every session made improvement visible.",
-      body: "The programme moves through fourteen deliberate modules: clarity, structure, voice. Then storytelling, connection, managing pressure. Then the hardest work: building presence, communicating ambition, creating exposure. Every session includes coaching that responds to your specific words, tools to rewrite and rehearse.",
+      body: "Fourteen deliberate sessions — clarity, storytelling, presence, exposure — each with coaching that responds to your own words.",
       emotion: "Focus",
       image: "story-phone-practice.jpg",
       imagePosition: "40% center"
@@ -53,14 +53,14 @@
     {
       title: "The Transformation",
       quote: "It wasn't talent. It was practice.",
-      body: "I believe every person can become a better communicator. Not gifted. Not naturally smooth. But deliberate. Precise. Compelling. The professionals who transformed their communication did it through practice, repetition, and a system that made improvement visible to themselves and the people around them.",
+      body: "Not gifted. Not naturally smooth. Just deliberate — practice and repetition that made improvement visible, to themselves and everyone around them.",
       emotion: "Confidence",
       image: "story-boardroom-amplifyu.jpg"
     },
     {
       title: "The Life It Builds",
       quote: "When you communicate well, everything else expands.",
-      body: "This platform was built in the margins of a full life. It is designed to be used in exactly the same way. When you communicate well, you work faster, influence more, and come home with something left to give.",
+      body: "Built in the margins of a full life, for a full life. When you communicate well, you work faster, influence more, and come home with something left to give.",
       emotion: "Wholeness",
       image: "story-family-playtime2.jpg",
       imagePosition: "35% center"
@@ -83,7 +83,7 @@
     '.story-reel-body{display:flex;flex-direction:row;height:100%;}' +
     '.story-reel-media{flex:0 0 40%;}' +
     '.story-reel-content{padding:18px 20px 22px;}' +
-    '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;}' +
+    '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}' +
     '.story-reel-quote{font-size:17px;margin:0 0 8px;line-height:1.15;}' +
     '.story-reel-bodytext{font-size:11px;line-height:1.55;margin:0 0 10px;}' +
     '.story-reel-card button.story-reel-navbtn{font-size:4.5px;}' +
