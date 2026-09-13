@@ -9,6 +9,12 @@
   var INK = '#1a1714';
   var CREAM = '#f0ebe2';
   var SAGE = '#6b7c6e';
+  // Book-cover panel palette — pulled from the app's theme.js (T.gold,
+  // T.serif) and Day8.jsx's INK constant, so the reel's text panel matches
+  // that panel exactly rather than approximating it.
+  var PANEL_BG = '#3A3028';
+  var PANEL_GOLD = '#8A9E84';
+  var PANEL_CREAM = '#F8F5EF';
   var FONT_SERIF = "'Cormorant Garamond','Georgia',serif";
   var FONT_SANS = "'Inter',-apple-system,sans-serif";
   var SCENE_MS = 7000;
@@ -77,20 +83,20 @@
     '.story-reel-card{width:100%;height:100%;}' +
     '.story-reel-body{display:flex;flex-direction:row;height:100%;}' +
     '.story-reel-media{flex:0 0 40%;}' +
-    '.story-reel-content{padding:16px 18px;}' +
-    '.story-reel-eyebrow{font-size:8px;margin-bottom:5px;}' +
-    '.story-reel-quote{font-size:14px;margin:0 0 5px;line-height:1.25;}' +
-    '.story-reel-bodytext{font-size:10.5px;line-height:1.42;margin:0 0 7px;}' +
+    '.story-reel-content{padding:18px 20px 22px;}' +
+    '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;}' +
+    '.story-reel-quote{font-size:17px;margin:0 0 8px;line-height:1.15;}' +
+    '.story-reel-bodytext{font-size:11px;line-height:1.55;margin:0 0 10px;}' +
     '.story-reel-navbtn{font-size:10px;}' +
     '.story-reel-navlabel{font-size:9px;}' +
     '.story-reel-mediacap{left:14px;right:14px;bottom:12px;}' +
     '.story-reel-mediaeyebrow{font-size:8px;margin-bottom:3px;}' +
     '.story-reel-mediaheadline{font-size:11px;line-height:1.25;}' +
     '@media (min-width:900px){' +
-    '.story-reel-content{padding:28px 34px;}' +
-    '.story-reel-eyebrow{font-size:10px;margin-bottom:10px;}' +
-    '.story-reel-quote{font-size:19px;margin:0 0 10px;line-height:1.3;}' +
-    '.story-reel-bodytext{font-size:13.5px;line-height:1.55;margin:0 0 14px;}' +
+    '.story-reel-content{padding:24px 32px;}' +
+    '.story-reel-eyebrow{font-size:9px;margin-bottom:10px;}' +
+    '.story-reel-quote{font-size:28px;margin:0 0 8px;line-height:1.15;}' +
+    '.story-reel-bodytext{font-size:13px;line-height:1.55;margin:0 0 14px;}' +
     '.story-reel-mediacap{left:24px;right:24px;bottom:20px;}' +
     '.story-reel-mediaeyebrow{font-size:10px;margin-bottom:5px;}' +
     '.story-reel-mediaheadline{font-size:15px;line-height:1.25;}' +
@@ -225,20 +231,20 @@
       if (mediaCaption) media.appendChild(mediaCaption);
 
       // Content pane
-      var content = h('div', { className: 'story-reel-content', style: { position: 'relative', flex: '1', background: CREAM, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' } });
+      var content = h('div', { className: 'story-reel-content', style: { position: 'relative', flex: '1', background: PANEL_BG, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' } });
       var page = h('div', {});
 
       var sceneInner = h('div', {}, [
-        h('div', { className: 'story-reel-eyebrow', style: { fontFamily: FONT_SANS, fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'rgba(26,23,20,0.42)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
-        h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: INK, letterSpacing: '-0.3px' } }, ['“' + scene.quote + '”']),
+        h('div', { className: 'story-reel-eyebrow', style: { fontFamily: FONT_SANS, fontWeight: '700', letterSpacing: '2.5px', textTransform: 'uppercase', color: PANEL_GOLD } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
+        h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: PANEL_CREAM, letterSpacing: '-0.3px' } }, [scene.quote]),
         h('p', {
           className: 'story-reel-bodytext',
-          style: { fontFamily: FONT_SANS, color: 'rgba(26,23,20,0.72)' }
+          style: { fontFamily: FONT_SANS, fontWeight: '300', color: 'rgba(248,245,239,0.5)' }
         }, [scene.body]),
         h('span', {
           style: {
             display: 'inline-block', fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '700', letterSpacing: '1px',
-            textTransform: 'uppercase', color: SAGE, background: 'rgba(107,124,110,0.14)', border: '1px solid rgba(107,124,110,0.3)',
+            textTransform: 'uppercase', color: PANEL_GOLD, background: 'rgba(138,158,132,0.14)', border: '1px solid rgba(138,158,132,0.35)',
             borderRadius: '16px', padding: '6px 14px', opacity: '0', transform: 'scale(0.85)',
             transition: reducedMotion ? 'none' : 'opacity 260ms ease 160ms, transform 260ms ease 160ms'
           }
@@ -257,7 +263,7 @@
       if (!reducedMotion) {
         var wipe = h('div', {
           'aria-hidden': 'true',
-          style: { position: 'absolute', inset: '0', background: CREAM, pointerEvents: 'none', transform: 'translateX(0%)', transition: 'transform 750ms cubic-bezier(.65,0,.35,1)' }
+          style: { position: 'absolute', inset: '0', background: PANEL_BG, pointerEvents: 'none', transform: 'translateX(0%)', transition: 'transform 750ms cubic-bezier(.65,0,.35,1)' }
         });
         content.appendChild(wipe);
         void wipe.offsetHeight;
@@ -268,13 +274,13 @@
       var navRow = h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '14px', pointerEvents: 'auto' } });
       navRow.appendChild(h('button', {
         className: 'story-reel-navbtn',
-        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '600', color: INK, padding: '4px 0' },
+        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '600', color: PANEL_CREAM, padding: '4px 0' },
         onClick: prev
       }, ['← Previous']));
-      navRow.appendChild(h('span', { className: 'story-reel-navlabel', style: { fontFamily: FONT_SANS, color: 'rgba(26,23,20,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
+      navRow.appendChild(h('span', { className: 'story-reel-navlabel', style: { fontFamily: FONT_SANS, color: 'rgba(248,245,239,0.4)' } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total]));
       navRow.appendChild(h('button', {
         className: 'story-reel-navbtn',
-        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '600', color: INK, padding: '4px 0' },
+        style: { background: 'none', border: 'none', cursor: 'pointer', fontFamily: FONT_SANS, fontWeight: '600', color: PANEL_CREAM, padding: '4px 0' },
         onClick: next
       }, ['Next →']));
       content.appendChild(navRow);
