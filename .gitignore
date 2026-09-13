@@ -1,3 +1,5 @@
 # Videos are hosted on Vercel Blob storage, not committed to the repo
 *.mp4
 *.mov
+
+.DS_Store
