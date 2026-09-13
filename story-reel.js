@@ -82,7 +82,7 @@
     '.story-reel-card{width:100%;height:100%;}' +
     '.story-reel-body{display:flex;flex-direction:row;height:100%;}' +
     '.story-reel-media{flex:0 0 40%;}' +
-    '.story-reel-content{padding:30px 20px 22px;}' +
+    '.story-reel-content{padding:38px 20px 22px;}' +
     '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;line-height:1.5;}' +
     '.story-reel-quote{font-size:17px;margin:0 0 8px;line-height:1.15;}' +
     '.story-reel-bodytext{font-size:11px;line-height:1.55;margin:0 0 10px;}' +
