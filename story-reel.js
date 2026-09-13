@@ -57,7 +57,8 @@
       quote: "When you communicate well, everything else expands.",
       body: "This platform was built in the margins of a full life. It is designed to be used in exactly the same way. Because the professionals who need these tools most are also the ones with the least time to waste, and the most to gain.",
       emotion: "Wholeness",
-      image: "story-microphone.jpg"
+      image: "story-family-evening.jpg",
+      imagePosition: "35% center"
     }
   ];
 
