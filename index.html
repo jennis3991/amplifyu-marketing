@@ -643,6 +643,82 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   <div class="w-outcomes-track fade-up delay-2" id="outcomesTrack"></div>
 </section>
 
+<!-- ══ MEET YOUR AI COACH ══ -->
+<section class="section-home-coach" style="padding:100px 0 100px; background:var(--dark); position:relative; overflow:hidden;">
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:500px; height:500px; background:radial-gradient(ellipse, rgba(107,124,110,0.05) 0%, transparent 70%); pointer-events:none;"></div>
+
+  <!-- Header -->
+  <div style="text-align:center; padding:0 48px; margin-bottom:60px; position:relative; z-index:1;" class="fade-up">
+    <p style="font-family:var(--sans); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent-light); margin-bottom:20px;">Meet Your AI Coach</p>
+    <h2 style="font-family:var(--serif-display); font-size:clamp(30px,4vw,50px); font-weight:400; color:var(--cream); line-height:1.1; max-width:640px; margin:0 auto 20px;">You speak. It coaches.<br>You improve <em style="font-style:italic; color:var(--accent-light);">— same session.</em></h2>
+    <p style="font-family:var(--serif-body); font-size:18px; font-weight:300; color:rgba(240,235,226,0.45); max-width:480px; margin:0 auto; line-height:1.65;">Record yourself answering a real prompt. Your coach scores it across five dimensions, tells you the one thing to fix, and lets you go again — immediately.</p>
+  </div>
+
+  <!-- Phone frame -->
+  <div style="display:flex; justify-content:center; position:relative; z-index:1;">
+    <div style="position:relative; width:375px;">
+
+      <!-- SVG chrome overlay -->
+      <svg width="375" height="624" viewBox="0 0 375 624" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:0; left:0; z-index:4; pointer-events:none;">
+        <rect x="1" y="1" width="373" height="622" rx="44" ry="44" fill="none" stroke="rgba(240,235,226,0.18)" stroke-width="1.5"/>
+        <rect x="7" y="7" width="361" height="610" rx="39" ry="39" fill="none" stroke="rgba(240,235,226,0.06)" stroke-width="1"/>
+        <rect x="-2" y="120" width="4" height="32" rx="2" fill="rgba(240,235,226,0.12)"/>
+        <rect x="-2" y="166" width="4" height="52" rx="2" fill="rgba(240,235,226,0.12)"/>
+        <rect x="-2" y="232" width="4" height="52" rx="2" fill="rgba(240,235,226,0.12)"/>
+        <rect x="373" y="160" width="4" height="68" rx="2" fill="rgba(240,235,226,0.12)"/>
+        <rect x="138" y="14" width="70" height="24" rx="12" fill="#080808"/>
+        <rect x="138" y="606" width="70" height="4" rx="2" fill="rgba(240,235,226,0.2)"/>
+      </svg>
+
+      <!-- Scrolling viewport -->
+      <div style="width:351px; height:600px; border-radius:40px; overflow:hidden; background:#080808; position:relative; margin:12px;">
+        <div style="position:absolute; top:0; left:0; right:0; height:100px; background:linear-gradient(to bottom, #080808 0%, #080808 45%, transparent 100%); z-index:3; pointer-events:none;"></div>
+        <div style="position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, #080808 0%, transparent 100%); z-index:3; pointer-events:none;"></div>
+        <div style="display:flex; flex-direction:column; animation:homeCoachScroll 48s linear infinite; padding:8px 8px 0; will-change:transform;" id="homeCoachStrip"></div>
+      </div>
+
+      <!-- glow ring -->
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:440px; height:440px; border-radius:50%; background:radial-gradient(ellipse, rgba(107,124,110,0.07) 0%, transparent 70%); z-index:0; pointer-events:none;"></div>
+    </div>
+  </div>
+
+  <!-- Link below phone -->
+  <div style="text-align:center; margin-top:52px; position:relative; z-index:1;" class="fade-up">
+    <a href="coach.html" class="w-teams-link">See how coaching works →</a>
+  </div>
+
+</section>
+
+<style>
+@keyframes homeCoachScroll {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-3432px); }
+}
+</style>
+
+<script>
+(function(){
+  var images = [
+    'home-coach-1-intro.jpg',
+    'home-coach-2-prompt.jpg',
+    'home-coach-3-recording.jpg',
+    'home-coach-4-analysing.jpg',
+    'home-coach-5-score.jpg',
+    'home-coach-6-profile.jpg'
+  ];
+  var strip = document.getElementById('homeCoachStrip');
+  if (!strip) return;
+  var html = '';
+  for (var rep = 0; rep < 4; rep++) {
+    images.forEach(function(src){
+      html += '<img src="' + src + '" alt="AmplifyU AI coach — live session coaching interface" style="width:100%; height:560px; object-fit:cover; object-position:center 38%; border-radius:10px; display:block; flex-shrink:0;">';
+      html += '<div style="height:12px; flex-shrink:0;"></div>';
+    });
+  }
+  strip.innerHTML = html;
+})();
+</script>
+
 <!-- ══ WHAT AMPLIFYU TEACHES + HOW IT WORKS ══ -->
 <section class="w-showcase">
   <div class="w-showcase-inner">
