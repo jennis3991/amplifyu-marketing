@@ -111,6 +111,17 @@
     try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; }
   }
 
+  // Scene titles vary a lot in length ("Focus" vs "The Realisation"); on the
+  // narrow mobile content pane, "Scene X of 6 · <title>" can wrap to a
+  // second line and collide with the progress bar above it, and the wrap
+  // point differs per scene. Dropping the title on narrow viewports (the
+  // number alone is unambiguous, and the same "Scene X of 6" repeats in the
+  // nav row anyway) guarantees a single line regardless of which scene or
+  // device renders it, rather than chasing per-title padding/font tweaks.
+  function isNarrowViewport() {
+    try { return window.matchMedia('(max-width: 900px)').matches; } catch (e) { return false; }
+  }
+
   function h(tag, attrs, children) {
     var el = document.createElement(tag);
     if (attrs) {
@@ -236,7 +247,8 @@
       var page = h('div', { style: { flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center' } });
 
       var sceneInner = h('div', {}, [
-        h('div', { className: 'story-reel-eyebrow', style: { fontFamily: FONT_SANS, fontWeight: '700', letterSpacing: '2.5px', textTransform: 'uppercase', color: PANEL_GOLD } }, ['Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
+        h('div', { className: 'story-reel-eyebrow', style: { fontFamily: FONT_SANS, fontWeight: '700', letterSpacing: '2.5px', textTransform: 'uppercase', color: PANEL_GOLD } },
+          [isNarrowViewport() ? 'Scene ' + (state.activeScene + 1) + ' of ' + total : 'Scene ' + (state.activeScene + 1) + ' of ' + total + ' · ' + scene.title]),
         h('h3', { className: 'story-reel-quote', style: { fontFamily: FONT_SERIF, fontWeight: '500', color: PANEL_CREAM, letterSpacing: '-0.3px' } }, [scene.quote]),
         h('p', {
           className: 'story-reel-bodytext',
