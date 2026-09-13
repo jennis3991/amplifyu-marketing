@@ -39,8 +39,8 @@
       quote: "I needed more than instinct. I needed a system.",
       body: "I had strong instincts for communication and had built real credibility. But coming back, I wanted something I could call on when tired, when stretched, when operating across two full worlds simultaneously. I built AmplifyU because the tools I needed didn't exist.",
       emotion: "Purpose",
-      image: "story-session-modules.jpg",
-      imagePosition: "5% center"
+      image: "story-session-modules2.jpg",
+      imagePosition: "15% center"
     },
     {
       title: "The Practice",
