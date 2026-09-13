@@ -12,7 +12,7 @@
   // Book-cover panel palette — pulled from the app's theme.js (T.gold,
   // T.serif) and Day8.jsx's INK constant, so the reel's text panel matches
   // that panel exactly rather than approximating it.
-  var PANEL_BG = '#3A3028';
+  var PANEL_BG = '#0f0d0a';
   var PANEL_GOLD = '#8A9E84';
   var PANEL_CREAM = '#F8F5EF';
   var FONT_SERIF = "'Cormorant Garamond','Georgia',serif";
