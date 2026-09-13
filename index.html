@@ -454,9 +454,10 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     overflow-x:auto; scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none; -ms-overflow-style:none;
+    gap:14px; background:transparent; border:none;
   }
   .w-skill-grid::-webkit-scrollbar { display:none; }
-  .w-skill-card { flex:0 0 86%; min-width:0; padding:28px 22px; scroll-snap-align:start; }
+  .w-skill-card { flex:0 0 86%; min-width:0; padding:28px 22px; scroll-snap-align:start; border-radius:18px; box-shadow:0 8px 24px rgba(0,0,0,0.25); }
   .w-skill-dots { display:flex; justify-content:center; align-items:center; gap:8px; margin-top:20px; }
   .w-skill-dot { width:6px; height:6px; border-radius:50%; background:rgba(240,235,226,0.18); flex-shrink:0; transition:background 0.2s, transform 0.2s; }
   .w-skill-dot.is-active { background:var(--accent-light); transform:scale(1.5); }
