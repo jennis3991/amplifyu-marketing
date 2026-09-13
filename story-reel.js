@@ -82,12 +82,13 @@
     '.story-reel-card{width:100%;height:100%;}' +
     '.story-reel-body{display:flex;flex-direction:row;height:100%;}' +
     '.story-reel-media{flex:0 0 40%;}' +
-    '.story-reel-content{padding:18px 20px 22px;}' +
-    '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}' +
+    '.story-reel-content{padding:30px 20px 22px;}' +
+    '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;line-height:1.5;}' +
     '.story-reel-quote{font-size:17px;margin:0 0 8px;line-height:1.15;}' +
     '.story-reel-bodytext{font-size:11px;line-height:1.55;margin:0 0 10px;}' +
-    '.story-reel-card button.story-reel-navbtn{font-size:4.5px;}' +
+    '.story-reel-card button.story-reel-navbtn{font-size:11px;}' +
     '.story-reel-navlabel{font-size:9px;}' +
+    '.story-reel-pill{font-size:8px;padding:4px 10px;}' +
     '.story-reel-mediacap{left:14px;right:14px;bottom:12px;}' +
     '.story-reel-mediaeyebrow{font-size:8px;margin-bottom:3px;}' +
     '.story-reel-mediaheadline{font-size:11px;line-height:1.25;}' +
@@ -96,6 +97,7 @@
     '.story-reel-eyebrow{font-size:9px;margin-bottom:10px;}' +
     '.story-reel-quote{font-size:28px;margin:0 0 8px;line-height:1.15;}' +
     '.story-reel-bodytext{font-size:13px;line-height:1.55;margin:0 0 14px;}' +
+    '.story-reel-pill{font-size:9px;padding:5px 12px;}' +
     '.story-reel-mediacap{left:24px;right:24px;bottom:20px;}' +
     '.story-reel-mediaeyebrow{font-size:10px;margin-bottom:5px;}' +
     '.story-reel-mediaheadline{font-size:15px;line-height:1.25;}' +
@@ -241,10 +243,11 @@
           style: { fontFamily: FONT_SANS, fontWeight: '300', color: 'rgba(248,245,239,0.5)' }
         }, [scene.body]),
         h('span', {
+          className: 'story-reel-pill',
           style: {
-            display: 'inline-block', fontFamily: FONT_SANS, fontSize: '11px', fontWeight: '700', letterSpacing: '1px',
+            display: 'inline-block', fontFamily: FONT_SANS, fontWeight: '700', letterSpacing: '1px',
             textTransform: 'uppercase', color: PANEL_GOLD, background: 'rgba(138,158,132,0.14)', border: '1px solid rgba(138,158,132,0.35)',
-            borderRadius: '16px', padding: '6px 14px', opacity: '0', transform: 'scale(0.85)',
+            borderRadius: '16px', opacity: '0', transform: 'scale(0.85)',
             transition: reducedMotion ? 'none' : 'opacity 260ms ease 160ms, transform 260ms ease 160ms'
           }
         }, [scene.emotion])
