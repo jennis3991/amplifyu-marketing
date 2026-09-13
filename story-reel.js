@@ -61,9 +61,9 @@
     {
       title: "The Life It Builds",
       quote: "When you communicate well, everything else expands.",
-      body: "This platform was built in the margins of a full life. It is designed to be used in exactly the same way. Because the professionals who need these tools most are also the ones with the least time to waste, and the most to gain.",
+      body: "This platform was built in the margins of a full life. It is designed to be used in exactly the same way. When you communicate well, you work faster, influence more, and come home with something left to give.",
       emotion: "Wholeness",
-      image: "story-family-evening.jpg",
+      image: "story-family-playtime.jpg",
       imagePosition: "35% center"
     }
   ];
