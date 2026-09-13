@@ -659,7 +659,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <div style="width:351px; height:600px; border-radius:40px; overflow:hidden; background:#080808; position:relative; margin:12px;">
         <div style="position:absolute; top:0; left:0; right:0; height:100px; background:linear-gradient(to bottom, #080808 0%, #080808 45%, transparent 100%); z-index:3; pointer-events:none;"></div>
         <div style="position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, #080808 0%, transparent 100%); z-index:3; pointer-events:none;"></div>
-        <div style="display:flex; flex-direction:column; animation:homeCoachScroll 29s linear infinite; padding:8px 8px 0; will-change:transform;" id="homeCoachStrip"></div>
+        <div style="display:flex; flex-direction:column; animation:homeCoachScroll 24s linear infinite; padding:8px 8px 0; will-change:transform;" id="homeCoachStrip"></div>
       </div>
 
       <!-- glow ring -->
@@ -677,23 +677,23 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 <style>
 @keyframes homeCoachScroll {
   0%   { transform: translateY(0); }
-  100% { transform: translateY(-2103px); }
+  100% { transform: translateY(-1719px); }
 }
 </style>
 
 <script>
 (function(){
   var images = [
-    'home-coach-3-recording.jpg',
-    'home-coach-5-score.jpg',
-    'home-coach-6-profile.jpg'
+    { src: 'home-coach-3-recording.jpg', height: 689 },
+    { src: 'home-coach-5-score.jpg', height: 689 },
+    { src: 'home-coach-6-profile.jpg', height: 305 }
   ];
   var strip = document.getElementById('homeCoachStrip');
   if (!strip) return;
   var html = '';
   for (var rep = 0; rep < 2; rep++) {
-    images.forEach(function(src){
-      html += '<img src="' + src + '" alt="AmplifyU AI coach — live session coaching interface" style="width:100%; height:689px; object-fit:cover; border-radius:10px; display:block; flex-shrink:0;">';
+    images.forEach(function(img){
+      html += '<img src="' + img.src + '" alt="AmplifyU AI coach — live session coaching interface" style="width:100%; height:' + img.height + 'px; object-fit:cover; border-radius:10px; display:block; flex-shrink:0;">';
       html += '<div style="height:12px; flex-shrink:0;"></div>';
     });
   }
