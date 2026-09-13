@@ -207,22 +207,6 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-skill-desc { font-family:var(--sans); font-size:12px; color:var(--text-light); line-height:1.6; }
 
 
-/* ─── GAP / OPPORTUNITY ─── */
-.w-gap { background: var(--dark); padding: 60px 48px 100px; }
-.w-gap-header { max-width:1100px; margin:0 auto 72px; }
-.w-gap-h2 { font-family:var(--serif-display); font-size:clamp(36px,4.5vw,60px); font-weight:400; color:var(--cream); letter-spacing:-0.5px; line-height:1.08; margin-bottom:20px; }
-.w-gap-h2 em { font-style:italic; color:var(--accent-light); }
-.w-gap-sub { font-family:var(--sans); font-size:16px; color:rgba(240,235,226,0.65); line-height:1.75; font-weight:300; max-width:560px; }
-.w-gap-stats { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; border:1px solid rgba(240,235,226,0.08); }
-.w-stat-cell { padding:48px 52px; transition:background 0.25s; cursor:default; }
-.w-stat-cell:hover { background:rgba(255,255,255,0.04); }
-.w-stat-cell:nth-child(odd):not(:last-child) { border-right:1px solid rgba(240,235,226,0.08); }
-.w-stat-cell:not(:last-child) { border-bottom:1px solid rgba(240,235,226,0.08); }
-.w-stat-cell--wide { grid-column:1 / -1; }
-.w-stat-num { font-family:var(--serif-display); font-size:clamp(44px,5vw,68px); font-weight:300; color:rgba(240,235,226,0.7); line-height:0.95; margin-bottom:20px; }
-.w-stat-label { font-family:var(--sans); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; font-weight:600; color:rgba(240,235,226,0.6); margin-bottom:20px; }
-.w-stat-body { font-family:var(--serif-body); font-size:17px; font-weight:300; color:rgba(240,235,226,0.6); line-height:1.7; }
-.w-stat-source { font-family:var(--sans); font-size:11px; font-weight:300; color:rgba(240,235,226,0.35); letter-spacing:0.04em; margin-top:14px; }
 
 /* ─── GO DEEPER ─── */
 .section-go-deeper { padding: 48px 48px 60px; background: var(--dark); }
@@ -475,15 +459,6 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 
   .w-teaches-sub { font-size:14px; }
   .w-teaches-coda { font-size:22px; }
-  .w-gap { padding: 72px 24px; }
-  .w-gap-header { margin-bottom:48px; }
-  .w-gap-h2 { margin-bottom:16px; }
-  .w-gap-sub { font-size:14px; }
-  .w-gap-stats { grid-template-columns:1fr; }
-  .w-stat-cell:nth-child(odd):not(:last-child) { border-right:none; }
-  .w-stat-cell--wide { grid-column:1; }
-  .w-stat-cell { border-bottom:1px solid rgba(240,235,226,0.08) !important; padding:44px 32px; }
-  .w-stat-cell:last-child { border-bottom:none !important; }
 
   .w-solution { padding: 48px 24px 0; }
   .w-solution-inner { grid-template-columns:1fr; gap:32px; }
@@ -552,7 +527,6 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-grid { grid-template-columns: 1fr; }
   .w-phases { grid-template-columns: 1fr; }
   .w-stats { gap:20px; }
-  .w-stat-num { font-size:36px; }
 }
 </style>
 <!-- Cookie consent + gated GA4 (see cookie-consent.js) -->
@@ -809,39 +783,6 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       </div>
     </div>
     <p class="w-teaches-coda fade-up">Build the skills to become more influential... in just 14 days.</p>
-  </div>
-</section>
-
-<!-- ══ THE GAP ══ -->
-<section class="w-gap">
-  <div class="w-gap-header">
-    <div class="eyebrow fade-up">The Gap</div>
-    <h2 class="w-gap-h2 fade-up delay-1">Technical skills get you hired<br><em>Communication skills get you promoted</em></h2>
-    <p class="w-gap-sub fade-up delay-1">Professionals know these skills matter. Most spend years trying to learn them anyway — through fragmented, inconsistent, and inaccessible routes.</p>
-  </div>
-  <div class="w-gap-stats fade-up delay-2">
-    <div class="w-stat-cell">
-      <div class="w-stat-num">£10k+</div>
-      <div class="w-stat-label">Per Year for Executive Coaching</div>
-      <p class="w-stat-body">At £300–600 per hour, meaningful coaching runs to tens of thousands annually. The only structured route to these skills — reserved for those at the very top.</p>
-    </div>
-    <div class="w-stat-cell">
-      <div class="w-stat-num">84%</div>
-      <div class="w-stat-label">Of The Workforce Say</div>
-      <p class="w-stat-body">Job candidates must demonstrate soft skills — and communication ranks as the single most valuable one.</p>
-      <p class="w-stat-source">Source: Forbes, 2024</p>
-    </div>
-    <div class="w-stat-cell">
-      <div class="w-stat-num">1 day</div>
-      <div class="w-stat-label">Retention Window</div>
-      <p class="w-stat-body">Research shows most training content is forgotten within 24 hours without reinforcement. AmplifyU embeds learning across 14 days of practice — and on Day 14, your coach generates a personalised blueprint so the shift stays with you.</p>
-      <p class="w-stat-source">Source: Ebbinghaus Forgetting Curve; Murre &amp; Dros (2015), PLOS ONE</p>
-    </div>
-    <div class="w-stat-cell">
-      <div class="w-stat-num">0</div>
-      <div class="w-stat-label">Dedicated AI Coaching Apps for Career Navigation and Professional Development</div>
-      <p class="w-stat-body">Duolingo for language. LinkedIn Learning for knowledge. Nothing structured, personalised, and AI-coached exists for how professionals communicate, influence, and lead.</p>
-    </div>
   </div>
 </section>
 
