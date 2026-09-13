@@ -48,7 +48,9 @@
       title: "The Transformation",
       quote: "It wasn't talent. It was practice.",
       body: "I believe every person can become a better communicator. Not gifted. Not naturally smooth. But deliberate. Precise. Compelling. The professionals who transformed their communication did it through practice, repetition, and a system that made improvement visible to themselves and the people around them.",
-      emotion: "Confidence"
+      emotion: "Confidence",
+      image: "story-transformation-meeting.jpg",
+      imagePosition: "65% center"
     },
     {
       title: "The Life It Builds",
