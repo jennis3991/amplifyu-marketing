@@ -26,7 +26,7 @@
       quote: "Communication became the skill that multiplied everything else.",
       body: "I quickly realised that my ability to communicate clearly, to structure my thinking under pressure, to tell stories that landed, was the single highest-leverage skill I could develop. When I communicate well, I work faster, influence more, and come home with something left to give.",
       emotion: "Clarity",
-      image: "story-cognitive-science.jpg"
+      image: "story-communicate-impact.jpg"
     },
     {
       title: "Building the System",
