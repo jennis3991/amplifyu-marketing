@@ -305,12 +305,12 @@
   }
   .storyreel-inner {
     width: 100%; max-width: 1700px; margin: 0 auto;
-    display: flex; flex-direction: column; align-items: center; gap: 48px;
+    display: grid; grid-template-columns: 500px 1fr; gap: 64px; align-items: start;
   }
-  .storyreel-col { position: relative; width: 100%; max-width: 1400px; aspect-ratio: 16 / 9; }
+  .storyreel-col { position: relative; width: 100%; max-width: 1000px; aspect-ratio: 16 / 9; justify-self: start; }
   .storyreel-col .story-reel-card { box-shadow: 0 40px 100px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.06); }
 
-  .storyreel-photo-col { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .storyreel-photo-col { display: flex; flex-direction: column; }
   .storyreel-eyebrow {
     font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--sage); margin-bottom: 16px;
@@ -580,10 +580,9 @@
     .story-hero { padding: 100px 24px 60px; min-height: 60vh; }
     .hero-sub { font-size: 14px; color: rgba(237,234,230,0.7); line-height: 1.65; }
     .section-storyreel { min-height: unset; padding: 56px 24px; }
-    .storyreel-inner { gap: 24px; }
-    .storyreel-photo-col { align-items: flex-start; text-align: left; }
+    .storyreel-inner { grid-template-columns: 1fr; gap: 24px; }
     .storyreel-quote-below { max-width: none; }
-    .storyreel-col { aspect-ratio: 4 / 3; max-width: 100%; }
+    .storyreel-col { aspect-ratio: 4 / 3; }
     .section-context { padding: 56px 24px; }
     .context-inner { grid-template-columns: 1fr; gap: 40px; }
     .section-storyboard { padding: 64px 24px; }
