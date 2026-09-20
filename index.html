@@ -194,6 +194,11 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-hero-cta-note { margin-top:12px; font-family:var(--sans); font-size:11px; letter-spacing:0.04em; color:rgba(237,234,230,0.4); }
 .w-app-badge-link { display:inline-block; margin-top:16px; line-height:0; }
 .w-app-badge-link img { height:44px; width:auto; display:block; }
+/* In the bottom CTA the badge sits beside the button by default
+   (both are just inline-level siblings there, unlike the hero
+   where they're already separate flex items); force it onto its
+   own centered line below "Start Your Programme" instead. */
+.w-cta .w-app-badge-link { display:block; width:fit-content; margin:16px auto 0; }
 /* ── WHAT AMPLIFYU TEACHES ── */
 .w-teaches { padding:100px 8% 0; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
 .w-teaches-inner { max-width:1200px; margin:0 auto; }
