@@ -140,13 +140,18 @@
   .toolkit-headline { font-family: var(--serif-display); font-size: clamp(36px, 4vw, 52px); font-weight: 400; line-height: 1.1; color: var(--text-dark); margin-bottom: 20px; }
   .toolkit-headline em { font-style: italic; color: var(--sage); }
   .toolkit-intro { font-family: var(--serif-body); font-size: 19px; font-weight: 300; color: var(--text-mid); line-height: 1.7; }
-  .toolkit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--cream-dark); }
-  .tk-card { background: var(--cream); padding: 36px 28px; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s; }
-  .tk-card:hover { background: var(--cream-mid); }
-  .tk-icon { width: 40px; height: 40px; border-radius: 3px; background: var(--cream-mid); border: 1px solid var(--cream-dark); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; color: var(--sage); }
-  .tk-title { font-family: var(--serif-display); font-size: 19px; font-weight: 500; color: var(--text-dark); line-height: 1.2; }
-  .tk-desc { font-family: var(--sans); font-size: 12px; color: var(--text-light); line-height: 1.6; flex: 1; }
-  .tk-time { font-family: var(--sans); font-size: 10px; color: var(--text-light); letter-spacing: 0.06em; margin-top: 4px; }
+  .toolkit-screen { margin-bottom: 56px; border-radius: 4px; overflow: hidden; box-shadow: 0 24px 60px rgba(42,37,32,0.18), 0 0 0 1px rgba(42,37,32,0.08); }
+  .toolkit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--cream-dark); }
+  .tk-path { background: var(--cream); padding: 36px 32px; display: flex; flex-direction: column; transition: background 0.2s; }
+  .tk-path:hover { background: var(--cream-mid); }
+  .tk-path-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--cream-mid); border: 1px solid var(--cream-dark); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: var(--sage); }
+  .tk-path-title { font-family: var(--serif-display); font-size: 22px; font-weight: 500; color: var(--text-dark); line-height: 1.2; margin-bottom: 4px; }
+  .tk-path-sub { font-family: var(--sans); font-size: 13px; color: var(--text-mid); line-height: 1.5; margin-bottom: 6px; }
+  .tk-path-meta { font-family: var(--sans); font-size: 11px; color: var(--text-light); letter-spacing: 0.04em; margin-bottom: 18px; }
+  .tk-tool-list { list-style: none; margin: 0; padding-top: 16px; border-top: 1px solid var(--cream-dark); display: flex; flex-direction: column; gap: 11px; flex: 1; }
+  .tk-tool-list li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .tk-tool-name { font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--text-dark); line-height: 1.4; }
+  .tk-tool-time { font-family: var(--sans); font-size: 11px; color: var(--text-light); white-space: nowrap; flex-shrink: 0; }
 
   /* ─── PULL QUOTE ─── */
   .section-pullquote { padding: 100px 48px; background: var(--dark); text-align: center; }
@@ -193,7 +198,7 @@
     .fb-editorial { padding: 60px 32px; min-height: 280px; }
     .fb-content { padding: 48px 32px; }
     .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    .toolkit-grid { grid-template-columns: repeat(2, 1fr); }
+    .toolkit-grid { grid-template-columns: 1fr; }
     .fb-screens-pair { grid-template-columns: 1fr; }
     .pcb-inner { flex-direction: column; align-items: flex-start; }
     footer { flex-direction: column; text-align: center; }
@@ -470,40 +475,53 @@
     <div class="toolkit-header fade-up">
       <p class="toolkit-eyebrow">Your Communication Operating System</p>
       <h2 class="toolkit-headline">The <em>Toolkit</em></h2>
-      <p class="toolkit-intro">Precision tools available any time — inside the programme or independently. Built for real workplace moments, not theoretical practice.</p>
+      <p class="toolkit-intro">Three paths, each built around a real-world moment. Every tool is available any time — inside the programme or independently.</p>
+    </div>
+    <div class="toolkit-screen fade-up">
+      <div class="fb-screen-bar"><span class="fb-dot"></span><span class="fb-dot"></span><span class="fb-dot"></span><span class="fb-bar-label">Toolkit · Your Paths</span></div>
+      <img src="feat-toolkit-paths.jpg" alt="AmplifyU Toolkit — Promotion, Presentation and Visibility paths" style="width:100%;display:block;">
     </div>
     <div class="toolkit-grid">
-      <div class="tk-card fade-up">
-        <div class="tk-icon">
-          <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="16" height="16" rx="2"/><path d="M7 8h8M7 11h5"/></svg>
+      <div class="tk-path fade-up">
+        <div class="tk-path-icon">
+          <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h10v4a5 5 0 0 1-10 0V3z"/><path d="M6 4H3v1a4 4 0 0 0 4 4M16 4h3v1a4 4 0 0 1-4 4"/><path d="M11 12v3M8 19h6M9.5 15h3v4h-3z"/></svg>
         </div>
-        <div class="tk-title">SAR Story Builder (Situation, Action, Result)</div>
-        <div class="tk-desc">Turn achievements into compelling stories that land in performance reviews, promotions, and interviews.</div>
-        <div class="tk-time">⏱ 8 min</div>
+        <div class="tk-path-title">Promotion Path</div>
+        <div class="tk-path-sub">Stand out and get noticed.</div>
+        <div class="tk-path-meta">24 min · 4 tools</div>
+        <ul class="tk-tool-list">
+          <li><span class="tk-tool-name">Achievement Story Builder</span><span class="tk-tool-time">5 min</span></li>
+          <li><span class="tk-tool-name">Promotion Prep</span><span class="tk-tool-time">8 min</span></li>
+          <li><span class="tk-tool-name">Leadership Hot Seat</span><span class="tk-tool-time">8 min</span></li>
+          <li><span class="tk-tool-name">Pressure Response Drill</span><span class="tk-tool-time">3 min</span></li>
+        </ul>
       </div>
-      <div class="tk-card fade-up delay-1">
-        <div class="tk-icon">
-          <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="5" height="5" rx="1"/><rect x="8.5" y="3" width="5" height="5" rx="1"/><rect x="15" y="3" width="5" height="5" rx="1"/><path d="M4.5 8v3M4.5 11h13M17.5 11v-3"/><rect x="8" y="14" width="6" height="5" rx="1"/></svg>
+      <div class="tk-path fade-up delay-1">
+        <div class="tk-path-icon">
+          <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="18" height="12" rx="2"/><path d="M8 19h6M11 15v4"/><path d="M6 12l3-3 2.5 2L16 7"/></svg>
         </div>
-        <div class="tk-title">PRE Framework (Point, Reason, Evidence)</div>
-        <div class="tk-desc">Think clearly under pressure. Train the Point–Reason–Example framework until it becomes automatic.</div>
-        <div class="tk-time">⏱ 3 min</div>
+        <div class="tk-path-title">Presentation Path</div>
+        <div class="tk-path-sub">Deliver with confidence and impact.</div>
+        <div class="tk-path-meta">21 min · 4 tools</div>
+        <ul class="tk-tool-list">
+          <li><span class="tk-tool-name">Story Architect</span><span class="tk-tool-time">8 min</span></li>
+          <li><span class="tk-tool-name">Pixar Story Builder</span><span class="tk-tool-time">4 min</span></li>
+          <li><span class="tk-tool-name">Executive Briefing</span><span class="tk-tool-time">4 min</span></li>
+          <li><span class="tk-tool-name">Achievement Story Builder</span><span class="tk-tool-time">5 min</span></li>
+        </ul>
       </div>
-      <div class="tk-card fade-up delay-2">
-        <div class="tk-icon">
-          <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="7"/><path d="M11 9v4l3 2"/><path d="M9 2h4M11 2v2"/></svg>
+      <div class="tk-path fade-up delay-2">
+        <div class="tk-path-icon">
+          <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="7" r="3"/><path d="M5 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 4.5a5 5 0 0 1 0 5"/><path d="M6.5 4.5a5 5 0 0 0 0 5"/></svg>
         </div>
-        <div class="tk-title">Story Sprint</div>
-        <div class="tk-desc">Tell your professional story in 60 seconds. Timed, scored, and coached for elevator pitches and networking moments.</div>
-        <div class="tk-time">⏱ 3 min</div>
-      </div>
-      <div class="tk-card fade-up delay-3">
-        <div class="tk-icon">
-          <svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="7" r="3"/><path d="M5 19c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15.5 4.5a5 5 0 010 5"/><path d="M6.5 4.5a5 5 0 000 5"/></svg>
-        </div>
-        <div class="tk-title">Brand Audit</div>
-        <div class="tk-desc">Discover what your communication style currently signals — and close the gap between how you're seen and how you want to be known.</div>
-        <div class="tk-time">⏱ 5 min</div>
+        <div class="tk-path-title">Visibility Path</div>
+        <div class="tk-path-sub">Build your brand and expand your reach.</div>
+        <div class="tk-path-meta">18 min · 3 tools</div>
+        <ul class="tk-tool-list">
+          <li><span class="tk-tool-name">Brand Audit</span><span class="tk-tool-time">5 min</span></li>
+          <li><span class="tk-tool-name">Rapport Builder</span><span class="tk-tool-time">5 min</span></li>
+          <li><span class="tk-tool-name">Promotion Prep</span><span class="tk-tool-time">8 min</span></li>
+        </ul>
       </div>
     </div>
   </div>
