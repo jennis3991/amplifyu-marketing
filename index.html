@@ -490,6 +490,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none; -ms-overflow-style:none;
     gap:14px; background:transparent; border:none;
+    touch-action:pan-x; overscroll-behavior-y:contain;
   }
   .w-skill-grid::-webkit-scrollbar { display:none; }
   .w-skill-card { flex:0 0 86%; min-width:0; padding:28px 22px; scroll-snap-align:start; border-radius:18px; box-shadow:0 8px 24px rgba(0,0,0,0.25); }
