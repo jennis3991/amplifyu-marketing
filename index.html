@@ -207,7 +207,41 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-skill-desc { font-family:var(--sans); font-size:12px; color:var(--text-light); line-height:1.6; }
 .w-skill-dots { display:none; }
 
-
+/* ── HOMEPAGE FAQ ── */
+.w-faq { padding:100px 48px; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.w-faq-inner { max-width:820px; margin:0 auto; }
+.w-faq-header { max-width:620px; margin:0 auto 48px; text-align:center; }
+.w-faq-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:16px; }
+.w-faq-h2 { font-family:var(--serif-display); font-size:clamp(30px,3.6vw,44px); font-weight:400; color:rgba(247,243,236,0.95); line-height:1.15; }
+.w-faq-h2 em { font-style:italic; color:var(--accent-light); }
+.w-faq-list { border-top:1px solid rgba(255,255,255,0.08); }
+.w-faq-item { border-bottom:1px solid rgba(255,255,255,0.08); }
+.w-faq-q { margin:0; }
+.w-faq-trigger {
+  all:unset; box-sizing:border-box;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  width:100%; padding:22px 4px; cursor:pointer;
+  font-family:var(--serif-body); font-size:19px; font-weight:500;
+  color:rgba(247,243,236,0.92); line-height:1.35;
+}
+.w-faq-trigger:hover { color:var(--accent-light); }
+.w-faq-trigger:focus-visible { outline:2px solid var(--accent-light); outline-offset:3px; border-radius:2px; }
+.w-faq-trigger-text { flex:1; }
+.w-faq-icon { position:relative; flex-shrink:0; width:18px; height:18px; color:var(--accent-light); }
+.w-faq-icon::before, .w-faq-icon::after {
+  content:''; position:absolute; top:50%; left:50%;
+  background:currentColor; transform:translate(-50%,-50%);
+  transition:transform 0.25s ease, opacity 0.25s ease;
+}
+.w-faq-icon::before { width:14px; height:1.5px; }
+.w-faq-icon::after { width:1.5px; height:14px; }
+.w-faq-trigger[aria-expanded="true"] .w-faq-icon::after { transform:translate(-50%,-50%) rotate(90deg); opacity:0; }
+.w-faq-panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows 0.3s ease; }
+.w-faq-item.is-open .w-faq-panel { grid-template-rows:1fr; }
+.w-faq-panel-inner { overflow:hidden; }
+.w-faq-answer { font-family:var(--sans); font-size:15px; font-weight:300; color:rgba(237,234,230,0.55); line-height:1.8; padding:0 4px 22px; max-width:680px; }
+.w-faq-footer { text-align:center; margin-top:48px; }
+.w-faq-footer-label { font-family:var(--serif-body); font-size:17px; font-style:italic; color:rgba(237,234,230,0.5); margin-bottom:20px; }
 
 /* ─── GO DEEPER ─── */
 .section-go-deeper { padding: 48px 48px 60px; background: var(--dark); }
@@ -471,6 +505,11 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 
   .w-teaches-sub { font-size:14px; }
   .w-teaches-coda { font-size:22px; }
+
+  .w-faq { padding:64px 24px; }
+  .w-faq-header { margin-bottom:32px; }
+  .w-faq-trigger { font-size:16px; padding:18px 4px; gap:14px; }
+  .w-faq-answer { font-size:14px; }
 
   .w-solution { padding: 48px 24px 0; }
   .w-solution-inner { grid-template-columns:1fr; gap:32px; }
@@ -744,6 +783,117 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     </div>
   </div>
 </section>
+
+<!-- ══ HOMEPAGE FAQ ══ -->
+<section class="w-faq">
+  <div class="w-faq-inner">
+    <div class="w-faq-header fade-up">
+      <p class="w-faq-eyebrow">Common Questions</p>
+      <h2 class="w-faq-h2">Quick answers, <em>before you start.</em></h2>
+    </div>
+    <div class="w-faq-list fade-up delay-1" id="homeFaqList">
+      <div class="w-faq-item">
+        <h3 class="w-faq-q">
+          <button class="w-faq-trigger" type="button" aria-expanded="false" aria-controls="home-faq-a-1" id="home-faq-q-1">
+            <span class="w-faq-trigger-text">What is AmplifyU?</span>
+            <span class="w-faq-icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="w-faq-panel" id="home-faq-a-1" role="region" aria-labelledby="home-faq-q-1">
+          <div class="w-faq-panel-inner">
+            <p class="w-faq-answer">AI-powered coaching for the unwritten skills behind career success - helping you communicate, influence, present yourself and navigate the moments that matter.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-faq-item">
+        <h3 class="w-faq-q">
+          <button class="w-faq-trigger" type="button" aria-expanded="false" aria-controls="home-faq-a-2" id="home-faq-q-2">
+            <span class="w-faq-trigger-text">What can I improve with AmplifyU?</span>
+            <span class="w-faq-icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="w-faq-panel" id="home-faq-a-2" role="region" aria-labelledby="home-faq-q-2">
+          <div class="w-faq-panel-inner">
+            <p class="w-faq-answer">Build practical skills in clarity, storytelling, executive presence, influence, personal brand and difficult conversations.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-faq-item">
+        <h3 class="w-faq-q">
+          <button class="w-faq-trigger" type="button" aria-expanded="false" aria-controls="home-faq-a-3" id="home-faq-q-3">
+            <span class="w-faq-trigger-text">How does AmplifyU actually work?</span>
+            <span class="w-faq-icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="w-faq-panel" id="home-faq-a-3" role="region" aria-labelledby="home-faq-q-3">
+          <div class="w-faq-panel-inner">
+            <p class="w-faq-answer">Every session follows six steps: Insights → Theory → Example → Rehearse → Simulation → Review. Learn → Practise → AI Feedback → Improve.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-faq-item">
+        <h3 class="w-faq-q">
+          <button class="w-faq-trigger" type="button" aria-expanded="false" aria-controls="home-faq-a-4" id="home-faq-q-4">
+            <span class="w-faq-trigger-text">What does the AI coach actually do?</span>
+            <span class="w-faq-icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="w-faq-panel" id="home-faq-a-4" role="region" aria-labelledby="home-faq-q-4">
+          <div class="w-faq-panel-inner">
+            <p class="w-faq-answer">Your AI coach analyses your practice and gives personalised feedback on areas such as clarity, structure, delivery, pace, storytelling and how effectively you communicate your message.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-faq-item">
+        <h3 class="w-faq-q">
+          <button class="w-faq-trigger" type="button" aria-expanded="false" aria-controls="home-faq-a-5" id="home-faq-q-5">
+            <span class="w-faq-trigger-text">Can AmplifyU help me think on my feet?</span>
+            <span class="w-faq-icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="w-faq-panel" id="home-faq-a-5" role="region" aria-labelledby="home-faq-q-5">
+          <div class="w-faq-panel-inner">
+            <p class="w-faq-answer">Yes. You'll practise structuring your thoughts, responding to questions and communicating under pressure - so you're not relying on perfectly prepared scripts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-faq-item">
+        <h3 class="w-faq-q">
+          <button class="w-faq-trigger" type="button" aria-expanded="false" aria-controls="home-faq-a-6" id="home-faq-q-6">
+            <span class="w-faq-trigger-text">Can AmplifyU help with my personal brand and career?</span>
+            <span class="w-faq-icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="w-faq-panel" id="home-faq-a-6" role="region" aria-labelledby="home-faq-q-6">
+          <div class="w-faq-panel-inner">
+            <p class="w-faq-answer">Yes. AmplifyU helps you communicate your value, build your professional presence, tell your story, increase your visibility and prepare for moments that matter in your career.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-faq-footer fade-up delay-2">
+      <p class="w-faq-footer-label">Have another question?</p>
+      <a href="faq.html" class="w-cta-btn">Explore all FAQs →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var items = document.querySelectorAll('#homeFaqList .w-faq-item');
+  items.forEach(function(item) {
+    var trigger = item.querySelector('.w-faq-trigger');
+    var panel = item.querySelector('.w-faq-panel');
+    panel.setAttribute('inert', '');
+    trigger.addEventListener('click', function() {
+      var isOpen = item.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) { panel.removeAttribute('inert'); }
+      else { panel.setAttribute('inert', ''); }
+    });
+  });
+})();
+</script>
 
 <!-- ══ WHAT AMPLIFYU TEACHES ══ -->
 <section class="w-teaches">
