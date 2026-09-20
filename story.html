@@ -306,30 +306,51 @@
   }
   .storyreel-inner {
     width: 100%; max-width: 1700px; margin: 0 auto;
-    display: grid; grid-template-columns: 500px 1fr; gap: 64px; align-items: start;
+    display: grid; grid-template-columns: 460px 1fr; gap: 64px; align-items: start;
   }
-  .storyreel-col { position: relative; width: 100%; max-width: 1000px; aspect-ratio: 16 / 9; justify-self: start; }
+  .storyreel-col { position: relative; width: 100%; max-width: 760px; justify-self: start; }
   .storyreel-col .story-reel-card { box-shadow: 0 40px 100px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.06); }
 
-  .storyreel-photo-col { display: flex; flex-direction: column; }
+  .storyreel-photo-col { display: flex; flex-direction: column; max-width: 460px; }
   .storyreel-eyebrow {
     font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--sage); margin-bottom: 16px;
   }
+  .storyreel-headline {
+    font-family: var(--serif-display); font-size: clamp(32px, 3.4vw, 46px); font-weight: 500;
+    line-height: 1.1; letter-spacing: -0.5px; color: var(--text-dark); margin: 0 0 20px;
+  }
+  .storyreel-subline {
+    font-family: var(--sans); font-size: 15px; font-weight: 300; line-height: 1.7;
+    color: var(--text-mid); margin: 0 0 32px; max-width: 400px;
+  }
   .storyreel-photo {
-    position: relative; width: 280px; max-width: 100%; aspect-ratio: 1 / 1;
-    border-radius: 14px; overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06);
+    position: relative; width: 100%; max-width: 420px; aspect-ratio: 4 / 5;
+    border-radius: 16px; overflow: hidden; margin-bottom: 32px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,0,0,0.06);
   }
   .storyreel-photo-img {
     position: absolute; inset: 0; width: 100%; height: 100%;
     object-fit: cover; object-position: center 18%;
   }
-  .storyreel-quote-below {
-    font-family: var(--sans); font-size: 15px; font-weight: 300; line-height: 1.8;
-    color: var(--text-mid); margin: 20px 0 0; max-width: 460px;
+  .storyreel-pullquote {
+    font-family: var(--serif-display); font-size: clamp(19px, 1.9vw, 23px); font-weight: 400;
+    font-style: italic; line-height: 1.4; color: var(--text-dark);
+    padding-left: 20px; border-left: 2px solid var(--accent);
+    margin: 0 0 20px;
   }
-  .storyreel-quote-below em { font-style: italic; color: var(--text-dark); }
+  .storyreel-closing {
+    font-family: var(--sans); font-size: 15px; font-weight: 500; line-height: 1.6;
+    color: var(--text-dark); margin: 0 0 28px;
+  }
+  .storyreel-signature {
+    font-family: var(--serif-display); font-size: 26px; font-weight: 500; font-style: italic;
+    color: var(--sage); margin: 0;
+  }
+  .storyreel-signature span {
+    display: block; font-family: var(--sans); font-size: 11px; font-weight: 500; font-style: normal;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-top: 6px;
+  }
 
   /* ─── PULL QUOTE ─── */
   .section-pullquote {
@@ -582,8 +603,8 @@
     .hero-sub { font-size: 14px; color: rgba(237,234,230,0.7); line-height: 1.65; }
     .section-storyreel { min-height: unset; padding: 56px 24px; }
     .storyreel-inner { grid-template-columns: 1fr; gap: 24px; }
-    .storyreel-quote-below { max-width: none; }
-    .storyreel-col { aspect-ratio: 4 / 3; }
+    .storyreel-photo-col { max-width: none; }
+    .storyreel-subline { max-width: none; }
     .section-context { padding: 56px 24px; }
     .context-inner { grid-template-columns: 1fr; gap: 40px; }
     .section-storyboard { padding: 64px 24px; }
@@ -711,10 +732,14 @@
   <div class="storyreel-inner">
     <div class="storyreel-photo-col fade-up">
       <p class="storyreel-eyebrow">My Story</p>
+      <h2 class="storyreel-headline">I built the app<br>I wish I'd had.</h2>
+      <p class="storyreel-subline">16 years in high-stakes corporate environments. Two children. One realisation: communication is a skill you can build.</p>
       <div class="storyreel-photo">
         <img src="founder-photo.jpg" alt="Jenni, founder of AmplifyU" class="storyreel-photo-img">
       </div>
-      <p class="storyreel-quote-below"><em>"I needed an app designed for real life — something practical, personal and backed by science."</em> But what I was looking for didn't exist. So that's why I built it. AmplifyU is the product I wish I had throughout my career.</p>
+      <blockquote class="storyreel-pullquote">"I needed an app designed for real life — something practical, personal and backed by science."</blockquote>
+      <p class="storyreel-closing">What I was looking for didn't exist.<br>So I built it.</p>
+      <p class="storyreel-signature">Jenni<span>Founder, AmplifyU</span></p>
     </div>
     <div class="storyreel-col fade-up delay-1">
       <div id="story-reel"></div>

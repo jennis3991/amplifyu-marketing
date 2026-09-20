@@ -77,31 +77,31 @@
     '@keyframes storyReelKenBurns{0%{transform:scale(1);}100%{transform:scale(1.14);}}' +
     '.story-reel-card button{outline:none;-webkit-tap-highlight-color:transparent;font:inherit;}' +
     '.story-reel-kenburns{animation:storyReelKenBurns 32s ease-in-out infinite alternate;}' +
-    '#story-reel{width:100%;height:100%;}' +
-    '.story-reel-card{width:100%;height:100%;}' +
-    '.story-reel-body{display:flex;flex-direction:row;height:100%;}' +
-    '.story-reel-media{flex:0 0 40%;}' +
-    '.story-reel-content{padding:38px 20px 22px;}' +
-    '.story-reel-eyebrow{font-size:8px;margin-bottom:8px;line-height:1.5;}' +
-    '.story-reel-quote{font-size:17px;margin:0 0 8px;line-height:1.15;}' +
-    '.story-reel-bodytext{font-size:11px;line-height:1.55;margin:0 0 10px;}' +
-    '.story-reel-card button.story-reel-navbtn{font-size:11px;}' +
-    '.story-reel-navlabel{font-size:9px;}' +
-    '.story-reel-pill{font-size:8px;padding:4px 10px;}' +
-    '.story-reel-mediacap{left:14px;right:14px;bottom:12px;}' +
-    '.story-reel-mediaeyebrow{font-size:8px;margin-bottom:3px;}' +
-    '.story-reel-mediaheadline{font-size:11px;line-height:1.25;}' +
-    '@media (min-width:900px){' +
-    '.story-reel-content{padding:24px 32px;}' +
-    '.story-reel-eyebrow{font-size:9px;margin-bottom:10px;}' +
-    '.story-reel-quote{font-size:28px;margin:0 0 8px;line-height:1.15;}' +
-    '.story-reel-bodytext{font-size:13px;line-height:1.55;margin:0 0 14px;}' +
-    '.story-reel-pill{font-size:9px;padding:5px 12px;}' +
-    '.story-reel-mediacap{left:24px;right:24px;bottom:20px;}' +
-    '.story-reel-mediaeyebrow{font-size:10px;margin-bottom:5px;}' +
-    '.story-reel-mediaheadline{font-size:15px;line-height:1.25;}' +
-    '.story-reel-card button.story-reel-navbtn{font-size:15px;}' +
+    '#story-reel{width:100%;}' +
+    '.story-reel-card{width:100%;}' +
+    '.story-reel-body{display:flex;flex-direction:column;}' +
+    '.story-reel-media{aspect-ratio:16/9;}' +
+    '.story-reel-content{padding:26px 22px 22px;}' +
+    '.story-reel-eyebrow{font-size:9px;margin-bottom:10px;line-height:1.5;}' +
+    '.story-reel-quote{font-size:22px;margin:0 0 10px;line-height:1.2;}' +
+    '.story-reel-bodytext{font-size:13px;line-height:1.6;margin:0 0 14px;max-width:640px;}' +
+    '.story-reel-card button.story-reel-navbtn{font-size:12px;}' +
     '.story-reel-navlabel{font-size:10px;}' +
+    '.story-reel-pill{font-size:9px;padding:5px 12px;}' +
+    '.story-reel-mediacap{left:18px;right:18px;bottom:16px;}' +
+    '.story-reel-mediaeyebrow{font-size:9px;margin-bottom:4px;}' +
+    '.story-reel-mediaheadline{font-size:13px;line-height:1.25;}' +
+    '@media (min-width:900px){' +
+    '.story-reel-content{padding:32px 40px 30px;}' +
+    '.story-reel-eyebrow{font-size:10px;margin-bottom:12px;}' +
+    '.story-reel-quote{font-size:32px;margin:0 0 14px;line-height:1.18;}' +
+    '.story-reel-bodytext{font-size:15px;line-height:1.65;margin:0 0 18px;}' +
+    '.story-reel-pill{font-size:10px;padding:6px 14px;}' +
+    '.story-reel-mediacap{left:28px;right:28px;bottom:22px;}' +
+    '.story-reel-mediaeyebrow{font-size:10px;margin-bottom:5px;}' +
+    '.story-reel-mediaheadline{font-size:17px;line-height:1.25;}' +
+    '.story-reel-card button.story-reel-navbtn{font-size:14px;}' +
+    '.story-reel-navlabel{font-size:11px;}' +
     '}' +
     '@media (prefers-reduced-motion:reduce){.story-reel-kenburns{animation:none !important;}}';
   document.head.appendChild(STYLE);
@@ -242,8 +242,8 @@
       if (mediaCaption) media.appendChild(mediaCaption);
 
       // Content pane
-      var content = h('div', { className: 'story-reel-content', style: { position: 'relative', flex: '1', background: PANEL_BG, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' } });
-      var page = h('div', { style: { flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center' } });
+      var content = h('div', { className: 'story-reel-content', style: { position: 'relative', background: PANEL_BG, overflow: 'hidden' } });
+      var page = h('div', {});
 
       var sceneInner = h('div', {}, [
         h('div', { className: 'story-reel-eyebrow', style: { fontFamily: FONT_SANS, fontWeight: '700', letterSpacing: '2.5px', textTransform: 'uppercase', color: PANEL_GOLD } },
