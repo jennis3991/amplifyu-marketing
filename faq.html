@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | AmplifyU</title>
+<meta name="description" content="Answers to common questions about AmplifyU — the AI-powered coaching programme for communication, presence and influence. How it works, what you'll develop, and what to expect before you start.">
+<link rel="canonical" href="https://www.amplifyu.app/faq">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="stylesheet" href="fonts.css">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --dark:#0f0d0a;
+  --cream:#edeae6;
+  --cream-mid:#e5e2de;
+  --cream-dark:#d2cecc;
+  --accent:#6b7c6e;
+  --accent-light:#8a9e8d;
+  --text-mid:#6e6b66;
+  --text-light:#9a9895;
+  --serif-body:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', system-ui, sans-serif;
+}
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--dark); font-family:var(--sans); font-size:16px; line-height:1.6; overflow-x:hidden; }
+
+/* ─── NAV ─── */
+#nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; background:rgba(15,13,10,0); transition:background 0.3s; }
+#nav.scrolled { background:rgba(15,13,10,0.95); backdrop-filter:blur(8px); }
+.nav-logo { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-img { height:64px; width:auto; display:block; filter:brightness(0) invert(1); }
+.nav-links { display:flex; align-items:center; gap:22px; }
+.nav-link { font-family:var(--sans); font-size:13px; font-weight:400; letter-spacing:0.02em; color:rgba(237,234,230,0.55); text-decoration:none; transition:color 0.2s; }
+.nav-link:hover, .nav-link.active { color:#fff; }
+.nav-right { display:flex; align-items:center; gap:16px; }
+.nav-cta { font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:10px 22px; border-radius:3px; transition:background 0.2s, color 0.2s; }
+.nav-cta--get { background:#6b7c6e; color:#fff; border-color:transparent; border-radius:24px; transition:background 0.2s; }
+.nav-cta--get:hover { background:#4e5e51; }
+.nav-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.nav-hamburger span { display:block; width:22px; height:1.5px; background:rgba(237,234,230,0.7); transition:0.2s; }
+
+/* ─── PAGE HERO ─── */
+.pg-hero { background:var(--dark); padding:140px 48px 64px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.pg-hero-inner { max-width:780px; margin:0 auto; }
+.pg-back { display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-light); text-decoration:none; margin-bottom:32px; transition:color 0.2s; }
+.pg-back:hover { color:#fff; }
+.pg-back svg { transition:transform 0.2s; }
+.pg-back:hover svg { transform:translateX(-3px); }
+.pg-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); font-weight:500; margin-bottom:20px; }
+.pg-h1 { font-family:var(--serif-body); font-size:clamp(30px,4.5vw,48px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1px; line-height:1.1; }
+
+/* ─── PAGE BODY ─── */
+.pg-body { max-width:780px; margin:0 auto; padding:64px 48px 100px; }
+.pg-p { font-family:var(--sans); font-size:15px; color:var(--text-mid); line-height:1.85; font-weight:300; margin-bottom:14px; }
+.pg-p a { color:var(--accent); }
+.pg-rule { width:100%; height:1px; background:var(--cream-dark); margin:48px 0 24px; }
+.pg-footnote { font-family:var(--serif-body); font-size:15px; font-style:italic; color:var(--text-mid); }
+.pg-footnote a { color:var(--accent); }
+
+/* ─── FAQ CATEGORIES & ACCORDION ─── */
+.faq-intro { margin-bottom:56px; }
+.faq-category { margin-bottom:56px; }
+.faq-category:last-of-type { margin-bottom:0; }
+.faq-cat-head { padding-bottom:22px; margin-bottom:4px; border-bottom:1px solid var(--cream-dark); }
+.faq-cat-title { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin:0 0 10px; }
+.faq-cat-sub { font-family:var(--serif-body); font-size:17px; font-style:italic; font-weight:300; color:var(--text-mid); line-height:1.5; margin:0; }
+
+.faq-list { }
+.faq-item { border-bottom:1px solid var(--cream-dark); }
+.faq-q { margin:0; }
+.faq-trigger {
+  all:unset; box-sizing:border-box;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  width:100%; padding:20px 4px; cursor:pointer;
+  font-family:var(--serif-body); font-size:18px; font-weight:500;
+  color:var(--dark); line-height:1.35;
+}
+.faq-trigger:hover { color:var(--accent); }
+.faq-trigger:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+.faq-trigger-text { flex:1; }
+.faq-icon { position:relative; flex-shrink:0; width:18px; height:18px; color:var(--accent); }
+.faq-icon::before, .faq-icon::after {
+  content:''; position:absolute; top:50%; left:50%;
+  background:currentColor; transform:translate(-50%,-50%);
+  transition:transform 0.25s ease, opacity 0.25s ease;
+}
+.faq-icon::before { width:14px; height:1.5px; }
+.faq-icon::after { width:1.5px; height:14px; }
+.faq-trigger[aria-expanded="true"] .faq-icon::after { transform:translate(-50%,-50%) rotate(90deg); opacity:0; }
+
+.faq-panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows 0.3s ease; }
+.faq-item.is-open .faq-panel { grid-template-rows:1fr; }
+.faq-panel-inner { overflow:hidden; }
+.faq-answer { font-family:var(--sans); font-size:14.5px; font-weight:300; color:var(--text-mid); line-height:1.85; padding:0 4px 22px; max-width:680px; }
+.faq-answer a { color:var(--accent); }
+
+/* ─── FOOTER ─── */
+footer { display:flex; align-items:center; justify-content:space-between; padding:32px 48px; background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); }
+.footer-logo { display:flex; align-items:center; gap:10px; font-family:var(--sans); font-size:13px; font-weight:600; color:var(--accent-light); letter-spacing:0.15em; text-transform:uppercase; white-space:nowrap; }
+.footer-logo img { width:36px; height:36px; object-fit:contain; display:block; filter:brightness(0) invert(1); }
+.footer-legal { font-family:var(--sans); font-size:11px; color:rgba(237,234,230,0.2); letter-spacing:0.05em; text-align:center; }
+.footer-legal a { color:rgba(237,234,230,0.35); text-decoration:none; }
+.footer-legal a:hover { color:rgba(237,234,230,0.6); }
+.footer-tm { font-size:0.75em; letter-spacing:0; vertical-align:super; margin-left:-0.12em; }
+
+/* ─── MOBILE ─── */
+@media (max-width:1100px) {
+  #nav { padding:0 20px; height:64px; background:rgba(15,13,10,0.92); backdrop-filter:blur(8px); }
+  .nav-hamburger { display:flex; }
+  .nav-links { position:absolute; top:100%; left:0; right:0; display:flex; flex-direction:column; align-items:stretch; gap:0; background:rgba(15,13,10,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(107,124,110,0.12); max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .nav-links .nav-link { width:100%; box-sizing:border-box; padding:16px 24px; border-bottom:1px solid rgba(240,235,226,0.08); }
+  #nav.nav-open .nav-links { max-height:70vh; }
+  .nav-logo-img { height:38px; }
+  .pg-hero { padding:100px 24px 48px; }
+  .pg-body { padding:48px 24px 72px; }
+  footer { flex-direction:column; text-align:center; gap:16px; padding:24px; }
+}
+@media (max-width:600px) {
+  .faq-trigger { font-size:16px; padding:16px 4px; gap:14px; }
+  .faq-cat-sub { font-size:16px; }
+}
+</style>
+<!-- Cookie consent + gated GA4 (see cookie-consent.js) -->
+<script src="cookie-consent.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is AmplifyU?", "acceptedAnswer": { "@type": "Answer", "text": "AmplifyU is an AI-powered coaching programme designed to help you build the unwritten skills behind career success — how you communicate, influence, present yourself and navigate the moments that matter. Across 14 short sessions, you'll develop practical skills in clarity, storytelling, executive presence, influence, personal brand and difficult conversations. It's not about becoming someone else. It's about becoming more effective at being you." } },
+    { "@type": "Question", "name": "Who is AmplifyU for?", "acceptedAnswer": { "@type": "Answer", "text": "AmplifyU is for professionals who know they have more to offer — but want to become better at communicating it. Whether you're preparing for a big presentation, stepping into leadership, navigating a difficult conversation, building your personal brand, preparing for your next career move or simply wanting to feel more confident when you speak, AmplifyU gives you a structured way to practise. You don't need to be a confident speaker to start. In fact, you might be exactly the person who needs it most." } },
+    { "@type": "Question", "name": "What can I improve with AmplifyU?", "acceptedAnswer": { "@type": "Answer", "text": "AmplifyU focuses on the skills that often make the difference between being capable and being recognised for your capability. You'll work on: Clarity — structure your thoughts and make complex ideas easier to understand. Storytelling — turn information into stories that people remember and act on. Executive presence — communicate with greater authority, composure and conviction. Influence — build buy-in and communicate ideas in a way that brings people with you. Personal brand — become clearer on what you want to be known for and how you show up. Difficult conversations — prepare for high-stakes moments where how you communicate matters. And the skills don't sit in isolation — they reinforce each other." } },
+    { "@type": "Question", "name": "Is AmplifyU just another online course?", "acceptedAnswer": { "@type": "Answer", "text": "No. Most learning stops at Learn. AmplifyU is designed to take you further: Learn → Practise → AI Feedback → Improve. You don't just read about a communication technique — you learn it, apply it, practise it out loud, receive personalised feedback and use that feedback to improve. The goal isn't to give you more information. It's to change how you show up." } },
+    { "@type": "Question", "name": "How long does AmplifyU take?", "acceptedAnswer": { "@type": "Answer", "text": "The core programme is designed around 14 sessions over 14 days, with each session taking approximately 15 minutes. That's intentional — the aim is to make meaningful development fit into a real working day, rather than becoming another course you save for \"when you have time.\"" } },
+    { "@type": "Question", "name": "What happens after the 14 days?", "acceptedAnswer": { "@type": "Answer", "text": "You leave with more than a completed programme. The final stage brings your learning together into a personalised Communication Blueprint — helping you understand the skills you've developed, the areas you can continue working on, and how to apply them beyond AmplifyU. Because the goal isn't to finish a course. It's to change what you do afterwards." } },
+    { "@type": "Question", "name": "Is AmplifyU a replacement for an executive coach?", "acceptedAnswer": { "@type": "Answer", "text": "No. AmplifyU is designed to make high-quality coaching principles and deliberate practice more accessible and scalable. A human coach can provide deep context, challenge, nuance and a relationship built over time. AmplifyU gives you something different: structured learning, private practice, immediate AI feedback and the ability to keep practising whenever you need it. Think of it as having a coach in your pocket." } },
+    { "@type": "Question", "name": "Is AmplifyU only for presentations and public speaking?", "acceptedAnswer": { "@type": "Answer", "text": "No. Presentation skills are part of it, but communication happens everywhere. AmplifyU is designed around the moments that shape your professional reputation — from explaining an idea in a meeting and answering a difficult question, to telling your career story, building relationships, influencing decisions and navigating challenging conversations. The stage might be a presentation. The real test is everything that happens in between." } },
+    { "@type": "Question", "name": "What makes AmplifyU different?", "acceptedAnswer": { "@type": "Answer", "text": "AmplifyU brings together three things that are often separated: Knowledge — the science and frameworks behind effective communication. Practice — realistic exercises that make you use the skill. Coaching — AI feedback that helps you understand what to do differently. It puts them into a structured 14-day journey designed to help the learning compound. You're not just learning about communication. You're training it." } },
+    { "@type": "Question", "name": "What if I only have 15 minutes?", "acceptedAnswer": { "@type": "Answer", "text": "That's exactly who AmplifyU was built for. You don't need an hour, a weekend course, or a training programme at work. Give yourself 15 minutes, practise one skill and make one small improvement. Then do it again tomorrow. Small practice. Real situations. Compounding change." } },
+    { "@type": "Question", "name": "Where should I start?", "acceptedAnswer": { "@type": "Answer", "text": "Start with Day 1. You don't need to know exactly what you're doing wrong — you just need to be curious about how you could communicate, influence and show up differently. 14 days. 15 minutes a day. Start building the skills behind your next opportunity." } },
+    { "@type": "Question", "name": "How does each AmplifyU session work?", "acceptedAnswer": { "@type": "Answer", "text": "Every session follows a six-step coaching journey: 01 Insights — understand the skill and why it matters. 02 Theory — learn the science, frameworks and principles behind it. 03 Example — see the skill in action through real-world examples and communication masters. 04 Rehearse — put the technique into practice through a short, focused exercise. 05 Simulation — use your voice to practise the skill in a realistic scenario and receive AI-powered feedback. 06 Review — reflect on what happened, identify where you can improve, and turn the learning into something you can use in the real world. Learn → Practise → AI Feedback → Improve — that loop is at the heart of AmplifyU." } },
+    { "@type": "Question", "name": "Why do I need to practise out loud?", "acceptedAnswer": { "@type": "Answer", "text": "Because knowing how to communicate and being able to communicate under pressure are two different things. You can understand a framework perfectly and still lose your structure when someone puts you on the spot. AmplifyU gets you out of passive learning and into deliberate practice — helping you rehearse the moments that matter before they happen for real." } },
+    { "@type": "Question", "name": "What does the AI coach actually do?", "acceptedAnswer": { "@type": "Answer", "text": "Your AI coach analyses your practice and gives you personalised feedback designed to help you understand what you're already doing well and where you can improve. Depending on the exercise, feedback can focus on areas such as clarity, structure, delivery, pace, confidence, storytelling and how effectively you communicate your message. The purpose isn't to give you a score for the sake of a score — it's to answer: \"What should I try differently next time?\"" } },
+    { "@type": "Question", "name": "Does AmplifyU judge how good I am at communicating?", "acceptedAnswer": { "@type": "Answer", "text": "No. The AI is there to coach you, not judge you. There is no single \"perfect\" way to communicate, and AmplifyU isn't designed to turn everyone into the same type of speaker. Your feedback is intended to help you understand your communication habits, identify opportunities to improve and experiment with different ways of expressing yourself. The goal is progress, not perfection." } },
+    { "@type": "Question", "name": "Can AmplifyU help me think on my feet?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A major focus of AmplifyU is helping you communicate when you don't have time to perfectly prepare. You'll practise structuring your thoughts, responding to questions, handling pressure and navigating conversations where the outcome matters. The aim isn't to give you scripted answers — it's to help you develop the underlying communication skills so you can respond more naturally when the unexpected happens." } },
+    { "@type": "Question", "name": "Can AmplifyU help with my personal brand?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Personal brand isn't just about LinkedIn — it's about the reputation you build through what you say, how you communicate, how you show up and what people remember about you. AmplifyU helps you explore what you want to be known for, how clearly you're communicating that value, and whether your professional presence is aligned with the person you're trying to become." } },
+    { "@type": "Question", "name": "Can AmplifyU help with career progression?", "acceptedAnswer": { "@type": "Answer", "text": "AmplifyU doesn't decide your career path for you. Instead, it helps you develop skills that can support you as you navigate it — communicating your impact more clearly, preparing for a promotion conversation, building relationships, telling your story, increasing your visibility, handling difficult conversations, or becoming more confident in leadership situations. Because career progression isn't only about what you can do — it's also about how effectively you communicate the value you bring." } },
+    { "@type": "Question", "name": "What if I don't know exactly what I need to improve?", "acceptedAnswer": { "@type": "Answer", "text": "That's okay. You don't need to diagnose yourself before you start. The programme exposes you to a range of skills and gives you opportunities to practise them. Your reflections and AI feedback can help you identify patterns in how you communicate and areas worth focusing on. Think of AmplifyU as a communication workout — you discover your strengths by using them, and your development areas by practising them." } },
+    { "@type": "Question", "name": "Do I need to be a confident speaker?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely not. AmplifyU is designed for people at different stages of their careers and communication journey. You might already be confident presenting but struggle to think clearly under pressure. You might have great ideas but find it difficult to articulate them. You might be comfortable speaking but unsure how you're perceived. Or you might simply want to feel more prepared for the next opportunity. Start where you are. Build from there." } },
+    { "@type": "Question", "name": "Is my practice private?", "acceptedAnswer": { "@type": "Answer", "text": "Your practice should feel like a safe space to experiment, make mistakes and try again. AmplifyU is designed around private practice and AI feedback, rather than performance for an audience. Your recordings and personal information are handled according to AmplifyU's Privacy Policy (https://www.amplifyu.app/privacy-policy) and Terms of Service (https://www.amplifyu.app/terms-of-service)." } },
+    { "@type": "Question", "name": "Do I have to record myself?", "acceptedAnswer": { "@type": "Answer", "text": "The simulation exercises use your voice because the most valuable feedback often comes from actually hearing yourself communicate. It can feel uncomfortable at first — that's part of the point. The more you practise in a private environment, the more familiar these situations become, and the easier it can feel to do them in real life." } },
+    { "@type": "Question", "name": "What if I don't like hearing myself back?", "acceptedAnswer": { "@type": "Answer", "text": "You're not alone — most people aren't used to hearing themselves communicate objectively. But playback can reveal things you don't notice while you're speaking: whether you're rushing, over-explaining, losing your structure, relying on filler words or underselling your point. What initially feels uncomfortable can become one of the most useful parts of the process." } },
+    { "@type": "Question", "name": "Is the AI always right?", "acceptedAnswer": { "@type": "Answer", "text": "No AI is perfect. AmplifyU's feedback should be treated as coaching guidance rather than an absolute judgement of your communication ability. Use the feedback alongside your own judgement and context — if something doesn't resonate with you, consider why, and decide what's useful for your development. The most important part is the loop: Practise. Get feedback. Reflect. Try again." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-a-transparent.png" alt="AmplifyU" class="nav-logo-img">
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="programme.html" class="nav-link">Programme</a>
+    <a href="coach.html" class="nav-link">AI Coach</a>
+    <a href="features.html" class="nav-link">Features</a>
+    <a href="faq.html" class="nav-link active">FAQ</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="investors.html" class="nav-link">Investors</a>
+  </div>
+  <div class="nav-right">
+    <a href="coming-soon.html" class="nav-cta nav-cta--get">Get AmplifyU</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="pg-hero">
+  <div class="pg-hero-inner">
+    <a href="index.html" class="pg-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 12L6 8l4-4"/></svg>
+      Back to Home
+    </a>
+    <div class="pg-eyebrow">FAQ</div>
+    <h1 class="pg-h1">Everything you need to know.</h1>
+  </div>
+</section>
+
+<main>
+  <div class="pg-body">
+
+    <p class="pg-p faq-intro">Answers to the questions professionals ask most before, during and after AmplifyU. Tap any question to expand it.</p>
+
+    <section class="faq-category" aria-labelledby="faq-cat-01">
+      <div class="faq-cat-head">
+        <h2 class="faq-cat-title" id="faq-cat-01">01 — The Experience</h2>
+        <p class="faq-cat-sub">What AmplifyU is, who it's for and what you'll get.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-1" id="faq-q-1-1">
+              <span class="faq-trigger-text">What is AmplifyU?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-1" role="region" aria-labelledby="faq-q-1-1">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">AmplifyU is an AI-powered coaching programme designed to help you build the unwritten skills behind career success — how you communicate, influence, present yourself and navigate the moments that matter. Across 14 short sessions, you'll develop practical skills in clarity, storytelling, executive presence, influence, personal brand and difficult conversations. It's not about becoming someone else. It's about becoming more effective at being you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-2" id="faq-q-1-2">
+              <span class="faq-trigger-text">Who is AmplifyU for?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-2" role="region" aria-labelledby="faq-q-1-2">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">AmplifyU is for professionals who know they have more to offer — but want to become better at communicating it. Whether you're preparing for a big presentation, stepping into leadership, navigating a difficult conversation, building your personal brand, preparing for your next career move or simply wanting to feel more confident when you speak, AmplifyU gives you a structured way to practise. You don't need to be a confident speaker to start. In fact, you might be exactly the person who needs it most.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-3" id="faq-q-1-3">
+              <span class="faq-trigger-text">What can I improve with AmplifyU?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-3" role="region" aria-labelledby="faq-q-1-3">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">AmplifyU focuses on the skills that often make the difference between being capable and being recognised for your capability. You'll work on: Clarity — structure your thoughts and make complex ideas easier to understand. Storytelling — turn information into stories that people remember and act on. Executive presence — communicate with greater authority, composure and conviction. Influence — build buy-in and communicate ideas in a way that brings people with you. Personal brand — become clearer on what you want to be known for and how you show up. Difficult conversations — prepare for high-stakes moments where how you communicate matters. And the skills don't sit in isolation — they reinforce each other.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-4" id="faq-q-1-4">
+              <span class="faq-trigger-text">Is AmplifyU just another online course?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-4" role="region" aria-labelledby="faq-q-1-4">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">No. Most learning stops at Learn. AmplifyU is designed to take you further: Learn → Practise → AI Feedback → Improve. You don't just read about a communication technique — you learn it, apply it, practise it out loud, receive personalised feedback and use that feedback to improve. The goal isn't to give you more information. It's to change how you show up.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-5" id="faq-q-1-5">
+              <span class="faq-trigger-text">How long does AmplifyU take?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-5" role="region" aria-labelledby="faq-q-1-5">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">The core programme is designed around 14 sessions over 14 days, with each session taking approximately 15 minutes. That's intentional — the aim is to make meaningful development fit into a real working day, rather than becoming another course you save for "when you have time."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-6" id="faq-q-1-6">
+              <span class="faq-trigger-text">What happens after the 14 days?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-6" role="region" aria-labelledby="faq-q-1-6">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">You leave with more than a completed programme. The final stage brings your learning together into a personalised Communication Blueprint — helping you understand the skills you've developed, the areas you can continue working on, and how to apply them beyond AmplifyU. Because the goal isn't to finish a course. It's to change what you do afterwards.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-7" id="faq-q-1-7">
+              <span class="faq-trigger-text">Is AmplifyU a replacement for an executive coach?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-7" role="region" aria-labelledby="faq-q-1-7">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">No. AmplifyU is designed to make high-quality coaching principles and deliberate practice more accessible and scalable. A human coach can provide deep context, challenge, nuance and a relationship built over time. AmplifyU gives you something different: structured learning, private practice, immediate AI feedback and the ability to keep practising whenever you need it. Think of it as having a coach in your pocket.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-8" id="faq-q-1-8">
+              <span class="faq-trigger-text">Is AmplifyU only for presentations and public speaking?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-8" role="region" aria-labelledby="faq-q-1-8">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">No. Presentation skills are part of it, but communication happens everywhere. AmplifyU is designed around the moments that shape your professional reputation — from explaining an idea in a meeting and answering a difficult question, to telling your career story, building relationships, influencing decisions and navigating challenging conversations. The stage might be a presentation. The real test is everything that happens in between.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-9" id="faq-q-1-9">
+              <span class="faq-trigger-text">What makes AmplifyU different?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-9" role="region" aria-labelledby="faq-q-1-9">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">AmplifyU brings together three things that are often separated: Knowledge — the science and frameworks behind effective communication. Practice — realistic exercises that make you use the skill. Coaching — AI feedback that helps you understand what to do differently. It puts them into a structured 14-day journey designed to help the learning compound. You're not just learning about communication. You're training it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-10" id="faq-q-1-10">
+              <span class="faq-trigger-text">What if I only have 15 minutes?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-10" role="region" aria-labelledby="faq-q-1-10">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">That's exactly who AmplifyU was built for. You don't need an hour, a weekend course, or a training programme at work. Give yourself 15 minutes, practise one skill and make one small improvement. Then do it again tomorrow. Small practice. Real situations. Compounding change.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-1-11" id="faq-q-1-11">
+              <span class="faq-trigger-text">Where should I start?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-1-11" role="region" aria-labelledby="faq-q-1-11">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Start with Day 1. You don't need to know exactly what you're doing wrong — you just need to be curious about how you could communicate, influence and show up differently. 14 days. 15 minutes a day. Start building the skills behind your next opportunity.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="faq-category" aria-labelledby="faq-cat-02">
+      <div class="faq-cat-head">
+        <h2 class="faq-cat-title" id="faq-cat-02">02 — How It Works</h2>
+        <p class="faq-cat-sub">The six-step methodology and AI coaching loop.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-2-1" id="faq-q-2-1">
+              <span class="faq-trigger-text">How does each AmplifyU session work?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-2-1" role="region" aria-labelledby="faq-q-2-1">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Every session follows a six-step coaching journey: 01 Insights — understand the skill and why it matters. 02 Theory — learn the science, frameworks and principles behind it. 03 Example — see the skill in action through real-world examples and communication masters. 04 Rehearse — put the technique into practice through a short, focused exercise. 05 Simulation — use your voice to practise the skill in a realistic scenario and receive AI-powered feedback. 06 Review — reflect on what happened, identify where you can improve, and turn the learning into something you can use in the real world. Learn → Practise → AI Feedback → Improve — that loop is at the heart of AmplifyU.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-2-2" id="faq-q-2-2">
+              <span class="faq-trigger-text">Why do I need to practise out loud?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-2-2" role="region" aria-labelledby="faq-q-2-2">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Because knowing how to communicate and being able to communicate under pressure are two different things. You can understand a framework perfectly and still lose your structure when someone puts you on the spot. AmplifyU gets you out of passive learning and into deliberate practice — helping you rehearse the moments that matter before they happen for real.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-2-3" id="faq-q-2-3">
+              <span class="faq-trigger-text">What does the AI coach actually do?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-2-3" role="region" aria-labelledby="faq-q-2-3">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Your AI coach analyses your practice and gives you personalised feedback designed to help you understand what you're already doing well and where you can improve. Depending on the exercise, feedback can focus on areas such as clarity, structure, delivery, pace, confidence, storytelling and how effectively you communicate your message. The purpose isn't to give you a score for the sake of a score — it's to answer: "What should I try differently next time?"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-2-4" id="faq-q-2-4">
+              <span class="faq-trigger-text">Does AmplifyU judge how good I am at communicating?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-2-4" role="region" aria-labelledby="faq-q-2-4">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">No. The AI is there to coach you, not judge you. There is no single "perfect" way to communicate, and AmplifyU isn't designed to turn everyone into the same type of speaker. Your feedback is intended to help you understand your communication habits, identify opportunities to improve and experiment with different ways of expressing yourself. The goal is progress, not perfection.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-2-5" id="faq-q-2-5">
+              <span class="faq-trigger-text">Can AmplifyU help me think on my feet?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-2-5" role="region" aria-labelledby="faq-q-2-5">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Yes. A major focus of AmplifyU is helping you communicate when you don't have time to perfectly prepare. You'll practise structuring your thoughts, responding to questions, handling pressure and navigating conversations where the outcome matters. The aim isn't to give you scripted answers — it's to help you develop the underlying communication skills so you can respond more naturally when the unexpected happens.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="faq-category" aria-labelledby="faq-cat-03">
+      <div class="faq-cat-head">
+        <h2 class="faq-cat-title" id="faq-cat-03">03 — What You'll Develop</h2>
+        <p class="faq-cat-sub">Clarity, storytelling, presence, personal brand, influence, pressure and career.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-3-1" id="faq-q-3-1">
+              <span class="faq-trigger-text">Can AmplifyU help with my personal brand?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-3-1" role="region" aria-labelledby="faq-q-3-1">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Yes. Personal brand isn't just about LinkedIn — it's about the reputation you build through what you say, how you communicate, how you show up and what people remember about you. AmplifyU helps you explore what you want to be known for, how clearly you're communicating that value, and whether your professional presence is aligned with the person you're trying to become.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-3-2" id="faq-q-3-2">
+              <span class="faq-trigger-text">Can AmplifyU help with career progression?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-3-2" role="region" aria-labelledby="faq-q-3-2">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">AmplifyU doesn't decide your career path for you. Instead, it helps you develop skills that can support you as you navigate it — communicating your impact more clearly, preparing for a promotion conversation, building relationships, telling your story, increasing your visibility, handling difficult conversations, or becoming more confident in leadership situations. Because career progression isn't only about what you can do — it's also about how effectively you communicate the value you bring.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-3-3" id="faq-q-3-3">
+              <span class="faq-trigger-text">What if I don't know exactly what I need to improve?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-3-3" role="region" aria-labelledby="faq-q-3-3">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">That's okay. You don't need to diagnose yourself before you start. The programme exposes you to a range of skills and gives you opportunities to practise them. Your reflections and AI feedback can help you identify patterns in how you communicate and areas worth focusing on. Think of AmplifyU as a communication workout — you discover your strengths by using them, and your development areas by practising them.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="faq-category" aria-labelledby="faq-cat-04">
+      <div class="faq-cat-head">
+        <h2 class="faq-cat-title" id="faq-cat-04">04 — Before You Start</h2>
+        <p class="faq-cat-sub">The reassurance questions around confidence, recording, privacy and AI.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-4-1" id="faq-q-4-1">
+              <span class="faq-trigger-text">Do I need to be a confident speaker?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-4-1" role="region" aria-labelledby="faq-q-4-1">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Absolutely not. AmplifyU is designed for people at different stages of their careers and communication journey. You might already be confident presenting but struggle to think clearly under pressure. You might have great ideas but find it difficult to articulate them. You might be comfortable speaking but unsure how you're perceived. Or you might simply want to feel more prepared for the next opportunity. Start where you are. Build from there.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-4-2" id="faq-q-4-2">
+              <span class="faq-trigger-text">Is my practice private?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-4-2" role="region" aria-labelledby="faq-q-4-2">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">Your practice should feel like a safe space to experiment, make mistakes and try again. AmplifyU is designed around private practice and AI feedback, rather than performance for an audience. Your recordings and personal information are handled according to AmplifyU's <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-of-service">Terms of Service</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-4-3" id="faq-q-4-3">
+              <span class="faq-trigger-text">Do I have to record myself?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-4-3" role="region" aria-labelledby="faq-q-4-3">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">The simulation exercises use your voice because the most valuable feedback often comes from actually hearing yourself communicate. It can feel uncomfortable at first — that's part of the point. The more you practise in a private environment, the more familiar these situations become, and the easier it can feel to do them in real life.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-4-4" id="faq-q-4-4">
+              <span class="faq-trigger-text">What if I don't like hearing myself back?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-4-4" role="region" aria-labelledby="faq-q-4-4">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">You're not alone — most people aren't used to hearing themselves communicate objectively. But playback can reveal things you don't notice while you're speaking: whether you're rushing, over-explaining, losing your structure, relying on filler words or underselling your point. What initially feels uncomfortable can become one of the most useful parts of the process.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-4-5" id="faq-q-4-5">
+              <span class="faq-trigger-text">Is the AI always right?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-panel" id="faq-a-4-5" role="region" aria-labelledby="faq-q-4-5">
+            <div class="faq-panel-inner">
+              <p class="faq-answer">No AI is perfect. AmplifyU's feedback should be treated as coaching guidance rather than an absolute judgement of your communication ability. Use the feedback alongside your own judgement and context — if something doesn't resonate with you, consider why, and decide what's useful for your development. The most important part is the loop: Practise. Get feedback. Reflect. Try again.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="pg-rule"></div>
+    <p class="pg-footnote">Still have a question? <a href="support.html">Get in touch with our team</a>.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo-a-transparent.png" alt="" aria-hidden="true">
+    AMPLIFYU<sup class="footer-tm">™</sup>
+  </div>
+  <p class="footer-legal">© 2026 AmplifyU Technologies Ltd · Registered in England &amp; Wales · AmplifyU™ UK IPO Trademark Approved · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-of-service.html">Terms of Service</a> · <a href="cookie-policy.html">Cookie Policy</a> · <a href="support.html">Support</a></p>
+</footer>
+
+<script>
+  var navEl = document.getElementById('nav');
+  window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 40); });
+  document.getElementById('navHamburger').addEventListener('click', function() {
+    var isOpen = navEl.classList.toggle('nav-open');
+    this.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    var trigger = item.querySelector('.faq-trigger');
+    var panel = item.querySelector('.faq-panel');
+    panel.setAttribute('inert', '');
+    trigger.addEventListener('click', function() {
+      var isOpen = item.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) { panel.removeAttribute('inert'); }
+      else { panel.setAttribute('inert', ''); }
+    });
+  });
+</script>
+</body>
+</html>
