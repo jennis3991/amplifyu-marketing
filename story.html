@@ -619,13 +619,19 @@
     .section-storyreel { min-height: unset; padding: 56px 24px; }
     .storyreel-inner { grid-template-columns: 1fr; gap: 24px; }
     /* Same full-bleed photo-with-overlaid-text treatment as desktop, just
-       taller and with the scrim fading top-to-bottom instead of
-       left-to-right, since the text now spans the full width. */
-    .storyreel-photo-col { min-height: 980px; }
+       with the scrim fading top-to-bottom instead of left-to-right, since
+       the text now spans the full width. Kept much shorter than desktop's
+       aspect ratio would suggest: object-fit:cover on a very tall, narrow
+       box forces a landscape photo to scale up a lot just to cover the
+       height, which crops out most of its width - the taller the box, the
+       more zoomed-in/cropped the photo looks. No artificial gap before
+       the subline here (unlike desktop) since there isn't height to spare
+       without reintroducing that crop. */
+    .storyreel-photo-col { min-height: 0; }
     .storyreel-text-top, .storyreel-text-bottom { max-width: none; }
     .storyreel-text-top { padding: 40px 24px 0 24px; }
     .storyreel-text-bottom { padding: 0 24px 32px 24px; }
-    .storyreel-subline { margin-top: 180px; }
+    .storyreel-subline { margin-top: 24px; }
     .storyreel-photo-scrim {
       background: linear-gradient(180deg,
         rgba(247,243,236,0.95) 0%,
