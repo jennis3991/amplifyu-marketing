@@ -346,7 +346,7 @@
   }
   .storyreel-subline {
     font-family: var(--sans); font-size: 15px; font-weight: 300; line-height: 1.7;
-    color: var(--text-mid); margin: 230px 0 0;
+    color: var(--text-mid); margin: 230px 0 24px;
   }
   .storyreel-pullquote {
     font-family: var(--serif-display); font-size: clamp(19px, 1.9vw, 23px); font-weight: 400;
@@ -618,23 +618,22 @@
     .hero-sub { font-size: 14px; color: rgba(237,234,230,0.7); line-height: 1.65; }
     .section-storyreel { min-height: unset; padding: 56px 24px; }
     .storyreel-inner { grid-template-columns: 1fr; gap: 24px; }
-    /* Same full-bleed photo-with-overlaid-text treatment as desktop, just
-       with the scrim fading top-to-bottom instead of left-to-right, since
-       the text now spans the full width. Kept much shorter than desktop's
-       aspect ratio would suggest: object-fit:cover on a very tall, narrow
-       box forces a landscape photo to scale up a lot just to cover the
-       height, which crops out most of its width - the taller the box, the
-       more zoomed-in/cropped the photo looks. No artificial gap before
-       the subline here (unlike desktop) since there isn't height to spare
-       without reintroducing that crop. */
-    .storyreel-photo-col { min-height: 0; }
-    .storyreel-text-top, .storyreel-text-bottom { max-width: none; }
-    .storyreel-text-top { padding: 40px 24px 0 24px; }
-    .storyreel-text-bottom { padding: 0 24px 32px 24px; }
-    .storyreel-subline { margin-top: 24px; }
-    .storyreel-photo-scrim {
-      background: none;
+    /* Mobile drops the full-bleed overlay entirely: eyebrow/headline above
+       the photo, the photo as its own framed block, then the rest of the
+       copy below it on plain background - no text ever sits on top of the
+       photo, so there's nothing to keep legible against a variable image
+       and nothing covering her face. */
+    .storyreel-photo-col { position: static; }
+    .storyreel-text-top, .storyreel-text-bottom { position: static; z-index: auto; max-width: none; }
+    .storyreel-text-top { padding: 0 24px; }
+    .storyreel-text-bottom { padding: 0 24px 8px 24px; margin-top: 24px; }
+    .storyreel-subline { margin: 0 0 24px; }
+    .storyreel-photo-bg {
+      position: relative; width: 100%; aspect-ratio: 4 / 5;
+      border-radius: 14px; overflow: hidden; margin: 24px 0;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.06);
     }
+    .storyreel-photo-scrim { display: none; }
     .section-context { padding: 56px 24px; }
     .context-inner { grid-template-columns: 1fr; gap: 40px; }
     .section-storyboard { padding: 64px 24px; }
@@ -764,13 +763,13 @@
       <div class="storyreel-text-top">
         <p class="storyreel-eyebrow">My Story</p>
         <h2 class="storyreel-headline">I built the app<br>I wish I'd had.</h2>
-        <p class="storyreel-subline">16 years in high-stakes corporate environments taught me what great communication looks like. Becoming a mum of two taught me how little time there is to practise it.</p>
       </div>
       <div class="storyreel-photo-bg">
         <img src="founder-photo-story.jpg" alt="Jenni, founder of AmplifyU" class="storyreel-photo-bg-img">
         <div class="storyreel-photo-scrim" aria-hidden="true"></div>
       </div>
       <div class="storyreel-text-bottom">
+        <p class="storyreel-subline">16 years in high-stakes corporate environments taught me what great communication looks like. Becoming a mum of two taught me how little time there is to practise it.</p>
         <blockquote class="storyreel-pullquote">"I needed an app designed for real life — something practical, personal and backed by science."</blockquote>
         <p class="storyreel-closing">What I was looking for didn't exist.<br>So I built it.</p>
         <p class="storyreel-signature">Jenni<span>Jenni Singh<br>Founder, AmplifyU</span></p>
