@@ -319,7 +319,7 @@
      story copy layered on top rather than beside it in its own card. */
   .storyreel-photo-col { position: relative; min-height: 780px; overflow: hidden; }
   .storyreel-text-top, .storyreel-text-bottom { position: relative; z-index: 1; max-width: 420px; }
-  .storyreel-text-top { padding: 280px 32px 0 32px; }
+  .storyreel-text-top { padding: 48px 32px 0 32px; }
   .storyreel-text-bottom { padding: 0 32px 8px 32px; margin-top: 24px; }
   .storyreel-photo-bg { position: absolute; inset: 0; z-index: 0; }
   .storyreel-photo-bg-img {
@@ -346,7 +346,7 @@
   }
   .storyreel-subline {
     font-family: var(--sans); font-size: 15px; font-weight: 300; line-height: 1.7;
-    color: var(--text-mid); margin: 0;
+    color: var(--text-mid); margin: 230px 0 0;
   }
   .storyreel-pullquote {
     font-family: var(--serif-display); font-size: clamp(19px, 1.9vw, 23px); font-weight: 400;
@@ -623,8 +623,9 @@
        left-to-right, since the text now spans the full width. */
     .storyreel-photo-col { min-height: 980px; }
     .storyreel-text-top, .storyreel-text-bottom { max-width: none; }
-    .storyreel-text-top { padding: 220px 24px 0 24px; }
+    .storyreel-text-top { padding: 40px 24px 0 24px; }
     .storyreel-text-bottom { padding: 0 24px 32px 24px; }
+    .storyreel-subline { margin-top: 180px; }
     .storyreel-photo-scrim {
       background: linear-gradient(180deg,
         rgba(247,243,236,0.95) 0%,
