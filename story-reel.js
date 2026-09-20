@@ -24,22 +24,21 @@
       quote: "I came back to a career that still mattered.",
       body: "A year after maternity leave, with two small children at home, I couldn't afford to be anything less than precise. Every conversation had to earn its place.",
       emotion: "Determination",
-      image: "story-laptop-night.jpg"
+      image: "story-reel-scene1.jpg"
     },
     {
       title: "The Realisation",
       quote: "Communication - the skill that multiplies everything.",
       body: "Communicating clearly under pressure became the single highest-leverage skill I could develop — the one that lets me work faster, influence more, and still come home with something left to give.",
       emotion: "Clarity",
-      image: "story-communicate-impact.jpg"
+      image: "story-reel-scene2.jpg"
     },
     {
       title: "Building the System",
       quote: "I needed more than instinct. I needed a system.",
       body: "I had the instincts, but I needed a system I could call on when stretched thin. So I built AmplifyU — because the tools I needed didn't exist.",
       emotion: "Purpose",
-      image: "story-session-modules2.jpg",
-      imagePosition: "15% center"
+      image: "story-reel-scene3.jpg"
     },
     {
       title: "The Practice",
@@ -54,15 +53,14 @@
       quote: "My Mission is Simple",
       body: "Help professionals present with impact, inspire action and accelerate their career.",
       emotion: "Confidence",
-      image: "story-boardroom-amplifyu.jpg"
+      image: "story-reel-scene5.jpg"
     },
     {
       title: "The Life It Builds",
       quote: "When you communicate well, everything else expands.",
       body: "Built in the margins of a full life, for a full life. When you communicate well, you work faster, influence more, and come home with something left to give.",
       emotion: "Wholeness",
-      image: "story-family-playtime2.jpg",
-      imagePosition: "35% center"
+      image: "story-reel-scene6.jpg"
     }
   ];
 
