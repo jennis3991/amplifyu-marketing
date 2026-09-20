@@ -2,7 +2,7 @@
  * AmplifyU cookie consent banner + GA4 gate.
  * Include on every page with: <script src="cookie-consent.js" defer></script>
  * GA4 (gtag.js) is only ever injected into the DOM after the user clicks
- * "Accept All" — until then, no request to googletagmanager.com is made
+ * "Accept All" - until then, no request to googletagmanager.com is made
  * and no analytics cookies are set.
  */
 (function () {
@@ -36,7 +36,7 @@
 
   // Stops any GA instance already loaded this session (e.g. the user
   // accepted earlier, then reopened Cookie Settings and rejected) from
-  // sending further hits — gtag.js checks this flag before every hit.
+  // sending further hits - gtag.js checks this flag before every hit.
   function disableGA() {
     window['ga-disable-' + GA_ID] = true;
   }
@@ -110,7 +110,7 @@
     el.setAttribute('aria-label', 'Cookie consent');
     el.innerHTML =
       '<div class="cc-text"><span class="cc-title">We use cookies</span>' +
-      'We’d like to use optional analytics cookies to understand how this site is used — they only load ' +
+      'We’d like to use optional analytics cookies to understand how this site is used - they only load ' +
       'if you accept. <a href="cookie-policy.html" class="cc-link">Learn more in our Cookie Policy</a>.</div>' +
       '<div class="cc-actions">' +
         '<button type="button" class="cc-reject">Reject Non-Essential</button>' +

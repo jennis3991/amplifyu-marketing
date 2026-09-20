@@ -1,5 +1,5 @@
 /*
- * AmplifyU StoryReel — vanilla-JS port of the app's React StoryReel.jsx.
+ * AmplifyU StoryReel - vanilla-JS port of the app's React StoryReel.jsx.
  * Self-contained, always-on autoplaying scene carousel: starts playing as
  * soon as it mounts, loops continuously, fills whatever fixed-size box its
  * container gives it (so every scene renders at the same size).
@@ -9,7 +9,7 @@
   var INK = '#1a1714';
   var CREAM = '#f0ebe2';
   var SAGE = '#6b7c6e';
-  // Book-cover panel palette — cream panel with dark ink text, matching
+  // Book-cover panel palette - cream panel with dark ink text, matching
   // the site's light sections.
   var PANEL_BG = CREAM;
   var PANEL_GOLD = SAGE;
@@ -29,21 +29,21 @@
     {
       title: "The Realisation",
       quote: "Communication - the skill that multiplies everything.",
-      body: "Communicating clearly under pressure became the single highest-leverage skill I could develop — the one that lets me work faster, influence more, and still come home with something left to give.",
+      body: "Communicating clearly under pressure became the single highest-leverage skill I could develop - the one that lets me work faster, influence more, and still come home with something left to give.",
       emotion: "Clarity",
       image: "story-reel-scene2.jpg"
     },
     {
       title: "Building the System",
       quote: "I needed more than instinct. I needed a system.",
-      body: "I had the instincts, but I needed a system I could call on when stretched thin. So I built AmplifyU — because the tools I needed didn't exist.",
+      body: "I had the instincts, but I needed a system I could call on when stretched thin. So I built AmplifyU - because the tools I needed didn't exist.",
       emotion: "Purpose",
       image: "story-reel-scene3.jpg"
     },
     {
       title: "The Practice",
       quote: "Every session made improvement visible.",
-      body: "Fourteen deliberate sessions — clarity, storytelling, presence, exposure — each with coaching that responds to your own words.",
+      body: "Fourteen deliberate sessions - clarity, storytelling, presence, exposure - each with coaching that responds to your own words.",
       emotion: "Focus",
       image: "story-phone-practice.jpg",
       imagePosition: "40% center"
@@ -212,13 +212,13 @@
         bar.appendChild(segBtn);
       });
 
-      // Tap zones — bottom layer, so real controls win over them
+      // Tap zones - bottom layer, so real controls win over them
       var tapZones = h('div', { style: { position: 'absolute', inset: '0', display: 'flex', zIndex: '1' } }, [
         h('button', { 'aria-label': 'Previous scene', style: { flex: '1', background: 'transparent', border: 'none', cursor: 'pointer' }, onClick: prev }),
         h('button', { 'aria-label': 'Next scene', style: { flex: '1', background: 'transparent', border: 'none', cursor: 'pointer' }, onClick: next })
       ]);
 
-      // Media pane — each scene can carry its own image (falls back to the shared default)
+      // Media pane - each scene can carry its own image (falls back to the shared default)
       var currentImage = scene.image || opts.backgroundImage;
       var mediaImg = h('img', {
         loading: 'lazy', src: currentImage, alt: '',
@@ -264,7 +264,7 @@
       page.appendChild(sceneInner);
       content.appendChild(page);
 
-      // Wipe overlay (re-mounted per scene change) — covers the full content
+      // Wipe overlay (re-mounted per scene change) - covers the full content
       // pane (a sibling of `page`, not nested inside it, so it always spans
       // the card's real height regardless of how much text a scene has).
       // Set the starting transform, force a synchronous style flush by
