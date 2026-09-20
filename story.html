@@ -293,6 +293,7 @@
   .beat--highlight .beat-cue { color: var(--sage); }
   .beat--highlight .beat-text { color: var(--text-dark); }
   .beat--highlight .beat-label-col { border-right-color: rgba(107,124,110,0.25); }
+  .storyboard-dots { display: none; }
 
   /* ─── STORY REEL (page 2) ─── */
   .section-storyreel {
@@ -587,8 +588,26 @@
     .context-inner { grid-template-columns: 1fr; gap: 40px; }
     .section-storyboard { padding: 64px 24px; }
     .storyboard-header { margin-bottom: 48px; }
-    .storyboard-beats .beat { grid-template-columns: 140px 1fr; }
-    .beat-content-col { padding-left: 24px; }
+    .storyboard-beats {
+      display: flex; flex-direction: row; gap: 14px;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x; overscroll-behavior-y: contain;
+      scrollbar-width: none; -ms-overflow-style: none;
+      margin-bottom: 0;
+    }
+    .storyboard-beats::-webkit-scrollbar { display: none; }
+    .beat {
+      display: flex; flex-direction: column;
+      flex: 0 0 86%; min-width: 0; scroll-snap-align: start;
+      border: 1px solid rgba(30,28,25,0.08); border-radius: 14px;
+      overflow: hidden; background: var(--cream);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .beat--highlight { background: rgba(107,124,110,0.05); }
+    .storyboard-dots { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; }
+    .storyboard-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(30,28,25,0.15); flex-shrink: 0; transition: background 0.2s, transform 0.2s; }
+    .storyboard-dot.is-active { background: var(--sage); transform: scale(1.5); }
     .section-pullquote { padding: 64px 24px; }
     .skills-grid { grid-template-columns: 1fr; }
     .skill-card--dark { grid-column: span 1; grid-template-columns: 1fr; gap: 32px; }
@@ -597,9 +616,8 @@
     .pcb-inner { flex-direction: column; align-items: flex-start; }
     footer { flex-direction: column; text-align: center; }
     section { padding-left: 24px !important; padding-right: 24px !important; }
-    .beat { grid-template-columns: 110px 1fr; }
-    .beat-label-col { padding: 20px 16px 20px 0; }
-    .beat-content-col { padding: 20px 0 20px 16px; }
+    .beat-label-col { padding: 20px 20px 14px; border-right: none; border-bottom: 1px solid rgba(30,28,25,0.08); }
+    .beat-content-col { padding: 20px; align-items: flex-start; }
     .beat-text { font-size: 17px; }
     .beat-cue { font-size: 17px; }
   }
@@ -742,7 +760,7 @@
       <p class="storyboard-intro">AmplifyU's Story Architect uses the Pixar framework — seven narrative beats that turn any experience into a story that lands. Here's mine.</p>
     </div>
 
-    <div class="storyboard-beats fade-up delay-1">
+    <div class="storyboard-beats fade-up delay-1" id="storyboardBeats">
       <div class="beat">
         <div class="beat-label-col">
           <div class="beat-frame">Beat 01</div>
@@ -807,9 +825,40 @@
         </div>
       </div>
     </div>
+    <div class="storyboard-dots" id="storyboardDots" aria-hidden="true">
+      <span class="storyboard-dot is-active"></span>
+      <span class="storyboard-dot"></span>
+      <span class="storyboard-dot"></span>
+      <span class="storyboard-dot"></span>
+      <span class="storyboard-dot"></span>
+      <span class="storyboard-dot"></span>
+      <span class="storyboard-dot"></span>
+    </div>
 
   </div>
 </section>
+
+<script>
+(function(){
+  var track = document.getElementById('storyboardBeats');
+  var dots = document.querySelectorAll('#storyboardDots .storyboard-dot');
+  if (!track || !dots.length) return;
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var card = track.children[0];
+    if (!card) return;
+    var cardWidth = card.getBoundingClientRect().width;
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var idx = Math.round(track.scrollLeft / (cardWidth + gap));
+    idx = Math.max(0, Math.min(dots.length - 1, idx));
+    dots.forEach(function(d, i){ d.classList.toggle('is-active', i === idx); });
+  }
+  track.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+})();
+</script>
 
 <!-- ─── PULL QUOTE ─── -->
 <section class="section-pullquote">
