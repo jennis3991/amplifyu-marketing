@@ -103,7 +103,14 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-hero-h1 span { color:var(--accent-light); font-style:normal; }
 .w-hero-rule { width:32px; height:1px; background:var(--accent); opacity:0.5; margin-bottom:40px; }
 .w-hero-sub { font-family:var(--sans); font-size:14px; color:rgba(255,255,255,0.65); line-height:1.75; font-weight:300; max-width:460px; margin-bottom:64px; }
-.w-hero-tag { display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.05em; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:7px 16px; align-self:flex-start; }
+.w-hero-tag { display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.05em; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:7px 16px; }
+/* Wraps the pill + CTA + (mobile) phone demo so the CTA can be
+   sized to match the pill's own natural width via flex stretch,
+   rather than an arbitrary fixed value - the container shrinks to
+   fit its widest child (the pill), then align-items:stretch (the
+   default) makes the narrower CTA block match that same width, so
+   centering it lands centered under the pill specifically. */
+.w-hero-pill-cta { display:flex; flex-direction:column; width:fit-content; }
 .w-hero-tag span { width:6px; height:6px; border-radius:50%; background:var(--accent-light); display:inline-block; }
 .phone-stack { display:flex; gap:14px; align-items:center; justify-content:center; }
 .phone-mock { border-radius:22px; border:1.5px solid rgba(255,255,255,0.1); overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5); flex-shrink:0; }
@@ -188,7 +195,7 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-phone-notch { position:absolute; top:10px; left:50%; transform:translateX(-50%); width:80px; height:20px; background:#0a0806; border-radius:12px; z-index:10; }
 .w-phone-inner { position:absolute; inset:0; overflow:hidden; border-radius:34px; }
 .w-phone-inner video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-.w-hero-cta-wrap { margin-top:32px; text-align:center; max-width:460px; }
+.w-hero-cta-wrap { margin-top:32px; text-align:center; }
 .w-hero-cta { display:inline-flex; align-items:center; gap:8px; background:#6b7c6e; color:#ffffff; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.04em; padding:15px 34px; border-radius:30px; text-decoration:none; transition:background 0.2s; }
 .w-hero-cta:hover { background:#4e5e51; }
 .w-hero-cta-note { margin-top:12px; font-family:var(--sans); font-size:11px; letter-spacing:0.04em; color:rgba(237,234,230,0.4); }
@@ -431,6 +438,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 
   .w-hero { padding: 100px 24px 40px; }
   .w-hero-inner { grid-template-columns:1fr; gap:0; }
+  .w-hero-pill-cta { width:100%; }
   .w-hero-cta-wrap { margin-top:24px; text-align:center; order:2; }
   .w-mob-demo { order:1; }
   .w-hero .w-problem-video { display:none; }
@@ -642,21 +650,23 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <h1 class="w-hero-h1 fade-up delay-1">The unwritten skills<br>behind career success<br><span>Now finally taught</span></h1>
       <div class="w-hero-rule fade-up delay-2"></div>
       <p class="w-hero-sub fade-up delay-2">AI-powered coaching for communication, influence, leadership and career growth. Built for professionals who know that how you communicate determines how far you go.</p>
-      <div class="w-hero-tag fade-up delay-3">
-        14 sessions. 15 mins a day. A different communicator.
-      </div>
-      <div class="w-hero-cta-wrap fade-up delay-3">
-        <a href="https://apps.apple.com/gb/app/amplifyu/id6803150663" target="_blank" rel="noopener" class="w-hero-cta">Start for free →</a>
-        <p class="w-hero-cta-note">No card required.</p>
-      </div>
-      <div class="w-mob-demo">
-        <p class="w-problem-video-label"><span>&#9654;</span>&nbsp; Watch the demo</p>
-        <div class="w-phone-frame">
-          <div class="w-phone-notch"></div>
-          <div class="w-phone-inner">
-            <video controls preload="metadata" playsinline poster="mobile-demo-poster-v2.jpg">
-              <source src="https://zdrjbgc9xr1duqxo.public.blob.vercel-storage.com/mobile-demo-v2-narrated.mp4" type="video/mp4">
-            </video>
+      <div class="w-hero-pill-cta">
+        <div class="w-hero-tag fade-up delay-3">
+          14 sessions. 15 mins a day. A different communicator.
+        </div>
+        <div class="w-hero-cta-wrap fade-up delay-3">
+          <a href="https://apps.apple.com/gb/app/amplifyu/id6803150663" target="_blank" rel="noopener" class="w-hero-cta">Start for free →</a>
+          <p class="w-hero-cta-note">No card required.</p>
+        </div>
+        <div class="w-mob-demo">
+          <p class="w-problem-video-label"><span>&#9654;</span>&nbsp; Watch the demo</p>
+          <div class="w-phone-frame">
+            <div class="w-phone-notch"></div>
+            <div class="w-phone-inner">
+              <video controls preload="metadata" playsinline poster="mobile-demo-poster-v2.jpg">
+                <source src="https://zdrjbgc9xr1duqxo.public.blob.vercel-storage.com/mobile-demo-v2-narrated.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
       </div>
