@@ -30,7 +30,7 @@ body { background:var(--cream); color:var(--dark); font-family:var(--sans); font
 #nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; background:rgba(15,13,10,0); transition:background 0.3s; }
 #nav.scrolled { background:rgba(15,13,10,0.95); backdrop-filter:blur(8px); }
 .nav-logo { display:flex; align-items:center; text-decoration:none; }
-.nav-logo-img { height:64px; width:auto; display:block; filter:brightness(0) invert(1); }
+.nav-logo-img { height:64px; width:auto; display:block; }
 .nav-links { display:flex; align-items:center; gap:22px; }
 .nav-link { font-family:var(--sans); font-size:13px; font-weight:400; letter-spacing:0.02em; color:rgba(237,234,230,0.55); text-decoration:none; transition:color 0.2s; }
 .nav-link:hover, .nav-link.active { color:#fff; }
@@ -98,7 +98,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 
 <nav id="nav">
   <a href="index.html" class="nav-logo">
-    <img src="logo-a-transparent.png" alt="AmplifyU" class="nav-logo-img">
+    <img src="logo-badge.png" alt="AmplifyU" class="nav-logo-img">
   </a>
   <div class="nav-links">
     <a href="index.html" class="nav-link">Home</a>
