@@ -173,8 +173,8 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
       <h3 class="pg-h3">B. Voice and practice data</h3>
       <ul class="pg-list">
         <li>Where the programme includes voice-based practice (including High-Stakes Conversation rehearsal), we access your microphone and process the resulting audio to provide coaching feedback (see Section 7).</li>
-        <li>On Day 2, AmplifyU measures vocal pitch, energy, and pauses using on-device audio analysis, and calculates your speaking pace from your transcript's word count and timing. These descriptive scores are sent to Anthropic as text to generate feedback. Day 3 measures only pause timing on-device and sends this as descriptive text to Anthropic. Day 7 measures pitch and pauses on-device, but uses these locally to adjust feedback rather than sending them to Anthropic. None of this identifies who is speaking, produces a voiceprint, or detects emotion (see Section 12).</li>
-        <li>AmplifyU uses your camera in the Day 12 Simulation exercise to record a short self-practice video (60–90 seconds) so you can watch yourself back and improve your body language, eye contact, and presence. This recording stays on your device and is never uploaded, transmitted to any AI provider, or shared.</li>
+        <li>On Day 2, AmplifyU measures vocal pitch, energy, and pauses using on-device audio analysis, and calculates your speaking pace from your transcript's word count and timing. These descriptive scores, together with your volume range, hedge-word count, sentence length and transcript, are sent to Anthropic as text to generate feedback. Day 3 measures only pauses on-device and sends yes/no pause flags and a pause count, together with your transcript, to Anthropic. Day 7 measures pitch and pauses on-device, but uses these locally to adjust feedback rather than sending them to Anthropic. (Your Day 7 audio is still transcribed as described in Section 7, and the transcript is sent to Anthropic.) None of this identifies who is speaking, produces a voiceprint, or detects emotion (see Section 12).</li>
+        <li>AmplifyU uses your camera in the Day 12 Simulation exercise to record a short self-practice video (60–90 seconds) so you can watch yourself back and improve your body language, eye contact, and presence. This recording stays on your device, is held only temporarily in the app's memory, and is never uploaded, transmitted to any AI provider, or shared. It is discarded when you re-record or leave the exercise.</li>
       </ul>
 
       <h3 class="pg-h3">C. Access and purchase information</h3>
@@ -195,18 +195,19 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 
     <div class="pg-section">
       <h2 class="pg-h2">4. What stays on your device</h2>
-      <p class="pg-p">AmplifyU does not maintain a separate server-side copy of your core programme data. Your onboarding reflections and Day 14 blueprint inputs are stored locally on your device. This means:</p>
+      <p class="pg-p">AmplifyU does not maintain a separate server-side copy of your core programme data. Your programme data is stored locally on your device. This means:</p>
       <ul class="pg-list">
         <li>We cannot access this data ourselves, even if we wanted to</li>
-        <li>Deleting the app, or clearing its data via your device settings, permanently removes it</li>
-        <li>If you switch devices or reinstall the app, this data does not carry over, since it never leaves your device</li>
+        <li>Deleting the app, or clearing its data via your device settings, removes it from your device. Copies in your own device backups are not affected</li>
+        <li>If you reinstall the app or move to a new device, this data does not carry over unless you restore your device from a backup (for example iCloud or a computer backup), which may include it. Otherwise it is not recoverable, since it is never sent to us</li>
       </ul>
       <p class="pg-p">Stored locally on your device:</p>
       <ul class="pg-list">
         <li>Onboarding reflection answers</li>
         <li>Day 14 Blueprint inputs and outputs - including your Communication Archetype, which Anthropic generates as part of the Blueprint (see Section 5)</li>
         <li>Stories, speeches, and other content generated via features like the AmplifyU Speech Writer, which you can save to your device</li>
-        <li>Your Day 12 self-practice video recording - camera access is used solely to create this recording for your own playback; it never leaves your device</li>
+        <li>Your Day 12 self-practice video is not saved. Camera access is used solely to create a recording for your own playback. It is held only in the app's temporary memory, never leaves your device, and is discarded when you re-record or leave the exercise</li>
+        <li>Transcripts of your practice answers, your progress, streaks and activity log, your Day 8 story cover images, your Day 11 Personal Signature and LinkedIn/CV rewrites, and the recordings from the Day 1 and Day 2 Simulations, which are saved on your device together with their transcripts</li>
       </ul>
     </div>
 
@@ -220,7 +221,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         <tbody>
           <tr>
             <td>AI coaching / blueprint generation</td>
-            <td>Your reflection and blueprint answers</td>
+            <td>Your role, onboarding answers, job title, list of days completed, and your reflection and blueprint answers</td>
             <td>To generate personalised coaching content</td>
             <td>Anthropic</td>
             <td>30 days from receipt/generation, then automatically deleted, under Anthropic's standard API terms; not used to train Anthropic's models (see Section 9)</td>
@@ -262,7 +263,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
           </tr>
         </tbody>
       </table>
-      <p class="pg-p" style="margin-top:16px;">Separately, on Days 2, 3, and 7, AmplifyU performs vocal delivery analysis entirely on your device - no audio for this analysis is sent anywhere. Day 2 sends descriptive pitch/energy/pause/pace scores to Anthropic as text; Day 3 sends only a descriptive pause-timing score; Day 7's locally-measured scores are used to adjust the feedback already generated by Anthropic and are not sent to Anthropic at all.</p>
+      <p class="pg-p" style="margin-top:16px;">Separately, on Days 2, 3, and 7, AmplifyU performs vocal delivery analysis entirely on your device - no audio for this analysis is sent anywhere. Day 2 sends descriptive pitch, energy, pause, pace, volume range, hedge-word and sentence-length scores to Anthropic as text, together with your transcript; Day 3 sends only yes/no pause flags and a pause count, together with your transcript; Day 7's locally-measured scores are used to adjust the feedback already generated by Anthropic and are not sent to Anthropic at all.</p>
 
       <h3 class="pg-h3">5A. Outbound links to third-party retailers</h3>
       <p class="pg-p">At the end of each chapter, the Review tab recommends two books, with links to purchase them on Amazon. Where these are live, they are Amazon Associates affiliate links - AmplifyU earns a small commission on qualifying purchases made through them, at no extra cost to you. This affiliate relationship is disclosed directly in the app, next to the book recommendations themselves.</p>
@@ -389,7 +390,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         <li>Because AmplifyU stores most of your data locally rather than on our servers, the security of that data also depends on your own device's protections (passcode, biometric lock, disk encryption) - we'd encourage you to use these</li>
         <li>At-rest encryption: environment variables are encrypted at rest, and file storage/build artifacts are encrypted at rest using AES-256</li>
       </ul>
-      <p class="pg-p">AmplifyU does not perform facial recognition, biometric identification (i.e. identifying who is speaking or appearing on camera), or emotion detection from your voice or video. AmplifyU does analyse generic vocal delivery qualities on-device on three days, and this varies by day: Day 2 measures pitch, energy, and pauses via on-device audio analysis, plus a speaking-pace score calculated from your transcript's word count and timing - these descriptive scores are sent to Anthropic as text to generate feedback. Day 3 measures only pause timing on-device, sent to Anthropic as descriptive text. Day 7 measures pitch and pauses on-device, but these are used locally to adjust feedback already generated by Anthropic, rather than being sent to Anthropic at all. None of this identifies who is speaking, produces a voiceprint, or detects emotion. Separately, voice recordings used for transcription (see Section 7) produce only a text transcript via OpenAI's Whisper, with no additional analysis requested or performed on that audio. The Day 12 video recording is for your own personal playback and self-review only - no frame is ever extracted from it and it never leaves your device.</p>
+      <p class="pg-p">AmplifyU does not perform facial recognition, biometric identification (i.e. identifying who is speaking or appearing on camera), or emotion detection from your voice or video. AmplifyU does analyse generic vocal delivery qualities on-device on three days, and this varies by day: Day 2 measures pitch, energy, and pauses via on-device audio analysis, plus a speaking-pace score calculated from your transcript's word count and timing - these descriptive scores, together with your volume range, hedge-word count, sentence length and transcript, are sent to Anthropic as text to generate feedback. Day 3 measures only pauses on-device and sends yes/no pause flags and a pause count, together with your transcript, to Anthropic. Day 7 measures pitch and pauses on-device, but these are used locally to adjust feedback already generated by Anthropic, rather than being sent to Anthropic at all. None of this identifies who is speaking, produces a voiceprint, or detects emotion. Separately, voice recordings used for transcription (see Section 7) produce only a text transcript via OpenAI's Whisper, with no additional analysis requested or performed on that audio. The Day 12 video recording is for your own personal playback and self-review only - no frame is ever extracted from it and it never leaves your device.</p>
       <p class="pg-p">Under UK GDPR and EU GDPR, voice can become biometric data where it is used for the purpose of uniquely identifying a person. AmplifyU's vocal delivery analysis works differently: it measures how you sound (delivery characteristics such as pitch, energy, pauses, and pace) in order to generate coaching feedback, rather than building a biometric template used to identify who you are. AmplifyU does not process biometric data for the purpose of uniquely identifying users, and does not create voiceprints or identify speakers.</p>
 
       <h3 class="pg-h3">12A. Data breach notification</h3>
@@ -407,7 +408,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
         <li>Withdraw consent, where we rely on consent as our legal basis</li>
         <li>Rights relating to automated decision-making, where applicable (see Section 14)</li>
       </ul>
-      <p class="pg-p">Because most of your programme data is stored locally on your device rather than on our servers, you can exercise your right to delete this data directly, at any time, by clearing the app's data or deleting the app. Deleting the app removes programme data stored locally on your device. Information that has already been transmitted to our service providers for processing (see Sections 5 and 9) is subject to the retention periods described in this policy, rather than being erased immediately on deletion of the app.</p>
+      <p class="pg-p">Because most of your programme data is stored locally on your device rather than on our servers, you can exercise your right to delete this data directly, at any time, by clearing the app's data or deleting the app. Deleting the app removes programme data stored locally on your device. Copies that may exist in your own device backups (for example iCloud) are controlled through your backup settings. Information that has already been transmitted to our service providers for processing (see Sections 5 and 9) is subject to the retention periods described in this policy, rather than being erased immediately on deletion of the app.</p>
       <p class="pg-p">In the meantime, or for any other question about your rights, email <a href="mailto:hello@amplifyu.app">hello@amplifyu.app</a> - we will respond within one month, as required by law. You also have the right to complain to the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
     </div>
 
@@ -425,7 +426,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
     <div class="pg-section">
       <h2 class="pg-h2">16. Cookies and analytics</h2>
       <p class="pg-p">Our website uses cookies for optional analytics (Google Analytics), only after you give consent via our cookie banner. You can manage your preferences at any time via "Cookie Settings" at the bottom of any page on amplifyu.app. See our full <a href="cookie-policy.html">Cookie Policy</a> for detail.</p>
-      <p class="pg-p">Our app does not currently use cookies, analytics, or tracking of any kind.</p>
+      <p class="pg-p">Our app does not use cookies, analytics, or tracking. When the app starts, it currently loads its text fonts from Google Fonts, which means Google receives your IP address and device type.</p>
     </div>
 
     <div class="pg-section">
