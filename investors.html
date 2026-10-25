@@ -56,6 +56,10 @@ body { background:var(--dark); color:var(--cream); font-family:var(--sans); font
 .hero-inner, .flush-inner { max-width:1100px; margin:0 auto; }
 .hero-inner { position:relative; z-index:1; }
 .contact-top, #founder, #problem, #why-now, #solution, #cohort, #roadmap, #contact { padding-left:48px; padding-right:48px; }
+.hero-chip { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:28px; border-radius:999px; font-family:var(--sans); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; background:linear-gradient(90deg, #c8327c 0%, #8a3f97 45%, #6a4ca3 70%, #3fb0a0 100%); border:none; color:#fff; font-weight:600; box-shadow:0 6px 20px rgba(106,76,163,0.35); transition:opacity 0.65s ease, transform 0.65s ease, filter 0.25s ease; }
+.hero-chip-dot { width:6px; height:6px; border-radius:50%; background:#fff; flex-shrink:0; }
+.hero-chip-arrow { color:#fff; letter-spacing:0; }
+.hero-chip:hover { filter:brightness(1.12); }
 .hero-super { font-family:var(--sans); font-size:10px; font-weight:500; letter-spacing:0.35em; text-transform:uppercase; color:var(--accent-light); margin-bottom:48px; }
 .hero-h1 { font-family:var(--serif-body); font-size:clamp(36px,4.5vw,68px); font-weight:500; line-height:1.04; letter-spacing:-2px; color:rgba(247,243,236,0.95); margin-bottom:48px; }
 .hero-h1 em { font-style:italic; color:var(--accent-light); }
@@ -247,6 +251,7 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-inner">
+    <a href="https://websummit.com/appearances/lis26/42533b39-d71f-404d-b632-a56862109887/amplifyu/" target="_blank" rel="noopener" class="hero-chip fade-up"><span class="hero-chip-dot"></span>Selected for Web Summit 2026<span class="hero-chip-arrow">&rarr;</span></a>
     <p class="hero-super fade-up">AmplifyU Technologies Ltd · Investor Overview 2026</p>
     <h1 class="hero-h1 fade-up delay-1">The skills that shape careers<br><em>finally taught</em></h1>
     <p class="hero-sub fade-up delay-2">A £10bn+ e-learning market. A generation of professionals who know communication determines their career - and no structured, scalable way to learn it. Until now.</p>
