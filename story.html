@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://www.amplifyu.app/story">
 <meta property="og:title" content="Our Story | AmplifyU">
 <meta property="og:description" content="AmplifyU was built on one belief: communication is the skill that changes everything. Discover the story behind the programme and the people who built it.">
-<meta property="og:image" content="https://www.amplifyu.app/jenni3.jpeg">
+<meta property="og:image" content="https://www.amplifyu.app/founder-og.jpg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -311,34 +311,23 @@
   .storyreel-col { position: relative; width: 100%; max-width: 940px; justify-self: start; }
   .storyreel-col .story-reel-card { border-radius: 16px; box-shadow: 0 24px 60px rgba(20,18,15,0.16), 0 0 0 1px rgba(20,18,15,0.05); }
 
-  /* Left: founder photo as a full-bleed atmospheric background, with the
-     story copy layered on top rather than beside it in its own card. The
-     outer column still stretches to match the reel's height (keeps
-     bottoms aligned), but the photo itself is now a shorter, top-anchored
-     landscape rectangle (aspect-ratio, not inset:0 filling the whole tall
-     column) so object-fit:cover doesn't have to crop so aggressively to
-     cover a tall/narrow box - that was cropping most of the photo's width
-     away. Text below the photo's own box just sits on the plain page
-     background. */
-  .storyreel-photo-col { position: relative; overflow: hidden; }
-  .storyreel-text-top, .storyreel-text-bottom { position: relative; z-index: 1; max-width: 420px; }
-  .storyreel-text-top { padding: 48px 32px 0 32px; }
-  .storyreel-text-bottom { padding: 0 32px 8px 32px; margin-top: 254px; }
-  .storyreel-photo-bg { position: absolute; top: 0; left: 0; right: 0; aspect-ratio: 4 / 3; z-index: 0; }
+  /* Left: eyebrow/headline above a framed portrait photo. The column
+     stretches to match the reel's height and the photo fills whatever is
+     left, so the photo's bottom lines up with the reel card's. No text
+     sits on the photo, so it only gets a very light flat tint. */
+  .storyreel-photo-col { position: relative; display: flex; flex-direction: column; }
+  .storyreel-text-top { position: relative; max-width: 420px; }
+  .storyreel-text-top { padding: 0 0 28px 0; }
+  .storyreel-photo-bg {
+    position: relative; flex: 1 1 auto; min-height: 420px;
+    border-radius: 16px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(20,18,15,0.16), 0 0 0 1px rgba(20,18,15,0.05);
+  }
   .storyreel-photo-bg-img {
     position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; object-position: 68% 30%;
+    object-fit: cover; object-position: 50% 4%;
   }
-  .storyreel-photo-scrim {
-    position: absolute; inset: 0;
-    background: linear-gradient(100deg,
-      rgba(247,243,236,0.8) 0%,
-      rgba(247,243,236,0.68) 28%,
-      rgba(247,243,236,0.32) 46%,
-      rgba(247,243,236,0.02) 62%,
-      rgba(247,243,236,0) 76%
-    );
-  }
+  .storyreel-photo-scrim { position: absolute; inset: 0; background: rgba(15,13,10,0.06); }
   .storyreel-eyebrow {
     font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--sage); margin-bottom: 16px;
@@ -346,24 +335,6 @@
   .storyreel-headline {
     font-family: var(--serif-display); font-size: clamp(32px, 3.4vw, 46px); font-weight: 500;
     line-height: 1.1; letter-spacing: -0.5px; color: var(--text-dark); margin: 0 0 20px;
-  }
-  .storyreel-pullquote {
-    font-family: var(--serif-display); font-size: clamp(19px, 1.9vw, 23px); font-weight: 400;
-    font-style: italic; line-height: 1.4; color: var(--text-dark);
-    padding-left: 20px; border-left: 2px solid var(--accent);
-    margin: 0 0 20px;
-  }
-  .storyreel-closing {
-    font-family: var(--sans); font-size: 15px; font-weight: 300; line-height: 1.7;
-    color: var(--text-mid); margin: 0 0 24px;
-  }
-  .storyreel-signature {
-    font-family: 'Allura', var(--serif-display); font-size: 40px; font-weight: 400;
-    font-style: italic; color: var(--sage); margin: 0; line-height: 1;
-  }
-  .storyreel-signature span {
-    display: block; font-family: var(--sans); font-size: 11px; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-top: 10px; line-height: 1.6;
   }
 
   /* ─── PULL QUOTE ─── */
@@ -617,23 +588,16 @@
     .hero-sub { font-size: 14px; color: rgba(237,234,230,0.7); line-height: 1.65; }
     .section-storyreel { min-height: unset; padding: 56px 24px; }
     .storyreel-inner { grid-template-columns: 1fr; gap: 24px; }
-    /* Mobile drops the full-bleed overlay entirely: eyebrow/headline above
-       the photo, the photo as its own framed block, then the rest of the
-       copy below it on plain background - no text ever sits on top of the
-       photo, so there's nothing to keep legible against a variable image
-       and nothing covering her face. A very light flat tint (not the
-       desktop text-legibility gradient) sits over the photo purely for
-       mood/polish. */
+    /* Mobile: same stack, but the photo gets a fixed 4:5 frame instead of
+       stretching to the reel's height. */
     .storyreel-photo-col { position: static; }
-    .storyreel-text-top, .storyreel-text-bottom { position: static; z-index: auto; max-width: none; }
+    .storyreel-text-top { position: static; z-index: auto; max-width: none; }
     .storyreel-text-top { padding: 0 24px; }
-    .storyreel-text-bottom { padding: 0 24px 8px 24px; margin-top: 24px; }
     .storyreel-photo-bg {
       position: relative; width: 100%; aspect-ratio: 4 / 5;
       border-radius: 14px; overflow: hidden; margin: 24px 0;
       box-shadow: 0 20px 50px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.06);
     }
-    .storyreel-photo-scrim { background: rgba(15,13,10,0.4); }
     .section-context { padding: 56px 24px; }
     .context-inner { grid-template-columns: 1fr; gap: 40px; }
     .section-storyboard { padding: 64px 24px; }
@@ -765,13 +729,8 @@
         <h2 class="storyreel-headline">I built the app<br>I wish I'd had.</h2>
       </div>
       <div class="storyreel-photo-bg">
-        <img src="founder-photo-story.jpg" alt="Jenni, founder of AmplifyU" class="storyreel-photo-bg-img">
+        <img src="founder-photo-story-v2.jpg" alt="Jenni, founder of AmplifyU" class="storyreel-photo-bg-img">
         <div class="storyreel-photo-scrim" aria-hidden="true"></div>
-      </div>
-      <div class="storyreel-text-bottom">
-        <blockquote class="storyreel-pullquote">"I needed an app designed for real life - something practical, personal and backed by science."</blockquote>
-        <p class="storyreel-closing">What I was looking for didn't exist.<br>So I built it.</p>
-        <p class="storyreel-signature">Jenni<span>Jenni Singh<br>Founder, AmplifyU</span></p>
       </div>
     </div>
     <div class="storyreel-col fade-up delay-1">
