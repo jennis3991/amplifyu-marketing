@@ -311,15 +311,15 @@
   .storyreel-col { position: relative; width: 100%; max-width: 940px; justify-self: start; }
   .storyreel-col .story-reel-card { border-radius: 16px; box-shadow: 0 24px 60px rgba(20,18,15,0.16), 0 0 0 1px rgba(20,18,15,0.05); }
 
-  /* Left: eyebrow/headline above the founder photo, shown whole at its
-     own 2:3 portrait shape (capped in width so it doesn't tower over the
-     reel). No text sits on the photo, so it only gets a very light flat
-     tint. */
+  /* Left: the founder photo, shown whole at its own 2:3 portrait shape,
+     with the eyebrow/headline below it. Its top lines up with the reel
+     card's, and the width cap keeps it about the reel's height. No text
+     sits on the photo, so it only gets a very light flat tint. */
   .storyreel-photo-col { position: relative; display: flex; flex-direction: column; }
   .storyreel-text-top { position: relative; max-width: 420px; }
-  .storyreel-text-top { padding: 0 0 28px 0; }
+  .storyreel-text-top { padding: 28px 0 0 0; }
   .storyreel-photo-bg {
-    position: relative; width: 100%; max-width: 460px; aspect-ratio: 2 / 3;
+    position: relative; width: 100%; max-width: 430px; aspect-ratio: 2 / 3;
     border-radius: 16px; overflow: hidden;
     box-shadow: 0 24px 60px rgba(20,18,15,0.16), 0 0 0 1px rgba(20,18,15,0.05);
   }
@@ -723,13 +723,13 @@
 <section class="section-storyreel">
   <div class="storyreel-inner">
     <div class="storyreel-photo-col fade-up">
-      <div class="storyreel-text-top">
-        <p class="storyreel-eyebrow">My Story</p>
-        <h2 class="storyreel-headline">I built the app<br>I wish I'd had.</h2>
-      </div>
       <div class="storyreel-photo-bg">
         <img src="founder-photo-story-v2.jpg" alt="Jenni, founder of AmplifyU" class="storyreel-photo-bg-img">
         <div class="storyreel-photo-scrim" aria-hidden="true"></div>
+      </div>
+      <div class="storyreel-text-top">
+        <p class="storyreel-eyebrow">My Story</p>
+        <h2 class="storyreel-headline">I built the app<br>I wish I'd had.</h2>
       </div>
     </div>
     <div class="storyreel-col fade-up delay-1">
