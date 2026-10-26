@@ -311,15 +311,15 @@
   .storyreel-col { position: relative; width: 100%; max-width: 940px; justify-self: start; }
   .storyreel-col .story-reel-card { border-radius: 16px; box-shadow: 0 24px 60px rgba(20,18,15,0.16), 0 0 0 1px rgba(20,18,15,0.05); }
 
-  /* Left: eyebrow/headline above a framed portrait photo. The column
-     stretches to match the reel's height and the photo fills whatever is
-     left, so the photo's bottom lines up with the reel card's. No text
-     sits on the photo, so it only gets a very light flat tint. */
+  /* Left: eyebrow/headline above the founder photo, shown whole at its
+     own 2:3 portrait shape (capped in width so it doesn't tower over the
+     reel). No text sits on the photo, so it only gets a very light flat
+     tint. */
   .storyreel-photo-col { position: relative; display: flex; flex-direction: column; }
   .storyreel-text-top { position: relative; max-width: 420px; }
   .storyreel-text-top { padding: 0 0 28px 0; }
   .storyreel-photo-bg {
-    position: relative; flex: 1 1 auto; min-height: 420px;
+    position: relative; width: 100%; max-width: 460px; aspect-ratio: 2 / 3;
     border-radius: 16px; overflow: hidden;
     box-shadow: 0 24px 60px rgba(20,18,15,0.16), 0 0 0 1px rgba(20,18,15,0.05);
   }
@@ -588,13 +588,12 @@
     .hero-sub { font-size: 14px; color: rgba(237,234,230,0.7); line-height: 1.65; }
     .section-storyreel { min-height: unset; padding: 56px 24px; }
     .storyreel-inner { grid-template-columns: 1fr; gap: 24px; }
-    /* Mobile: same stack, but the photo gets a fixed 4:5 frame instead of
-       stretching to the reel's height. */
+    /* Mobile: same stack, photo full width. */
     .storyreel-photo-col { position: static; }
     .storyreel-text-top { position: static; z-index: auto; max-width: none; }
     .storyreel-text-top { padding: 0 24px; }
     .storyreel-photo-bg {
-      position: relative; width: 100%; aspect-ratio: 4 / 5;
+      position: relative; width: 100%; max-width: none; aspect-ratio: 2 / 3;
       border-radius: 14px; overflow: hidden; margin: 24px 0;
       box-shadow: 0 20px 50px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.06);
     }
