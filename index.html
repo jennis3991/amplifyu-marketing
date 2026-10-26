@@ -377,6 +377,18 @@ body { background: var(--cream); color: var(--dark); font-family: var(--sans); f
 .w-cell.au-cell { color:rgba(237,234,230,0.85); font-weight:500; }
 .w-cell.au-cell::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--accent-light); flex-shrink:0; }
 
+/* ─── TESTIMONIALS ─── */
+.w-voices { background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); padding:100px 48px; }
+.w-voices-inner { max-width:1100px; margin:0 auto; }
+.w-voices-top { text-align:center; margin-bottom:48px; }
+.w-voices-h2 { font-family:var(--serif-body); font-size:clamp(28px,4vw,56px); font-weight:500; color:rgba(247,243,236,0.95); letter-spacing:-1.5px; line-height:1.08; }
+.w-voices-h2 em { font-style:italic; color:var(--accent-light); }
+.w-voices-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.w-voice { display:flex; flex-direction:column; justify-content:space-between; gap:28px; margin:0; border:1px solid rgba(138,158,141,0.25); border-radius:6px; background:rgba(107,124,110,0.06); padding:32px 32px 28px; }
+.w-voice-quote { font-family:var(--serif-body); font-size:21px; font-weight:300; font-style:italic; color:rgba(240,235,226,0.85); line-height:1.4; letter-spacing:-0.3px; margin:0; padding-left:20px; border-left:2px solid var(--accent); }
+.w-voice-author { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent-light); }
+.w-voice-author span { display:block; margin-top:6px; font-weight:400; letter-spacing:0.08em; text-transform:none; font-size:12px; color:rgba(237,234,230,0.4); }
+
 /* ─── FOUNDER NOTE ─── */
 .w-founder { background:var(--dark); border-top:1px solid rgba(255,255,255,0.06); padding:56px 48px; }
 .w-founder-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:36px; }
@@ -580,6 +592,9 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   .w-cell.au-cell { grid-column:1 / -1; grid-row:3; display:flex; flex-direction:column; align-items:flex-start; gap:4px; border-top:1px solid rgba(255,255,255,0.06); padding:10px 14px 14px; }
   .w-cell.au-cell::before { content:'AMPLIFYU'; display:block; font-size:8px; letter-spacing:0.3em; color:var(--accent-light); font-weight:600; font-family:var(--sans); width:auto; height:auto; border-radius:0; background:transparent; }
 
+  .w-voices { padding: 80px 24px; }
+  .w-voices-grid { grid-template-columns:1fr; gap:16px; }
+  .w-voice { padding:28px 24px 24px; }
   .w-founder { padding: 40px 24px; }
   .w-founder-inner { flex-direction:column; align-items:flex-start; gap:20px; }
   .w-founder-link { margin-left:0; }
@@ -1022,6 +1037,30 @@ footer { display:flex; align-items:center; justify-content:space-between; paddin
   }, { passive: true });
 })();
 </script>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="w-voices">
+  <div class="w-voices-inner">
+    <div class="w-voices-top">
+      <div class="eyebrow fade-up">In their words</div>
+      <h2 class="w-voices-h2 fade-up delay-1">What our users <em>are saying</em></h2>
+    </div>
+    <div class="w-voices-grid fade-up delay-2">
+      <figure class="w-voice">
+        <blockquote class="w-voice-quote">For the conversation prep alone, AmplifyU is worth it.</blockquote>
+        <figcaption class="w-voice-author">Kate<span>AmplifyU user, UK</span></figcaption>
+      </figure>
+      <figure class="w-voice">
+        <blockquote class="w-voice-quote">I was so impressed by what it can do. The AI coach is incredibly accurate.</blockquote>
+        <figcaption class="w-voice-author">Alex<span>AmplifyU user, UK</span></figcaption>
+      </figure>
+      <figure class="w-voice">
+        <blockquote class="w-voice-quote">It helped me understand my personal brand and how to be more visible.</blockquote>
+        <figcaption class="w-voice-author">Hannah<span>AmplifyU user, UK</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <!-- ══ FOUNDER NOTE ══ -->
 <section class="w-founder">
